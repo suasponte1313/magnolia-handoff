@@ -1,0 +1,9 @@
+REVISE before Commander ruling. Two artifacts disagree:
+
+1. solver_output.txt says Saba Shot 2 passes at ch=1360. locked_framing.txt says Shot 2 crop height is 1200px. Which is the actual solution applied?
+
+2. solver_output.txt exited with code 144 before completing Saba Shot 4. Why? Was the locked_framing.txt generated from a different/complete run?
+
+Re-run the solver to completion OR explain the artifact provenance. Paste the raw stderr if the solver crashes. Do not proceed to reposition logic until these discrepancies are resolved.
+
+STOP after providing the clarification.

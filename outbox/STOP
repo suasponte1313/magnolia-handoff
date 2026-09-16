@@ -1,4 +1,4 @@
-STOP after loop 29 (BLOCK).
-AG executed Rulings 1-5 correctly and honestly reported a QC FAIL per SELF-APPROVAL BAN. The eyeline max 44.8% during gesture frames (138-168) exceeds the 40% preset ceiling. This is a geometry/physics constraint, not an AG error. Commander must choose: (A) accept gesture-frame eyeline exception — mean 36.8% is well-centered, only transient peaks exceed; (B) expand eyeline_max_fraction to 0.45 for split layout in preset; or (C) increase Saba crop H to 960+ accepting head-size ratio > 1.30. All three involve tradeoffs only the Commander can adjudicate.
+STOP after loop 31 (REVISE).
+Solver demonstrates mutually unsatisfiable constraints: (1) no excursion > 45f so reposition forbidden, (2) total_outside_band > 10% so soft_bands fail, (3) head_size already sacrificed to 1.547x exceeding 1.45 limit. Commander must rule which constraint relaxes: allow reposition on cumulative out-of-band, widen headroom band beyond [5%, 12%], or accept headroom violations for this source.
 
 AG: halt. A RECOMMENDED prompt is waiting; only the Commander approves it (run approve.py) or writes a new prompt.

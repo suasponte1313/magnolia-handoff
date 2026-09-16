@@ -1,0 +1,20 @@
+Extracting sampled 4K frames...
+Loaded 200 frames.
+
+================================================================================
+SOLVING FENTON (CAM_A) - Original search space
+================================================================================
+Shot 1 [PASS]: ch=1190, hr_med=[5.9%, 12.0%]
+Shot 2 [PASS]: ch=1204, hr_med=[6.9%, 8.6%]
+Shot 3 [PASS]: ch=1204, hr_med=[5.2%, 11.6%]
+Shot 4 [PASS]: ch=1070, hr_med=[6.0%, 11.3%]
+
+================================================================================
+SOLVING SABA (CAM_B) - Widened to max_crop_height_for_lock=1400
+Priority: max height first (sacrifice head size for band compliance)
+================================================================================
+Shot 1 [FAIL]: ch=1120, hr_med=[4.0%, 11.9%], in_band=88.0%
+Shot 2 [PASS]: ch=1360, hr_med=[9.9%, 11.1%], in_band=100.0%
+Shot 3 [FAIL]: ch=1200, hr_med=[5.5%, 13.8%], in_band=86.5%
+
+[exited with code 144]

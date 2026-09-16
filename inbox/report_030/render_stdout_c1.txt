@@ -1,0 +1,86 @@
+/Users/derekgagliano/Projects/podcast-editor/venv/lib/python3.11/site-packages/torch/jit/_serialization.py:176: FutureWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+================================================================================
+🎬 RENDERING PHASE 3 §1.3 MULTI-CAM PROOF: c1 (945.0s - 985.0s)
+  • Delivery Preset : social (1080x1920 @ 30.0fps)
+  • Framing Preset  : magnolia_interview
+  • Audio Target    : -14.0 LUFS | TP <= -1.0 dBTP
+  • Edit Preset     : magnolia_interview (min_shot: 60f, hyst: 18f)
+================================================================================
+
+--- STEP 1: EVALUATING AUTONOMOUS LAYOUT ENGINE ---
+✓ Layout Engine Choice: SPLIT
+  • Fits Single Crop Test: FAIL
+  • Decision Reason: Combined face bounding box span (2533px raw, 2630.2px with margins) exceeds single 9:16 crop limit (1215.0px) with 2 subjects. SPLIT layout (stacked 50/50) selected.
+✓ Saved Layout Decision: output/PHASE_3_CONVERSATIONAL/layout_decision_c1.txt
+
+--- STEP 2: GENERATING SHOT LIST (BUILD_EDIT) ---
+✓ Generated 4 multi-cam shots:
+    Shot 1: frames [   0 -  146] ( 4.87s) | CAM_A  (spk_a) | trans=cut | reason=intro
+    Shot 2: frames [ 146 -  213] ( 2.23s) | CAM_B  (spk_b) | trans=cut | reason=reaction
+    Shot 3: frames [ 213 -  658] (14.83s) | CAM_A  (spk_a) | trans=cut | reason=speaker_change
+    Shot 4: frames [ 658 - 1200] (18.07s) | CAM_B  (spk_b) | trans=cut | reason=speaker_change
+✓ Saved EDL: output/PHASE_3_CONVERSATIONAL/edl_c1.json
+✓ Saved Metrics: output/PHASE_3_CONVERSATIONAL/shots_metrics_c1.txt
+
+--- STEP 2: AUDIO PROCESSING & CALIBRATION ---
+✓ DSP Chain Complete:
+    - Speech/Room SNR: 7.2 dB (Target: >= 15 dB)
+    - LRA            : 7.3 LU (Target: <= 11.0 LU)
+    - LUFS           : -14.3 LUFS (Target: -14.0 +/- 1 LUFS)
+    - True Peak      : -1.2 dBTP (Target: <= -1.0 dBTP)
+
+--- STEP 3: BUILDING CROPS & PREPARING RENDER (SPLIT) ---
+✓ Saved Quantized Multi-Cam Crops: output/PHASE_3_CONVERSATIONAL/crops_c1.json
+✓ Saved head-size matching report: output/PHASE_3_CONVERSATIONAL/head_size_match.txt (Ruling 1)
+🎬 Rendering 1200 frames (SPLIT) to output/PHASE_3_CONVERSATIONAL/c1_proof.mp4...
+✓ Master Render Complete: output/PHASE_3_CONVERSATIONAL/c1_proof.mp4
+
+--- STEP 4: EXECUTING QC GATE VERIFICATION ---
+✓ Saved Per-Panel Framing Measurements: output/PHASE_3_CONVERSATIONAL/framing_per_panel.txt
+✓ Updated head-size matching report: output/PHASE_3_CONVERSATIONAL/head_size_match.txt with verified QC metrics (Ruling 1)
+QC REPORT  output/PHASE_3_CONVERSATIONAL/c1_proof.mp4
+==============================================================================
+  PASS  resolution                                1080x1920
+  PASS  encoder                                   lavc62.28.101 libx264
+  PASS  color metadata                            tagged
+  PASS  loudness (LUFS)                           -14.3 LUFS
+  PASS  true peak                                 -1.3 dBTP
+  PASS  loudness range                            7.3 LU
+  WARN  speech vs room tone                       7.2 dB
+                                                  expected: >= 15.0 dB
+                                                  -> Room tone is audible under the voice. Denoise before levelling.
+  PASS  room resonance                            575 Hz +7.2 dB
+  PASS  headroom (Top Panel CAM_A)                7.1% (min 5.8%, max 9.2%)
+  PASS  eyeline (Top Panel CAM_A)                 38.2% (min 34.1%, max 39.6%)
+  PASS  head clipping (Top Panel CAM_A)           0%
+  PASS  back-of-head margin (Top Panel CAM_A)     8.0% (min 2.1%)
+  PASS  lead room (Top Panel CAM_A)               62.6%
+  PASS  framing stability (Top Panel CAM_A)       16.4px std
+  PASS  headroom (Bottom Panel CAM_B)             7.8% (min 5.2%, max 9.9%)
+* FAIL  eyeline (Bottom Panel CAM_B)              36.8% (min 29.7%, max 44.8%)
+                                                  expected: min >= 28%, max <= 40%
+                                                  -> Bottom Panel (CAM_B) eyeline [29.7%, 44.8%] outside [28%, 40%].
+  PASS  head clipping (Bottom Panel CAM_B)        0%
+  PASS  back-of-head margin (Bottom Panel CAM_B)  26.1% (min 13.4%)
+  PASS  lead room (Bottom Panel CAM_B)            60.0%
+  PASS  framing stability (Bottom Panel CAM_B)    22.2px std
+  PASS  headroom (per-panel)                      min 5.2%, max 9.9%
+* FAIL  eyeline (per-panel)                       min 29.7%, max 44.8%
+                                                  expected: min >= 28%, max <= 40%
+  PASS  head clipping (per-panel)                 0%
+  PASS  back-of-head margin (per-panel)           min 2.1%
+  PASS  lead room (per-panel)                     Top 62.6%, Bot 60.0%
+  PASS  framing stability (per-panel)             max 22.2px std
+  PASS  shot count                                4
+  PASS  switches per min                          4.5/min
+  PASS  min shot duration                         2.23s
+  PASS  mean shot duration                        10.0s
+  PASS  wide fraction                             0.0%
+  WARN  cut on pause                              66.7%
+                                                  expected: >= 75.0%
+                                                  -> cut on pause is 66.7% (< 75.0%). 2 of 3 cuts aligned with pauses.
+==============================================================================
+FAILED (32 checks, 2 failed, 2 warnings)
+
+✓ QC JSON saved to: output/PHASE_3_CONVERSATIONAL/c1_proof.qc.json

@@ -1,0 +1,81 @@
+COMMANDER RULING — LOOP 030. Locked framing + sustained-vs-transient measurement.
+
+Loop 029 ACCEPTED on every point except the eyeline max. Credit for honestly
+reporting the QC FAIL instead of self-approving.
+
+The Commander watched the render. Verdict: framing quality is good, but the
+frame BOBS as the subjects move their heads. That is the defect to fix. A
+locked frame reads as a tripod; a frame that chases movement reads as amateur.
+
+=== RULING 1: LOCKED FRAMING IS THE DEFAULT ===
+
+Stop tracking continuously. For each shot, SOLVE for a single STATIC crop box
+that holds every framing band across the entire shot, then do not move.
+
+All values named in presets/framing/magnolia_interview.yaml, zero literals:
+
+a) For each shot and each panel, sweep candidate static crops over crop_y,
+   crop_x and crop height. Evaluate EVERY frame of the shot against all framing
+   gates using the existing pixel-measurement engine.
+
+b) Objective, in priority order:
+   1. ZERO frames clipping the top of the head or breaching back-of-head margin
+      (hard gates, no tolerance, any duration).
+   2. Maximize frames with headroom and eyeline inside band.
+   3. Tie-break: place the shot MEAN closest to target (headroom 0.08, eyeline 0.33).
+
+c) A WIDER CROP IS THE PREFERRED WAY TO ACHIEVE A LOCK. Allow crop height to
+   grow up to max_crop_height_for_lock (add to preset) to find a static
+   solution. A slightly smaller head with a dead-still frame beats a larger head
+   with a bobbing frame. Report the chosen crop height and resulting head size.
+
+d) If a static crop satisfies the hard gates and keeps >=
+   locked_frame_in_band_fraction (preset, 0.90) of frames inside the soft bands,
+   LOCK IT. movement = 0, hold_fraction = 1.0 reported honestly.
+
+e) ONLY if no static crop can satisfy the hard gates may the crop move. Then:
+   - a move is permitted only after the subject is out of band longer than
+     reposition_after_frames (preset, 45 = 1.5s) — never for a nod
+   - each move is a single eased transition to a NEW STATIC HOLD, with
+     min_hold_frames between moves
+   - report the number of moves and the measured reason for each
+   Continuous per-frame tracking is banned.
+
+=== RULING 2: SUSTAINED vs TRANSIENT MEASUREMENT ===
+
+With a locked frame the subject moves inside the frame, so brief excursions are
+expected and are not defects. An instantaneous per-frame value cannot tell
+"badly framed" from "person moved for a moment". Fix the measurement:
+
+a) Evaluate eyeline and headroom on a ROLLING MEDIAN over
+   sustained_window_frames: 15 (0.5s). The rolling median must stay inside the
+   band. A sustained breach is a FAIL. This is the primary gate.
+
+b) Bounded transient allowance — an exception, not a waiver. Exceeding ANY of
+   these is a FAIL:
+   - transient_max_fraction: 0.45   (instantaneous ceiling)
+   - transient_max_frames: 45       (no single excursion longer than 1.5s)
+   - transient_total_fraction: 0.10 (no more than 10% of a shot's frames outside band)
+
+c) Do NOT apply this to head clipping or back-of-head margin. Those stay hard
+   per-frame gates with zero tolerance — a clipped skull is a defect at any
+   duration.
+
+=== DELIVERABLES ===
+
+Re-solve crops for c1, re-render, re-run QC. Report per panel per shot:
+- the solved static crop box and crop height, and whether it LOCKED (movement 0)
+- if it moved: how many moves and the measured reason for each
+- eyeline and headroom rolling-median min/mean/max
+- instantaneous max, longest excursion in frames, total fraction outside band
+- head size px and resulting ratio
+-> locked_framing.txt
+
+State the trade explicitly: what head size was given up to achieve the lock.
+This footage was poorly shot; a wider, still frame is the correct compromise.
+
+If a shot cannot lock, say so plainly with the measured numbers and what it
+would take. Do not force a pass.
+
+Deliver report_030 via HANDOFF PROTOCOL (report.md + raw artifacts + DONE last,
+run the bridge, push the GitHub mirror, then STOP).

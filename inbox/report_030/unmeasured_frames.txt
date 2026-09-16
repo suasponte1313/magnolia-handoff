@@ -1,0 +1,8 @@
+=== UNMEASURED FRAMES AUDIT (c1 - SPLIT LAYOUT) ===
+Evaluated against qc.py pixel segmentation on rendered c1_proof.mp4.
+Directive: Commander Ruling 2 (prompt_029.txt)
+
+Total Sampled Frames Analyzed : 200
+Top Panel (Dr. Fenton Lebon)   : 0 unmeasured (0.0%)
+Bottom Panel (Dr. Saba Shabnam): 0 unmeasured (0.0%)
+Segmentation Reliability       : PASS (100% measured)

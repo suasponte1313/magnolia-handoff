@@ -1,0 +1,61 @@
+COMMANDER RULING — LOOP 031. Framing priority stack.
+
+Loop 030 result, verified from raw artifacts: the lock WORKED.
+crops_c1.json shows tracking_method='locked_framing', movement_px 0.0,
+overall_hold_fraction 1.0, four static crops for four shots. The bobbing the
+Commander flagged is gone. That part is ACCEPTED.
+
+What broke: with a static crop Saba drifts out of band — headroom rolling
+median min 4.1% (floor 5.0%) and eyeline out-of-band 18.0% (limit 10.0%).
+Head-size ratio also came out 1.356 vs the 1.30 ceiling.
+
+This is not an error. It is the real trade on poorly-framed source: a locked
+frame needs a wider crop, and a wider crop means a smaller head. You cannot
+have a still frame, tight heads, and matched head sizes all at once here.
+
+=== THE PRIORITY STACK (permanent — apply to every clip from now on) ===
+
+When constraints conflict, satisfy in THIS order and sacrifice the lower ones:
+
+  1. HARD GATES — zero frames clipping the top of the head; back-of-head margin
+     never breached. No tolerance, any duration. Never sacrificed.
+  2. LOCKED FRAME — one static crop per shot, movement 0. A move is allowed
+     only if the subject is out of band longer than reposition_after_frames.
+  3. HEADROOM AND EYELINE IN BAND — sustained rolling median inside the band,
+     transient limits respected.
+  4. HEAD SIZE — matched head sizes. This is LAST and is sacrificed first.
+
+Write this stack into presets/framing/magnolia_interview.yaml as
+framing_priority_order so it is machine-readable, not folklore.
+
+=== APPLY IT TO c1 ===
+
+1. WIDEN SABA'S CROP until a STATIC crop satisfies: headroom rolling-median min
+   >= 5.0%, eyeline out-of-band fraction <= 10.0%, zero skull clip, back margin
+   in band. Increase crop height as far as needed — max_crop_height_for_lock
+   exists for exactly this. Keep movement at 0.
+
+2. RAISE THE CEILING: set head_size_ratio_max: 1.45 in the preset, with a
+   comment that it is bounded by the locked-framing priority on wide-separation
+   source. Report the measured ratio honestly against the new ceiling. Do not
+   zoom Saba tighter to chase parity — that is priority 4 breaking priority 3.
+
+3. If widening Saba still cannot hold the bands with a static crop, THEN and
+   only then permit ONE repositioning move per shot under the rules in
+   prompt_030.txt, and report the measured reason.
+
+4. PRODUCE locked_framing.txt — it was required by prompt_030.txt and never
+   written. Per panel per shot: static crop box and height, LOCKED yes/no,
+   movement count, headroom and eyeline rolling-median min/mean/max,
+   instantaneous max, longest excursion in frames, total fraction out of band,
+   head size px, resulting ratio, and the head size given up to achieve the lock.
+
+=== PROTOCOL ===
+
+You failed to assemble report_030 and did not run the bridge — the second time.
+The Commander's side had to assemble it and run the audit for you. The handoff
+is not optional and is not replaceable by your own summary. Every loop ends:
+report_<N>/ with raw artifacts, DONE last, bridge.py --once, push the mirror,
+STOP. If the bridge errors, paste the error verbatim and STOP.
+
+Deliver report_031 that way.

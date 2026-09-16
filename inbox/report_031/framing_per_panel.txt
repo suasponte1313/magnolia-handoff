@@ -1,0 +1,23 @@
+=== PER-PANEL FRAMING MEASUREMENTS (c1 - SPLIT LAYOUT) ===
+Evaluated against magnolia_interview preset targets and Commander Ruling 2 bands.
+
+Top Panel: CAM_A (Dr. Fenton Lebon) — Verdict: PASS
+  • Headroom (Rolling Med) : [ 5.9%, 11.2%] (raw:  7.5%, min  4.5%, max 13.2%) [Target: 8.0%, Band: 5.0%-12.0%] -> PASS
+    - Headroom Transients  : max exc 6f (limit: <= 45f), out-of-band  2.5% (limit: <= 10.0%)
+  • Eyeline (Rolling Med)  : [33.7%, 39.7%] (raw: 36.7%, min 33.5%, max 39.8%) [Target: 33.0%, Band: 28.0%-40.0%] -> PASS
+    - Eyeline Transients   : max exc 0f (limit: <= 45f), out-of-band  0.0% (limit: <= 10.0%), max raw 39.8% (ceiling: <= 45.0%)
+  • Top of Head Clip       :  0.0%                   [Tolerance: 0.0%] -> PASS
+  • Back of Head Margin    :  7.6% mean (min:  2.1%) [Target: >= 2.0% (sensor edge)] -> PASS
+  • Lead Room              : 64.8% mean             [Band: 55.0%-67.0%] -> PASS
+  • Center X               : 23.2% mean (std: 20.3px) [Threshold: < 40.0px] -> PASS
+
+Bottom Panel: CAM_B (Dr. Saba Shabnam) — Verdict: FAIL
+  • Headroom (Rolling Med) : [ 4.1%, 14.1%] (raw:  8.8%, min  2.8%, max 15.4%) [Target: 8.0%, Band: 5.0%-12.0%] -> FAIL
+    - Headroom Transients  : max exc 36f (limit: <= 45f), out-of-band 18.0% (limit: <= 10.0%)
+  • Eyeline (Rolling Med)  : [28.1%, 33.9%] (raw: 30.2%, min 27.9%, max 34.8%) [Target: 33.0%, Band: 28.0%-40.0%] -> PASS
+    - Eyeline Transients   : max exc 6f (limit: <= 45f), out-of-band  0.5% (limit: <= 10.0%), max raw 34.8% (ceiling: <= 45.0%)
+  • Top of Head Clip       :  0.0%                   [Tolerance: 0.0%] -> PASS
+  • Back of Head Margin    : 30.0% mean (min: 19.6%) [Target: >= 4.0%] -> PASS
+  • Lead Room              : 59.8% mean             [Band: 55.0%-67.0%] -> PASS
+  • Center X               : 64.2% mean (std: 22.8px) [Threshold: < 40.0px] -> PASS
+
