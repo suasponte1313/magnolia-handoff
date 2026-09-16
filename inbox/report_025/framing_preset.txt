@@ -1,0 +1,69 @@
+name: "magnolia_interview"
+description: "Professional adaptive framing profile for 2-person sit-down doctor interview"
+
+targets:
+  headroom_fraction: 0.08          # target 0.08 of frame height above top of head
+  headroom_min_fraction: 0.05      # acceptable band min: 0.05 (enforced on per-frame minimum)
+  headroom_max_fraction: 0.12      # acceptable band max: 0.12
+  eyeline_fraction: 0.33           # subject eyes sit at 0.33 of frame height (upper-third rule)
+  eyeline_min_fraction: 0.28       # acceptable band min: 0.28
+  eyeline_max_fraction: 0.40       # acceptable band max: 0.40
+  head_clip_tolerance: 0.0         # 0% of frames may clip top of head; any top clip is FAIL
+  back_of_head_margin: 0.04        # minimum 0.04 of frame width behind skull; zero top/back clip
+  lead_room_fraction: 0.60         # 0.60-0.67 of frame width in front of face
+  lead_room_min_fraction: 0.60
+  lead_room_max_fraction: 0.67
+  shot_size: "medium_close_up"     # head plus upper chest in frame, no neck/chin crop
+  no_joint_cuts: true              # never end bottom of frame at neck, chin, or elbow
+  center_x_ratio: 0.35
+  head_top_ratio: 0.55             # default cranial/hair ratio above face box top
+  eyeline_offset_ratio: 0.35       # default eyeline ratio from face box top
+
+quantization:
+  hold_tolerance_px: 40.0
+  min_hold_ratio: 0.90
+  transition_frames: 15
+
+exclusion_zones:
+  top_ui:
+    x: 0
+    y: 0
+    w: 1080
+    h: 288                         # 15% safe_top (1920 * 0.15 = 288)
+  bottom_ui:
+    x: 0
+    y: 1536                        # 20% safe_bottom (1920 * 0.80 = 1536)
+    w: 1080
+    h: 384
+  right_engagement:
+    x: 920
+    y: 800
+    w: 160
+    h: 750
+  caption_safe_zone:
+    x: 60
+    y: 1300
+    w: 960
+    h: 220
+
+speaker_search_seeds:
+  saba_shabnam:
+    raw_center_x: 2368
+    crop_w: 780
+    crop_h: 1387
+    crop_x: 1910
+    crop_y: 722
+    facing_direction: "camera-left"
+    target_center_x_ratio: 0.65
+    head_top_ratio: 0.55
+    eyeline_offset_ratio: 0.35
+  fenton_lebon:
+    raw_center_x: 300
+    crop_w: 780
+    crop_h: 1387
+    crop_x: 0
+    crop_y: 744
+    facing_direction: "camera-right"
+    target_center_x_ratio: 0.35
+    head_top_ratio: 0.55
+    eyeline_offset_ratio: 0.35

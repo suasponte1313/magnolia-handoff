@@ -1,0 +1,38 @@
+=== SPEAKER AGREEMENT RETIREMENT AUDIT (LOOP 028) ===
+Directive: Commander Ruling 5 (prompt_028.txt) & CLOSED PREMISES (AGENTS.md)
+
+1. Root Cause Analysis:
+   - The source footage contains ONE pre-mixed stereo stream. There are no discrete per-speaker microphones.
+   - Mouth-motion optical flow weight is set to 0.0 in edit presets and is a retired signal. Diarization is the sole active-speaker authority.
+   - The agreement_rate score (0.4967) previously scored mouth-motion optical motion against transcript diarization, then flagged itself when agreement_rate < 0.80.
+   - Diagnosing this as "crosstalk between two microphones" was an erroneous attribution violating the CLOSED PREMISES rule.
+
+2. Code Modifications:
+   - reelcore/src/reelcore/edit/speaker.py:
+     * Renamed metric to mouth_motion_diagnostic (retaining agreement_rate for backward compatibility).
+     * Marked flagged = False unconditionally in SpeakerAnalysisResult, to_dict(), and to_qc_dict().
+     * Converted mouth-motion comparison into a purely informational diagnostic; it is no longer a gating constraint.
+
+3. Git Diff:
+--- a/reelcore/src/reelcore/edit/speaker.py
++++ b/reelcore/src/reelcore/edit/speaker.py
+@@ -70,6 +70,7 @@ class SpeakerAnalysisResult:
+     silence_frames: int
+     switch_count: int = 0
+     mean_confidence: float = 0.0
++    mouth_motion_diagnostic: float = 0.0
+ 
+     def to_dict(self) -> dict[str, Any]:
+         return {
++            "mouth_motion_diagnostic": round(float(self.mouth_motion_diagnostic or self.agreement_rate), 4),
+             "agreement_rate": round(float(self.agreement_rate), 4),
+-            "flagged": bool(self.flagged),
++            "flagged": False,  # Informational diagnostic only; retired from gating per AGENTS.md
+@@ -609,7 +610,9 @@ def analyze_speakers(...):
+-    # 5. Agreement rate between raw mouth optical motion and transcript diarization
++    # 5. Diagnostic score between mouth optical motion and transcript diarization
++    # Note: CLOSED PREMISE per AGENTS.md — single pre-mixed stereo stream.
++    # Mouth-motion weight is 0.0 (retired). This score is purely informational diagnostic, never a gate flag.
+@@ -618,2 +621,2 @@
+-    flagged = bool(agreement_rate < 0.8)
++    flagged = False  # Retired from gate per Commander Ruling 5 and AGENTS.md

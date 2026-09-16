@@ -1,0 +1,38 @@
+=== CUT BOUNDARY AT FRAME 137 (frames 132 to 142) ===
+frame= 132  t= 4.400s (global: 949.400s)  speaker=spk_a   conf=0.713  overlap=False
+frame= 133  t= 4.433s (global: 949.433s)  speaker=spk_a   conf=0.731  overlap=False
+frame= 134  t= 4.467s (global: 949.467s)  speaker=spk_a   conf=0.776  overlap=False
+frame= 135  t= 4.500s (global: 949.500s)  speaker=spk_a   conf=0.768  overlap=False
+frame= 136  t= 4.533s (global: 949.533s)  speaker=spk_a   conf=0.757  overlap=False
+frame= 137  t= 4.567s (global: 949.567s)  speaker=None    conf=0.687  overlap=False
+frame= 138  t= 4.600s (global: 949.600s)  speaker=None    conf=0.728  overlap=False
+frame= 139  t= 4.633s (global: 949.633s)  speaker=None    conf=0.760  overlap=False
+frame= 140  t= 4.667s (global: 949.667s)  speaker=None    conf=0.791  overlap=False
+frame= 141  t= 4.700s (global: 949.700s)  speaker=None    conf=0.919  overlap=False
+frame= 142  t= 4.733s (global: 949.733s)  speaker=None    conf=0.931  overlap=False
+
+=== CUT BOUNDARY AT FRAME 212 (frames 207 to 217) ===
+frame= 207  t= 6.900s (global: 951.900s)  speaker=None    conf=0.702  overlap=False
+frame= 208  t= 6.933s (global: 951.933s)  speaker=None    conf=0.693  overlap=False
+frame= 209  t= 6.967s (global: 951.967s)  speaker=None    conf=0.726  overlap=False
+frame= 210  t= 7.000s (global: 952.000s)  speaker=None    conf=0.772  overlap=False
+frame= 211  t= 7.033s (global: 952.033s)  speaker=None    conf=0.782  overlap=False
+frame= 212  t= 7.067s (global: 952.067s)  speaker=None    conf=0.759  overlap=False
+frame= 213  t= 7.100s (global: 952.100s)  speaker=None    conf=0.637  overlap=False
+frame= 214  t= 7.133s (global: 952.133s)  speaker=None    conf=0.647  overlap=False
+frame= 215  t= 7.167s (global: 952.167s)  speaker=None    conf=0.685  overlap=False
+frame= 216  t= 7.200s (global: 952.200s)  speaker=None    conf=0.730  overlap=False
+frame= 217  t= 7.233s (global: 952.233s)  speaker=None    conf=0.739  overlap=False
+
+=== CUT BOUNDARY AT FRAME 662 (frames 657 to 667) ===
+frame= 657  t=21.900s (global: 966.900s)  speaker=None    conf=0.640  overlap=False
+frame= 658  t=21.933s (global: 966.933s)  speaker=None    conf=0.524  overlap=False
+frame= 659  t=21.967s (global: 966.967s)  speaker=None    conf=0.524  overlap=False
+frame= 660  t=22.000s (global: 967.000s)  speaker=None    conf=0.529  overlap=False
+frame= 661  t=22.033s (global: 967.033s)  speaker=None    conf=0.531  overlap=False
+frame= 662  t=22.067s (global: 967.067s)  speaker=spk_b   conf=0.700  overlap=False
+frame= 663  t=22.100s (global: 967.100s)  speaker=spk_b   conf=0.700  overlap=False
+frame= 664  t=22.133s (global: 967.133s)  speaker=spk_b   conf=0.700  overlap=False
+frame= 665  t=22.167s (global: 967.167s)  speaker=spk_b   conf=0.710  overlap=False
+frame= 666  t=22.200s (global: 967.200s)  speaker=spk_b   conf=0.729  overlap=False
+frame= 667  t=22.233s (global: 967.233s)  speaker=spk_b   conf=0.736  overlap=False

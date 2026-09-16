@@ -1,0 +1,106 @@
+=== FUSION CODE BLOCK (reelcore/src/reelcore/edit/speaker.py:442-509) ===
+
+442:     # Evidence fusion: Primary (mouth) + Secondary (diarization)
+443:     score_a = w_mouth * mouth_a + w_diar * diar_a
+444:     score_b = w_mouth * mouth_b + w_diar * diar_b
+445: 
+446:     raw_decisions: list[str | None] = []
+447:     confidences: list[float] = []
+448:     overlaps: list[bool] = []
+449: 
+450:     for f in range(total_frames):
+451:         if not speech_mask[f]:
+452:             raw_decisions.append(None)
+453:             # Continuous silence certainty (no flat 1.000)
+454:             sil_certainty = float(1.0 - max(score_a[f], score_b[f]))
+455:             confidences.append(round(float(np.clip(sil_certainty, 0.50, 0.95)), 3))
+456:             overlaps.append(False)
+457:             continue
+458: 
+459:         sa = score_a[f]
+460:         sb = score_b[f]
+461: 
+462:         is_both = (
+463:             (mouth_a[f] >= 0.20 and mouth_b[f] >= 0.20)
+464:             or (diar_a[f] > 0.5 and diar_b[f] > 0.5)
+465:             or (sa >= threshold and sb >= threshold and abs(sa - sb) < overlap_thr)
+466:         )
+467:         if is_both:
+468:             raw_decisions.append("both")
+469:             confidences.append(round(float(np.clip(min(sa, sb), 0.50, 0.95)), 3))
+470:             overlaps.append(True)
+471:         elif sa >= sb:
+472:             raw_decisions.append("spk_a")
+473:             # Continuous posterior probability via sigmoid of evidence margin (no flat 1.000)
+474:             margin = float(sa - sb)
+475:             post_conf = float(1.0 / (1.0 + np.exp(-conf_scale * margin)))
+476:             confidences.append(round(float(np.clip(post_conf, 0.50, 0.95)), 3))
+477:             overlaps.append(False)
+478:         else:
+479:             raw_decisions.append("spk_b")
+480:             margin = float(sb - sa)
+481:             post_conf = float(1.0 / (1.0 + np.exp(-conf_scale * margin)))
+482:             confidences.append(round(float(np.clip(post_conf, 0.50, 0.95)), 3))
+483:             overlaps.append(False)
+484: 
+485:     # 4. Temporal median smoothing
+486:     smoothed_decisions = _modal_filter_1d(raw_decisions, window_size=median_window)
+487: 
+488:     timeline: list[SpeakerFrame] = []
+489:     spk_a_count = 0
+490:     spk_b_count = 0
+491:     both_count = 0
+492:     silence_count = 0
+493: 
+494:     for f in range(total_frames):
+495:         spk = smoothed_decisions[f]
+496:         conf = float(confidences[f])
+497:         ov = overlaps[f] or (spk == "both")
+498:         timeline.append(SpeakerFrame(frame=f, speaker=spk, confidence=conf, overlap=ov))
+499: 
+500:         if spk == "spk_a":
+501:             spk_a_count += 1
+502:         elif spk == "spk_b":
+503:             spk_b_count += 1
+504:         elif spk == "both":
+505:             both_count += 1
+506:         else:
+507:             silence_count += 1
+508: 
+509:     # 5. Agreement rate report between smoothed active speaker decisions and transcript diarization
+
+
+=== HAND-WORKED ARITHMETIC FOR FRAME 835 ===
+
+Frame 835 inputs:
+  mouth_a[835] = 0.3079  (normalized optical motion for spk_a, Dr. Fenton)
+  mouth_b[835] = 0.0180  (normalized optical motion for spk_b, Dr. Saba)
+  diar_a[835]  = 0.0000  (transcript diarization for spk_a)
+  diar_b[835]  = 1.0000  (transcript diarization for spk_b, Dr. Saba turn active)
+  w_mouth      = 0.55    (from presets/edit/magnolia_interview.yaml)
+  w_diar       = 0.45    (from presets/edit/magnolia_interview.yaml)
+
+Weighted score calculations:
+  score_a = w_mouth * mouth_a + w_diar * diar_a
+          = 0.55 * 0.3079 + 0.45 * 0.0000
+          = 0.169345 + 0.0
+          = 0.1693
+
+  score_b = w_mouth * mouth_b + w_diar * diar_b
+          = 0.55 * 0.0180 + 0.45 * 1.0000
+          = 0.009900 + 0.4500
+          = 0.4599
+
+Decision comparison:
+  score_b (0.4599) > score_a (0.1693)
+  Margin = score_b - score_a = 0.2906
+  sa >= sb is FALSE -> raw_decisions.append("spk_b")
+
+Why diarization overrides mouth on frame 835:
+Diarization is a binary indicator in {0.0, 1.0}. When Dr. Saba is speaking per the transcript,
+diar_b = 1.0 imparts an immediate baseline of w_diar * 1.0 = +0.4500 to score_b.
+Because w_mouth = 0.55, for mouth_a alone to overcome that +0.4500 baseline (with mouth_b=0.0180),
+mouth_a would need to exceed: (0.4500 + 0.55 * 0.0180) / 0.55 = 0.4599 / 0.55 = 0.8362 (83.6% motion).
+At frame 835, mouth_a is 0.3079 (moderate listener jaw motion). 0.55 * 0.3079 = 0.1693, which is far
+below 0.4599. Thus, binary diarization acts as a strong prior that prevents moderate mouth motion noise
+on the listener from spuriously overriding the true active speaker turn.

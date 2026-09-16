@@ -1,0 +1,13 @@
+Foundation ACCEPTED: audio single-channel proven, ROI derivation proven, Step 0 literals proven gone, cut-on-pause proven. Good.
+
+One hard fix, then advance. Raw output only, no tables, no prose.
+
+1. FAKE FLAG: speaker.py ~line 550 has `flagged = False` hardcoded. Replace with real logic: flagged = (agreement_rate < 0.8). Paste the corrected code block and the recomputed flagged value for c1 (agreement 0.4967 -> flagged MUST become true) -> flag_fix.txt.
+
+2. HONESTY: mouth-motion vs diarization agreement is 0.4967 = chance. That means mouth-motion is NOT a reliable refiner on this camera. Do not try to tune it now. Instead: set diarization as the sole speaker authority for the edit, and reduce mouth-motion weight to 0 (or a documented small value) so it cannot corrupt cuts. State the new weights from the preset file -> weights.txt. Mouth-motion improvement is deferred to later; note it as a known limitation, do not fix now.
+
+3. CONFIDENCE FLOOR: the 0.700 constant when mouth diff <= 0 is an uncalibrated default. Either justify it from data in one line or replace with the measured detection confidence. Paste the code -> confidence_fix.txt.
+
+4. Re-emit the c1 proof with diarization-only speaker attribution: edl_c1.json, shots_metrics_c1.txt, c1_proof.qc.json, render_stdout_c1.txt. The edit must still cut sensibly to whoever the transcript says is talking.
+
+Deliver as report_020 via HANDOFF PROTOCOL (report.md + raw artifacts + DONE last, run the bridge, STOP). Do NOT touch other reels. STOP after report_020.

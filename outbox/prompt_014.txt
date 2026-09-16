@@ -1,0 +1,15 @@
+§1.2 is NOT accepted. Your own artifacts contradict each other on c1 agreement and I do not trust flagged=false. Channel-layout proof (single stereo, Ch2 dead) IS accepted — keep the mouth0.55+diar0.45 fusion.
+
+Fix and re-report ONLY these, raw output, no tables, no prose summaries:
+
+1. c1 agreement is reported two ways: speaker_qc_c1.json says 0.999 (1006/1007); your c1_agreement_arithmetic.txt says 0.8302 (836/1007). Same denominator, different numerator. Paste:
+   - `sed -n '505,535p' reelcore/src/reelcore/edit/speaker.py` (the exact block that computes the number written to the qc sidecar).
+   - A one-shot python recompute that loads speaker_timeline_c1.json and dallas1_transcript.json, and for every frame prints: frame, fused_speaker, diar_label_at_that_frame, vad_speech, and eq=(fused==diar). Then prints numerator, denominator, ratio. Redirect to agree_recompute_c1.txt. The ratio it prints must equal what goes in speaker_qc_c1.json or you fix the qc writer.
+
+2. In agreement_breakdown_c1.txt, rows like frames 7-23, 53-65, 93-107, 175-209, 283-320, 375-419, 516-543 show fused_label=spk_a, diar_label=spk_b, agree=True. Either fix the agree computation so agree = (fused==diar), or paste the diar segment lookup for frame 7 and frame 300 proving diar really is spk_a there. Raw.
+
+3. Your boundary_agreement.txt says c1 boundary agreement = 3/24 = 12.5% at frame 662, while the fused c1 timeline holds spk_a from frame 0 to ~658. Given diarization_segments_c1.txt (spk_a 943-966s, spk_b 967s+) and mouth_motion_c1.txt (mouth_b > mouth_a across many stretches before 655), state plainly: is fused=spk_a for frames 0-654 CORRECT? If yes, prove it from mouth+diar per frame. If no, fix the fusion and re-emit speaker_timeline_c1.json + speaker_qc_c1.json.
+
+4. After the real agreement number is known, re-evaluate flagged per blueprint §1.2 (<0.8 -> flag). Report the corrected flagged for c1/c2/c3.
+
+Write everything to handoff/inbox/report_14/, copy the raw artifacts, DONE last. STOP at the review boundary. Do not start §1.3 BUILD_EDIT.

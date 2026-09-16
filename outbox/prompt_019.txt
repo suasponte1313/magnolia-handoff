@@ -1,0 +1,17 @@
+STOP AND REVERT. You ran past a gate and regressed. Two hard corrections before anything else:
+
+A) §1.2 was LOCKED by Commander decision: single usable audio channel, NO per-mic VAD, diarization is the authority, mouth-motion only refines cut timing. You reverted to per-mic VAD and a 0.999 agreement number. Remove per-mic VAD from the speaker path entirely. There is ONE audio channel.
+
+B) A hardcoded ROI reappeared: face_tracks_c1 home_region=[2109,825,599,676] but every spk_a box is at x~150. That is a stale/fixed literal. home_region MUST be derived from first-frame detection.
+
+Fix both, then RE-EMIT the c1 proof. Deliver as report_019 via the HANDOFF PROTOCOL (report.md + RAW artifacts + DONE last, run the bridge, STOP). Raw output only, no tables, no prose:
+
+1. ffprobe -v error -show_streams -select_streams a -print_format json <source>  -> ffprobe_streams.txt
+2. ffmpeg per-channel astats energy (Ch1 vs Ch2 RMS)  -> channel_energy.txt
+3. grep -rn 2109 reelcore/ scripts/  -> roi_grep.txt  (must be empty), AND the home_region derivation code -> home_region_code.txt showing it comes from first-frame detection
+4. Re-run §1.1+§1.2 for c1 with per-mic VAD removed; re-emit face_tracks_c1.json, speaker_timeline_c1.json
+5. Re-run §1.3 for c1; re-emit edl_c1.json + shots_metrics_c1.txt + c1_proof.qc.json + render_stdout_c1.txt
+6. For each of the 3 cut boundaries, paste the timeline frames ±5 around it proving cut-on-pause  -> cut_boundaries_c1.txt
+7. Step 0 proof (you claimed closed with nothing): grep showing 10.8 / 35.1 / 233 / frame[900:1500] gone -> step0_grep.txt; plus audio_profile.json and verify_phase2 stdout -> verify_stdout.txt
+
+Do NOT touch other reels. STOP after report_019.

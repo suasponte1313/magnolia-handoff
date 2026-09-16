@@ -1,0 +1,5 @@
+[Parsed_astats_0 @ 0x997008fc0] Channel: 1
+[Parsed_astats_0 @ 0x997008fc0] Peak level dB: -1.000001
+[Parsed_astats_0 @ 0x997008fc0] RMS level dB: -26.115172
+[Parsed_astats_0 @ 0x997008fc0] Peak level dB: -1.000001
+[Parsed_astats_0 @ 0x997008fc0] RMS level dB: -26.115172

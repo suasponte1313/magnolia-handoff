@@ -1,0 +1,69 @@
+def detect_faces_first_frame(
+    frame: np.ndarray,
+    speaker_seeds: dict[str, Any] | None = None,
+    margin_px: int = 250,
+) -> dict[str, dict[str, Any]]:
+    """Scan first frame to dynamically establish home_region and initial face bbox per subject."""
+    fh, fw = frame.shape[:2]
+    subjects: dict[str, dict[str, Any]] = {}
+
+    configs = [
+        ("spk_a", "fenton_lebon", 0, int(fw * 0.45), int(fh * 0.30), int(fh * 0.85), "right"),
+        ("spk_b", "saba_shabnam", int(fw * 0.55), fw, int(fh * 0.30), int(fh * 0.85), "left"),
+    ]
+
+    for track_id, seed_key, sx1, sx2, sy1, sy2, default_facing in configs:
+        if speaker_seeds and seed_key in speaker_seeds:
+            s = speaker_seeds[seed_key]
+            raw_cx = int(s.get("raw_center_x", (sx1 + sx2) // 2))
+            raw_cy = int(s.get("raw_top_y", sy1) + s.get("crop_h", 1200) * 0.25)
+            cw = int(s.get("crop_w", 675))
+            ch = int(s.get("crop_h", 1200))
+            sx1 = max(0, raw_cx - cw // 2)
+            sx2 = min(fw, raw_cx + cw // 2)
+            sy1 = max(0, raw_cy - ch // 4)
+            sy2 = min(fh, raw_cy + ch // 4)
+            default_facing = s.get("facing_direction", "").replace("camera-", "") or default_facing
+
+        sub = frame[sy1:sy2, sx1:sx2]
+        mask = _skin_mask(sub)
+        n_lbl, labels, stats, centroids = cv2.connectedComponentsWithStats(mask, connectivity=8)
+
+        if n_lbl > 1:
+            best_idx = 1 + int(np.argmax(stats[1:, cv2.CC_STAT_AREA]))
+            bl = stats[best_idx, cv2.CC_STAT_LEFT] + sx1
+            bt = stats[best_idx, cv2.CC_STAT_TOP] + sy1
+            bw = stats[best_idx, cv2.CC_STAT_WIDTH]
+            bh = stats[best_idx, cv2.CC_STAT_HEIGHT]
+            cx_blob = centroids[best_idx][0] + sx1
+            cy_blob = centroids[best_idx][1] + sy1
+
+            rx1 = max(0, bl - margin_px)
+            ry1 = max(0, bt - margin_px)
+            rx2 = min(fw, bl + bw + margin_px)
+            ry2 = min(fh, bt + bh + margin_px)
+            home_region = (rx1, ry1, rx2 - rx1, ry2 - ry1)
+
+            # Facing direction from blob centroid offset relative to box center
+            box_cx = bl + bw / 2.0
+            if cx_blob > box_cx + bw * 0.03:
+                facing = "right"
+            elif cx_blob < box_cx - bw * 0.03:
+                facing = "left"
+            else:
+                facing = default_facing
+        else:
+            # Fallback based on frame half
+            bw, bh = 450, 450
+            bl = (sx1 + sx2) // 2 - bw // 2
+            bt = (sy1 + sy2) // 2 - bh // 2
+            home_region = (max(0, bl - margin_px), max(0, bt - margin_px), bw + 2 * margin_px, bh + 2 * margin_px)
+            facing = default_facing
+
+        subjects[track_id] = {
+            "box": (bl, bt, bw, bh),
+            "home_region": home_region,
+            "facing": facing,
+        }
+
+    return subjects

@@ -1,0 +1,14 @@
+=== PRESET WEIGHTS (presets/edit/magnolia_interview.yaml) ===
+speaker_fusion:
+  weight_mouth: 0.0
+  weight_diarization: 1.0
+  speech_threshold: 0.25
+  overlap_threshold: 0.08
+  confidence_scale: 3.0
+
+=== ARCHITECTURAL NOTE ===
+Mouth-motion vs diarization agreement on c1 is 0.4967 (~chance level).
+Mouth-motion optical flow is not a reliable cut refiner on this camera setup.
+Diarization is set as the sole speaker authority for the edit (weight_diarization: 1.0).
+Mouth-motion weight is set to 0.0 (weight_mouth: 0.0) so it cannot corrupt cut timing.
+Mouth-motion improvement is deferred to later as a known limitation.

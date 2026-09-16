@@ -1,0 +1,350 @@
+{
+  "path": "output/PHASE_3_CONVERSATIONAL/c1_proof.mp4",
+  "passed": true,
+  "checks": [
+    {
+      "name": "resolution",
+      "status": "PASS",
+      "measured": "1080x1920",
+      "expected": "1080x1920",
+      "detail": ""
+    },
+    {
+      "name": "encoder",
+      "status": "PASS",
+      "measured": "lavc62.28.101 libx264",
+      "expected": "software encoder (libx264/libx265)",
+      "detail": ""
+    },
+    {
+      "name": "color metadata",
+      "status": "PASS",
+      "measured": "tagged",
+      "expected": "color_space / transfer / primaries tagged",
+      "detail": ""
+    },
+    {
+      "name": "loudness (LUFS)",
+      "status": "PASS",
+      "measured": "-14.3 LUFS",
+      "expected": "-14.0 +/- 1.0",
+      "detail": ""
+    },
+    {
+      "name": "true peak",
+      "status": "PASS",
+      "measured": "-1.3 dBTP",
+      "expected": "<= -1.0 dBTP",
+      "detail": ""
+    },
+    {
+      "name": "loudness range",
+      "status": "PASS",
+      "measured": "7.3 LU",
+      "expected": "<= 11.0 LU",
+      "detail": ""
+    },
+    {
+      "name": "speech vs room tone",
+      "status": "WARN",
+      "measured": "7.2 dB",
+      "expected": ">= 15.0 dB",
+      "detail": "Room tone is audible under the voice. Denoise before levelling."
+    },
+    {
+      "name": "room resonance",
+      "status": "PASS",
+      "measured": "575 Hz +7.2 dB",
+      "expected": "< +10 dB above local mean",
+      "detail": ""
+    },
+    {
+      "name": "headroom (Top Panel CAM_A)",
+      "status": "PASS",
+      "measured": "8.6% (min 5.1%)",
+      "expected": "min >= 5%, mean <= 12%",
+      "detail": ""
+    },
+    {
+      "name": "eyeline (Top Panel CAM_A)",
+      "status": "PASS",
+      "measured": "39.7%",
+      "expected": "28%-40%",
+      "detail": ""
+    },
+    {
+      "name": "head clipping (Top Panel CAM_A)",
+      "status": "PASS",
+      "measured": "0%",
+      "expected": "<= 0%",
+      "detail": ""
+    },
+    {
+      "name": "back-of-head margin (Top Panel CAM_A)",
+      "status": "PASS",
+      "measured": "8.0% (min 2.1%)",
+      "expected": "min >= 2% (sensor edge exception)",
+      "detail": ""
+    },
+    {
+      "name": "lead room (Top Panel CAM_A)",
+      "status": "PASS",
+      "measured": "62.6%",
+      "expected": "55%-67%",
+      "detail": ""
+    },
+    {
+      "name": "framing stability (Top Panel CAM_A)",
+      "status": "PASS",
+      "measured": "16.4px std",
+      "expected": "< 40px",
+      "detail": ""
+    },
+    {
+      "name": "headroom (Bottom Panel CAM_B)",
+      "status": "PASS",
+      "measured": "11.9% (min 5.1%)",
+      "expected": "min >= 5%, mean <= 12%",
+      "detail": ""
+    },
+    {
+      "name": "eyeline (Bottom Panel CAM_B)",
+      "status": "PASS",
+      "measured": "38.3%",
+      "expected": "28%-40%",
+      "detail": ""
+    },
+    {
+      "name": "head clipping (Bottom Panel CAM_B)",
+      "status": "PASS",
+      "measured": "0%",
+      "expected": "<= 0%",
+      "detail": ""
+    },
+    {
+      "name": "back-of-head margin (Bottom Panel CAM_B)",
+      "status": "PASS",
+      "measured": "27.3% (min 15.6%)",
+      "expected": "min >= 4%",
+      "detail": ""
+    },
+    {
+      "name": "lead room (Bottom Panel CAM_B)",
+      "status": "PASS",
+      "measured": "60.0%",
+      "expected": "55%-67%",
+      "detail": ""
+    },
+    {
+      "name": "framing stability (Bottom Panel CAM_B)",
+      "status": "PASS",
+      "measured": "20.4px std",
+      "expected": "< 40px",
+      "detail": ""
+    },
+    {
+      "name": "headroom (per-panel)",
+      "status": "PASS",
+      "measured": "min 5.1%",
+      "expected": "min >= 5%, mean <= 12%",
+      "detail": ""
+    },
+    {
+      "name": "eyeline (per-panel)",
+      "status": "PASS",
+      "measured": "38.3%-39.7%",
+      "expected": "28%-40%",
+      "detail": ""
+    },
+    {
+      "name": "head clipping (per-panel)",
+      "status": "PASS",
+      "measured": "0%",
+      "expected": "<= 0%",
+      "detail": ""
+    },
+    {
+      "name": "back-of-head margin (per-panel)",
+      "status": "PASS",
+      "measured": "min 2.1%",
+      "expected": "min >= 4% (or 2% at sensor edge)",
+      "detail": ""
+    },
+    {
+      "name": "lead room (per-panel)",
+      "status": "PASS",
+      "measured": "Top 62.6%, Bot 60.0%",
+      "expected": "55%-67%",
+      "detail": ""
+    },
+    {
+      "name": "framing stability (per-panel)",
+      "status": "PASS",
+      "measured": "max 20.4px std",
+      "expected": "< 40px",
+      "detail": ""
+    }
+  ],
+  "measurements": {
+    "resolution": "1080x1920",
+    "duration_s": 40.0,
+    "encoder": "lavc62.28.101 libx264",
+    "audio_channels": 1,
+    "sample_rate": 48000,
+    "lufs": -14.3,
+    "lra": 7.3,
+    "true_peak": -1.3,
+    "speech_to_noise_db": 7.2,
+    "room_resonances_hz": [
+      {
+        "hz": 575,
+        "db": 7.2
+      },
+      {
+        "hz": 393,
+        "db": 5.6
+      }
+    ],
+    "framing_width": 1080,
+    "framing_height": 1920,
+    "framing_frames": 1200,
+    "framing_layout": "SPLIT",
+    "framing_detections": 400,
+    "framing_per_panel": [
+      {
+        "panel": "Top Panel",
+        "speaker": "spk_a",
+        "camera": "CAM_A",
+        "subject": "Dr. Fenton Lebon",
+        "crop_x": 0,
+        "width": 1080,
+        "height": 960,
+        "detections": 200,
+        "headroom_mean": 0.0862,
+        "headroom_min": 0.0506,
+        "eyeline_mean": 0.3973,
+        "head_clip_fraction": 0.0,
+        "back_margin_mean": 0.0802,
+        "back_margin_min": 0.0206,
+        "lead_room_mean": 0.6258,
+        "back_clip_fraction": 0.0,
+        "center_x_mean": 0.2464,
+        "center_x_std_px": 16.43
+      },
+      {
+        "panel": "Bottom Panel",
+        "speaker": "spk_b",
+        "camera": "CAM_B",
+        "subject": "Dr. Saba Shabnam",
+        "crop_x": 1718,
+        "width": 1080,
+        "height": 960,
+        "detections": 200,
+        "headroom_mean": 0.1187,
+        "headroom_min": 0.0511,
+        "eyeline_mean": 0.3826,
+        "head_clip_fraction": 0.0,
+        "back_margin_mean": 0.2729,
+        "back_margin_min": 0.156,
+        "lead_room_mean": 0.6004,
+        "back_clip_fraction": 0.0,
+        "center_x_mean": 0.6555,
+        "center_x_std_px": 20.4
+      }
+    ],
+    "framing_framing_per_panel": [
+      {
+        "panel": "Top Panel",
+        "speaker": "spk_a",
+        "camera": "CAM_A",
+        "subject": "Dr. Fenton Lebon",
+        "crop_x": 0,
+        "width": 1080,
+        "height": 960,
+        "detections": 200,
+        "headroom_mean": 0.0862,
+        "headroom_min": 0.0506,
+        "eyeline_mean": 0.3973,
+        "head_clip_fraction": 0.0,
+        "back_margin_mean": 0.0802,
+        "back_margin_min": 0.0206,
+        "lead_room_mean": 0.6258,
+        "back_clip_fraction": 0.0,
+        "center_x_mean": 0.2464,
+        "center_x_std_px": 16.43
+      },
+      {
+        "panel": "Bottom Panel",
+        "speaker": "spk_b",
+        "camera": "CAM_B",
+        "subject": "Dr. Saba Shabnam",
+        "crop_x": 1718,
+        "width": 1080,
+        "height": 960,
+        "detections": 200,
+        "headroom_mean": 0.1187,
+        "headroom_min": 0.0511,
+        "eyeline_mean": 0.3826,
+        "head_clip_fraction": 0.0,
+        "back_margin_mean": 0.2729,
+        "back_margin_min": 0.156,
+        "lead_room_mean": 0.6004,
+        "back_clip_fraction": 0.0,
+        "center_x_mean": 0.6555,
+        "center_x_std_px": 20.4
+      }
+    ],
+    "framing_top_panel": {
+      "panel": "Top Panel",
+      "speaker": "spk_a",
+      "camera": "CAM_A",
+      "subject": "Dr. Fenton Lebon",
+      "crop_x": 0,
+      "width": 1080,
+      "height": 960,
+      "detections": 200,
+      "headroom_mean": 0.0862,
+      "headroom_min": 0.0506,
+      "eyeline_mean": 0.3973,
+      "head_clip_fraction": 0.0,
+      "back_margin_mean": 0.0802,
+      "back_margin_min": 0.0206,
+      "lead_room_mean": 0.6258,
+      "back_clip_fraction": 0.0,
+      "center_x_mean": 0.2464,
+      "center_x_std_px": 16.43
+    },
+    "framing_bottom_panel": {
+      "panel": "Bottom Panel",
+      "speaker": "spk_b",
+      "camera": "CAM_B",
+      "subject": "Dr. Saba Shabnam",
+      "crop_x": 1718,
+      "width": 1080,
+      "height": 960,
+      "detections": 200,
+      "headroom_mean": 0.1187,
+      "headroom_min": 0.0511,
+      "eyeline_mean": 0.3826,
+      "head_clip_fraction": 0.0,
+      "back_margin_mean": 0.2729,
+      "back_margin_min": 0.156,
+      "lead_room_mean": 0.6004,
+      "back_clip_fraction": 0.0,
+      "center_x_mean": 0.6555,
+      "center_x_std_px": 20.4
+    },
+    "framing_edge_clip_fraction": 0.0,
+    "framing_right_clip_fraction": 0.0,
+    "framing_subject_center_x": 0.45094999999999996,
+    "framing_head_top_fraction": 0.0862,
+    "framing_eyeline_fraction": 0.38995,
+    "framing_head_clip_fraction": 0.0,
+    "framing_back_margin_fraction": 0.0802,
+    "framing_back_margin_min": 0.0206,
+    "framing_lead_room_fraction": 0.6131,
+    "framing_back_clip_fraction": 0.0,
+    "framing_left_half_share": 0.5,
+    "framing_center_x_std_px": 20.395802877062724
+  }
+}

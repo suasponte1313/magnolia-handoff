@@ -1,0 +1,231 @@
+=== FFPROBE AUDIO STREAMS (input/raw_part_2_Dallas1.mov) ===
+{
+    "streams": [
+        {
+            "index": 1,
+            "codec_name": "aac",
+            "codec_long_name": "AAC (Advanced Audio Coding)",
+            "profile": "LC",
+            "codec_type": "audio",
+            "codec_tag_string": "mp4a",
+            "codec_tag": "0x6134706d",
+            "mime_codec_string": "mp4a.40.2",
+            "sample_fmt": "fltp",
+            "sample_rate": "48000",
+            "channels": 2,
+            "channel_layout": "stereo",
+            "bits_per_sample": 0,
+            "initial_padding": 0,
+            "id": "0x2",
+            "r_frame_rate": "0/0",
+            "avg_frame_rate": "0/0",
+            "time_base": "1/48000",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "duration_ts": 61758320,
+            "duration": "1286.631667",
+            "bit_rate": "182568",
+            "nb_frames": "60314",
+            "extradata_size": 2,
+            "disposition": {
+                "default": 1,
+                "dub": 0,
+                "original": 0,
+                "comment": 0,
+                "lyrics": 0,
+                "karaoke": 0,
+                "forced": 0,
+                "hearing_impaired": 0,
+                "visual_impaired": 0,
+                "clean_effects": 0,
+                "attached_pic": 0,
+                "timed_thumbnails": 0,
+                "non_diegetic": 0,
+                "captions": 0,
+                "descriptions": 0,
+                "metadata": 0,
+                "dependent": 0,
+                "still_image": 0,
+                "multilayer": 0
+            },
+            "tags": {
+                "creation_time": "2026-09-03T18:58:22.000000Z",
+                "language": "und",
+                "handler_name": "Core Media Audio",
+                "vendor_id": "[0][0][0][0]"
+            }
+        }
+    ]
+}
+
+=== FFMPEG ASTATS (60s slice t=500..560s) ===
+ffmpeg version 8.1.1 Copyright (c) 2000-2026 the FFmpeg developers
+  built with Apple clang version 17.0.0 (clang-1700.6.4.2)
+  configuration: --prefix=/opt/homebrew/Cellar/ffmpeg/8.1.1 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags= --enable-ffplay --enable-gpl --enable-libsvtav1 --enable-libopus --enable-libx264 --enable-libmp3lame --enable-libdav1d --enable-libvmaf --enable-libvpx --enable-libx265 --enable-openssl --enable-videotoolbox --enable-audiotoolbox --enable-neon
+  libavutil      60. 26.101 / 60. 26.101
+  libavcodec     62. 28.101 / 62. 28.101
+  libavformat    62. 12.101 / 62. 12.101
+  libavdevice    62.  3.101 / 62.  3.101
+  libavfilter    11. 14.101 / 11. 14.101
+  libswscale      9.  5.101 /  9.  5.101
+  libswresample   6.  3.101 /  6.  3.101
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'input/raw_part_2_Dallas1.mov':
+  Metadata:
+    major_brand     : qt  
+    minor_version   : 0
+    compatible_brands: qt  
+    creation_time   : 2026-09-03T18:58:22.000000Z
+    com.apple.quicktime.location.accuracy.horizontal: 2.000000
+    com.apple.quicktime.full-frame-rate-playback-intent: 0
+    com.apple.quicktime.metadata.1: 1
+    com.apple.quicktime.location.ISO6709: +32.9338-097.0913+197.780/
+    com.apple.quicktime.make: Apple
+    com.apple.quicktime.model: iPhone 17 Pro
+    com.apple.quicktime.software: 26.6.1
+    com.apple.quicktime.creationdate: 2026-09-03T13:58:22-0500
+  Duration: 00:21:26.63, start: 0.000000, bitrate: 25198 kb/s
+  Stream #0:0[0x1](und): Video: hevc (Main 10) (hvc1 / 0x31637668), yuv420p10le(tv, bt2020nc/bt2020/arib-std-b67), 3840x2160, 24880 kb/s, 30 fps, 30 tbr, 600 tbn (default)
+    Metadata:
+      creation_time   : 2026-09-03T18:58:22.000000Z
+      handler_name    : Core Media Video
+      vendor_id       : [0][0][0][0]
+      encoder         : HEVC
+    Side data:
+      DOVI configuration record: version: 1.0, profile: 8, level: 7, rpu flag: 1, el flag: 0, bl flag: 1, compatibility id: 4, compression: 0
+      Ambient viewing environment: ambient_illuminance=314.000000, ambient_light_x=0.312700, ambient_light_y=0.329000
+  Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 182 kb/s (default)
+    Metadata:
+      creation_time   : 2026-09-03T18:58:22.000000Z
+      handler_name    : Core Media Audio
+      vendor_id       : [0][0][0][0]
+  Stream #0:2[0x3](und): Data: none (mebx / 0x7862656D) (default)
+    Metadata:
+      creation_time   : 2026-09-03T18:58:22.000000Z
+      handler_name    : Core Media Metadata
+  Stream #0:3[0x4](und): Data: none (mebx / 0x7862656D), 46 kb/s (default)
+    Metadata:
+      creation_time   : 2026-09-03T18:58:22.000000Z
+      handler_name    : Core Media Metadata
+  Stream #0:4[0x5](und): Data: none (mebx / 0x7862656D), 68 kb/s (default)
+    Metadata:
+      creation_time   : 2026-09-03T18:58:22.000000Z
+      handler_name    : Core Media Metadata
+  Stream #0:5[0x6](und): Data: none (mebx / 0x7862656D), 2 kb/s (default)
+    Metadata:
+      creation_time   : 2026-09-03T18:58:22.000000Z
+      handler_name    : Core Media Metadata
+  Stream #0:6[0x7](und): Data: none (mebx / 0x7862656D) (default)
+    Metadata:
+      creation_time   : 2026-09-03T18:58:22.000000Z
+      handler_name    : Core Media Metadata
+Stream mapping:
+  Stream #0:0 -> #0:0 (hevc (native) -> wrapped_avframe (native))
+  Stream #0:1 -> #0:1 (aac (native) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+[hevc @ 0x748d2c380] Multiple Dolby Vision RPUs found in one AU. Skipping previous.
+[hevc @ 0x748d2c700] Multiple Dolby Vision RPUs found in one AU. Skipping previous.
+[hevc @ 0x748d2ca80] Multiple Dolby Vision RPUs found in one AU. Skipping previous.
+Output #0, null, to 'pipe:':
+  Metadata:
+    major_brand     : qt  
+    minor_version   : 0
+    compatible_brands: qt  
+    com.apple.quicktime.creationdate: 2026-09-03T13:58:22-0500
+    com.apple.quicktime.location.accuracy.horizontal: 2.000000
+    com.apple.quicktime.full-frame-rate-playback-intent: 0
+    com.apple.quicktime.metadata.1: 1
+    com.apple.quicktime.location.ISO6709: +32.9338-097.0913+197.780/
+    com.apple.quicktime.make: Apple
+    com.apple.quicktime.model: iPhone 17 Pro
+    com.apple.quicktime.software: 26.6.1
+    encoder         : Lavf62.12.101
+  Stream #0:0(und): Video: wrapped_avframe, yuv420p10le(tv, bt2020nc/bt2020/arib-std-b67, progressive), 3840x2160, q=2-31, 200 kb/s, 30 fps, 30 tbn (default)
+    Metadata:
+      encoder         : Lavc62.28.101 wrapped_avframe
+      creation_time   : 2026-09-03T18:58:22.000000Z
+      handler_name    : Core Media Video
+      vendor_id       : [0][0][0][0]
+    Side data:
+      Ambient viewing environment: ambient_illuminance=314.000000, ambient_light_x=0.312700, ambient_light_y=0.329000
+  Stream #0:1(und): Audio: pcm_s16le, 48000 Hz, stereo, s16, 1536 kb/s (default)
+    Metadata:
+      encoder         : Lavc62.28.101 pcm_s16le
+      creation_time   : 2026-09-03T18:58:22.000000Z
+      handler_name    : Core Media Audio
+      vendor_id       : [0][0][0][0]
+frame=   21 fps=0.0 q=-0.0 size=N/A time=00:00:00.70 bitrate=N/A speed=1.37x elapsed=0:00:00.51    
+frame=  102 fps=100 q=-0.0 size=N/A time=00:00:03.40 bitrate=N/A speed=3.34x elapsed=0:00:01.01    
+frame=  184 fps=121 q=-0.0 size=N/A time=00:00:06.13 bitrate=N/A speed=4.02x elapsed=0:00:01.52    
+frame=  268 fps=132 q=-0.0 size=N/A time=00:00:08.93 bitrate=N/A speed=4.39x elapsed=0:00:02.03    
+frame=  351 fps=138 q=-0.0 size=N/A time=00:00:11.70 bitrate=N/A speed=4.62x elapsed=0:00:02.53    
+frame=  434 fps=143 q=-0.0 size=N/A time=00:00:14.46 bitrate=N/A speed=4.75x elapsed=0:00:03.04    
+frame=  513 fps=144 q=-0.0 size=N/A time=00:00:17.10 bitrate=N/A speed=4.81x elapsed=0:00:03.55    
+frame=  596 fps=147 q=-0.0 size=N/A time=00:00:19.86 bitrate=N/A speed= 4.9x elapsed=0:00:04.05    
+frame=  676 fps=148 q=-0.0 size=N/A time=00:00:22.53 bitrate=N/A speed=4.93x elapsed=0:00:04.56    
+frame=  759 fps=150 q=-0.0 size=N/A time=00:00:25.30 bitrate=N/A speed=4.99x elapsed=0:00:05.06    
+frame=  840 fps=151 q=-0.0 size=N/A time=00:00:28.00 bitrate=N/A speed=5.02x elapsed=0:00:05.57    
+frame=  923 fps=152 q=-0.0 size=N/A time=00:00:30.76 bitrate=N/A speed=5.05x elapsed=0:00:06.08    
+frame= 1007 fps=153 q=-0.0 size=N/A time=00:00:33.56 bitrate=N/A speed= 5.1x elapsed=0:00:06.58    
+frame= 1092 fps=154 q=-0.0 size=N/A time=00:00:36.40 bitrate=N/A speed=5.13x elapsed=0:00:07.09    
+frame= 1173 fps=154 q=-0.0 size=N/A time=00:00:39.10 bitrate=N/A speed=5.14x elapsed=0:00:07.59    
+frame= 1257 fps=155 q=-0.0 size=N/A time=00:00:41.90 bitrate=N/A speed=5.17x elapsed=0:00:08.10    
+frame= 1340 fps=155 q=-0.0 size=N/A time=00:00:44.66 bitrate=N/A speed=5.18x elapsed=0:00:08.61    
+frame= 1415 fps=155 q=-0.0 size=N/A time=00:00:47.20 bitrate=N/A speed=5.17x elapsed=0:00:09.12    
+frame= 1499 fps=156 q=-0.0 size=N/A time=00:00:49.96 bitrate=N/A speed=5.19x elapsed=0:00:09.63    
+frame= 1583 fps=156 q=-0.0 size=N/A time=00:00:52.76 bitrate=N/A speed= 5.2x elapsed=0:00:10.14    
+frame= 1667 fps=157 q=-0.0 size=N/A time=00:00:55.56 bitrate=N/A speed=5.22x elapsed=0:00:10.64    
+frame= 1747 fps=157 q=-0.0 size=N/A time=00:00:58.23 bitrate=N/A speed=5.22x elapsed=0:00:11.14    
+[Parsed_astats_0 @ 0x74900af40] Channel: 1
+[Parsed_astats_0 @ 0x74900af40] DC offset: -0.000008
+[Parsed_astats_0 @ 0x74900af40] Min level: -0.323302
+[Parsed_astats_0 @ 0x74900af40] Max level: 0.354635
+[Parsed_astats_0 @ 0x74900af40] Min difference: 0.000000
+[Parsed_astats_0 @ 0x74900af40] Max difference: 0.038208
+[Parsed_astats_0 @ 0x74900af40] Mean difference: 0.001068
+[Parsed_astats_0 @ 0x74900af40] RMS difference: 0.002164
+[Parsed_astats_0 @ 0x74900af40] Peak level dB: -9.004379
+[Parsed_astats_0 @ 0x74900af40] RMS level dB: -30.386353
+[Parsed_astats_0 @ 0x74900af40] RMS peak dB: -18.777698
+[Parsed_astats_0 @ 0x74900af40] RMS through dB: -79.137420
+[Parsed_astats_0 @ 0x74900af40] Crest factor: 11.724618
+[Parsed_astats_0 @ 0x74900af40] Flat factor: 0.000000
+[Parsed_astats_0 @ 0x74900af40] Peak count: 2
+[Parsed_astats_0 @ 0x74900af40] Abs Peak count: 1
+[Parsed_astats_0 @ 0x74900af40] Noise floor dB: -74.362875
+[Parsed_astats_0 @ 0x74900af40] Noise floor count: 1540
+[Parsed_astats_0 @ 0x74900af40] Entropy: 0.619531
+[Parsed_astats_0 @ 0x74900af40] Bit depth: 30/32/32/32
+[Parsed_astats_0 @ 0x74900af40] Dynamic range: 193.462396
+[Parsed_astats_0 @ 0x74900af40] Zero crossings: 92695
+[Parsed_astats_0 @ 0x74900af40] Zero crossings rate: 0.032186
+[Parsed_astats_0 @ 0x74900af40] Number of NaNs: 0
+[Parsed_astats_0 @ 0x74900af40] Number of Infs: 0
+[Parsed_astats_0 @ 0x74900af40] Number of denormals: 0
+[Parsed_astats_0 @ 0x74900af40] Channel: 2
+[Parsed_astats_0 @ 0x74900af40] DC offset: -0.000020
+[Parsed_astats_0 @ 0x74900af40] Min level: -0.052574
+[Parsed_astats_0 @ 0x74900af40] Max level: 0.053313
+[Parsed_astats_0 @ 0x74900af40] Min difference: 0.000000
+[Parsed_astats_0 @ 0x74900af40] Max difference: 0.006348
+[Parsed_astats_0 @ 0x74900af40] Mean difference: 0.000184
+[Parsed_astats_0 @ 0x74900af40] RMS difference: 0.000341
+[Parsed_astats_0 @ 0x74900af40] Peak level dB: -25.463324
+[Parsed_astats_0 @ 0x74900af40] RMS level dB: -45.087786
+[Parsed_astats_0 @ 0x74900af40] RMS peak dB: -31.891266
+[Parsed_astats_0 @ 0x74900af40] RMS through dB: -76.205560
+[Parsed_astats_0 @ 0x74900af40] Crest factor: 9.576860
+[Parsed_astats_0 @ 0x74900af40] Flat factor: 0.000000
+[Parsed_astats_0 @ 0x74900af40] Peak count: 2
+[Parsed_astats_0 @ 0x74900af40] Abs Peak count: 1
+[Parsed_astats_0 @ 0x74900af40] Noise floor dB: -69.346211
+[Parsed_astats_0 @ 0x74900af40] Noise floor count: 409
+[Parsed_astats_0 @ 0x74900af40] Entropy: 0.460182
+[Parsed_astats_0 @ 0x74900af40] Bit depth: 27/32/32/32
+[Parsed_astats_0 @ 0x74900af40] Dynamic range: 175.152358
+[Parsed_astats_0 @ 0x74900af40] Zero crossings: 66964
+[Parsed_astats_0 @ 0x74900af40] Zero crossings rate: 0.023251
+[Parsed_astats_0 @ 0x74900af40] Number of NaNs: 0
+[Parsed_astats_0 @ 0x74900af40] Number of Infs: 0
+[Parsed_astats_0 @ 0x74900af40] Number of denormals: 0
+[out#0/null @ 0x749009140] video:745KiB audio:11250KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown
+frame= 1800 fps=156 q=-0.0 Lsize=N/A time=00:01:00.00 bitrate=N/A speed= 5.2x elapsed=0:00:11.54    

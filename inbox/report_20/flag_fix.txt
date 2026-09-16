@@ -1,0 +1,17 @@
+=== CORRECTED CODE BLOCK (reelcore/src/reelcore/edit/speaker.py line ~610-618) ===
+    # 5. Agreement rate between raw mouth optical motion and transcript diarization
+    valid_eval = speech_mask & ((diar_a > 0.5) ^ (diar_b > 0.5)) & ((mouth_a > 0.05) | (mouth_b > 0.05))
+    if valid_eval.any():
+        mouth_spk = np.where(mouth_a > mouth_b, "spk_a", "spk_b")
+        diar_spk = np.where(diar_a > diar_b, "spk_a", "spk_b")
+        matches = (mouth_spk[valid_eval] == diar_spk[valid_eval]).sum()
+        agreement_rate = float(matches / valid_eval.sum())
+    else:
+        agreement_rate = 0.50
+
+    flagged = bool(agreement_rate < 0.8)
+
+=== RECOMPUTED C1 VALUES ===
+agreement_rate: 0.4967
+threshold: 0.8000
+flagged: True

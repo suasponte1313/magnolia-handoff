@@ -1,0 +1,12 @@
+STOP after this. Do NOT advance to BUILD_EDIT. Two things, raw output only, no tables, no prose summaries substituting for files.
+
+1. Prove the speaker attribution is not circular. From the raw mouth_motion_c1.txt and the diar arrays you already have, compute and paste a raw per-frame file for c1 restricted to SPEECH frames where diar_a XOR diar_b is set: columns frame, mouth_winner (argmax of mouth_a/mouth_b), diar_winner, fused_winner, agree_mouth_vs_diar. Then paste the summary counts: N_speech_diar_frames, N where mouth_winner==diar_winner, N where mouth_winner!=diar_winner, and of those disagreements, N where fused followed diar vs N where fused followed mouth. This is the real number. I expect mouth to disagree with diar on a large fraction and fused to follow diar almost always — if so, say plainly that mouth motion is effectively inert on this pre-mixed source and the 0.999 agreement is the timeline echoing its own diarization input. Do not report 0.999 as an accuracy again.
+
+2. Land the Step 0 artifacts you marked CLOSED. Paste raw, each into report_16:
+   - `cat output/audio_profile.json` and the derived gate/comp/limiter values from dsp.py (grep the derivation lines).
+   - `cat output/reel_1.qc.json` showing subject_center_x, and `grep -n connectedComponentsWithStats reelcore/src/reelcore/qc.py`.
+   - Full stdout of `./venv/bin/python3 scripts/verify_phase2.py` showing the Check-1 fresh render + per-field QC diff.
+   - The re-transcription result for the word 'body' (grep it out of output/dallas1_transcript.json) and confirm no hand-patch.
+   - `grep -rn '10.8\|35.1\|233\|frame\[900:1500' scripts/` — must be empty.
+
+Write report_16 with these files, touch DONE last, and STOP. No new stages.

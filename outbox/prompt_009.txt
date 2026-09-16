@@ -1,0 +1,14 @@
+BLOCK. Your confidence/preset/channel-layout work is accepted — the stereo source is proven single-track with a dead Ch2, and confidence is genuinely noisy from preset-loaded weights. But the fusion is not trustworthy and your report claims it is. Fix and re-report §1.2 only. Do NOT start §1.3.
+
+1. DIARIZATION IS DEGENERATE. In agreement_breakdown_c1.txt the diar_label is 'spk_a' for EVERY frame 0–654 (including all the silence gaps) then 'spk_b' for the rest — a two-block step function, not transcript per-segment labels. Paste raw, no prose:
+   - grep -n 'speaker' output showing where speaker.py reads dallas1_transcript.json segment speaker fields.
+   - python one-liner dumping the transcript's segment (start,end,speaker) tuples for the c1 time range 945–985s: prove there are more than two turns and that diar_label changes at those boundaries. If the transcript really only has two speaker blocks in this window, say so and show it.
+
+2. MOUTH MOTION SATURATES. mouth_motion_c1.txt hits exactly 1.0000 constantly and both speakers spike together, causing spk_a/spk_b to thrash every 1–3 frames. Show, raw:
+   - the speaker sequence BEFORE the median filter and AFTER, for c1 frames 650–760, side by side, plus the total switch count before/after. If the window-9 median filter isn't being applied pre-label, fix it and re-run.
+
+3. FACE GAP-FILL. face_tracks_c1 has box-height/y jumps (~140px) every ~20 frames (e.g. frame 15, 36-38, 79-81). §1.1 says hold-last-valid, never centre-fallback. Show the fill_detection_gaps code and paste 20 consecutive raw boxes proving transient jumps are rejected/held.
+
+4. NO QC SIDECAR. Standing Rule 1: produce a speaker_qc.json for each clip with {agreement_rate, flagged, switch_count, both_frames, silence_frames, mean_confidence} and include the raw files.
+
+Stop after re-reporting §1.2. One stage. Wait for prompt_009.

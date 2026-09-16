@@ -1,0 +1,7 @@
+Two blocking items before §1.3. RAW only — no tables, no prose summaries.
+
+1. c1 boundary at frame 662 shows 12.5% agreement because frames 655-678 are labeled 'both'. Prove that is real overlap, not a mouth-threshold mis-fire. For c1 frames 650-682 dump ONE file with columns: frame, mouth_a, mouth_b, diar_a, diar_b, sa, sb, is_both(True/False), which is_both sub-clause fired (mouth-AND / diar-AND / score-AND), raw_label. Pull mouth_a/mouth_b straight from mouth_motion_c1.txt so I can cross-check. If 'both' is firing only on the (mouth_a>=0.20 AND mouth_b>=0.20) clause while diarization shows a single clean speaker turn, that is a MISS — do not call it overlap; report it as such and propose a fix to the mouth is_both threshold or gating.
+
+2. You asserted '204 raw both frames, min(sa,sb) span 0.1113-0.4789 mean 0.1875' with no artifact. Dump the actual per-frame min(sa,sb) for every raw (pre-smoothing) 'both' frame in c1 to both_minscore_c1.txt — one value per line with its frame index. 
+
+Do NOT start §1.3. Stop at the review boundary after writing report_012 with these two files.

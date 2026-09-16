@@ -1,0 +1,1 @@
+SPEAKER AUTHORITY CHAIN: Diarization is sole authority; mouth-motion weight is 0.0; per-mic VAD is disabled (single usable audio stream, no isolated per-speaker channels).

@@ -1,0 +1,185 @@
+{
+  "path": "output/PHASE_3_CONVERSATIONAL/c1_proof.mp4",
+  "passed": true,
+  "checks": [
+    {
+      "name": "resolution",
+      "status": "PASS",
+      "measured": "1080x1920",
+      "expected": "1080x1920",
+      "detail": ""
+    },
+    {
+      "name": "encoder",
+      "status": "PASS",
+      "measured": "lavc62.28.101 libx264",
+      "expected": "software encoder (libx264/libx265)",
+      "detail": ""
+    },
+    {
+      "name": "color metadata",
+      "status": "PASS",
+      "measured": "tagged",
+      "expected": "color_space / transfer / primaries tagged",
+      "detail": ""
+    },
+    {
+      "name": "loudness (LUFS)",
+      "status": "PASS",
+      "measured": "-14.3 LUFS",
+      "expected": "-14.0 +/- 1.0",
+      "detail": ""
+    },
+    {
+      "name": "true peak",
+      "status": "PASS",
+      "measured": "-1.3 dBTP",
+      "expected": "<= -1.0 dBTP",
+      "detail": ""
+    },
+    {
+      "name": "loudness range",
+      "status": "PASS",
+      "measured": "7.3 LU",
+      "expected": "<= 11.0 LU",
+      "detail": ""
+    },
+    {
+      "name": "speech vs room tone",
+      "status": "WARN",
+      "measured": "7.2 dB",
+      "expected": ">= 15.0 dB",
+      "detail": "Room tone is audible under the voice. Denoise before levelling."
+    },
+    {
+      "name": "room resonance",
+      "status": "PASS",
+      "measured": "575 Hz +7.2 dB",
+      "expected": "< +10 dB above local mean",
+      "detail": ""
+    },
+    {
+      "name": "head clipping (left)",
+      "status": "PASS",
+      "measured": "0% of frames",
+      "expected": "<= 2%",
+      "detail": ""
+    },
+    {
+      "name": "head clipping (right)",
+      "status": "PASS",
+      "measured": "0% of frames",
+      "expected": "<= 2%",
+      "detail": ""
+    },
+    {
+      "name": "subject centre X",
+      "status": "PASS",
+      "measured": "51.8% of width",
+      "expected": "30%-70%",
+      "detail": ""
+    },
+    {
+      "name": "left/right balance",
+      "status": "PASS",
+      "measured": "40% left / 60% right",
+      "expected": "neither half > 75%",
+      "detail": ""
+    },
+    {
+      "name": "headroom",
+      "status": "PASS",
+      "measured": "13.9% of height above head",
+      "expected": "2%-20%",
+      "detail": ""
+    },
+    {
+      "name": "framing stability (per-shot)",
+      "status": "WARN",
+      "measured": "max 61px std",
+      "expected": "< 25px",
+      "detail": "Per-shot drift exceeds 25px threshold (max: 60.7px)."
+    },
+    {
+      "name": "framing stability (global)",
+      "status": "WARN",
+      "measured": "178px std",
+      "expected": "reference metric",
+      "detail": "Multi-camera cut distribution metric across different camera angles / look-rooms."
+    }
+  ],
+  "measurements": {
+    "resolution": "1080x1920",
+    "duration_s": 40.0,
+    "encoder": "lavc62.28.101 libx264",
+    "audio_channels": 1,
+    "sample_rate": 48000,
+    "lufs": -14.3,
+    "lra": 7.3,
+    "true_peak": -1.3,
+    "speech_to_noise_db": 7.2,
+    "room_resonances_hz": [
+      {
+        "hz": 575,
+        "db": 7.2
+      },
+      {
+        "hz": 393,
+        "db": 5.6
+      }
+    ],
+    "framing_width": 1080,
+    "framing_height": 1920,
+    "framing_frames": 1200,
+    "framing_detections": 40,
+    "framing_edge_clip_fraction": 0.0,
+    "framing_right_clip_fraction": 0.0,
+    "framing_subject_center_x": 0.5176273148148148,
+    "framing_head_top_fraction": 0.139453125,
+    "framing_left_half_share": 0.3975984322597987,
+    "framing_center_x_std_px": 178.30866452236694,
+    "framing_per_shot": [
+      {
+        "shot_index": 1,
+        "camera": "CAM_A",
+        "subject": "spk_a",
+        "start_frame": 0,
+        "end_frame": 146,
+        "detections": 5,
+        "center_x_mean": 0.3615,
+        "center_x_std_px": 60.68
+      },
+      {
+        "shot_index": 2,
+        "camera": "CAM_B",
+        "subject": "spk_b",
+        "start_frame": 146,
+        "end_frame": 221,
+        "detections": 3,
+        "center_x_mean": 0.6423,
+        "center_x_std_px": 23.33
+      },
+      {
+        "shot_index": 3,
+        "camera": "CAM_A",
+        "subject": "spk_a",
+        "start_frame": 221,
+        "end_frame": 658,
+        "detections": 14,
+        "center_x_mean": 0.3455,
+        "center_x_std_px": 22.26
+      },
+      {
+        "shot_index": 4,
+        "camera": "CAM_B",
+        "subject": "spk_b",
+        "start_frame": 658,
+        "end_frame": 1200,
+        "detections": 18,
+        "center_x_mean": 0.6741,
+        "center_x_std_px": 53.09
+      }
+    ],
+    "framing_per_shot_max_std_px": 60.68
+  }
+}

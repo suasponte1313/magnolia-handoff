@@ -1,0 +1,10 @@
+# Transcript segments in range 945.0s - 985.0s (dallas1_transcript.json)
+# (start, end, speaker, text)
+(943.16, 948.64, 'spk_a') # and you're going to feel incredible afterwards. Yes, we're so happy that you're starting this
+(948.64, 953.62, 'spk_a') # path with us. You're already seeing some results. Can you tell us a little bit of the
+(953.62, 960.74, 'spk_a') # patience? We've only started this venture together recently. Tell us a little bit about the people
+(960.74, 966.82, 'spk_a') # obviously not giving us names, but just some cases in which you've seen some benefit with NAD.
+(967.08, 973.52, 'spk_b') # I started first using it on myself, and I'm like let's start with an nasal spray, so I used to feel
+(973.52, 979.04, 'spk_b') # like I need a, there's a need for tea or a caffeine like in the middle afternoon after I'm
+(979.04, 983.68, 'spk_b') # seeing the patients, and when I started doing the nasal spray, I stopped drinking tea in the
+(983.68, 988.98, 'spk_b') # afternoon because I was not needing it. I was staying more focused, and I was very attentive,

@@ -1,0 +1,30 @@
+
+=== reel_c1 (945.0s - 985.0s) ===
+(943.16, 948.64, 'spk_a') # and you're going to feel incredible afterwards. Yes, we're so happy that you're starting this
+(948.64, 953.62, 'spk_a') # path with us. You're already seeing some results. Can you tell us a little bit of the
+(953.62, 960.74, 'spk_a') # patience? We've only started this venture together recently. Tell us a little bit about the people
+(960.74, 966.82, 'spk_a') # obviously not giving us names, but just some cases in which you've seen some benefit with NAD.
+(967.08, 973.52, 'spk_b') # I started first using it on myself, and I'm like let's start with an nasal spray, so I used to feel
+(973.52, 979.04, 'spk_b') # like I need a, there's a need for tea or a caffeine like in the middle afternoon after I'm
+(979.04, 983.68, 'spk_b') # seeing the patients, and when I started doing the nasal spray, I stopped drinking tea in the
+(983.68, 988.98, 'spk_b') # afternoon because I was not needing it. I was staying more focused, and I was very attentive,
+
+=== reel_c2 (720.0s - 750.0s) ===
+(717.62, 724.2, 'spk_a') # And so we're seeing benefit, and we're so happy that you're doing this here, and you're
+(724.2, 725.78, 'spk_a') # going to continue seeing great things.
+(726.38, 727.24, 'spk_b') # I'm so excited.
+(727.54, 732.52, 'spk_b') # I'm beyond excited, because there is not a woman alive who doesn't want to at least
+(732.52, 739.3, 'spk_b') # go back 10 years and see a different face in the mirror, because we wake up one day
+(739.3, 743.66, 'spk_b') # and it's different, and it's shocking, because it just happens like that.
+(744.62, 745.26, 'spk_a') # It really does.
+(745.26, 751.46, 'spk_b') # Like you said, your epidermis and your dermis separating, and we don't understand it, because
+
+=== reel_c3 (768.0s - 788.0s) ===
+(763.04, 772.12, 'spk_b') # a lot of mill grams, this is not just a small amount, so we're really fixing that in people,
+(772.68, 774.68, 'spk_b') # and that is the most exciting thing.
+(774.68, 775.38, 'spk_b') # It's exciting.
+(775.7, 776.08, 'spk_a') # Yes.
+(776.4, 776.96, 'spk_b') # I'm excited.
+(777.44, 778.36, 'spk_b') # I want it myself.
+(778.92, 787.3, 'spk_a') # Of course, these treatments are not inexpensive, I be the sub-q, and I think it's important for
+(787.3, 794.86, 'spk_a') # people to ask themselves, and I use this analogy, a person goes to a pediatric cardiac surgeon,

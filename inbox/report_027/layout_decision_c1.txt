@@ -1,0 +1,37 @@
+=== LAYOUT ENGINE DECISION REPORT (c1) ===
+Chosen Layout         : SPLIT
+Decision Reason       : Combined face bounding box span (2533px raw, 2630.2px with margins) exceeds single 9:16 crop limit (1215.0px) with 2 subjects. SPLIT layout (stacked 50/50) selected.
+Manual Override Active: NO (Autonomous Decision)
+
+--- SOURCE & CROP GEOMETRY CONSTRAINTS ---
+Source Resolution     : 3840x2160
+Single 9:16 Crop Width: 1215.0px (Source Height 2160 * 0.5625)
+Fits Single Crop Test : FAIL (Exceeds 1 crop width)
+
+--- DETECTED FACE MEASUREMENTS ---
+Detected Face Count   : 2
+Subject [spk_a]:
+  • Face Box Span (4K)  : X=[73..506] (W=433px), Y=[1037..1440] (H=403px)
+  • Mean Face Center    : (296.3, 1237.4)
+  • Mean Face Size      : 309.8x347.5px
+  • Facing Direction    : right
+  • Back of Head Margin : 48.6px (preset target >= 4.0%)
+  • Lead Room Margin    : 486.0px
+  • Margin Span Range   : [24.4 .. 992.0]
+Subject [spk_b]:
+  • Face Box Span (4K)  : X=[2298..2606] (W=308px), Y=[991..1367] (H=376px)
+  • Mean Face Center    : (2426.6, 1179.4)
+  • Mean Face Size      : 112.5x217.3px
+  • Facing Direction    : left
+  • Back of Head Margin : 48.6px (preset target >= 4.0%)
+  • Lead Room Margin    : 729.0px
+  • Margin Span Range   : [1569.0 .. 2654.6]
+
+--- COMBINED GEOMETRY & FITS EVALUATION ---
+Combined Face Bounding Box : X=[73..2606] (Width=2533px, Height=449px)
+Combined Span With Margins : X=[24.4..2654.6] (Width=2630.2px)
+Single Crop Width Ceiling  : 1215.0px
+Margin Delta (Over Ceiling): +1415.2px (+116.5%)
+
+--- CONCLUSION ---
+Because combined span (2630.2px) exceeds single 9:16 crop width (1215.0px) and detected face count is 2, the engine deterministically selected: SPLIT.

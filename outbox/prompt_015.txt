@@ -1,0 +1,15 @@
+COMMANDER DECISION — §1.2 is ACCEPTED. This footage has one usable audio channel, so an independent audio-vs-diarization metric cannot exist. Stop chasing it. On single-mic interview footage the rule is: diarization (transcript) is the authority for who has the floor; mouth-motion only refines the exact cut moment. Reaction/listener cuts are a §1.3 editing decision, not a §1.2 attribution problem. Keep the current fusion. §1.2 is locked.
+
+Proceed to §1.3 BUILD_EDIT, but as a PROOF on ONE reel only (c1). Deliver as report_015 through the HANDOFF PROTOCOL (report.md + raw artifacts + DONE last, run the bridge, then STOP).
+
+Do:
+1. Build reelcore/edit/shots.py (BUILD_EDIT) per PHASE3_BLUEPRINT §1.3: turn speaker_timeline_c1 + face_tracks_c1 into a cut list. Rules: cut to whoever has the floor per diarization; hold a shot at least the preset minimum (no machine-gun cutting); allow a brief cut to the listener only during the speaker's pauses. All thresholds from presets/edit/magnolia_interview.yaml — no literals.
+2. Render a proof MP4 of c1 and run reelcore.qc on it.
+3. In report.md state the reel and the render path. Raw artifacts in report_015/:
+   - edl_c1.json (the cut list: each cut's start, end, which subject/cam)
+   - shots_metrics_c1.txt (switches/min, mean shot duration, min shot duration, wide/reaction fraction, cut-on-pause fraction)
+   - c1_proof.qc.json (the QC sidecar of the rendered proof)
+   - render_stdout_c1.txt (raw stdout of the render)
+4. Also restate, one line each with the source filename, the CURRENT status of Step 0 items 0.1-0.6. If any is not closed, say so plainly.
+
+Do NOT batch other reels. Stop after report_015 so the proof edit can be watched.

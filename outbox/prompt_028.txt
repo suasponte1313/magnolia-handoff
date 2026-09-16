@@ -1,0 +1,19 @@
+COMMANDER RULINGS — LOOP 028. Read the ROLE LOCK, CLOSED PREMISES and SELF-APPROVAL BAN now in AGENTS.md before you start.
+
+1. HEAD SIZE — OPTION 1 APPROVED (<= 1.10x) with one correction.
+   Fenton H=1250, Saba H=860 as you proposed. BUT Saba's headroom mean is 11.9% against a 12.0% ceiling — 0.1% of margin, which breaks when you zoom her in.
+   REQUIRED: anchor crop_y(t) to the headroom TARGET (0.08), not to wherever it lands in the band. Solve crop_y per frame so headroom tracks 0.08, per-frame MIN never below 0.05, mean at or near 0.08 — not 0.119.
+   Report per panel: head height px, ratio, headroom min/mean/max, eyeline min/mean/max, upscale factor -> head_size_match.txt
+   If 860px cannot hold headroom at target during her gestures (frames 120-205), report the measured numbers and propose the nearest H that can. Do not force a pass.
+
+2. SINGLE MEASUREMENT ENGINE — APPROVED. Delete the synthetic formula ht_b_4k = bb[1] - 0.55*bb[3] entirely. framing_per_frame_dump.json must record the exact per-frame values qc.py's skin-segmentation produces on rendered pixels. Zero divergence. Paste the diff -> dump_unified.txt
+
+3. DYNAMIC CROP METADATA — APPROVED. qc.py records crop_x_min/max/mean and crop_y_min/max/mean whenever per-frame tracking exists in crops_data['frames']. No scalar summary boxes.
+
+4. MULTI-CAM METRICS — APPROVED. Promote shot_count, switches_per_min, mean/min shot duration, wide_fraction, cut_on_pause into first-class Check() items in qc.py with preset-driven bounds. cut_on_pause is 0.667 — report it honestly as a WARN, do not force it.
+
+5. SPEAKER AGREEMENT — RETIRE IT. Your 'crosstalk between the two microphones' diagnosis is wrong and violates a CLOSED PREMISE: there is one pre-mixed stereo stream, no second mic. The 0.4967 scores mouth-motion (weight 0.0, retired) against diarization and then flags itself. Remove agreement_rate/flagged from the speaker gate, or rename it mouth_motion_diagnostic and mark it informational — never a flag. Paste the change -> agreement_retired.txt
+
+6. ARTIFACTS in handoff/inbox/report_028/: head_size_match.txt, dump_unified.txt, agreement_retired.txt, framing_per_frame_dump.json, crops_c1.json, c1_proof.qc.json, framing_per_panel.txt, edl_c1.json, shots_metrics_c1.txt, speaker_timeline_c1.json, face_tracks_c1.json, render_stdout_c1.txt. A cited-but-missing file is an automatic REVISE.
+
+Re-render c1_proof.mp4. Deliver report_028 via HANDOFF PROTOCOL (report.md + artifacts + DONE last, run the bridge, STOP).

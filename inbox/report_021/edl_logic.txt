@@ -1,0 +1,74 @@
+REACTION-SHOT TRIGGER:
+Triggered in shots.py when an active speaker's continuous run exceeds min_listen_frames + min_shot_frames (120f + 75f = 195f), cutting to the non-speaking listener at the earliest inter-word pause p0 satisfying (c_start + min_listen_frames) <= p0.
+
+75-FRAME MIN_SHOT_FRAMES CLAMP:
+Enforced in shots.py via r_end = r_start + min_shot_frames and snapped_cut - cuts[-1] >= min_shot_frames (75f = 2.5s from magnolia_interview.yaml), guaranteeing reaction shots and speaker cuts do not violate the minimum duration floor.
+
+SHOT DERIVATION CODE BLOCK (reelcore/src/reelcore/edit/shots.py lines 190-257):
+    spk_runs: list[tuple[int, int, str]] = []
+    cur_spk = frame_speakers[0] if frame_speakers else "spk_a"
+    run_start = 0
+
+    i = 1
+    while i < total_frames:
+        cand = frame_speakers[i]
+        if cand != cur_spk and cand in ("spk_a", "spk_b", "both"):
+            held = 0
+            j = i
+            while j < total_frames and frame_speakers[j] == cand:
+                held += 1
+                j += 1
+            if held >= hysteresis_frames:
+                spk_runs.append((run_start, i, cur_spk))
+                cur_spk = cand
+                run_start = i
+                i = j
+                continue
+        i += 1
+    spk_runs.append((run_start, total_frames, cur_spk))
+
+    cuts: list[int] = [0]
+    cut_reasons: dict[int, str] = {0: "intro"}
+    cut_subjects: dict[int, Optional[str]] = {0: spk_runs[0][2] if spk_runs[0][2] in ("spk_a", "spk_b") else "spk_a"}
+
+    for idx in range(1, len(spk_runs)):
+        raw_cut = spk_runs[idx][0]
+        new_spk = spk_runs[idx][2]
+        
+        if cut_on_pause_enabled:
+            snapped_cut, _ = snap_to_nearest_pause(raw_cut, pauses, max_search_frames=18)
+        else:
+            snapped_cut = raw_cut
+
+        if snapped_cut - cuts[-1] >= min_shot_frames:
+            cuts.append(snapped_cut)
+            cut_reasons[snapped_cut] = "overlap" if new_spk == "both" else "speaker_change"
+            cut_subjects[snapped_cut] = new_spk if new_spk in ("spk_a", "spk_b") else None
+
+    if reaction_enabled:
+        augmented_cuts = list(cuts)
+        for c_idx in range(len(cuts)):
+            c_start = cuts[c_idx]
+            c_end = cuts[c_idx + 1] if c_idx + 1 < len(cuts) else total_frames
+            cur_subj = cut_subjects.get(c_start)
+
+            if cur_subj in ("spk_a", "spk_b") and (c_end - c_start) >= (min_listen_frames + min_shot_frames):
+                listener = "spk_b" if cur_subj == "spk_a" else "spk_a"
+                for p0, p1 in pauses:
+                    if (c_start + min_listen_frames) <= p0 and (p0 + min_shot_frames) <= (c_end - min_shot_frames):
+                        r_start = p0
+                        r_end = r_start + min_shot_frames
+                        if r_end <= c_end - min_shot_frames:
+                            augmented_cuts.append(r_start)
+                            augmented_cuts.append(r_end)
+                            cut_reasons[r_start] = "reaction"
+                            cut_subjects[r_start] = listener
+                            cut_reasons[r_end] = "speaker_change"
+                            cut_subjects[r_end] = cur_subj
+                            break
+
+        augmented_cuts = sorted(list(set(augmented_cuts)))
+        cuts = augmented_cuts
+
+    if total_frames not in cuts:
+        cuts.append(total_frames)

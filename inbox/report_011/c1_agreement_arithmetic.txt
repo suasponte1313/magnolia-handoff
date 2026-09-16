@@ -1,0 +1,33 @@
+=== EXACT FRAME-SELECTION RULE AND ARITHMETIC FOR REEL_C1 AGREEMENT (0.8302) ===
+
+1. Frame-Selection Rule:
+   Evaluation condition: (vad_speech == True) AND (diar_label != "none")
+   In Python code (reelcore/src/reelcore/edit/speaker.py:510):
+     valid_eval = speech_mask & ((diar_a > 0.5) ^ (diar_b > 0.5))
+
+2. Breakdown of Total Frames in agreement_breakdown_c1.txt:
+   Total frames in reel_c1: 1200
+   - vad_speech == True (speech detected by Silero VAD): 1014
+   - vad_speech == False (silence / non-speech frames):   186
+   - diar_label != "none" (transcript segment labeled):  1193
+   - diar_label == "none" (transcript boundary gaps):     7
+
+3. Evaluated Set (Denominator):
+   Frames where vad_speech == True AND diar_label != "none":
+   Denominator = 1007 frames
+
+4. Matching Frames (Numerator):
+   Within the 1007 evaluated frames:
+   - agree == True  (fused_label == diar_label): 836 frames
+   - agree == False (fused_label != diar_label): 171 frames
+
+5. Exact Arithmetic:
+   Agreement Rate = Numerator / Denominator
+                  = 836 / 1007
+                  = 0.830189
+                  = 83.02%
+
+6. Verification from agreement_breakdown_c1.txt:
+   Grep verification:
+     grep "True.*True" output/PHASE_3_CONVERSATIONAL/agreement_breakdown_c1.txt | grep -v "#" | wc -l
+     matches exactly 836 rows where col 2 (vad_speech) is True and col 6 (agree) is True.

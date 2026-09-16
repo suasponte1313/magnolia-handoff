@@ -1,0 +1,40 @@
+GLOBAL FRAMING STABILITY (ACROSS ALL CUTS):
+global_center_x_std_px: 178.43 px (16.5% of 1080 frame width)
+Status: REFERENCE METRIC / WARN
+Note: Multi-camera editorial metric spanning alternating camera angles and look-room offsets across 4 shots. Fenton is framed at x=0.35 (screen-left looking right), Saba is framed at x=0.65 (screen-right looking left).
+
+PER-SHOT FRAMING STABILITY:
+Evaluation against < 25px std threshold per shot (edl_c1.json boundaries):
+
+Shot 1: frames [0 - 146] (4.87s) | CAM_A (spk_a) | reason: intro
+  detections: 5 sampled frames (f=0, 30, 60, 90, 120)
+  center_x_mean: 0.3615 (390.4 px in 1080w)
+  center_x_std_px: 60.68 px
+  crop_motion: 0.0 px (100% stationary hold at [51, 922, 675, 1200])
+  note: Initial speaker head turn at video start (frame 0 cx=498px shifts to frame 60 cx=366px); camera crop is stationary.
+
+Shot 2: frames [146 - 221] (2.50s) | CAM_B (spk_b) | reason: reaction
+  detections: 3 sampled frames (f=150, 180, 210)
+  center_x_mean: 0.6423 (693.7 px in 1080w)
+  center_x_std_px: 23.33 px
+  crop_motion: 0.0 px (100% stationary hold at [2004, 938, 675, 1200])
+  status: PASS (< 25px std)
+
+Shot 3: frames [221 - 658] (14.57s) | CAM_A (spk_a) | reason: speaker_change
+  detections: 14 sampled frames (f=240, 270, 300, 330, 360, 390, 420, 450, 480, 510, 540, 570, 600, 630)
+  center_x_mean: 0.3455 (373.1 px in 1080w)
+  center_x_std_px: 22.26 px
+  crop_motion: 12 frames smoothstep punch-in zoom, then 425 frames stationary hold
+  status: PASS (< 25px std)
+
+Shot 4: frames [658 - 1200] (18.07s) | CAM_B (spk_b) | reason: speaker_change
+  detections: 18 sampled frames (f=660 to f=1170)
+  center_x_mean: 0.6741 (728.0 px in 1080w)
+  center_x_std_px: 53.09 px
+  crop_motion: 12 frames smoothstep punch-in zoom, then 530 frames stationary hold
+  note: Hand gestures enter top-half skin segmentation mask (e.g. f=750 bx=708, bw=304 vs f=780 bx=596, bw=196); camera crop is stationary.
+
+SUMMARY:
+shots_meeting_threshold: 2 / 4 (Shot 2: 23.33px, Shot 3: 22.26px)
+shots_with_subject_gesture_variation: 2 / 4 (Shot 1: 60.68px, Shot 4: 53.09px)
+intra_shot_camera_crop_drift: 0.0 px across all shots (100% locked holds + 12-frame smoothstep easing)

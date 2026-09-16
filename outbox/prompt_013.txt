@@ -1,0 +1,13 @@
+REVISE. Diagnosis accepted; the defect is still in the code. Do exactly this, then STOP at the review boundary.
+
+1. APPLY the mouth-AND fix in reelcore/src/reelcore/edit/speaker.py. Use Option A (drop the unconstrained mouth-AND clause; require competitive composite scores) OR Option B (gate mouth-AND by diarization compatibility). Load overlap_threshold from the preset — do NOT leave 0.08 as a code default.
+   - Add overlap_threshold to presets/edit/magnolia_interview.yaml under speaker_fusion.
+   - Paste RAW: grep -n 'overlap_threshold\|is_both\|mouth_a\|mouth_b' reelcore/src/reelcore/edit/speaker.py and grep -n 'speaker_fusion' -A6 presets/edit/magnolia_interview.yaml. No tables.
+
+2. RE-RUN analyze_speakers for c1/c2/c3. Paste RAW the new speaker_qc.json (all three) and RAW the frames 650-682 dump for c1 in the same columnar format as c1_boundary_650_682.txt, showing is_both now False across the single-speaker turn. Confirm the 24-frame both-run at 655-678 is gone.
+
+3. CHANNEL LAYOUT — state it plainly. In report.md write one sentence: the source is a single pre-mixed AAC stereo stream (ffprobe channels=2, channel_layout=stereo; astats Ch1 RMS -30.4dB vs Ch2 -45.1dB), therefore per-mic VAD is a SPEECH GATE only and NOT a speaker-attribution source; §1.2 evidence is mouth-motion(0.55)+diarization(0.45). Paste RAW the ffprobe -show_streams and astats you already have (channel_layout.txt) plus the speaker.py:107 comment line proving the code knows this.
+
+4. EXPLAIN the 'agree' column in agreement_breakdown_c1.txt: is it per-frame diar_label or segment-level? Show the exact code line that computes it (grep -n). Re-confirm the new agreement_rate arithmetic (numerator/denominator) from the raw breakdown after the fix.
+
+Do NOT start §1.3. Do NOT touch render/EDL. Raw output only — no reformatting qc.json into tables. STOP at the boundary and wait for prompt_013.

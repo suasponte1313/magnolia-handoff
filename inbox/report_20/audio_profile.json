@@ -1,0 +1,75 @@
+{
+  "file_path": "/Users/derekgagliano/Projects/podcast-editor/output/test_verify_manifest/temp_01_STRONGEST_The_Oral_Pill_Myth_PRESET_raw.wav",
+  "sample_rate": 48000,
+  "duration_seconds": 59.12,
+  "channels": [
+    {
+      "channel_index": 0,
+      "muffle": {
+        "clarity_ratio": 0.0060117494757404785,
+        "spectral_rolloff_hz": 2223.5423417842167,
+        "spectral_centroid_hz": 1343.6293623222175
+      },
+      "noise": {
+        "speech_rms": 0.028208202579233843,
+        "noise_rms": 0.0005558030325944003,
+        "noise_floor_db": -65.10158175875046,
+        "snr_db": 34.10909003641998
+      },
+      "reverb": {
+        "srmr": 4.780370634613393
+      },
+      "clipping": {
+        "clipped_samples": 0,
+        "near_clipped_samples": 0,
+        "clipped_percentage": 0.0
+      },
+      "level": {
+        "integrated_lufs": -31.520946301000183,
+        "peak_db": -8.366443014679119,
+        "true_peak_dbtp": -7.866443014679119,
+        "dynamic_range_db": 56.735138744071335
+      },
+      "resonances": [
+        {
+          "frequency_hz": 486.3,
+          "db_above_mean": 11.2,
+          "q_estimate": 20.0
+        },
+        {
+          "frequency_hz": 474.6,
+          "db_above_mean": 7.8,
+          "q_estimate": 20.0
+        },
+        {
+          "frequency_hz": 416.0,
+          "db_above_mean": 7.4,
+          "q_estimate": 20.0
+        }
+      ],
+      "recommended_highpass_hz": 80.0,
+      "recommended_notches": [
+        486.3,
+        474.6,
+        416.0
+      ],
+      "recommended_gain_db": 12.0
+    }
+  ],
+  "cross_channel": {
+    "channel_count": 1,
+    "correlation_matrix": [
+      [
+        1.0
+      ]
+    ],
+    "bleed_estimates_db": [
+      [
+        0.0
+      ]
+    ]
+  },
+  "recommendation": "LOCAL_NATURAL",
+  "recommendation_reason": "Standard clean studio speech; optimal for adaptive highpass, with measured room notching, gentle compression, and BS.1770 loudnorm.",
+  "analyzed_at": "2026-09-10T01:57:00.809563+00:00"
+}

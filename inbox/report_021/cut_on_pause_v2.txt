@@ -1,0 +1,50 @@
+FORMAL DEFINITION:
+cut_on_pause := (cut_frame - pause_start_frame >= min_pause_frames) AND (pause_end_frame - cut_frame >= min_pause_frames)
+where min_pause_ms = 250.0 (from presets/edit/magnolia_interview.yaml)
+fps = 30.0
+min_pause_frames = round(250.0 / 1000.0 * 30.0) = 8 frames (266.7 ms) [strict floor: 8 frames / 266.7ms; 7.5 frames / 250.0ms]
+
+DETECTED PAUSES in c1 (frames relative to clip start t=945.0s):
+[21, 32] dur=11f (366.7ms)
+[38, 46] dur=8f (266.7ms)
+[137, 155] dur=18f (600.0ms)
+[205, 222] dur=17f (566.7ms)
+[275, 286] dur=11f (366.7ms)
+[405, 424] dur=19f (633.3ms)
+[655, 662] dur=7f (233.3ms)
+[724, 746] dur=22f (733.3ms)
+
+EVALUATION OF c1 CUTS:
+
+Cut 1: frame 137 (t=4.567s)
+  Pause: [137, 155] (dur=18f / 600.0ms)
+  Left silence: 0 frames (0.0ms)
+  Right silence: 18 frames (600.0ms)
+  Left silence >= 250ms: False (0.0ms < 250.0ms)
+  Right silence >= 250ms: True (600.0ms >= 250.0ms)
+  Both sides >= 250ms: False
+
+Cut 2: frame 212 (t=7.067s)
+  Pause: [205, 222] (dur=17f / 566.7ms)
+  Left silence: 7 frames (233.3ms)
+  Right silence: 10 frames (333.3ms)
+  Left silence >= 250ms: False (233.3ms < 250.0ms)
+  Right silence >= 250ms: True (333.3ms >= 250.0ms)
+  Both sides >= 250ms: False (misses left bound by 16.7ms / 0.5 frame)
+
+Cut 3: frame 662 (t=22.067s)
+  Pause: [655, 662] (dur=7f / 233.3ms)
+  Left silence: 7 frames (233.3ms)
+  Right silence: 0 frames (0.0ms)
+  Left silence >= 250ms: False (233.3ms < 250.0ms)
+  Right silence >= 250ms: False (0.0ms < 250.0ms)
+  Both sides >= 250ms: False
+
+SUMMARY METRICS:
+total_cuts: 3
+strict_both_sides_pause_hits: 0
+strict_both_sides_pause_fraction: 0.0000 (0 / 3)
+single_side_pause_hits: 3
+single_side_pause_fraction: 1.0000 (3 / 3)
+relaxed_200ms_both_sides_hits: 1
+relaxed_200ms_both_sides_fraction: 0.3333 (1 / 3)

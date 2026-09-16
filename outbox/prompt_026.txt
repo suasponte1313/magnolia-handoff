@@ -1,0 +1,45 @@
+COMMANDER DIRECTIVE — automatic layout selection. Add on top of prompt_025 framing rules (those stand).
+
+Build a LAYOUT ENGINE that picks the vertical layout per clip from measured face geometry. All thresholds in presets/framing/magnolia_interview.yaml, zero literals.
+
+DECISION RULE (evaluate per clip, from face_tracks):
+1. Compute the combined bounding box of all detected faces across the clip, plus each face's own box.
+2. FITS TEST: does the combined bbox (plus the prompt_025 lead-room and back-of-head margins) fit inside ONE 9:16 crop of the source? For 3840x2160 that crop is ~1215px wide.
+   - FITS + any number of people -> layout: KEEP_ALL. Single frame, everyone visible, no speaker switching. This is the correct choice for properly framed 2-3 person V-pattern setups.
+   - DOES NOT FIT + exactly 2 faces -> layout: SPLIT. Stacked 50/50, one speaker top, one bottom.
+   - DOES NOT FIT + 3-4 faces -> layout: GRID.
+   - 1 face only -> layout: FILL (speaker-tracked crop, current behavior).
+3. Write the chosen layout AND the measured numbers behind the choice into the manifest so it is auditable.
+
+SPLIT LAYOUT QUALITY REQUIREMENTS:
+- Each panel obeys ALL prompt_025 framing rules independently (headroom band, eyeline, back-of-head margin, lead room, no top clip). Panels are gated separately in QC.
+- Per-panel vertical alignment is derived from that subject's face position — do not default to centering.
+- Per-panel auto-zoom so both faces appear at similar head size even if one sits closer to camera. Bound it with max_panel_zoom from the preset.
+- Active speaker gets a subtle emphasis (preset-controlled); the inactive panel stays live, never frozen.
+
+OVERRIDE: support a per-clip manual override in the manifest, e.g. layout: SPLIT | FILL | KEEP_ALL | GRID, plus focus_subject: <track_id> so the Commander can force a single doctor or a specific region on any clip. Manual override always wins over the auto rule.
+
+APPLY TO c1: this interview is poorly framed (subjects far apart, backs of heads clipped by the tight crop) — the rule should select SPLIT. Re-render c1_proof.mp4 as SPLIT and run QC with per-panel framing gates.
+
+Raw artifacts in report_026/: layout_decision_c1.txt (the measured numbers and the chosen layout), framing_preset.txt, framing_per_panel.txt, crops_c1.json, c1_proof.qc.json, render_stdout_c1.txt.
+
+If SPLIT cannot satisfy the framing bands from this source, say so with measured numbers instead of forcing a pass.
+
+Deliver as report_026 via HANDOFF PROTOCOL (report.md + raw artifacts + DONE last, run the bridge, STOP). c1 only. STOP after report_026.
+
+=== COMMANDER RULINGS (prepended authority for this loop) ===
+
+1. STEP 0: formally CLOSED and WAIVED from re-proof. It was verified with raw artifacts at loops 19-20 (literals gone, ROI derived, channel layout proven). Do not re-litigate Step 0 in any future report. If a Step 0 literal ever REAPPEARS, that is a new defect and must be flagged — but no further re-proof is required.
+
+2. LEAD ROOM: per-speaker bands are APPROVED, because the 2160px sensor height physically prevents Fenton from reaching 0.60-0.67 in a single crop. Write them into presets/framing/magnolia_interview.yaml as named values:
+   - CAM_A (Fenton): lead_room_fraction 0.40, band [0.35, 0.46]
+   - CAM_B (Saba):  lead_room_fraction 0.60, band [0.55, 0.67]
+   RULE THAT STANDS: a value outside its band is a FAIL. Never PASS with a prose excuse. If a band is wrong, propose changing the band with measured numbers — do not relabel a miss.
+
+3. PRESET SEEDS: storing validated per-interview anchor seeds in a named YAML preset is ACCEPTABLE. But they must be documented in the preset as seed values, and never described in a report as 'dynamically derived from first-frame detection'. Say plainly which numbers are preset seeds and which are measured.
+
+4. ARTIFACTS: yes — copy face_tracks_c1.json into the report directory every loop from now on, plus the per-frame head-top-y and eyeline dump so clip measurements are independently auditable.
+
+5. SPLIT resolves the lead-room conflict by giving each subject a dedicated panel. Apply per-panel bands from ruling 2.
+
+Proceed with the LAYOUT ENGINE directive above.

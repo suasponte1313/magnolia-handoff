@@ -1,0 +1,50 @@
+[
+  {
+    "start_frame": 0,
+    "end_frame": 146,
+    "start_s": 0.0,
+    "end_s": 4.867,
+    "duration_frames": 146,
+    "duration_s": 4.867,
+    "camera": "CAM_A",
+    "subject": "spk_a",
+    "transition_in": "cut",
+    "reason": "intro"
+  },
+  {
+    "start_frame": 146,
+    "end_frame": 213,
+    "start_s": 4.867,
+    "end_s": 7.1,
+    "duration_frames": 67,
+    "duration_s": 2.233,
+    "camera": "CAM_B",
+    "subject": "spk_b",
+    "transition_in": "cut",
+    "reason": "reaction"
+  },
+  {
+    "start_frame": 213,
+    "end_frame": 658,
+    "start_s": 7.1,
+    "end_s": 21.933,
+    "duration_frames": 445,
+    "duration_s": 14.833,
+    "camera": "CAM_A",
+    "subject": "spk_a",
+    "transition_in": "cut",
+    "reason": "speaker_change"
+  },
+  {
+    "start_frame": 658,
+    "end_frame": 1200,
+    "start_s": 21.933,
+    "end_s": 40.0,
+    "duration_frames": 542,
+    "duration_s": 18.067,
+    "camera": "CAM_B",
+    "subject": "spk_b",
+    "transition_in": "cut",
+    "reason": "speaker_change"
+  }
+]

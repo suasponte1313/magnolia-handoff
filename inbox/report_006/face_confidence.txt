@@ -1,0 +1,7 @@
+min_confidence: 1.000
+max_confidence: 1.000
+frames_less_than_1.0: 0
+
+All 1,774 frames for spk_b have confidence 1.000 because connectedComponentsWithStats found a valid skin blob (area >= 300) inside spk_b home_region on every frame.
+Confidence is assigned at reelcore/src/reelcore/framing/tracks.py line 234:
+    track_data[tid]["confidence"].append(1.0)

@@ -1,0 +1,76 @@
+/Users/derekgagliano/Projects/podcast-editor/venv/lib/python3.11/site-packages/torch/jit/_serialization.py:176: FutureWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+================================================================================
+🎬 RENDERING PHASE 3 §1.3 MULTI-CAM PROOF: c1 (945.0s - 985.0s)
+  • Delivery Preset : social (1080x1920 @ 30.0fps)
+  • Framing Preset  : magnolia_interview
+  • Audio Target    : -14.0 LUFS | TP <= -1.0 dBTP
+  • Edit Preset     : magnolia_interview (min_shot: 60f, hyst: 18f)
+================================================================================
+
+--- STEP 1: EVALUATING AUTONOMOUS LAYOUT ENGINE ---
+✓ Layout Engine Choice: SPLIT
+  • Fits Single Crop Test: FAIL
+  • Decision Reason: Combined face bounding box span (2533px raw, 2630.2px with margins) exceeds single 9:16 crop limit (1215.0px) with 2 subjects. SPLIT layout (stacked 50/50) selected.
+✓ Saved Layout Decision: output/PHASE_3_CONVERSATIONAL/layout_decision_c1.txt
+
+--- STEP 2: GENERATING SHOT LIST (BUILD_EDIT) ---
+✓ Generated 4 multi-cam shots:
+    Shot 1: frames [   0 -  146] ( 4.87s) | CAM_A  (spk_a) | trans=cut | reason=intro
+    Shot 2: frames [ 146 -  213] ( 2.23s) | CAM_B  (spk_b) | trans=cut | reason=reaction
+    Shot 3: frames [ 213 -  658] (14.83s) | CAM_A  (spk_a) | trans=cut | reason=speaker_change
+    Shot 4: frames [ 658 - 1200] (18.07s) | CAM_B  (spk_b) | trans=cut | reason=speaker_change
+✓ Saved EDL: output/PHASE_3_CONVERSATIONAL/edl_c1.json
+✓ Saved Metrics: output/PHASE_3_CONVERSATIONAL/shots_metrics_c1.txt
+
+--- STEP 2: AUDIO PROCESSING & CALIBRATION ---
+✓ DSP Chain Complete:
+    - Speech/Room SNR: 7.2 dB (Target: >= 15 dB)
+    - LRA            : 7.3 LU (Target: <= 11.0 LU)
+    - LUFS           : -14.3 LUFS (Target: -14.0 +/- 1 LUFS)
+    - True Peak      : -1.2 dBTP (Target: <= -1.0 dBTP)
+
+--- STEP 3: BUILDING CROPS & PREPARING RENDER (SPLIT) ---
+✓ Generated DYNAMIC QUANTIZED SPLIT crops: Fenton hold=95.0%, Saba hold=90.0%
+✓ Head Size Matching: Fenton=311.8px, Saba=222.0px -> Ratio=1.405x
+✓ Saved head-size matching report: output/PHASE_3_CONVERSATIONAL/head_size_match.txt (Ruling 5)
+✓ Saved per-frame framing dump: output/PHASE_3_CONVERSATIONAL/framing_per_frame_dump.json (Ruling 4)
+🎬 Rendering 1200 frames (SPLIT) to output/PHASE_3_CONVERSATIONAL/c1_proof.mp4...
+✓ Master Render Complete: output/PHASE_3_CONVERSATIONAL/c1_proof.mp4
+
+--- STEP 4: EXECUTING QC GATE VERIFICATION ---
+✓ Saved Per-Panel Framing Measurements: output/PHASE_3_CONVERSATIONAL/framing_per_panel.txt
+QC REPORT  output/PHASE_3_CONVERSATIONAL/c1_proof.mp4
+==============================================================================
+  PASS  resolution                                1080x1920
+  PASS  encoder                                   lavc62.28.101 libx264
+  PASS  color metadata                            tagged
+  PASS  loudness (LUFS)                           -14.3 LUFS
+  PASS  true peak                                 -1.3 dBTP
+  PASS  loudness range                            7.3 LU
+  WARN  speech vs room tone                       7.2 dB
+                                                  expected: >= 15.0 dB
+                                                  -> Room tone is audible under the voice. Denoise before levelling.
+  PASS  room resonance                            575 Hz +7.2 dB
+  PASS  headroom (Top Panel CAM_A)                8.6% (min 5.1%)
+  PASS  eyeline (Top Panel CAM_A)                 39.7%
+  PASS  head clipping (Top Panel CAM_A)           0%
+  PASS  back-of-head margin (Top Panel CAM_A)     8.0% (min 2.1%)
+  PASS  lead room (Top Panel CAM_A)               62.6%
+  PASS  framing stability (Top Panel CAM_A)       16.4px std
+  PASS  headroom (Bottom Panel CAM_B)             11.9% (min 5.1%)
+  PASS  eyeline (Bottom Panel CAM_B)              38.3%
+  PASS  head clipping (Bottom Panel CAM_B)        0%
+  PASS  back-of-head margin (Bottom Panel CAM_B)  27.3% (min 15.6%)
+  PASS  lead room (Bottom Panel CAM_B)            60.0%
+  PASS  framing stability (Bottom Panel CAM_B)    20.4px std
+  PASS  headroom (per-panel)                      min 5.1%
+  PASS  eyeline (per-panel)                       38.3%-39.7%
+  PASS  head clipping (per-panel)                 0%
+  PASS  back-of-head margin (per-panel)           min 2.1%
+  PASS  lead room (per-panel)                     Top 62.6%, Bot 60.0%
+  PASS  framing stability (per-panel)             max 20.4px std
+==============================================================================
+PASSED (26 checks, 0 failed, 1 warnings)
+
+✓ QC JSON saved to: output/PHASE_3_CONVERSATIONAL/c1_proof.qc.json

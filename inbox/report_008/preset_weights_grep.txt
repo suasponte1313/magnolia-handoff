@@ -1,0 +1,22 @@
+=== presets/edit/magnolia_interview.yaml ===
+27-smoothing:
+28-  speaker_median_filter_frames: 9
+29-
+30:speaker_fusion:
+31-  weight_mouth: 0.55
+32-  weight_diarization: 0.45
+33-  speech_threshold: 0.25
+
+=== reelcore/src/reelcore/edit/speaker.py ===
+352-                silence_frames=int(cached_result["silence_frames"]),
+353-            )
+354-
+355-    # Load fusion parameters from edit preset (never hardcoded literals)
+356-    try:
+357:        from reelcore.config import load_edit_preset
+358:        ep = load_edit_preset("magnolia_interview")
+359-        fusion_cfg = ep.speaker_fusion or {}
+360-        w_mouth = float(fusion_cfg.get("weight_mouth", 0.55))
+361-        w_diar = float(fusion_cfg.get("weight_diarization", 0.45))
+362-        threshold = float(fusion_cfg.get("speech_threshold", 0.25))
+363-        overlap_thr = float(fusion_cfg.get("overlap_threshold", 0.08))

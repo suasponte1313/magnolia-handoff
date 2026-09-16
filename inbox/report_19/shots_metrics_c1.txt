@@ -1,0 +1,15 @@
+=== SHOT LIST VERIFICATION METRICS (c1) ===
+shot_count: 4
+switches: 3
+switches_per_min: 4.5
+mean_shot_duration_s: 10.0
+min_shot_duration_s: 2.5
+min_shot_frames: 75
+max_shot_duration_s: 17.93
+wide_fraction: 0.0
+reaction_fraction: 0.0625
+reaction_count: 1
+wide_count: 0
+cut_on_pause_fraction: 1.0
+cut_on_pause_hits: 3
+total_cuts: 3

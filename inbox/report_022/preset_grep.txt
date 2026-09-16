@@ -1,0 +1,88 @@
+=== PRESET TRACEABILITY AUDIT ===
+
+1. CROPS CONFIGURATION (reelcore/src/reelcore/edit/crops.py):
+Line 21:  from reelcore.config import EditPreset, FramingPreset, load_edit_preset, load_framing_preset
+Line 104: framing_preset = load_framing_preset("magnolia_interview")
+Line 106: edit_preset = load_edit_preset("magnolia_interview")
+Line 111: hold_tolerance = float(framing_preset.quantization.hold_tolerance_px)
+Line 112: transition_frames = int(framing_preset.quantization.transition_frames)
+Line 113: headroom_min = float(framing_preset.targets.headroom_min_ratio)
+Line 114: headroom_max = float(framing_preset.targets.headroom_max_ratio)
+Line 115: target_headroom = (headroom_min + headroom_max) / 2.0
+Line 118: push_in_scale = float(push_cfg.get("push_in_scale", 1.08))
+Line 119: push_in_frames = int(push_cfg.get("push_in_frames", 12))
+Line 124: base_cw = int(sample_seed.get("crop_w", 675))
+Line 125: base_ch = int(sample_seed.get("crop_h", 1200))
+Line 126: raw_top_y = int(sample_seed.get("raw_top_y", 930))
+Line 214: target_cx_ratio = float(seed_info.get("target_center_x_ratio", 0.35 if subj_key == "spk_a" else 0.65))
+Line 218: anchor_x = int(np.clip(derived_cx, 0, fw - base_cw))
+Line 221: derived_cy = int(round(face_top - target_headroom * base_ch))
+Line 229: punch_w = int(round(base_cw / push_in_scale))
+Line 230: punch_h = int(round(base_ch / push_in_scale))
+Line 238: if idx_in_shot < push_in_frames:
+
+2. SHOT EDL CONFIGURATION (reelcore/src/reelcore/edit/shots.py):
+Line 15:  from reelcore.config import EditPreset, load_edit_preset
+Line 121: preset = load_edit_preset("magnolia_interview")
+Line 131: min_shot_frames = int(preset.min_shot_frames)
+Line 132: hysteresis_frames = int(preset.switch_hysteresis_frames)
+Line 139: min_listen_frames = int(reaction_cfg.get("min_listen_frames", 120))
+Line 144: reaction_duration = int(reaction_cfg.get("duration_frames", 45))
+Line 147: wide_on_silence = int(wide_cfg.get("on_silence_frames", 60))
+Line 148: max_single_frames = int(wide_cfg.get("max_single_frames", 600))
+Line 152: min_pause_ms = float(pause_cfg.get("min_pause_ms", 250.0))
+
+3. SOURCE PRESET: presets/framing/magnolia_interview.yaml
+targets:
+  eye_line_ratio: 0.35
+  headroom_min_ratio: 0.08
+  headroom_max_ratio: 0.15
+  subject_fill_ratio: 0.75
+  center_x_ratio: 0.35
+quantization:
+  hold_tolerance_px: 40.0
+  min_hold_ratio: 0.90
+  transition_frames: 15
+speaker_search_seeds:
+  saba_shabnam:
+    raw_center_x: 2418
+    raw_top_y: 930
+    crop_w: 675
+    crop_h: 1200
+    facing_direction: "camera-left"
+    target_center_x_ratio: 0.65
+  fenton_lebon:
+    raw_center_x: 458
+    raw_top_y: 930
+    crop_w: 675
+    crop_h: 1200
+    facing_direction: "camera-right"
+    target_center_x_ratio: 0.35
+
+4. SOURCE PRESET: presets/edit/magnolia_interview.yaml
+min_shot_frames: 75          # 2.5s @ 30 — no cut shorter than this
+switch_hysteresis_frames: 18 # speaker must hold this long before we cut to them
+reaction_shot:
+  enabled: true
+  min_listen_frames: 120     # listener shown after speaker has held 4s+
+  duration_frames: 45
+wide_shot:
+  on_overlap: true           # both talking -> WIDE
+  on_silence_frames: 60      # 2s silence -> WIDE
+  max_single_frames: 600     # 20s on one close-up -> cut to WIDE briefly
+  duration_frames: 60
+cut_on_pause:
+  enabled: true
+  min_pause_ms: 250          # prefer cutting inside pauses, not mid-word
+transition:
+  default: cut
+  push_in_frames: 12         # eased zoom when staying on same speaker
+  push_in_scale: 1.08
+smoothing:
+  speaker_median_filter_frames: 9
+speaker_fusion:
+  weight_mouth: 0.0
+  weight_diarization: 1.0
+  speech_threshold: 0.25
+  overlap_threshold: 0.08
+  confidence_scale: 3.0

@@ -1,0 +1,21 @@
+COMMANDER FRAMING DIRECTIVE — highest priority, ahead of other cleanup.
+
+Watched c1_proof.mp4: Dr. Saba (CAM_B) is framed too high and the top of her head is clipped. This passed QC because framing is averaged globally — Fenton's good framing hid Saba's bad framing. Framing must be evaluated and enforced PER CAMERA / PER SHOT, never averaged across the clip.
+
+Adopt these standard interview/podcast framing rules in presets/framing/magnolia_interview.yaml (all as named preset values, no literals in code):
+- headroom_fraction: target 0.08 of frame height above the top of the head, acceptable band 0.05-0.12. NEVER 0 and NEVER negative (no skull clipping) on any frame.
+- eyeline_fraction: subject's eyes sit at 0.33 of frame height from the top (upper-third rule), acceptable band 0.28-0.40.
+- head_clip_tolerance: 0% of frames may clip the top of the head. Any top-clip is a FAIL, not a WARN.
+- look_room: subject offset toward the edge they face away from; keep existing camera-right/left logic.
+- Shot size: medium close-up — head plus upper chest in frame; do not crop at the neck or chin.
+
+Do this:
+1. Update presets/framing/magnolia_interview.yaml with the above. Paste the file -> framing_preset.txt
+2. Update the crop/framing math so each camera's crop is positioned from ITS OWN face-track head-top and eye-line, satisfying the bands above per shot.
+3. Update reelcore.qc: headroom, eyeline, and top-of-head clipping evaluated PER SHOT using edl boundaries. Any shot outside the bands = FAIL. Report a per-shot table with the measured values -> framing_per_shot.txt
+4. Re-render c1_proof.mp4 and re-run QC. Include c1_proof.qc.json and render_stdout_c1.txt.
+5. Also carry over from prompt_022 if not already done: per-shot framing stability (< 25px), cut-midpoint placement + honest cut_on_pause_v3.txt, and copy speaker_timeline_c1.json / edl_c1.json / face_tracks_c1.json / crops_c1.json into the report dir.
+
+If Saba's face track is too small or too high in the source 4K frame to satisfy headroom without upscaling past preset limits, say so plainly with the measured numbers instead of forcing a pass.
+
+Deliver as report_023 via HANDOFF PROTOCOL (report.md + raw artifacts + DONE last, run the bridge, STOP). c1 only. STOP after report_023.

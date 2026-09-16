@@ -1,0 +1,34 @@
+COMMANDER DIRECTIVE — professional framing + cutting standard. This supersedes prior framing values. All values live in presets, zero literals in code.
+
+PROBLEM OBSERVED: backs of heads are cropped off. The 608px crop out of 3840 is far too tight for profile/three-quarter shots. Widen it.
+
+A) FRAMING STANDARD -> presets/framing/magnolia_interview.yaml
+- eyeline_fraction: 0.33 target, band [0.28, 0.40]  (eyes on upper-third line)
+- headroom_fraction: 0.08 target, band [0.05, 0.12], enforced on the PER-FRAME MINIMUM, not the mean
+- head_clip_tolerance: 0.0 — zero frames may clip the top of the head. FAIL, never WARN.
+- back_of_head_margin: minimum 0.04 of frame width behind the skull. Zero frames may clip the back of the head. FAIL.
+- lead_room_fraction: 0.60-0.67 of frame width in front of the face (the direction they face). Subject offset to the opposite third.
+- shot_size: medium close-up — head plus upper chest.
+- no_joint_cuts: never end the bottom of frame at neck, chin, or elbow.
+- crop_width must be derived from face width so both back_of_head_margin AND lead_room are satisfiable; if 608px cannot satisfy both, widen the crop (and reduce punch-in) until it can. Report the derived width per shot.
+
+B) VERTICAL SAFE ZONES -> presets/delivery/social.yaml
+- safe_top: 0.15, safe_bottom: 0.20 — no face, eyes, or captions inside those margins (platform UI covers them)
+- captions confined to the middle 60% of frame height
+
+C) CUTTING RULES -> presets/edit/magnolia_interview.yaml
+- Stay on the SPEAKER while they are making a point. Do not chase.
+- Cut to the listener ONLY for a genuine reaction, and only during the speaker's pause. Mere agreement/nodding does NOT earn a cut — hold on the speaker.
+- reaction_shot duration: 1.0-3.0s. Never twice in a row on the same reaction.
+- min_shot_duration: 2.0s. Cuts land at the MIDPOINT of a detected pause.
+- Prefer holding a listener shot over a late catch-up cut to the speaker.
+
+D) QC (§1.6): evaluate headroom, eyeline, back-of-head margin, lead room, top-clip, and stability PER SHOT using edl boundaries. Any shot outside a band = FAIL. Report per-shot measured values -> framing_per_shot.txt. A mean inside a band does NOT clear a per-frame gate.
+
+E) DRAFT MODE (new, outline the design only, do not build yet): a preset pass that auto-selects the best clips from a full episode, ranks them, and renders drafts with framing applied — so the Commander can review, adjust framing and color, then trigger a final render. Audio polish is a separate later pass. Write the design to draft_mode_design.md (no code this loop).
+
+Re-render c1_proof.mp4 with A-D applied and re-run QC. Raw artifacts: framing_preset.txt, framing_per_shot.txt, crops_c1.json, edl_c1.json, c1_proof.qc.json, render_stdout_c1.txt, draft_mode_design.md.
+
+If any rule cannot be satisfied from the 4K source, say so with the measured numbers instead of forcing a pass.
+
+Deliver as report_025 via HANDOFF PROTOCOL (report.md + raw artifacts + DONE last, run the bridge, STOP). c1 only. STOP after report_025.

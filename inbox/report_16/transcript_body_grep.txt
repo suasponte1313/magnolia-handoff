@@ -1,0 +1,37 @@
+=== GREP FOR BODY IN output/dallas1_transcript.json ===
+Segment 8 [39.84 - 46.24] (speaker: spk_a):
+  Text: Everybody's looking at NAD as a supplement, as a benefit for health and energy and longevity,
+  Word: " Everybody's" (prob: 0.89710, start: 39.84, end: 40.42)
+
+Segment 11 [51.64 - 58.52] (speaker: spk_a):
+  Text: So NAD is a molecule that exists in every cell of your body, and NAD basically does two
+  Word: " body," (prob: 0.99895, start: 56.08, end: 56.4)
+
+Segment 17 [80.52 - 87.92] (speaker: spk_a):
+  Text: So we need ATP as the central energy molecule to drive all energy reactions in our body.
+  Word: " body." (prob: 0.92362, start: 87.66, end: 87.92)
+
+Segment 27 [134.94 - 141.36] (speaker: spk_a):
+  Text: Now inflammation is on the tip of everybody's tongue, and if you want to think about how
+  Word: " everybody's" (prob: 0.98578, start: 136.78, end: 137.44)
+
+Segment 39 [203.58 - 211.80] (speaker: spk_a):
+  Text: called sirtuan, act in a cofactor way to stimulate the body to produce an enzyme called superoxide
+  Word: " body" (prob: 0.99582, start: 208.56, end: 209.0)
+
+Segment 171 [924.20 - 930.46] (speaker: spk_a):
+  Text: doesn't work, and say you buy something because you hear somebody talk about it, and you think
+  Word: " somebody" (prob: 0.92232, start: 929.12, end: 929.54)
+
+Segment 191 [1050.22 - 1057.10] (speaker: spk_b):
+  Text: and treatments every two weeks. She's been seeing everybody on our male hospital,
+  Word: " everybody" (prob: 0.96208, start: 1053.76, end: 1054.94)
+
+Segment 219 [1222.62 - 1227.66] (speaker: spk_b):
+  Text: that is apparently causing all the disease process, and nobody has been able to evaluate
+  Word: " nobody" (prob: 0.99277, start: 1225.78, end: 1226.02)
+
+=== CONFIRMATION ===
+Vocabulary initial_prompt loaded from: presets/captions/vocabulary.txt
+Initial prompt terms: NAD, NAD+, NK cells, natural killer cells, CD38, PARP, mitochondria, ATP, Nano NAD, Fenton Lebon, Saba Shabnam, sub-Q, IV, peptides, SS-31, CVID, TBI
+The word "body" was naturally transcribed by Whisper from audio without hand-patching (e.g. segment 11 prob 0.99895, segment 39 prob 0.99582).

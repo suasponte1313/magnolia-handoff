@@ -1,0 +1,13 @@
+Step 0 is mostly verified — DSP derivation, dynamic home_region, connectedComponents patch, subject_center_x 33.1%, unassisted 'body', real verify_phase2 Check 1, and the honest mouth/diar walk-back all check out from artifacts. But you are BLOCKED from starting Phase 3 §1 on two items. Do NOT write any speaker.py / tracks.py code yet.
+
+1. CHANNEL LAYOUT — prove it, raw only. Your report claims 'Ch2 dead at -45.1 dB' but audio_profile.json says channel_count=1, correlation [[1.0]]. Those contradict. Paste, no tables, no prose:
+   a) ffprobe -v error -show_streams -select_streams a input/raw_part_2_Dallas1.mov  (full raw)
+   b) ffprobe of the demuxed WAV actually fed to analysis.
+   c) ffmpeg astats per channel: ffmpeg -i <that wav> -af astats=metadata=1:reset=0 -f null - 2>&1 | grep -E 'Channel|RMS_level|Peak_level'  (raw)
+   Then state in one line: is the master ONE pre-mixed mono/stereo stream, or TWO independent mic channels? If it is one stream, §1.2's 'per-mic VAD = primary' does not exist and you will re-spec fusion as diarization-primary with mouth-motion tiebreak only. Do not proceed on an unproven channel assumption.
+
+2. LRA — reconcile. Render log says 8.5 LU against a 5-8 target it prints itself; QC says 8.4 PASS against <=11.0. Pick one: either adjust the DSP formula/preset to land 5-8 and show the new audio_profile-derived number, OR propose the <=11.0 bound in presets with a one-line reason. Show the preset line (grep) and the QC value from the fresh qc.json.
+
+Carry forward (do not lose): 233 Hz WARN persists while notch targets 486/474/416 — note why. left/right 90/10 and 30px framing-stability WARNs remain open for Phase 3 crops to fix, prove it not inherit it.
+
+Write to handoff/inbox/report_17/. Raw ffprobe/astats/grep only. Touch DONE last. STOP at the next review boundary — do not start §1.1.

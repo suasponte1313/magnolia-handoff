@@ -1,0 +1,56 @@
+/Users/derekgagliano/Projects/podcast-editor/venv/lib/python3.11/site-packages/torch/jit/_serialization.py:176: FutureWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+================================================================================
+🎬 RENDERING PHASE 3 §1.3 MULTI-CAM PROOF: c1 (945.0s - 985.0s)
+  • Delivery Preset : social (1080x1920 @ 30.0fps)
+  • Framing Preset  : magnolia_interview
+  • Audio Target    : -14.0 LUFS | TP <= -1.0 dBTP
+  • Edit Preset     : magnolia_interview (min_shot: 75f, hyst: 18f)
+================================================================================
+
+--- STEP 1: GENERATING SHOT LIST (BUILD_EDIT) ---
+✓ Generated 4 multi-cam shots:
+    Shot 1: frames [   0 -  137] ( 4.57s) | CAM_A  (spk_a) | trans=cut | reason=intro
+    Shot 2: frames [ 137 -  212] ( 2.50s) | CAM_B  (spk_b) | trans=cut | reason=reaction
+    Shot 3: frames [ 212 -  662] (15.00s) | CAM_A  (spk_a) | trans=cut | reason=speaker_change
+    Shot 4: frames [ 662 - 1200] (17.93s) | CAM_B  (spk_b) | trans=cut | reason=speaker_change
+✓ Saved EDL: output/PHASE_3_CONVERSATIONAL/edl_c1.json
+✓ Saved Metrics: output/PHASE_3_CONVERSATIONAL/shots_metrics_c1.txt
+
+--- STEP 2: AUDIO PROCESSING & CALIBRATION ---
+✓ DSP Chain Complete:
+    - Speech/Room SNR: 7.2 dB (Target: >= 15 dB)
+    - LRA            : 7.3 LU (Target: <= 11.0 LU)
+    - LUFS           : -14.3 LUFS (Target: -14.0 +/- 1 LUFS)
+    - True Peak      : -1.2 dBTP (Target: <= -1.0 dBTP)
+
+--- STEP 3: BUILDING QUANTIZED CROPS (§1.4 BUILD_CROPS) ---
+✓ Generated quantized crops: hold_fraction=98.0%
+🎬 Rendering 1200 frames across 4 camera shots to output/PHASE_3_CONVERSATIONAL/c1_proof.mp4...
+✓ Multi-Cam Master Render Complete: output/PHASE_3_CONVERSATIONAL/c1_proof.mp4
+
+--- STEP 4: EXECUTING QC GATE VERIFICATION ---
+QC REPORT  output/PHASE_3_CONVERSATIONAL/c1_proof.mp4
+==============================================================================
+  PASS  resolution             1080x1920
+  PASS  encoder                lavc62.28.101 libx264
+  PASS  color metadata         tagged
+  PASS  loudness (LUFS)        -14.3 LUFS
+  PASS  true peak              -1.3 dBTP
+  PASS  loudness range         7.3 LU
+  WARN  speech vs room tone    7.2 dB
+                               expected: >= 15.0 dB
+                               -> Room tone is audible under the voice. Denoise before levelling.
+  PASS  room resonance         575 Hz +7.2 dB
+  PASS  head clipping (left)   0% of frames
+  PASS  head clipping (right)  0% of frames
+  PASS  subject centre X       50.9% of width
+  PASS  left/right balance     42% left / 58% right
+  PASS  headroom               14.5% of height above head
+  WARN  framing stability      179px std
+                               expected: < 25px
+                               -> The crop is moving. Quantize the path into holds and eased moves.
+==============================================================================
+PASSED (14 checks, 0 failed, 2 warnings)
+
+✓ QC JSON saved to: output/PHASE_3_CONVERSATIONAL/c1_proof.qc.json

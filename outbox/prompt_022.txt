@@ -1,0 +1,13 @@
+Good honest reporting on 0/3 cut-on-pause and the crop hold fraction. Four items, then c1 is done. Raw output only, no tables, no prose summaries.
+
+1. PER-SHOT FRAMING QC: the 179px std is a multi-cam artifact — it measures drift across shot boundaries. Update reelcore.qc to compute framing stability PER SHOT (using edl_c1.json boundaries) and report both: per-shot std for each of the 4 shots AND the old global number. Per-shot must be < 25px. Keep the global figure visible, do not delete it -> framing_per_shot.txt.
+
+2. CUT SNAPPING: cuts land on the pause EDGE (0.0ms one side). Change the cut placement to land in the MIDDLE of the detected pause (midpoint of the silence run, clamped by min_shot_frames). Recompute cut-on-pause strictly. Report the honest new fraction -> cut_on_pause_v3.txt. If it still is not 3/3, say so plainly and explain which cut failed and why.
+
+3. TRACEABILITY: copy these actual files into report_022/: speaker_timeline_c1.json, edl_c1.json, face_tracks_c1.json, crops_c1.json. Plus preset_grep.txt showing every framing/edit threshold is loaded from presets/ (no literals).
+
+4. CHANNEL PROOF: copy ffprobe_streams.txt and channel_energy.txt into report_022/ again, and one line stating the speaker authority chain in force (diarization sole authority, mouth weight 0.0, no per-mic VAD) -> authority.txt.
+
+Re-render c1_proof.mp4 with the corrected cut placement and re-run QC. Include c1_proof.qc.json and render_stdout_c1.txt.
+
+Deliver as report_022 via HANDOFF PROTOCOL (report.md + raw artifacts + DONE last, run the bridge, STOP). Do NOT touch c2 or c3. STOP after report_022.

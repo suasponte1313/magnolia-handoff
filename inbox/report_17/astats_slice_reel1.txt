@@ -1,0 +1,8 @@
+size=N/A time=00:00:29.32 bitrate=N/A speed=19.4x elapsed=0:00:01.51    [Parsed_astats_0 @ 0xb4a838900] Channel: 1
+[Parsed_astats_0 @ 0xb4a838900] Peak level dB: -6.379175
+[Parsed_astats_0 @ 0xb4a838900] RMS level dB: -35.245503
+[Parsed_astats_0 @ 0xb4a838900] Channel: 2
+[Parsed_astats_0 @ 0xb4a838900] Peak level dB: -9.853252
+[Parsed_astats_0 @ 0xb4a838900] RMS level dB: -33.347352
+[Parsed_astats_0 @ 0xb4a838900] Peak level dB: -6.379175
+[Parsed_astats_0 @ 0xb4a838900] RMS level dB: -34.193541

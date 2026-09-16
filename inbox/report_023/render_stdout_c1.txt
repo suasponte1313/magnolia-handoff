@@ -1,0 +1,73 @@
+/Users/derekgagliano/Projects/podcast-editor/venv/lib/python3.11/site-packages/torch/jit/_serialization.py:176: FutureWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+================================================================================
+🎬 RENDERING PHASE 3 §1.3 MULTI-CAM PROOF: c1 (945.0s - 985.0s)
+  • Delivery Preset : social (1080x1920 @ 30.0fps)
+  • Framing Preset  : magnolia_interview
+  • Audio Target    : -14.0 LUFS | TP <= -1.0 dBTP
+  • Edit Preset     : magnolia_interview (min_shot: 75f, hyst: 18f)
+================================================================================
+
+--- STEP 1: GENERATING SHOT LIST (BUILD_EDIT) ---
+✓ Generated 4 multi-cam shots:
+    Shot 1: frames [   0 -  146] ( 4.87s) | CAM_A  (spk_a) | trans=cut | reason=intro
+    Shot 2: frames [ 146 -  221] ( 2.50s) | CAM_B  (spk_b) | trans=cut | reason=reaction
+    Shot 3: frames [ 221 -  658] (14.57s) | CAM_A  (spk_a) | trans=cut | reason=speaker_change
+    Shot 4: frames [ 658 - 1200] (18.07s) | CAM_B  (spk_b) | trans=cut | reason=speaker_change
+✓ Saved EDL: output/PHASE_3_CONVERSATIONAL/edl_c1.json
+✓ Saved Metrics: output/PHASE_3_CONVERSATIONAL/shots_metrics_c1.txt
+
+--- STEP 2: AUDIO PROCESSING & CALIBRATION ---
+✓ DSP Chain Complete:
+    - Speech/Room SNR: 7.2 dB (Target: >= 15 dB)
+    - LRA            : 7.3 LU (Target: <= 11.0 LU)
+    - LUFS           : -14.3 LUFS (Target: -14.0 +/- 1 LUFS)
+    - True Peak      : -1.2 dBTP (Target: <= -1.0 dBTP)
+
+--- STEP 3: BUILDING QUANTIZED CROPS (§1.4 BUILD_CROPS) ---
+✓ Generated quantized crops: hold_fraction=98.0%
+🎬 Rendering 1200 frames across 4 camera shots to output/PHASE_3_CONVERSATIONAL/c1_proof.mp4...
+✓ Multi-Cam Master Render Complete: output/PHASE_3_CONVERSATIONAL/c1_proof.mp4
+
+--- STEP 4: EXECUTING QC GATE VERIFICATION ---
+QC REPORT  output/PHASE_3_CONVERSATIONAL/c1_proof.mp4
+==============================================================================
+  PASS  resolution                    1080x1920
+  PASS  encoder                       lavc62.28.101 libx264
+  PASS  color metadata                tagged
+  PASS  loudness (LUFS)               -14.3 LUFS
+  PASS  true peak                     -1.3 dBTP
+  PASS  loudness range                7.3 LU
+  WARN  speech vs room tone           7.2 dB
+                                      expected: >= 15.0 dB
+                                      -> Room tone is audible under the voice. Denoise before levelling.
+  PASS  room resonance                575 Hz +7.2 dB
+  PASS  head clipping (left)          0% of frames
+  PASS  head clipping (right)         0% of frames
+  PASS  subject centre X              51.3% of width
+  PASS  left/right balance            41% left / 59% right
+  PASS  headroom (Shot 1 CAM_A)       8.6% (min 4.4%)
+  PASS  eyeline (Shot 1 CAM_A)        37.2%
+  PASS  head clipping (Shot 1 CAM_A)  0%
+  PASS  headroom (Shot 2 CAM_B)       9.5% (min 5.3%)
+  PASS  eyeline (Shot 2 CAM_B)        35.9%
+  PASS  head clipping (Shot 2 CAM_B)  0%
+  PASS  headroom (Shot 3 CAM_A)       7.6% (min 3.5%)
+  PASS  eyeline (Shot 3 CAM_A)        38.3%
+  PASS  head clipping (Shot 3 CAM_A)  0%
+  PASS  headroom (Shot 4 CAM_B)       10.5% (min 2.9%)
+  PASS  eyeline (Shot 4 CAM_B)        33.8%
+  PASS  head clipping (Shot 4 CAM_B)  0%
+  PASS  headroom (per-shot)           2.9%-10.5%
+  PASS  eyeline (per-shot)            33.8%-38.3%
+  PASS  head clipping (per-shot)      0%
+  WARN  framing stability (per-shot)  max 38px std
+                                      expected: < 25px
+                                      -> Per-shot drift exceeds 25px threshold (max: 37.8px).
+  WARN  framing stability (global)    178px std
+                                      expected: reference metric
+                                      -> Multi-camera cut distribution metric across different camera angles / look-rooms.
+==============================================================================
+PASSED (29 checks, 0 failed, 3 warnings)
+
+✓ QC JSON saved to: output/PHASE_3_CONVERSATIONAL/c1_proof.qc.json

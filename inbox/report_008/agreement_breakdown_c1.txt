@@ -1,0 +1,1202 @@
+# Per-frame agreement breakdown for reel_c1: mouth optical motion choice vs diarization label
+# frame	vad_speech	mouth_label	diar_label	agree
+   0	True 	spk_a  	spk_a  	True 
+   1	True 	spk_b  	spk_a  	False
+   2	True 	spk_a  	spk_a  	True 
+   3	True 	spk_a  	spk_a  	True 
+   4	True 	spk_a  	spk_a  	True 
+   5	True 	spk_a  	spk_a  	True 
+   6	True 	spk_a  	spk_a  	True 
+   7	True 	spk_a  	spk_a  	True 
+   8	True 	spk_a  	spk_a  	True 
+   9	True 	spk_b  	spk_a  	False
+  10	True 	spk_b  	spk_a  	False
+  11	True 	spk_b  	spk_a  	False
+  12	True 	spk_b  	spk_a  	False
+  13	True 	spk_b  	spk_a  	False
+  14	True 	spk_b  	spk_a  	False
+  15	True 	spk_b  	spk_a  	False
+  16	True 	spk_a  	spk_a  	True 
+  17	True 	spk_b  	spk_a  	False
+  18	True 	spk_b  	spk_a  	False
+  19	True 	spk_b  	spk_a  	False
+  20	True 	spk_b  	spk_a  	False
+  21	True 	spk_b  	spk_a  	False
+  22	True 	spk_b  	spk_a  	False
+  23	True 	spk_a  	spk_a  	True 
+  24	True 	spk_b  	spk_a  	False
+  25	True 	spk_b  	spk_a  	False
+  26	True 	spk_b  	spk_a  	False
+  27	True 	spk_b  	spk_a  	False
+  28	True 	spk_b  	spk_a  	False
+  29	True 	spk_b  	spk_a  	False
+  30	True 	spk_b  	spk_a  	False
+  31	True 	spk_b  	spk_a  	False
+  32	True 	spk_a  	spk_a  	True 
+  33	True 	spk_b  	spk_a  	False
+  34	True 	spk_b  	spk_a  	False
+  35	True 	spk_b  	spk_a  	False
+  36	True 	spk_a  	spk_a  	True 
+  37	True 	spk_b  	spk_a  	False
+  38	True 	spk_b  	spk_a  	False
+  39	True 	spk_a  	spk_a  	True 
+  40	True 	spk_b  	spk_a  	False
+  41	True 	spk_a  	spk_a  	True 
+  42	True 	spk_a  	spk_a  	True 
+  43	True 	spk_a  	spk_a  	True 
+  44	True 	spk_b  	spk_a  	False
+  45	True 	spk_b  	spk_a  	False
+  46	True 	spk_b  	spk_a  	False
+  47	True 	spk_b  	spk_a  	False
+  48	True 	spk_b  	spk_a  	False
+  49	True 	spk_a  	spk_a  	True 
+  50	True 	spk_b  	spk_a  	False
+  51	True 	spk_b  	spk_a  	False
+  52	True 	spk_b  	spk_a  	False
+  53	True 	spk_a  	spk_a  	True 
+  54	True 	spk_b  	spk_a  	False
+  55	True 	spk_b  	spk_a  	False
+  56	True 	spk_b  	spk_a  	False
+  57	True 	spk_b  	spk_a  	False
+  58	True 	spk_a  	spk_a  	True 
+  59	True 	spk_b  	spk_a  	False
+  60	True 	spk_a  	spk_a  	True 
+  61	True 	spk_b  	spk_a  	False
+  62	True 	spk_b  	spk_a  	False
+  63	True 	spk_b  	spk_a  	False
+  64	True 	spk_b  	spk_a  	False
+  65	True 	spk_b  	spk_a  	False
+  66	True 	spk_b  	spk_a  	False
+  67	True 	spk_a  	spk_a  	True 
+  68	True 	spk_b  	spk_a  	False
+  69	False	spk_b  	spk_a  	False
+  70	False	spk_a  	spk_a  	False
+  71	False	spk_b  	spk_a  	False
+  72	False	spk_b  	spk_a  	False
+  73	False	spk_b  	spk_a  	False
+  74	False	spk_b  	spk_a  	False
+  75	False	spk_b  	spk_a  	False
+  76	False	spk_b  	spk_a  	False
+  77	False	spk_b  	spk_a  	False
+  78	True 	spk_b  	spk_a  	False
+  79	True 	spk_b  	spk_a  	False
+  80	True 	spk_a  	spk_a  	True 
+  81	True 	spk_b  	spk_a  	False
+  82	True 	spk_b  	spk_a  	False
+  83	True 	spk_b  	spk_a  	False
+  84	True 	spk_b  	spk_a  	False
+  85	True 	spk_b  	spk_a  	False
+  86	True 	spk_b  	spk_a  	False
+  87	True 	spk_b  	spk_a  	False
+  88	True 	spk_a  	spk_a  	True 
+  89	True 	spk_b  	spk_a  	False
+  90	True 	spk_a  	spk_a  	True 
+  91	True 	spk_a  	spk_a  	True 
+  92	True 	spk_a  	spk_a  	True 
+  93	True 	spk_b  	spk_a  	False
+  94	True 	spk_b  	spk_a  	False
+  95	True 	spk_a  	spk_a  	True 
+  96	True 	spk_b  	spk_a  	False
+  97	True 	spk_a  	spk_a  	True 
+  98	True 	spk_b  	spk_a  	False
+  99	True 	spk_b  	spk_a  	False
+ 100	True 	spk_b  	spk_a  	False
+ 101	True 	spk_a  	spk_a  	True 
+ 102	True 	spk_a  	spk_a  	True 
+ 103	True 	spk_a  	spk_a  	True 
+ 104	True 	spk_b  	spk_a  	False
+ 105	True 	spk_b  	spk_a  	False
+ 106	True 	spk_b  	spk_a  	False
+ 107	True 	spk_b  	spk_a  	False
+ 108	False	spk_b  	spk_a  	False
+ 109	False	spk_b  	spk_a  	False
+ 110	False	spk_b  	spk_a  	False
+ 111	False	spk_a  	spk_a  	False
+ 112	False	spk_a  	spk_a  	False
+ 113	False	spk_a  	spk_a  	False
+ 114	False	spk_b  	spk_a  	False
+ 115	False	spk_b  	spk_a  	False
+ 116	False	spk_b  	spk_a  	False
+ 117	False	spk_b  	spk_a  	False
+ 118	False	spk_a  	spk_a  	False
+ 119	False	spk_a  	spk_a  	False
+ 120	True 	spk_a  	spk_a  	True 
+ 121	True 	spk_b  	spk_a  	False
+ 122	True 	spk_b  	spk_a  	False
+ 123	True 	spk_a  	spk_a  	True 
+ 124	True 	spk_a  	spk_a  	True 
+ 125	True 	spk_a  	spk_a  	True 
+ 126	True 	spk_b  	spk_a  	False
+ 127	True 	spk_b  	spk_a  	False
+ 128	True 	spk_b  	spk_a  	False
+ 129	True 	spk_b  	spk_a  	False
+ 130	True 	spk_b  	spk_a  	False
+ 131	True 	spk_b  	spk_a  	False
+ 132	True 	spk_b  	spk_a  	False
+ 133	True 	spk_b  	spk_a  	False
+ 134	True 	spk_b  	spk_a  	False
+ 135	True 	spk_b  	spk_a  	False
+ 136	True 	spk_b  	spk_a  	False
+ 137	True 	spk_b  	spk_a  	False
+ 138	True 	spk_b  	spk_a  	False
+ 139	True 	spk_b  	spk_a  	False
+ 140	True 	spk_b  	spk_a  	False
+ 141	True 	spk_a  	spk_a  	True 
+ 142	True 	spk_a  	spk_a  	True 
+ 143	True 	spk_b  	spk_a  	False
+ 144	True 	spk_b  	spk_a  	False
+ 145	True 	spk_b  	spk_a  	False
+ 146	True 	spk_b  	spk_a  	False
+ 147	True 	spk_a  	spk_a  	True 
+ 148	True 	spk_b  	spk_a  	False
+ 149	True 	spk_a  	spk_a  	True 
+ 150	True 	spk_a  	spk_a  	True 
+ 151	True 	spk_b  	spk_a  	False
+ 152	True 	spk_a  	spk_a  	True 
+ 153	True 	spk_a  	spk_a  	True 
+ 154	True 	spk_b  	spk_a  	False
+ 155	True 	spk_a  	spk_a  	True 
+ 156	True 	spk_a  	spk_a  	True 
+ 157	True 	spk_b  	spk_a  	False
+ 158	True 	spk_a  	spk_a  	True 
+ 159	True 	spk_b  	spk_a  	False
+ 160	True 	spk_b  	spk_a  	False
+ 161	True 	spk_a  	spk_a  	True 
+ 162	True 	spk_a  	spk_a  	True 
+ 163	True 	spk_b  	spk_a  	False
+ 164	True 	spk_b  	spk_a  	False
+ 165	True 	spk_a  	spk_a  	True 
+ 166	True 	spk_b  	spk_a  	False
+ 167	True 	spk_b  	spk_a  	False
+ 168	True 	spk_b  	spk_a  	False
+ 169	True 	spk_b  	spk_a  	False
+ 170	True 	spk_b  	spk_a  	False
+ 171	True 	spk_b  	spk_a  	False
+ 172	True 	spk_b  	spk_a  	False
+ 173	True 	spk_a  	spk_a  	True 
+ 174	True 	spk_b  	spk_a  	False
+ 175	True 	spk_b  	spk_a  	False
+ 176	True 	spk_b  	spk_a  	False
+ 177	True 	spk_b  	spk_a  	False
+ 178	True 	spk_b  	spk_a  	False
+ 179	True 	spk_b  	spk_a  	False
+ 180	True 	spk_b  	spk_a  	False
+ 181	True 	spk_b  	spk_a  	False
+ 182	True 	spk_b  	spk_a  	False
+ 183	True 	spk_b  	spk_a  	False
+ 184	True 	spk_b  	spk_a  	False
+ 185	True 	spk_a  	spk_a  	True 
+ 186	True 	spk_b  	spk_a  	False
+ 187	True 	spk_b  	spk_a  	False
+ 188	True 	spk_b  	spk_a  	False
+ 189	True 	spk_b  	spk_a  	False
+ 190	True 	spk_b  	spk_a  	False
+ 191	True 	spk_a  	spk_a  	True 
+ 192	True 	spk_b  	spk_a  	False
+ 193	True 	spk_b  	spk_a  	False
+ 194	True 	spk_b  	spk_a  	False
+ 195	True 	spk_b  	spk_a  	False
+ 196	True 	spk_a  	spk_a  	True 
+ 197	True 	spk_b  	spk_a  	False
+ 198	True 	spk_b  	spk_a  	False
+ 199	True 	spk_b  	spk_a  	False
+ 200	True 	spk_b  	spk_a  	False
+ 201	True 	spk_b  	spk_a  	False
+ 202	True 	spk_b  	spk_a  	False
+ 203	True 	spk_b  	spk_a  	False
+ 204	True 	spk_b  	spk_a  	False
+ 205	True 	spk_b  	spk_a  	False
+ 206	True 	spk_b  	spk_a  	False
+ 207	True 	spk_b  	spk_a  	False
+ 208	True 	spk_b  	spk_a  	False
+ 209	True 	spk_b  	spk_a  	False
+ 210	False	spk_b  	spk_a  	False
+ 211	False	spk_b  	spk_a  	False
+ 212	False	spk_b  	spk_a  	False
+ 213	False	spk_b  	spk_a  	False
+ 214	False	spk_a  	spk_a  	False
+ 215	False	spk_b  	spk_a  	False
+ 216	False	spk_a  	spk_a  	False
+ 217	False	spk_b  	spk_a  	False
+ 218	False	spk_b  	spk_a  	False
+ 219	True 	spk_b  	spk_a  	False
+ 220	True 	spk_b  	spk_a  	False
+ 221	True 	spk_b  	spk_a  	False
+ 222	True 	spk_b  	spk_a  	False
+ 223	True 	spk_a  	spk_a  	True 
+ 224	True 	spk_b  	spk_a  	False
+ 225	True 	spk_a  	spk_a  	True 
+ 226	True 	spk_b  	spk_a  	False
+ 227	True 	spk_b  	spk_a  	False
+ 228	True 	spk_b  	spk_a  	False
+ 229	True 	spk_b  	spk_a  	False
+ 230	True 	spk_b  	spk_a  	False
+ 231	True 	spk_b  	spk_a  	False
+ 232	True 	spk_b  	spk_a  	False
+ 233	True 	spk_b  	spk_a  	False
+ 234	True 	spk_b  	spk_a  	False
+ 235	True 	spk_b  	spk_a  	False
+ 236	True 	spk_b  	spk_a  	False
+ 237	True 	spk_b  	spk_a  	False
+ 238	True 	spk_b  	spk_a  	False
+ 239	True 	spk_a  	spk_a  	True 
+ 240	True 	spk_a  	spk_a  	True 
+ 241	True 	spk_b  	spk_a  	False
+ 242	True 	spk_b  	spk_a  	False
+ 243	True 	spk_b  	spk_a  	False
+ 244	True 	spk_b  	spk_a  	False
+ 245	True 	spk_b  	spk_a  	False
+ 246	True 	spk_b  	spk_a  	False
+ 247	True 	spk_b  	spk_a  	False
+ 248	True 	spk_a  	spk_a  	True 
+ 249	True 	spk_b  	spk_a  	False
+ 250	True 	spk_b  	spk_a  	False
+ 251	True 	spk_b  	spk_a  	False
+ 252	True 	spk_b  	spk_a  	False
+ 253	True 	spk_b  	spk_a  	False
+ 254	True 	spk_a  	spk_a  	True 
+ 255	True 	spk_b  	spk_a  	False
+ 256	True 	spk_b  	spk_a  	False
+ 257	True 	spk_a  	spk_a  	True 
+ 258	True 	spk_b  	spk_a  	False
+ 259	True 	spk_b  	spk_a  	False
+ 260	True 	spk_b  	spk_a  	False
+ 261	True 	spk_b  	spk_a  	False
+ 262	True 	spk_b  	spk_a  	False
+ 263	True 	spk_b  	spk_a  	False
+ 264	True 	spk_b  	spk_a  	False
+ 265	True 	spk_b  	spk_a  	False
+ 266	True 	spk_b  	spk_a  	False
+ 267	True 	spk_b  	spk_a  	False
+ 268	True 	spk_b  	spk_a  	False
+ 269	True 	spk_b  	spk_a  	False
+ 270	True 	spk_b  	spk_a  	False
+ 271	True 	spk_b  	spk_a  	False
+ 272	True 	spk_b  	spk_a  	False
+ 273	True 	spk_b  	spk_a  	False
+ 274	True 	spk_b  	spk_a  	False
+ 275	True 	spk_b  	spk_a  	False
+ 276	True 	spk_b  	spk_a  	False
+ 277	True 	spk_b  	spk_a  	False
+ 278	True 	spk_b  	spk_a  	False
+ 279	True 	spk_b  	spk_a  	False
+ 280	True 	spk_b  	spk_a  	False
+ 281	True 	spk_b  	spk_a  	False
+ 282	True 	spk_b  	spk_a  	False
+ 283	True 	spk_b  	spk_a  	False
+ 284	True 	spk_a  	spk_a  	True 
+ 285	True 	spk_b  	spk_a  	False
+ 286	True 	spk_b  	spk_a  	False
+ 287	True 	spk_b  	spk_a  	False
+ 288	True 	spk_b  	spk_a  	False
+ 289	True 	spk_b  	spk_a  	False
+ 290	True 	spk_b  	spk_a  	False
+ 291	True 	spk_b  	spk_a  	False
+ 292	True 	spk_b  	spk_a  	False
+ 293	True 	spk_b  	spk_a  	False
+ 294	True 	spk_a  	spk_a  	True 
+ 295	True 	spk_b  	spk_a  	False
+ 296	True 	spk_b  	spk_a  	False
+ 297	True 	spk_b  	spk_a  	False
+ 298	True 	spk_b  	spk_a  	False
+ 299	True 	spk_b  	spk_a  	False
+ 300	True 	spk_a  	spk_a  	True 
+ 301	True 	spk_b  	spk_a  	False
+ 302	True 	spk_b  	spk_a  	False
+ 303	True 	spk_b  	spk_a  	False
+ 304	True 	spk_b  	spk_a  	False
+ 305	True 	spk_b  	spk_a  	False
+ 306	True 	spk_a  	spk_a  	True 
+ 307	True 	spk_b  	spk_a  	False
+ 308	True 	spk_a  	spk_a  	True 
+ 309	True 	spk_b  	spk_a  	False
+ 310	True 	spk_b  	spk_a  	False
+ 311	True 	spk_b  	spk_a  	False
+ 312	True 	spk_a  	spk_a  	True 
+ 313	True 	spk_a  	spk_a  	True 
+ 314	True 	spk_b  	spk_a  	False
+ 315	True 	spk_a  	spk_a  	True 
+ 316	True 	spk_b  	spk_a  	False
+ 317	True 	spk_b  	spk_a  	False
+ 318	True 	spk_b  	spk_a  	False
+ 319	True 	spk_b  	spk_a  	False
+ 320	True 	spk_b  	spk_a  	False
+ 321	True 	spk_b  	spk_a  	False
+ 322	True 	spk_b  	spk_a  	False
+ 323	True 	spk_a  	spk_a  	True 
+ 324	True 	spk_b  	spk_a  	False
+ 325	True 	spk_a  	spk_a  	True 
+ 326	True 	spk_b  	spk_a  	False
+ 327	True 	spk_b  	spk_a  	False
+ 328	True 	spk_b  	spk_a  	False
+ 329	True 	spk_b  	spk_a  	False
+ 330	True 	spk_a  	spk_a  	True 
+ 331	True 	spk_b  	spk_a  	False
+ 332	True 	spk_a  	spk_a  	True 
+ 333	True 	spk_b  	spk_a  	False
+ 334	True 	spk_b  	spk_a  	False
+ 335	True 	spk_b  	spk_a  	False
+ 336	True 	spk_b  	spk_a  	False
+ 337	True 	spk_b  	spk_a  	False
+ 338	True 	spk_b  	spk_a  	False
+ 339	True 	spk_a  	spk_a  	True 
+ 340	True 	spk_b  	spk_a  	False
+ 341	True 	spk_b  	spk_a  	False
+ 342	True 	spk_b  	spk_a  	False
+ 343	True 	spk_b  	spk_a  	False
+ 344	True 	spk_b  	spk_a  	False
+ 345	True 	spk_b  	spk_a  	False
+ 346	True 	spk_a  	spk_a  	True 
+ 347	True 	spk_b  	spk_a  	False
+ 348	True 	spk_b  	spk_a  	False
+ 349	True 	spk_b  	spk_a  	False
+ 350	True 	spk_b  	spk_a  	False
+ 351	True 	spk_b  	spk_a  	False
+ 352	True 	spk_a  	spk_a  	True 
+ 353	True 	spk_a  	spk_a  	True 
+ 354	True 	spk_b  	spk_a  	False
+ 355	True 	spk_b  	spk_a  	False
+ 356	True 	spk_b  	spk_a  	False
+ 357	True 	spk_b  	spk_a  	False
+ 358	True 	spk_b  	spk_a  	False
+ 359	True 	spk_b  	spk_a  	False
+ 360	False	spk_b  	spk_a  	False
+ 361	False	spk_b  	spk_a  	False
+ 362	False	spk_b  	spk_a  	False
+ 363	False	spk_b  	spk_a  	False
+ 364	False	spk_a  	spk_a  	False
+ 365	False	spk_a  	spk_a  	False
+ 366	False	spk_b  	spk_a  	False
+ 367	False	spk_b  	spk_a  	False
+ 368	False	spk_b  	spk_a  	False
+ 369	False	spk_a  	spk_a  	False
+ 370	False	spk_a  	spk_a  	False
+ 371	False	spk_b  	spk_a  	False
+ 372	False	spk_b  	spk_a  	False
+ 373	False	spk_b  	spk_a  	False
+ 374	False	spk_b  	spk_a  	False
+ 375	True 	spk_b  	spk_a  	False
+ 376	True 	spk_b  	spk_a  	False
+ 377	True 	spk_b  	spk_a  	False
+ 378	True 	spk_b  	spk_a  	False
+ 379	True 	spk_b  	spk_a  	False
+ 380	True 	spk_b  	spk_a  	False
+ 381	True 	spk_a  	spk_a  	True 
+ 382	True 	spk_b  	spk_a  	False
+ 383	True 	spk_a  	spk_a  	True 
+ 384	True 	spk_b  	spk_a  	False
+ 385	True 	spk_b  	spk_a  	False
+ 386	True 	spk_b  	spk_a  	False
+ 387	True 	spk_b  	spk_a  	False
+ 388	True 	spk_b  	spk_a  	False
+ 389	True 	spk_b  	spk_a  	False
+ 390	True 	spk_a  	spk_a  	True 
+ 391	True 	spk_b  	spk_a  	False
+ 392	True 	spk_b  	spk_a  	False
+ 393	True 	spk_b  	spk_a  	False
+ 394	True 	spk_b  	spk_a  	False
+ 395	True 	spk_b  	spk_a  	False
+ 396	True 	spk_b  	spk_a  	False
+ 397	True 	spk_b  	spk_a  	False
+ 398	True 	spk_b  	spk_a  	False
+ 399	True 	spk_b  	spk_a  	False
+ 400	True 	spk_b  	spk_a  	False
+ 401	True 	spk_b  	spk_a  	False
+ 402	True 	spk_b  	spk_a  	False
+ 403	True 	spk_b  	spk_a  	False
+ 404	True 	spk_b  	spk_a  	False
+ 405	True 	spk_a  	spk_a  	True 
+ 406	True 	spk_b  	spk_a  	False
+ 407	True 	spk_b  	spk_a  	False
+ 408	True 	spk_b  	spk_a  	False
+ 409	True 	spk_b  	spk_a  	False
+ 410	True 	spk_a  	spk_a  	True 
+ 411	True 	spk_a  	spk_a  	True 
+ 412	True 	spk_b  	spk_a  	False
+ 413	True 	spk_b  	spk_a  	False
+ 414	True 	spk_b  	spk_a  	False
+ 415	True 	spk_b  	spk_a  	False
+ 416	True 	spk_b  	spk_a  	False
+ 417	True 	spk_b  	spk_a  	False
+ 418	True 	spk_b  	spk_a  	False
+ 419	True 	spk_b  	spk_a  	False
+ 420	False	spk_b  	spk_a  	False
+ 421	False	spk_b  	spk_a  	False
+ 422	False	spk_b  	spk_a  	False
+ 423	True 	spk_b  	spk_a  	False
+ 424	True 	spk_b  	spk_a  	False
+ 425	True 	spk_a  	spk_a  	True 
+ 426	True 	spk_b  	spk_a  	False
+ 427	True 	spk_a  	spk_a  	True 
+ 428	True 	spk_b  	spk_a  	False
+ 429	True 	spk_a  	spk_a  	True 
+ 430	True 	spk_b  	spk_a  	False
+ 431	True 	spk_a  	spk_a  	True 
+ 432	True 	spk_a  	spk_a  	True 
+ 433	True 	spk_a  	spk_a  	True 
+ 434	True 	spk_b  	spk_a  	False
+ 435	True 	spk_b  	spk_a  	False
+ 436	True 	spk_a  	spk_a  	True 
+ 437	True 	spk_a  	spk_a  	True 
+ 438	True 	spk_b  	spk_a  	False
+ 439	True 	spk_b  	spk_a  	False
+ 440	True 	spk_a  	spk_a  	True 
+ 441	True 	spk_b  	spk_a  	False
+ 442	True 	spk_a  	spk_a  	True 
+ 443	True 	spk_b  	spk_a  	False
+ 444	True 	spk_b  	spk_a  	False
+ 445	True 	spk_a  	spk_a  	True 
+ 446	True 	spk_b  	spk_a  	False
+ 447	True 	spk_b  	spk_a  	False
+ 448	True 	spk_b  	spk_a  	False
+ 449	True 	spk_b  	spk_a  	False
+ 450	True 	spk_b  	spk_a  	False
+ 451	True 	spk_b  	spk_a  	False
+ 452	True 	spk_b  	spk_a  	False
+ 453	True 	spk_b  	spk_a  	False
+ 454	True 	spk_b  	spk_a  	False
+ 455	True 	spk_b  	spk_a  	False
+ 456	True 	spk_a  	spk_a  	True 
+ 457	True 	spk_b  	spk_a  	False
+ 458	True 	spk_a  	spk_a  	True 
+ 459	True 	spk_a  	spk_a  	True 
+ 460	True 	spk_a  	spk_a  	True 
+ 461	True 	spk_a  	spk_a  	True 
+ 462	True 	spk_b  	spk_a  	False
+ 463	True 	spk_b  	spk_a  	False
+ 464	True 	spk_b  	spk_a  	False
+ 465	True 	spk_b  	spk_a  	False
+ 466	True 	spk_b  	spk_a  	False
+ 467	True 	spk_b  	spk_a  	False
+ 468	True 	spk_b  	spk_a  	False
+ 469	True 	spk_b  	spk_a  	False
+ 470	True 	spk_b  	spk_a  	False
+ 471	True 	spk_b  	spk_a  	False
+ 472	True 	spk_b  	spk_a  	False
+ 473	True 	spk_b  	spk_a  	False
+ 474	True 	spk_b  	spk_a  	False
+ 475	True 	spk_a  	spk_a  	True 
+ 476	True 	spk_a  	spk_a  	True 
+ 477	True 	spk_b  	spk_a  	False
+ 478	True 	spk_b  	spk_a  	False
+ 479	True 	spk_b  	spk_a  	False
+ 480	True 	spk_b  	spk_a  	False
+ 481	True 	spk_b  	spk_a  	False
+ 482	True 	spk_b  	spk_a  	False
+ 483	True 	spk_b  	spk_a  	False
+ 484	True 	spk_b  	spk_a  	False
+ 485	True 	spk_b  	spk_a  	False
+ 486	True 	spk_b  	spk_a  	False
+ 487	True 	spk_b  	spk_a  	False
+ 488	True 	spk_a  	spk_a  	True 
+ 489	True 	spk_b  	spk_a  	False
+ 490	True 	spk_b  	spk_a  	False
+ 491	True 	spk_b  	spk_a  	False
+ 492	True 	spk_b  	spk_a  	False
+ 493	True 	spk_b  	spk_a  	False
+ 494	True 	spk_b  	spk_a  	False
+ 495	True 	spk_a  	spk_a  	True 
+ 496	True 	spk_b  	spk_a  	False
+ 497	True 	spk_b  	spk_a  	False
+ 498	True 	spk_b  	spk_a  	False
+ 499	True 	spk_b  	spk_a  	False
+ 500	True 	spk_b  	spk_a  	False
+ 501	True 	spk_a  	spk_a  	True 
+ 502	True 	spk_b  	spk_a  	False
+ 503	True 	spk_b  	spk_a  	False
+ 504	True 	spk_b  	spk_a  	False
+ 505	True 	spk_b  	spk_a  	False
+ 506	True 	spk_a  	spk_a  	True 
+ 507	True 	spk_b  	spk_a  	False
+ 508	True 	spk_b  	spk_a  	False
+ 509	True 	spk_a  	spk_a  	True 
+ 510	True 	spk_b  	spk_a  	False
+ 511	True 	spk_b  	spk_a  	False
+ 512	True 	spk_a  	spk_a  	True 
+ 513	True 	spk_b  	spk_a  	False
+ 514	True 	spk_b  	spk_a  	False
+ 515	True 	spk_b  	spk_a  	False
+ 516	True 	spk_b  	spk_a  	False
+ 517	True 	spk_b  	spk_a  	False
+ 518	True 	spk_b  	spk_a  	False
+ 519	True 	spk_b  	spk_a  	False
+ 520	True 	spk_b  	spk_a  	False
+ 521	True 	spk_b  	spk_a  	False
+ 522	True 	spk_b  	spk_a  	False
+ 523	True 	spk_b  	spk_a  	False
+ 524	True 	spk_b  	spk_a  	False
+ 525	True 	spk_b  	spk_a  	False
+ 526	True 	spk_b  	spk_a  	False
+ 527	True 	spk_b  	spk_a  	False
+ 528	True 	spk_b  	spk_a  	False
+ 529	True 	spk_b  	spk_a  	False
+ 530	True 	spk_b  	spk_a  	False
+ 531	True 	spk_b  	spk_a  	False
+ 532	True 	spk_b  	spk_a  	False
+ 533	True 	spk_b  	spk_a  	False
+ 534	True 	spk_b  	spk_a  	False
+ 535	True 	spk_b  	spk_a  	False
+ 536	True 	spk_b  	spk_a  	False
+ 537	True 	spk_b  	spk_a  	False
+ 538	True 	spk_b  	spk_a  	False
+ 539	True 	spk_b  	spk_a  	False
+ 540	True 	spk_b  	spk_a  	False
+ 541	True 	spk_b  	spk_a  	False
+ 542	True 	spk_b  	spk_a  	False
+ 543	True 	spk_b  	spk_a  	False
+ 544	True 	spk_b  	spk_a  	False
+ 545	True 	spk_b  	spk_a  	False
+ 546	True 	spk_b  	spk_a  	False
+ 547	True 	spk_b  	spk_a  	False
+ 548	True 	spk_b  	spk_a  	False
+ 549	True 	spk_b  	spk_a  	False
+ 550	True 	spk_b  	spk_a  	False
+ 551	True 	spk_a  	spk_a  	True 
+ 552	True 	spk_a  	spk_a  	True 
+ 553	True 	spk_b  	spk_a  	False
+ 554	True 	spk_a  	spk_a  	True 
+ 555	True 	spk_a  	spk_a  	True 
+ 556	True 	spk_b  	spk_a  	False
+ 557	True 	spk_b  	spk_a  	False
+ 558	True 	spk_b  	spk_a  	False
+ 559	True 	spk_b  	spk_a  	False
+ 560	True 	spk_b  	spk_a  	False
+ 561	True 	spk_b  	spk_a  	False
+ 562	True 	spk_b  	spk_a  	False
+ 563	True 	spk_b  	spk_a  	False
+ 564	False	spk_b  	spk_a  	False
+ 565	False	spk_b  	spk_a  	False
+ 566	False	spk_b  	spk_a  	False
+ 567	False	spk_b  	spk_a  	False
+ 568	False	spk_b  	spk_a  	False
+ 569	False	spk_b  	spk_a  	False
+ 570	False	spk_b  	spk_a  	False
+ 571	False	spk_b  	spk_a  	False
+ 572	False	spk_b  	spk_a  	False
+ 573	False	spk_b  	spk_a  	False
+ 574	False	spk_b  	spk_a  	False
+ 575	False	spk_b  	spk_a  	False
+ 576	False	spk_b  	spk_a  	False
+ 577	False	spk_b  	spk_a  	False
+ 578	False	spk_b  	spk_a  	False
+ 579	True 	spk_b  	spk_a  	False
+ 580	True 	spk_b  	spk_a  	False
+ 581	True 	spk_b  	spk_a  	False
+ 582	True 	spk_b  	spk_a  	False
+ 583	True 	spk_b  	spk_a  	False
+ 584	True 	spk_b  	spk_a  	False
+ 585	True 	spk_b  	spk_a  	False
+ 586	True 	spk_b  	spk_a  	False
+ 587	True 	spk_b  	spk_a  	False
+ 588	True 	spk_b  	spk_a  	False
+ 589	True 	spk_b  	spk_a  	False
+ 590	True 	spk_b  	spk_a  	False
+ 591	True 	spk_b  	spk_a  	False
+ 592	True 	spk_b  	spk_a  	False
+ 593	True 	spk_b  	spk_a  	False
+ 594	True 	spk_b  	spk_a  	False
+ 595	True 	spk_b  	spk_a  	False
+ 596	True 	spk_b  	spk_a  	False
+ 597	True 	spk_b  	spk_a  	False
+ 598	True 	spk_b  	spk_a  	False
+ 599	True 	spk_b  	spk_a  	False
+ 600	True 	spk_b  	spk_a  	False
+ 601	True 	spk_b  	spk_a  	False
+ 602	True 	spk_b  	spk_a  	False
+ 603	True 	spk_b  	spk_a  	False
+ 604	True 	spk_a  	spk_a  	True 
+ 605	True 	spk_b  	spk_a  	False
+ 606	True 	spk_b  	spk_a  	False
+ 607	True 	spk_b  	spk_a  	False
+ 608	True 	spk_b  	spk_a  	False
+ 609	True 	spk_b  	spk_a  	False
+ 610	True 	spk_b  	spk_a  	False
+ 611	True 	spk_a  	spk_a  	True 
+ 612	True 	spk_a  	spk_a  	True 
+ 613	True 	spk_a  	spk_a  	True 
+ 614	True 	spk_a  	spk_a  	True 
+ 615	True 	spk_b  	spk_a  	False
+ 616	True 	spk_b  	spk_a  	False
+ 617	True 	spk_b  	spk_a  	False
+ 618	True 	spk_b  	spk_a  	False
+ 619	True 	spk_b  	spk_a  	False
+ 620	True 	spk_b  	spk_a  	False
+ 621	True 	spk_b  	spk_a  	False
+ 622	True 	spk_b  	spk_a  	False
+ 623	True 	spk_b  	spk_a  	False
+ 624	True 	spk_b  	spk_a  	False
+ 625	True 	spk_a  	spk_a  	True 
+ 626	True 	spk_b  	spk_a  	False
+ 627	True 	spk_b  	spk_a  	False
+ 628	True 	spk_b  	spk_a  	False
+ 629	True 	spk_a  	spk_a  	True 
+ 630	True 	spk_b  	spk_a  	False
+ 631	True 	spk_a  	spk_a  	True 
+ 632	True 	spk_a  	spk_a  	True 
+ 633	False	spk_b  	spk_a  	False
+ 634	False	spk_b  	spk_a  	False
+ 635	False	spk_b  	spk_a  	False
+ 636	False	spk_b  	spk_a  	False
+ 637	False	spk_b  	spk_a  	False
+ 638	False	spk_b  	spk_a  	False
+ 639	False	spk_b  	spk_a  	False
+ 640	False	spk_b  	spk_a  	False
+ 641	False	spk_b  	spk_a  	False
+ 642	False	spk_b  	spk_a  	False
+ 643	False	spk_b  	spk_a  	False
+ 644	False	spk_b  	spk_a  	False
+ 645	False	spk_b  	spk_a  	False
+ 646	False	spk_b  	spk_a  	False
+ 647	False	spk_b  	spk_a  	False
+ 648	False	spk_b  	spk_a  	False
+ 649	False	spk_b  	spk_a  	False
+ 650	False	spk_b  	spk_a  	False
+ 651	True 	spk_b  	spk_a  	False
+ 652	True 	spk_a  	spk_a  	True 
+ 653	True 	spk_b  	spk_a  	False
+ 654	True 	spk_a  	spk_a  	True 
+ 655	True 	spk_a  	none   	False
+ 656	True 	spk_b  	none   	False
+ 657	True 	spk_b  	none   	False
+ 658	True 	spk_a  	none   	False
+ 659	True 	spk_b  	none   	False
+ 660	True 	spk_b  	none   	False
+ 661	True 	spk_b  	none   	False
+ 662	True 	spk_a  	spk_b  	False
+ 663	True 	spk_b  	spk_b  	True 
+ 664	True 	spk_b  	spk_b  	True 
+ 665	True 	spk_b  	spk_b  	True 
+ 666	True 	spk_b  	spk_b  	True 
+ 667	True 	spk_a  	spk_b  	False
+ 668	True 	spk_a  	spk_b  	False
+ 669	True 	spk_a  	spk_b  	False
+ 670	True 	spk_b  	spk_b  	True 
+ 671	True 	spk_b  	spk_b  	True 
+ 672	True 	spk_b  	spk_b  	True 
+ 673	True 	spk_b  	spk_b  	True 
+ 674	True 	spk_b  	spk_b  	True 
+ 675	True 	spk_a  	spk_b  	False
+ 676	True 	spk_b  	spk_b  	True 
+ 677	True 	spk_a  	spk_b  	False
+ 678	True 	spk_b  	spk_b  	True 
+ 679	True 	spk_b  	spk_b  	True 
+ 680	True 	spk_a  	spk_b  	False
+ 681	True 	spk_b  	spk_b  	True 
+ 682	True 	spk_b  	spk_b  	True 
+ 683	True 	spk_b  	spk_b  	True 
+ 684	True 	spk_b  	spk_b  	True 
+ 685	True 	spk_b  	spk_b  	True 
+ 686	True 	spk_b  	spk_b  	True 
+ 687	False	spk_a  	spk_b  	False
+ 688	False	spk_b  	spk_b  	False
+ 689	False	spk_b  	spk_b  	False
+ 690	True 	spk_b  	spk_b  	True 
+ 691	True 	spk_b  	spk_b  	True 
+ 692	True 	spk_b  	spk_b  	True 
+ 693	True 	spk_b  	spk_b  	True 
+ 694	True 	spk_b  	spk_b  	True 
+ 695	True 	spk_b  	spk_b  	True 
+ 696	True 	spk_b  	spk_b  	True 
+ 697	True 	spk_b  	spk_b  	True 
+ 698	True 	spk_b  	spk_b  	True 
+ 699	True 	spk_b  	spk_b  	True 
+ 700	True 	spk_b  	spk_b  	True 
+ 701	True 	spk_a  	spk_b  	False
+ 702	True 	spk_a  	spk_b  	False
+ 703	True 	spk_b  	spk_b  	True 
+ 704	True 	spk_b  	spk_b  	True 
+ 705	True 	spk_b  	spk_b  	True 
+ 706	True 	spk_b  	spk_b  	True 
+ 707	True 	spk_b  	spk_b  	True 
+ 708	True 	spk_b  	spk_b  	True 
+ 709	True 	spk_b  	spk_b  	True 
+ 710	True 	spk_b  	spk_b  	True 
+ 711	True 	spk_b  	spk_b  	True 
+ 712	True 	spk_a  	spk_b  	False
+ 713	True 	spk_b  	spk_b  	True 
+ 714	True 	spk_b  	spk_b  	True 
+ 715	True 	spk_b  	spk_b  	True 
+ 716	True 	spk_b  	spk_b  	True 
+ 717	True 	spk_b  	spk_b  	True 
+ 718	True 	spk_b  	spk_b  	True 
+ 719	True 	spk_a  	spk_b  	False
+ 720	True 	spk_b  	spk_b  	True 
+ 721	True 	spk_b  	spk_b  	True 
+ 722	True 	spk_b  	spk_b  	True 
+ 723	True 	spk_b  	spk_b  	True 
+ 724	True 	spk_b  	spk_b  	True 
+ 725	True 	spk_b  	spk_b  	True 
+ 726	False	spk_b  	spk_b  	False
+ 727	False	spk_b  	spk_b  	False
+ 728	False	spk_b  	spk_b  	False
+ 729	False	spk_b  	spk_b  	False
+ 730	False	spk_b  	spk_b  	False
+ 731	False	spk_b  	spk_b  	False
+ 732	False	spk_b  	spk_b  	False
+ 733	False	spk_b  	spk_b  	False
+ 734	False	spk_b  	spk_b  	False
+ 735	True 	spk_b  	spk_b  	True 
+ 736	True 	spk_b  	spk_b  	True 
+ 737	True 	spk_b  	spk_b  	True 
+ 738	True 	spk_b  	spk_b  	True 
+ 739	True 	spk_b  	spk_b  	True 
+ 740	True 	spk_b  	spk_b  	True 
+ 741	True 	spk_b  	spk_b  	True 
+ 742	True 	spk_a  	spk_b  	False
+ 743	True 	spk_a  	spk_b  	False
+ 744	True 	spk_b  	spk_b  	True 
+ 745	True 	spk_a  	spk_b  	False
+ 746	True 	spk_b  	spk_b  	True 
+ 747	True 	spk_a  	spk_b  	False
+ 748	True 	spk_b  	spk_b  	True 
+ 749	True 	spk_b  	spk_b  	True 
+ 750	True 	spk_b  	spk_b  	True 
+ 751	True 	spk_a  	spk_b  	False
+ 752	True 	spk_a  	spk_b  	False
+ 753	True 	spk_a  	spk_b  	False
+ 754	True 	spk_a  	spk_b  	False
+ 755	True 	spk_b  	spk_b  	True 
+ 756	True 	spk_a  	spk_b  	False
+ 757	True 	spk_b  	spk_b  	True 
+ 758	True 	spk_b  	spk_b  	True 
+ 759	True 	spk_b  	spk_b  	True 
+ 760	True 	spk_b  	spk_b  	True 
+ 761	True 	spk_a  	spk_b  	False
+ 762	True 	spk_b  	spk_b  	True 
+ 763	True 	spk_a  	spk_b  	False
+ 764	True 	spk_b  	spk_b  	True 
+ 765	True 	spk_a  	spk_b  	False
+ 766	True 	spk_b  	spk_b  	True 
+ 767	True 	spk_b  	spk_b  	True 
+ 768	True 	spk_b  	spk_b  	True 
+ 769	True 	spk_b  	spk_b  	True 
+ 770	True 	spk_b  	spk_b  	True 
+ 771	True 	spk_a  	spk_b  	False
+ 772	True 	spk_a  	spk_b  	False
+ 773	True 	spk_a  	spk_b  	False
+ 774	True 	spk_b  	spk_b  	True 
+ 775	True 	spk_b  	spk_b  	True 
+ 776	True 	spk_b  	spk_b  	True 
+ 777	True 	spk_b  	spk_b  	True 
+ 778	True 	spk_b  	spk_b  	True 
+ 779	True 	spk_b  	spk_b  	True 
+ 780	True 	spk_b  	spk_b  	True 
+ 781	True 	spk_b  	spk_b  	True 
+ 782	True 	spk_b  	spk_b  	True 
+ 783	True 	spk_b  	spk_b  	True 
+ 784	True 	spk_b  	spk_b  	True 
+ 785	True 	spk_b  	spk_b  	True 
+ 786	True 	spk_b  	spk_b  	True 
+ 787	True 	spk_b  	spk_b  	True 
+ 788	True 	spk_b  	spk_b  	True 
+ 789	True 	spk_b  	spk_b  	True 
+ 790	True 	spk_b  	spk_b  	True 
+ 791	True 	spk_b  	spk_b  	True 
+ 792	True 	spk_b  	spk_b  	True 
+ 793	True 	spk_b  	spk_b  	True 
+ 794	True 	spk_b  	spk_b  	True 
+ 795	True 	spk_b  	spk_b  	True 
+ 796	True 	spk_b  	spk_b  	True 
+ 797	True 	spk_b  	spk_b  	True 
+ 798	True 	spk_b  	spk_b  	True 
+ 799	True 	spk_b  	spk_b  	True 
+ 800	True 	spk_b  	spk_b  	True 
+ 801	True 	spk_b  	spk_b  	True 
+ 802	True 	spk_a  	spk_b  	False
+ 803	True 	spk_b  	spk_b  	True 
+ 804	True 	spk_b  	spk_b  	True 
+ 805	True 	spk_b  	spk_b  	True 
+ 806	True 	spk_b  	spk_b  	True 
+ 807	True 	spk_b  	spk_b  	True 
+ 808	True 	spk_a  	spk_b  	False
+ 809	True 	spk_b  	spk_b  	True 
+ 810	True 	spk_b  	spk_b  	True 
+ 811	True 	spk_a  	spk_b  	False
+ 812	True 	spk_b  	spk_b  	True 
+ 813	True 	spk_b  	spk_b  	True 
+ 814	True 	spk_a  	spk_b  	False
+ 815	True 	spk_b  	spk_b  	True 
+ 816	True 	spk_b  	spk_b  	True 
+ 817	True 	spk_b  	spk_b  	True 
+ 818	True 	spk_b  	spk_b  	True 
+ 819	True 	spk_b  	spk_b  	True 
+ 820	True 	spk_b  	spk_b  	True 
+ 821	True 	spk_b  	spk_b  	True 
+ 822	True 	spk_b  	spk_b  	True 
+ 823	True 	spk_b  	spk_b  	True 
+ 824	True 	spk_b  	spk_b  	True 
+ 825	True 	spk_a  	spk_b  	False
+ 826	True 	spk_a  	spk_b  	False
+ 827	True 	spk_a  	spk_b  	False
+ 828	True 	spk_a  	spk_b  	False
+ 829	True 	spk_a  	spk_b  	False
+ 830	True 	spk_a  	spk_b  	False
+ 831	True 	spk_a  	spk_b  	False
+ 832	True 	spk_b  	spk_b  	True 
+ 833	True 	spk_b  	spk_b  	True 
+ 834	True 	spk_b  	spk_b  	True 
+ 835	True 	spk_b  	spk_b  	True 
+ 836	True 	spk_a  	spk_b  	False
+ 837	True 	spk_b  	spk_b  	True 
+ 838	True 	spk_b  	spk_b  	True 
+ 839	True 	spk_a  	spk_b  	False
+ 840	True 	spk_b  	spk_b  	True 
+ 841	True 	spk_b  	spk_b  	True 
+ 842	True 	spk_b  	spk_b  	True 
+ 843	False	spk_b  	spk_b  	False
+ 844	False	spk_b  	spk_b  	False
+ 845	False	spk_b  	spk_b  	False
+ 846	False	spk_b  	spk_b  	False
+ 847	False	spk_b  	spk_b  	False
+ 848	False	spk_b  	spk_b  	False
+ 849	False	spk_b  	spk_b  	False
+ 850	False	spk_b  	spk_b  	False
+ 851	False	spk_b  	spk_b  	False
+ 852	False	spk_b  	spk_b  	False
+ 853	False	spk_b  	spk_b  	False
+ 854	False	spk_b  	spk_b  	False
+ 855	False	spk_a  	spk_b  	False
+ 856	False	spk_a  	spk_b  	False
+ 857	False	spk_b  	spk_b  	False
+ 858	True 	spk_b  	spk_b  	True 
+ 859	True 	spk_b  	spk_b  	True 
+ 860	True 	spk_b  	spk_b  	True 
+ 861	True 	spk_b  	spk_b  	True 
+ 862	True 	spk_b  	spk_b  	True 
+ 863	True 	spk_b  	spk_b  	True 
+ 864	True 	spk_b  	spk_b  	True 
+ 865	True 	spk_b  	spk_b  	True 
+ 866	True 	spk_b  	spk_b  	True 
+ 867	True 	spk_b  	spk_b  	True 
+ 868	True 	spk_b  	spk_b  	True 
+ 869	True 	spk_b  	spk_b  	True 
+ 870	True 	spk_b  	spk_b  	True 
+ 871	True 	spk_b  	spk_b  	True 
+ 872	True 	spk_b  	spk_b  	True 
+ 873	True 	spk_b  	spk_b  	True 
+ 874	True 	spk_b  	spk_b  	True 
+ 875	True 	spk_b  	spk_b  	True 
+ 876	True 	spk_b  	spk_b  	True 
+ 877	True 	spk_b  	spk_b  	True 
+ 878	True 	spk_b  	spk_b  	True 
+ 879	True 	spk_b  	spk_b  	True 
+ 880	True 	spk_b  	spk_b  	True 
+ 881	True 	spk_b  	spk_b  	True 
+ 882	True 	spk_b  	spk_b  	True 
+ 883	True 	spk_b  	spk_b  	True 
+ 884	True 	spk_b  	spk_b  	True 
+ 885	True 	spk_b  	spk_b  	True 
+ 886	True 	spk_b  	spk_b  	True 
+ 887	True 	spk_b  	spk_b  	True 
+ 888	True 	spk_b  	spk_b  	True 
+ 889	True 	spk_b  	spk_b  	True 
+ 890	True 	spk_b  	spk_b  	True 
+ 891	True 	spk_b  	spk_b  	True 
+ 892	True 	spk_b  	spk_b  	True 
+ 893	True 	spk_b  	spk_b  	True 
+ 894	True 	spk_b  	spk_b  	True 
+ 895	True 	spk_b  	spk_b  	True 
+ 896	True 	spk_b  	spk_b  	True 
+ 897	True 	spk_b  	spk_b  	True 
+ 898	True 	spk_b  	spk_b  	True 
+ 899	True 	spk_b  	spk_b  	True 
+ 900	True 	spk_b  	spk_b  	True 
+ 901	True 	spk_b  	spk_b  	True 
+ 902	True 	spk_b  	spk_b  	True 
+ 903	True 	spk_b  	spk_b  	True 
+ 904	True 	spk_a  	spk_b  	False
+ 905	True 	spk_a  	spk_b  	False
+ 906	True 	spk_a  	spk_b  	False
+ 907	True 	spk_a  	spk_b  	False
+ 908	True 	spk_b  	spk_b  	True 
+ 909	True 	spk_b  	spk_b  	True 
+ 910	True 	spk_a  	spk_b  	False
+ 911	True 	spk_a  	spk_b  	False
+ 912	True 	spk_b  	spk_b  	True 
+ 913	True 	spk_b  	spk_b  	True 
+ 914	True 	spk_b  	spk_b  	True 
+ 915	True 	spk_b  	spk_b  	True 
+ 916	True 	spk_a  	spk_b  	False
+ 917	True 	spk_b  	spk_b  	True 
+ 918	True 	spk_b  	spk_b  	True 
+ 919	True 	spk_b  	spk_b  	True 
+ 920	True 	spk_b  	spk_b  	True 
+ 921	True 	spk_b  	spk_b  	True 
+ 922	True 	spk_a  	spk_b  	False
+ 923	True 	spk_b  	spk_b  	True 
+ 924	True 	spk_a  	spk_b  	False
+ 925	True 	spk_b  	spk_b  	True 
+ 926	True 	spk_b  	spk_b  	True 
+ 927	True 	spk_b  	spk_b  	True 
+ 928	True 	spk_b  	spk_b  	True 
+ 929	True 	spk_b  	spk_b  	True 
+ 930	True 	spk_a  	spk_b  	False
+ 931	True 	spk_b  	spk_b  	True 
+ 932	True 	spk_b  	spk_b  	True 
+ 933	True 	spk_b  	spk_b  	True 
+ 934	True 	spk_b  	spk_b  	True 
+ 935	True 	spk_b  	spk_b  	True 
+ 936	True 	spk_b  	spk_b  	True 
+ 937	True 	spk_b  	spk_b  	True 
+ 938	True 	spk_a  	spk_b  	False
+ 939	True 	spk_a  	spk_b  	False
+ 940	True 	spk_a  	spk_b  	False
+ 941	True 	spk_b  	spk_b  	True 
+ 942	True 	spk_a  	spk_b  	False
+ 943	True 	spk_b  	spk_b  	True 
+ 944	True 	spk_b  	spk_b  	True 
+ 945	True 	spk_b  	spk_b  	True 
+ 946	True 	spk_b  	spk_b  	True 
+ 947	True 	spk_b  	spk_b  	True 
+ 948	True 	spk_b  	spk_b  	True 
+ 949	True 	spk_b  	spk_b  	True 
+ 950	True 	spk_b  	spk_b  	True 
+ 951	True 	spk_b  	spk_b  	True 
+ 952	True 	spk_b  	spk_b  	True 
+ 953	True 	spk_b  	spk_b  	True 
+ 954	True 	spk_b  	spk_b  	True 
+ 955	True 	spk_b  	spk_b  	True 
+ 956	True 	spk_b  	spk_b  	True 
+ 957	True 	spk_b  	spk_b  	True 
+ 958	True 	spk_b  	spk_b  	True 
+ 959	True 	spk_b  	spk_b  	True 
+ 960	True 	spk_b  	spk_b  	True 
+ 961	True 	spk_b  	spk_b  	True 
+ 962	True 	spk_b  	spk_b  	True 
+ 963	False	spk_b  	spk_b  	False
+ 964	False	spk_b  	spk_b  	False
+ 965	False	spk_b  	spk_b  	False
+ 966	False	spk_b  	spk_b  	False
+ 967	False	spk_b  	spk_b  	False
+ 968	False	spk_b  	spk_b  	False
+ 969	False	spk_b  	spk_b  	False
+ 970	False	spk_b  	spk_b  	False
+ 971	False	spk_b  	spk_b  	False
+ 972	False	spk_b  	spk_b  	False
+ 973	False	spk_b  	spk_b  	False
+ 974	False	spk_b  	spk_b  	False
+ 975	False	spk_b  	spk_b  	False
+ 976	False	spk_b  	spk_b  	False
+ 977	False	spk_b  	spk_b  	False
+ 978	True 	spk_b  	spk_b  	True 
+ 979	True 	spk_b  	spk_b  	True 
+ 980	True 	spk_b  	spk_b  	True 
+ 981	True 	spk_b  	spk_b  	True 
+ 982	True 	spk_b  	spk_b  	True 
+ 983	True 	spk_b  	spk_b  	True 
+ 984	True 	spk_b  	spk_b  	True 
+ 985	True 	spk_b  	spk_b  	True 
+ 986	True 	spk_b  	spk_b  	True 
+ 987	True 	spk_b  	spk_b  	True 
+ 988	True 	spk_b  	spk_b  	True 
+ 989	True 	spk_b  	spk_b  	True 
+ 990	True 	spk_b  	spk_b  	True 
+ 991	True 	spk_b  	spk_b  	True 
+ 992	True 	spk_b  	spk_b  	True 
+ 993	True 	spk_b  	spk_b  	True 
+ 994	True 	spk_b  	spk_b  	True 
+ 995	True 	spk_b  	spk_b  	True 
+ 996	True 	spk_b  	spk_b  	True 
+ 997	True 	spk_b  	spk_b  	True 
+ 998	True 	spk_b  	spk_b  	True 
+ 999	True 	spk_b  	spk_b  	True 
+1000	True 	spk_b  	spk_b  	True 
+1001	True 	spk_b  	spk_b  	True 
+1002	True 	spk_b  	spk_b  	True 
+1003	True 	spk_b  	spk_b  	True 
+1004	True 	spk_b  	spk_b  	True 
+1005	True 	spk_b  	spk_b  	True 
+1006	True 	spk_a  	spk_b  	False
+1007	True 	spk_b  	spk_b  	True 
+1008	True 	spk_b  	spk_b  	True 
+1009	True 	spk_b  	spk_b  	True 
+1010	True 	spk_b  	spk_b  	True 
+1011	True 	spk_b  	spk_b  	True 
+1012	True 	spk_b  	spk_b  	True 
+1013	True 	spk_b  	spk_b  	True 
+1014	True 	spk_b  	spk_b  	True 
+1015	True 	spk_b  	spk_b  	True 
+1016	True 	spk_b  	spk_b  	True 
+1017	False	spk_b  	spk_b  	False
+1018	False	spk_b  	spk_b  	False
+1019	False	spk_b  	spk_b  	False
+1020	False	spk_b  	spk_b  	False
+1021	False	spk_a  	spk_b  	False
+1022	False	spk_b  	spk_b  	False
+1023	True 	spk_a  	spk_b  	False
+1024	True 	spk_a  	spk_b  	False
+1025	True 	spk_b  	spk_b  	True 
+1026	True 	spk_b  	spk_b  	True 
+1027	True 	spk_b  	spk_b  	True 
+1028	True 	spk_b  	spk_b  	True 
+1029	True 	spk_a  	spk_b  	False
+1030	True 	spk_b  	spk_b  	True 
+1031	True 	spk_a  	spk_b  	False
+1032	True 	spk_a  	spk_b  	False
+1033	True 	spk_b  	spk_b  	True 
+1034	True 	spk_b  	spk_b  	True 
+1035	True 	spk_a  	spk_b  	False
+1036	True 	spk_a  	spk_b  	False
+1037	True 	spk_b  	spk_b  	True 
+1038	True 	spk_b  	spk_b  	True 
+1039	True 	spk_b  	spk_b  	True 
+1040	True 	spk_b  	spk_b  	True 
+1041	True 	spk_b  	spk_b  	True 
+1042	True 	spk_b  	spk_b  	True 
+1043	True 	spk_b  	spk_b  	True 
+1044	False	spk_b  	spk_b  	False
+1045	False	spk_b  	spk_b  	False
+1046	False	spk_b  	spk_b  	False
+1047	False	spk_b  	spk_b  	False
+1048	False	spk_b  	spk_b  	False
+1049	False	spk_b  	spk_b  	False
+1050	False	spk_b  	spk_b  	False
+1051	False	spk_b  	spk_b  	False
+1052	False	spk_b  	spk_b  	False
+1053	False	spk_b  	spk_b  	False
+1054	False	spk_b  	spk_b  	False
+1055	False	spk_b  	spk_b  	False
+1056	True 	spk_b  	spk_b  	True 
+1057	True 	spk_a  	spk_b  	False
+1058	True 	spk_a  	spk_b  	False
+1059	True 	spk_b  	spk_b  	True 
+1060	True 	spk_b  	spk_b  	True 
+1061	True 	spk_b  	spk_b  	True 
+1062	True 	spk_b  	spk_b  	True 
+1063	True 	spk_b  	spk_b  	True 
+1064	True 	spk_b  	spk_b  	True 
+1065	True 	spk_b  	spk_b  	True 
+1066	True 	spk_b  	spk_b  	True 
+1067	True 	spk_b  	spk_b  	True 
+1068	True 	spk_a  	spk_b  	False
+1069	True 	spk_b  	spk_b  	True 
+1070	True 	spk_b  	spk_b  	True 
+1071	True 	spk_b  	spk_b  	True 
+1072	True 	spk_b  	spk_b  	True 
+1073	True 	spk_a  	spk_b  	False
+1074	True 	spk_b  	spk_b  	True 
+1075	True 	spk_a  	spk_b  	False
+1076	True 	spk_b  	spk_b  	True 
+1077	True 	spk_a  	spk_b  	False
+1078	True 	spk_b  	spk_b  	True 
+1079	True 	spk_b  	spk_b  	True 
+1080	True 	spk_b  	spk_b  	True 
+1081	True 	spk_b  	spk_b  	True 
+1082	True 	spk_a  	spk_b  	False
+1083	True 	spk_b  	spk_b  	True 
+1084	True 	spk_b  	spk_b  	True 
+1085	True 	spk_b  	spk_b  	True 
+1086	True 	spk_b  	spk_b  	True 
+1087	True 	spk_b  	spk_b  	True 
+1088	True 	spk_a  	spk_b  	False
+1089	False	spk_a  	spk_b  	False
+1090	False	spk_b  	spk_b  	False
+1091	False	spk_b  	spk_b  	False
+1092	False	spk_a  	spk_b  	False
+1093	False	spk_a  	spk_b  	False
+1094	False	spk_a  	spk_b  	False
+1095	False	spk_a  	spk_b  	False
+1096	False	spk_a  	spk_b  	False
+1097	False	spk_a  	spk_b  	False
+1098	False	spk_a  	spk_b  	False
+1099	False	spk_b  	spk_b  	False
+1100	False	spk_b  	spk_b  	False
+1101	False	spk_b  	spk_b  	False
+1102	False	spk_b  	spk_b  	False
+1103	False	spk_a  	spk_b  	False
+1104	False	spk_b  	spk_b  	False
+1105	False	spk_a  	spk_b  	False
+1106	False	spk_a  	spk_b  	False
+1107	False	spk_a  	spk_b  	False
+1108	False	spk_b  	spk_b  	False
+1109	False	spk_a  	spk_b  	False
+1110	False	spk_a  	spk_b  	False
+1111	False	spk_a  	spk_b  	False
+1112	False	spk_a  	spk_b  	False
+1113	False	spk_b  	spk_b  	False
+1114	False	spk_b  	spk_b  	False
+1115	False	spk_a  	spk_b  	False
+1116	False	spk_a  	spk_b  	False
+1117	False	spk_b  	spk_b  	False
+1118	False	spk_a  	spk_b  	False
+1119	False	spk_a  	spk_b  	False
+1120	False	spk_a  	spk_b  	False
+1121	False	spk_a  	spk_b  	False
+1122	True 	spk_a  	spk_b  	False
+1123	True 	spk_a  	spk_b  	False
+1124	True 	spk_a  	spk_b  	False
+1125	True 	spk_a  	spk_b  	False
+1126	True 	spk_b  	spk_b  	True 
+1127	True 	spk_a  	spk_b  	False
+1128	True 	spk_a  	spk_b  	False
+1129	True 	spk_a  	spk_b  	False
+1130	True 	spk_b  	spk_b  	True 
+1131	True 	spk_b  	spk_b  	True 
+1132	True 	spk_b  	spk_b  	True 
+1133	True 	spk_a  	spk_b  	False
+1134	True 	spk_b  	spk_b  	True 
+1135	True 	spk_a  	spk_b  	False
+1136	True 	spk_a  	spk_b  	False
+1137	True 	spk_a  	spk_b  	False
+1138	True 	spk_a  	spk_b  	False
+1139	True 	spk_b  	spk_b  	True 
+1140	True 	spk_a  	spk_b  	False
+1141	True 	spk_a  	spk_b  	False
+1142	True 	spk_a  	spk_b  	False
+1143	True 	spk_b  	spk_b  	True 
+1144	True 	spk_a  	spk_b  	False
+1145	True 	spk_b  	spk_b  	True 
+1146	True 	spk_a  	spk_b  	False
+1147	True 	spk_a  	spk_b  	False
+1148	True 	spk_b  	spk_b  	True 
+1149	True 	spk_a  	spk_b  	False
+1150	True 	spk_a  	spk_b  	False
+1151	True 	spk_a  	spk_b  	False
+1152	True 	spk_a  	spk_b  	False
+1153	True 	spk_b  	spk_b  	True 
+1154	True 	spk_b  	spk_b  	True 
+1155	True 	spk_b  	spk_b  	True 
+1156	True 	spk_a  	spk_b  	False
+1157	True 	spk_a  	spk_b  	False
+1158	True 	spk_a  	spk_b  	False
+1159	True 	spk_a  	spk_b  	False
+1160	True 	spk_a  	spk_b  	False
+1161	True 	spk_b  	spk_b  	True 
+1162	True 	spk_b  	spk_b  	True 
+1163	True 	spk_b  	spk_b  	True 
+1164	True 	spk_b  	spk_b  	True 
+1165	True 	spk_b  	spk_b  	True 
+1166	True 	spk_b  	spk_b  	True 
+1167	True 	spk_b  	spk_b  	True 
+1168	True 	spk_a  	spk_b  	False
+1169	True 	spk_a  	spk_b  	False
+1170	True 	spk_a  	spk_b  	False
+1171	True 	spk_a  	spk_b  	False
+1172	True 	spk_a  	spk_b  	False
+1173	True 	spk_a  	spk_b  	False
+1174	True 	spk_a  	spk_b  	False
+1175	True 	spk_a  	spk_b  	False
+1176	True 	spk_a  	spk_b  	False
+1177	True 	spk_b  	spk_b  	True 
+1178	True 	spk_b  	spk_b  	True 
+1179	True 	spk_a  	spk_b  	False
+1180	True 	spk_b  	spk_b  	True 
+1181	True 	spk_a  	spk_b  	False
+1182	True 	spk_b  	spk_b  	True 
+1183	True 	spk_a  	spk_b  	False
+1184	True 	spk_b  	spk_b  	True 
+1185	True 	spk_b  	spk_b  	True 
+1186	True 	spk_b  	spk_b  	True 
+1187	True 	spk_a  	spk_b  	False
+1188	False	spk_b  	spk_b  	False
+1189	False	spk_a  	spk_b  	False
+1190	False	spk_a  	spk_b  	False
+1191	False	spk_a  	spk_b  	False
+1192	False	spk_b  	spk_b  	False
+1193	False	spk_a  	spk_b  	False
+1194	False	spk_a  	spk_b  	False
+1195	False	spk_a  	spk_b  	False
+1196	False	spk_a  	spk_b  	False
+1197	False	spk_a  	spk_b  	False
+1198	False	spk_b  	spk_b  	False
+1199	False	spk_b  	spk_b  	False

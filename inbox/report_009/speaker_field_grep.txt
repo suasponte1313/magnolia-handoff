@@ -1,0 +1,31 @@
+=== grep -n 'speaker' reelcore/src/reelcore/edit/speaker.py ===
+1:"""Active speaker analysis and evidence fusion (Phase 3 §1.2 re-architecture).
+3:Per-frame active speaker detection fusing:
+5:2. Secondary (weight=0.45): Diarization speaker turns from transcript.
+28:    "analyze_speakers",
+29:    "save_speaker_timeline",
+30:    "load_speaker_timeline",
+31:    "save_speaker_qc",
+34:DETECTOR_VERSION = "speaker_analysis_v2.2"
+40:    speaker: str | None        # "spk_a" | "spk_b" | None (silence) | "both"
+47:            "speaker": str(self.speaker) if self.speaker is not None else None,
+56:            speaker=d["speaker"],
+107:    Note: Discrete per-channel audio energy is NOT used for speaker attribution on pre-mixed
+188:        # If segments lack speaker field, check for sibling diarized transcript
+189:        has_spk = any("speaker" in seg for seg in segments)
+201:    has_segment_speaker = any("speaker" in seg for seg in segments)
+203:    # Fallback to reel catalog if transcript segments lack speaker labels
+204:    cat_speaker = ""
+205:    if not has_segment_speaker and catalog_path and Path(catalog_path).is_file():
+211:                    cat_speaker = str(r.get("speaker", "")).lower()
+219:        spk = str(seg.get("speaker", "")).lower() or cat_speaker
+342:def analyze_speakers(
+390:        fusion_cfg = ep.speaker_fusion or {}
+466:        timeline.append(SpeakerFrame(frame=f, speaker=spk, confidence=conf, overlap=ov))
+508:        save_speaker_timeline(result, output_path)
+516:def save_speaker_timeline(result: SpeakerAnalysisResult, path: str | Path) -> None:
+517:    """Serialize speaker analysis result to JSON."""
+524:def save_speaker_qc(result: SpeakerAnalysisResult, path: str | Path) -> None:
+525:    """Serialize speaker QC metrics sidecar to machine-readable JSON."""
+532:def load_speaker_timeline(path: str | Path) -> SpeakerAnalysisResult:
+533:    """Deserialize speaker analysis result from JSON."""

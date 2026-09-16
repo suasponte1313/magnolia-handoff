@@ -1,0 +1,134 @@
+objc[81101]: Class AVFFrameReceiver is implemented in both /Users/derekgagliano/Projects/podcast-editor/venv/lib/python3.11/site-packages/av/.dylibs/libavdevice.62.3.102.dylib (0x107d243a8) and /Users/derekgagliano/Projects/podcast-editor/venv/lib/python3.11/site-packages/cv2/.dylibs/libavdevice.61.3.100.dylib (0x1279883a8). This may cause spurious casting failures and mysterious crashes. One of the duplicates must be removed or renamed.
+objc[81101]: Class AVFAudioReceiver is implemented in both /Users/derekgagliano/Projects/podcast-editor/venv/lib/python3.11/site-packages/av/.dylibs/libavdevice.62.3.102.dylib (0x107d243f8) and /Users/derekgagliano/Projects/podcast-editor/venv/lib/python3.11/site-packages/cv2/.dylibs/libavdevice.61.3.100.dylib (0x1279883f8). This may cause spurious casting failures and mysterious crashes. One of the duplicates must be removed or renamed.
+/Users/derekgagliano/Projects/podcast-editor/venv/lib/python3.11/site-packages/torch/jit/_serialization.py:176: FutureWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/Users/derekgagliano/Projects/podcast-editor/venv/lib/python3.11/site-packages/torch/jit/_serialization.py:176: FutureWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+
+===========================================================================
+🧪 CHECK 1: Reel 1 re-renders from project.json to fresh path with QC diff
+===========================================================================
+✓ Manifest loaded: dallas1_master
+✓ Source: input/raw_part_2_Dallas1.mov (3840x2160 @ 30.0fps)
+✓ Target: 01_STRONGEST_The_Oral_Pill_Myth_PRESET (501.86s - 560.98s)
+🎬 Executing real render from manifest to output/test_verify_manifest...
+Loaded manifest for project: Dallas 1 Interview - Fenton Lebon & Dr. Saba Shabnam (dallas1_master)
+Rendering target: 01_STRONGEST_The_Oral_Pill_Myth_PRESET (THE ORAL PILL MYTH)
+Presets: delivery=social, framing=magnolia_interview, audio=magnolia_interview, captions=magnolia_clean
+======================================================================
+🎬 RENDERING REEL 1 VIA PRESETS: THE ORAL PILL MYTH
+  • Delivery Preset : social (1080x1920 @ 30.0fps)
+  • Audio Target    : -14.0 LUFS | TP <= -1.0 dBTP
+  • Framing Preset  : magnolia_interview (Hold Tol: 40.0px)
+  • Captions Preset : magnolia_clean (Georgia Bold / #FFE500)
+  • Facing Direction: camera-right (Look room placement: left third ~35% X)
+======================================================================
+✓ Audio Preflight Complete:
+    - Measured SNR: 34.1 dB
+    - Measured Reverb (SRMR): 4.78
+    - Adaptive Highpass: 80.0 Hz
+    - Measured Resonances: [486.3, 474.6, 416.0]
+✓ Dynamically Derived DSP Parameters:
+    - Gate: thresh=-27.0 dB, ratio=2.9, range=-15.7 dB
+    - Comp: thresh=-28.5 dB, ratio=2.8
+    - Limiter: linear=0.780 (ceiling=-1.0 dBTP)
+✓ DSP Chain Complete:
+    - Speech/Room SNR: 16.6 dB (Target: >= 15 dB)
+    - LRA            : 8.5 LU (Target: 5-8 LU)
+    - LUFS           : -14.6 LUFS (Target: -14.0 +/- 1 LUFS)
+    - True Peak      : -1.9 dBTP (Target: <= -1.0 dBTP)
+🔍 Sampling real footage to compute face trajectory...
+✓ Dynamic home_region: (14, 911, 608, 638)
+✓ Real Framing Quantized: 1773 frames | 6 holds, 5 moves, 0 cuts | still 95.8% | max step 2.4px
+    - Hold Fraction: 0.9577 (Target: >= 0.90)
+✓ Caption Review JSON saved: 12 words flagged with confidence < 0.6
+🎬 Rendering 1773 frames to output/test_verify_manifest/01_STRONGEST_The_Oral_Pill_Myth_PRESET.mp4...
+✓ Master Render Complete: output/test_verify_manifest/01_STRONGEST_The_Oral_Pill_Myth_PRESET.mp4
+
+🔍 EXECUTING QC GATE VERIFICATION...
+QC REPORT  output/test_verify_manifest/01_STRONGEST_The_Oral_Pill_Myth_PRESET.mp4
+==============================================================================
+  PASS  resolution             1080x1920
+  PASS  encoder                lavc62.28.101 libx264
+  PASS  color metadata         tagged
+  PASS  loudness (LUFS)        -14.6 LUFS
+  PASS  true peak              -1.8 dBTP
+  PASS  loudness range         8.4 LU
+  PASS  speech vs room tone    16.6 dB
+  WARN  room resonance         233 Hz +14.2 dB
+                               expected: < +10 dB above local mean
+                               -> Notch the MEASURED frequency (233 Hz), not a guessed one. A notch at the wrong frequency thins the voice without removing the boxiness.
+  PASS  head clipping (left)   0% of frames
+  PASS  head clipping (right)  0% of frames
+  PASS  subject centre X       33.1% of width
+  WARN  left/right balance     90% left / 10% right
+                               expected: neither half > 75%
+                               -> Most of the frame is background. On a vertical phone crop that is the most valuable space you have.
+  PASS  headroom               19.7% of height above head
+  WARN  framing stability      30px std
+                               expected: < 25px
+                               -> The crop is moving. Quantize the path into holds and eased moves.
+==============================================================================
+PASSED (14 checks, 0 failed, 3 warnings)
+
+QC JSON saved to: output/test_verify_manifest/01_STRONGEST_The_Oral_Pill_Myth_PRESET.qc.json
+✓ Render from manifest succeeded: output/test_verify_manifest/01_STRONGEST_The_Oral_Pill_Myth_PRESET.mp4
+✓ QC Report: output/test_verify_manifest/01_STRONGEST_The_Oral_Pill_Myth_PRESET.qc.json
+
+--------------------------------------------------------------------------------
+Field                        | Reference    | Fresh Render | Tol    | Status
+--------------------------------------------------------------------------------
+lufs                         | -14.60       | -14.60       | 0.50   | PASS ✅
+true_peak                    | -1.80        | -1.80        | 0.30   | PASS ✅
+lra                          | 8.40         | 8.40         | 0.60   | PASS ✅
+speech_to_noise_db           | 16.60        | 16.60        | 1.00   | PASS ✅
+framing_subject_center_x     | 0.33         | 0.33         | 0.04   | PASS ✅
+framing_head_top_fraction    | 0.20         | 0.20         | 0.04   | PASS ✅
+--------------------------------------------------------------------------------
+✅ CHECK 1 PASSED: Fresh render from project.json matches reference QC within tolerance!
+
+===========================================================================
+🧪 CHECK 2: Killing a job mid-caption and restarting skips real Whisper transcription
+===========================================================================
+Step 1: Running pipeline; Captions will crash mid-run...
+[2026-09-10 00:46:20] [TRANSCRIBE] Starting TRANSCRIBE execution...
+[2026-09-10 00:46:20] [TRANSCRIBE] Executing REAL faster-whisper transcription on 15s audio slice...
+[2026-09-10 00:46:21] [TRANSCRIBE] Finished TRANSCRIBE in 0.86s
+[2026-09-10 00:46:21] [BUILD_CAPTIONS] Starting BUILD_CAPTIONS execution...
+[2026-09-10 00:46:21] [BUILD_CAPTIONS] Simulating process crash mid-caption burn (SIGKILL / Out of Memory)...
+[2026-09-10 00:46:21] [BUILD_CAPTIONS] FAILED with error: Process killed mid-caption burn (SIGKILL / Out of Memory)
+💥 Caught expected mid-job crash: Process killed mid-caption burn (SIGKILL / Out of Memory)
+
+Step 2: Restarting pipeline after fixing caption handler...
+⚡ [Job TRANSCRIBE] Reusing completed state from SQLite DB (test_real_resumability_TRANSCRIBE_6b91c209)
+[2026-09-10 00:46:21] [BUILD_CAPTIONS] Starting BUILD_CAPTIONS execution...
+[2026-09-10 00:46:21] [BUILD_CAPTIONS] Rendering kinetic subtitles from transcript...
+[2026-09-10 00:46:21] [BUILD_CAPTIONS] Finished BUILD_CAPTIONS in 0.00s
+Transcription call count after restart: 1 (must be 1)
+✅ CHECK 2 PASSED: Restarting mid-caption successfully skipped real transcription!
+
+===========================================================================
+🧪 CHECK 3: Second run with no changes hits cache on every real analysis stage
+===========================================================================
+Pass 1 (Cold cache): Executing real analysis stages...
+[2026-09-10 00:46:21] [ANALYZE_AUDIO] Starting ANALYZE_AUDIO execution...
+[2026-09-10 00:46:21] [ANALYZE_AUDIO] Running REAL audio preflight on 15s audio slice...
+[2026-09-10 00:46:22] [ANALYZE_AUDIO] Finished ANALYZE_AUDIO in 0.26s
+[2026-09-10 00:46:22] [TRANSCRIBE] Starting TRANSCRIBE execution...
+[2026-09-10 00:46:22] [TRANSCRIBE] Running REAL faster-whisper transcription on 15s slice...
+[2026-09-10 00:46:23] [TRANSCRIBE] Finished TRANSCRIBE in 0.81s
+Pass 1 real executions: {<JobType.ANALYZE_AUDIO: 'ANALYZE_AUDIO'>: 1, <JobType.TRANSCRIBE: 'TRANSCRIBE'>: 1}
+
+Pass 2 (Warm cache): Re-running real analysis stages with unchanged inputs...
+⚡ [Job ANALYZE_AUDIO] Reusing completed state from SQLite DB (test_real_caching_ANALYZE_AUDIO_a684dcea)
+⚡ [Job TRANSCRIBE] Reusing completed state from SQLite DB (test_real_caching_TRANSCRIBE_08b669f6)
+Pass 2 real executions: {<JobType.ANALYZE_AUDIO: 'ANALYZE_AUDIO'>: 1, <JobType.TRANSCRIBE: 'TRANSCRIBE'>: 1}
+✅ CHECK 3 PASSED: Every single real analysis stage hit cache on the second run!
+
+===========================================================================
+🏁 PHASE 2 VERIFICATION SUMMARY
+===========================================================================
+1. Reel 1 from project.json:            PASSED ✅
+2. Mid-caption failure skip transcribe:  PASSED ✅
+3. Second run hits cache on all stages:  PASSED ✅
+===========================================================================

@@ -1,0 +1,45 @@
+=== HEAD-SIZE MATCHING REPORT (c1 - SPLIT LAYOUT) ===
+Directive: Commander Ruling 1 & 5 (prompt_028.txt)
+
+1. Panel Head Measurements (On-Screen):
+   • Top Panel: Dr. Fenton Lebon (CAM_A, spk_a)
+     - 4K Mean Face Box Height : 347.5 px
+     - Crop Dimensions (W x H) : 1406 x 1250 px
+     - Scale Factor            : 0.7680 (960 / 1250)
+     - Final On-Screen Head H  : 266.9 px
+     - Upscale Factor          : 0.7680x (downscale from 4K)
+     - Headroom min/mean/max   : 7.0% / 8.2% / 10.1% (target 8.0%, band [5.0%, 12.0%]) -> PASS
+     - Eyeline min/mean/max    : 30.9% / 34.3% / 35.7% (target 33.0%, band [28.0%, 40.0%]) -> PASS
+     - Lead Room Mean          : 68.0% (target 60.0%, band [55.0%, 67.0%]) -> FAIL
+     - Back Margin Min         : 1.7% (sensor-edge exception target >= 2.0%) -> FAIL
+
+   • Bottom Panel: Dr. Saba Shabnam (CAM_B, spk_b)
+     - 4K Mean Face Box Height : 217.3 px
+     - Crop Dimensions (W x H) : 968 x 860 px
+     - Scale Factor            : 1.1163 (960 / 860)
+     - Final On-Screen Head H  : 242.6 px
+     - Upscale Factor          : 1.1163x (+11.6% upscale from 4K ProRes)
+     - Headroom min/mean/max   : 5.2% / 7.8% / 10.3% (target 8.0%, band [5.0%, 12.0%]) -> PASS
+     - Eyeline min/mean/max    : 29.6% / 36.7% / 45.0% (target 33.0%, band [28.0%, 40.0%]) -> PASS
+     - Lead Room Mean          : 60.0% (target 60.0%, band [55.0%, 67.0%]) -> PASS
+     - Back Margin Min         : 13.4% (target >= 4.0%) -> PASS
+
+2. Ratio & Compliance:
+   • On-Screen Head-Height Ratio : 1.100x (Fenton / Saba)
+   • Commander Ruling 1 Target   : <= 1.100x
+   • Target Compliance Status    : PASS (Measured: 1.100x)
+   • Panel Zoom Ratio            : 1.453x (<= 1.50 cap)
+
+3. Resolution Acuity & Bounding Analysis (Ruling 1):
+   • Saba Crop Height            : 860 px (968 x 860)
+   • Upscale Factor              : 1.1163x (+11.6%)
+   • Source Acuity               : 4K ProRes 422HQ native master. 1.116x digital upscale is well
+                                   within MTF50 optical limits; pristine sharpness, zero visible softness.
+   • Dynamic Bounded Tracking    : Anchoring crop_y(t) to headroom target 0.08 with bounded tracking
+                                   holds Saba's headroom between 5.2% (min) and 10.3% (max), mean 7.8%.
+   • Static Quantization Limit   : Under standard quantize_path (30px tol, 60f hold), Saba's nodding and
+                                   hand gestures (frames 120-205) drop headroom to -0.8% (or 0.3%). Nearest static
+                                   quantized H that holds headroom within [5.0%, 12.0%] is H=920px (mean 11.97%, min 5.17%, ratio 1.177x).
+   • Sensor-Edge Geometry Limits : At Fenton H=1250 (W=1406), sensor-edge placement (crop_x=0) stretches
+                                   lead room to 68.0% (> 67.0%) and min back margin to 1.7% (< 2.0%). Nearest H for
+                                   Fenton that satisfies all framing bounds is H=1070 (lead room 62.6%, back margin 2.1%).

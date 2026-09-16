@@ -1,0 +1,27 @@
+=== DERIVATION LINES FROM reelcore/src/reelcore/audio/dsp.py ===
+531:     gate_speech_offset = float(gate_cfg.get("gate_speech_offset_db", 4.0))
+532:     gate_threshold_db = round(float(speech_median_db + gate_speech_offset), 1)
+533: 
+534:     gate_ratio_base = float(gate_cfg.get("gate_ratio_base", 2.4))
+535:     gate_ratio_scale = float(gate_cfg.get("gate_ratio_snr_scale", 0.12))
+536:     gate_ratio = round(float(gate_ratio_base + max(0.0, (measured_snr - 30.0) * gate_ratio_scale)), 1)
+537: 
+538:     gate_range_base = float(gate_cfg.get("gate_range_base_db", -12.0))
+539:     gate_range_scale = float(gate_cfg.get("gate_range_snr_scale", 0.9))
+540:     gate_range_min_db = float(gate_cfg.get("gate_range_min_db", -24.0))
+541:     gate_range_db = round(float(np.clip(gate_range_base - (measured_snr - 30.0) * gate_range_scale, gate_range_min_db, 0.0)), 1)
+542: 
+543:     comp_depth_db = float(comp_cfg.get("comp_depth_db", -2.5))
+544:     comp_threshold_db = round(float(speech_median_db - comp_depth_db), 1)
+545: 
+546:     limiter_ceiling = float(delivery_true_peak_max_dbtp)
+547:     limiter_linear = float(lim_cfg.get("linear_limit", 0.78))
+548: 
+
+=== DERIVED VALUES FROM output/audio_profile.json ===
+gate_threshold_db: -27.0
+gate_ratio: 2.9
+gate_range_db: -15.7
+comp_threshold_db: -28.5
+limiter_ceiling_dbtp: -1.0
+limiter_linear: 0.78

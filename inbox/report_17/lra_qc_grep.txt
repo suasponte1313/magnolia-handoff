@@ -1,0 +1,9 @@
+37-      "expected": "<= -1.0 dBTP",
+38-      "detail": ""
+39-    },
+40-    {
+41:      "name": "loudness range",
+42-      "status": "PASS",
+43-      "measured": "8.4 LU",
+44-      "expected": "<= 11.0 LU",
+45-      "detail": ""

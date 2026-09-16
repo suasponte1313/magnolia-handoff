@@ -1,0 +1,147 @@
+{
+  "path": "output/PHASE_1_PRESET_REELS/01_STRONGEST_The_Oral_Pill_Myth_PRESET.mp4",
+  "passed": true,
+  "checks": [
+    {
+      "name": "resolution",
+      "status": "PASS",
+      "measured": "1080x1920",
+      "expected": "1080x1920",
+      "detail": ""
+    },
+    {
+      "name": "encoder",
+      "status": "PASS",
+      "measured": "lavc62.28.101 libx264",
+      "expected": "software encoder (libx264/libx265)",
+      "detail": ""
+    },
+    {
+      "name": "color metadata",
+      "status": "PASS",
+      "measured": "tagged",
+      "expected": "color_space / transfer / primaries tagged",
+      "detail": ""
+    },
+    {
+      "name": "loudness (LUFS)",
+      "status": "PASS",
+      "measured": "-14.6 LUFS",
+      "expected": "-14.0 +/- 1.0",
+      "detail": ""
+    },
+    {
+      "name": "true peak",
+      "status": "PASS",
+      "measured": "-1.8 dBTP",
+      "expected": "<= -1.0 dBTP",
+      "detail": ""
+    },
+    {
+      "name": "loudness range",
+      "status": "PASS",
+      "measured": "8.4 LU",
+      "expected": "<= 11.0 LU",
+      "detail": ""
+    },
+    {
+      "name": "speech vs room tone",
+      "status": "PASS",
+      "measured": "16.6 dB",
+      "expected": ">= 15.0 dB",
+      "detail": ""
+    },
+    {
+      "name": "room resonance",
+      "status": "WARN",
+      "measured": "233 Hz +14.2 dB",
+      "expected": "< +10 dB above local mean",
+      "detail": "Notch the MEASURED frequency (233 Hz), not a guessed one. A notch at the wrong frequency thins the voice without removing the boxiness."
+    },
+    {
+      "name": "head clipping (left)",
+      "status": "PASS",
+      "measured": "0% of frames",
+      "expected": "<= 2%",
+      "detail": ""
+    },
+    {
+      "name": "head clipping (right)",
+      "status": "PASS",
+      "measured": "0% of frames",
+      "expected": "<= 2%",
+      "detail": ""
+    },
+    {
+      "name": "subject centre X",
+      "status": "PASS",
+      "measured": "33.1% of width",
+      "expected": "30%-70%",
+      "detail": ""
+    },
+    {
+      "name": "left/right balance",
+      "status": "WARN",
+      "measured": "90% left / 10% right",
+      "expected": "neither half > 75%",
+      "detail": "Most of the frame is background. On a vertical phone crop that is the most valuable space you have."
+    },
+    {
+      "name": "headroom",
+      "status": "PASS",
+      "measured": "19.7% of height above head",
+      "expected": "2%-20%",
+      "detail": ""
+    },
+    {
+      "name": "framing stability",
+      "status": "WARN",
+      "measured": "30px std",
+      "expected": "< 25px",
+      "detail": "The crop is moving. Quantize the path into holds and eased moves."
+    }
+  ],
+  "measurements": {
+    "resolution": "1080x1920",
+    "duration_s": 59.1,
+    "encoder": "lavc62.28.101 libx264",
+    "audio_channels": 1,
+    "sample_rate": 48000,
+    "lufs": -14.6,
+    "lra": 8.4,
+    "true_peak": -1.8,
+    "speech_to_noise_db": 16.6,
+    "room_resonances_hz": [
+      {
+        "hz": 233,
+        "db": 14.2
+      },
+      {
+        "hz": 124,
+        "db": 10.1
+      },
+      {
+        "hz": 740,
+        "db": 9.3
+      },
+      {
+        "hz": 633,
+        "db": 7.9
+      },
+      {
+        "hz": 350,
+        "db": 7.4
+      }
+    ],
+    "framing_width": 1080,
+    "framing_height": 1920,
+    "framing_frames": 1773,
+    "framing_detections": 60,
+    "framing_edge_clip_fraction": 0.0,
+    "framing_right_clip_fraction": 0.0,
+    "framing_subject_center_x": 0.3305555555555555,
+    "framing_head_top_fraction": 0.1967795138888889,
+    "framing_left_half_share": 0.9010227997217465,
+    "framing_center_x_std_px": 29.97290443050189
+  }
+}

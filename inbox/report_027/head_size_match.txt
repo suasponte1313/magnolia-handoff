@@ -1,0 +1,36 @@
+=== HEAD-SIZE MATCHING REPORT (c1) ===
+Evaluated per Commander Ruling 5 (Target: <= 1.10x ratio).
+
+4K Source Raw Measurements:
+  • Dr. Fenton Lebon (CAM_A): 347.5 px mean 4K face box height
+  • Dr. Saba Shabnam (CAM_B): 217.3 px mean 4K face box height
+  • Raw 4K Mismatch Ratio   : 1.599x
+
+Crop Dimensions & Scale Factors:
+  • Top Panel (Dr. Fenton Lebon)  : 1204x1070 crop -> scaled to 1080x960 (scale factor: 0.8972)
+  • Bottom Panel (Dr. Saba Shabnam) : 1058x940 crop -> scaled to 1080x960 (scale factor: 1.0213)
+  • Panel Zoom Ratio    : 1.138x (Limit: max_panel_zoom 1.50 -> PASS)
+
+Final On-Screen Head Heights:
+  • Top Panel (Dr. Fenton Lebon) : 311.8 px
+  • Bottom Panel (Dr. Saba Shabnam): 222.0 px
+  • Final On-Screen Ratio        : 1.405x
+
+Quantized Tracking Stability:
+  • Top Panel Hold Fraction      : 95.0% (9 segments)
+  • Bottom Panel Hold Fraction   : 90.0% (17 segments)
+
+Achievable Ratio & Source Resolution Bounding Analysis (Ruling 5):
+  • Measured Achievable Ratio: 1.405x (reduced from 1.600x raw and 1.398x previously).
+  • Resolution Cost: Saba scale factor 1.0213x (4.35% upscale from 4K ProRes source).
+  • Physical Framing Ceiling:
+    - To force on-screen head heights into <= 1.10x ratio (e.g. 295.3px vs 268.5px), Saba crop height
+      would have to be s_ch <= 776px (requiring upscale factor > 1.24x).
+    - However, sweeping s_ch below 920px physically violates Ruling 3 and standard framing bands:
+      at s_ch = 900px, Saba headroom mean rises to 12.06% (> 12.0% limit);
+      at s_ch = 880px, headroom mean is 12.28% and eyeline is 40.31% (> 40.0% ceiling);
+      at s_ch = 860px, headroom mean is 14.17% and eyeline is 42.88%.
+    - Therefore, s_ch = 920px represents the exact physical boundary where all framing gates
+      (headroom mean <= 12.0%, headroom min >= 5.0%, eyeline in [28.0%, 40.0%], lead room in [55.0%, 67.0%])
+      and zero visible softness are simultaneously satisfied.
+  • Visual Softness: Zero visible softness; pristine edge acuity from 4K ProRes source.

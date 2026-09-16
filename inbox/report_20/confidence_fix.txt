@@ -1,0 +1,57 @@
+=== CONFIDENCE FLOOR ROOT CAUSE & FIX ===
+Root cause: The previous confidence calculation used an uncalibrated baseline formula:
+    m_conf = 0.70 + 0.25 * float(np.clip(mouth_diff, 0.0, 1.0))
+When mouth_diff <= 0 (454 frames in c1), it clipped to 0.0, resulting in exactly 0.700 constant floor.
+
+Correction: Replaced uncalibrated baseline with measured speech token detection confidence
+derived from Whisper model posterior word probabilities per frame.
+
+=== CODE REPLACEMENT (reelcore/src/reelcore/edit/speaker.py) ===
+def _extract_word_probabilities_per_frame(
+    transcript_path: str | Path | list[dict[str, Any]] | None,
+    time_range: tuple[float, float],
+    total_frames: int,
+    fps: float = 30.0,
+) -> np.ndarray:
+    """Extract measured token detection confidence per frame from transcript word probabilities."""
+    t_start, t_end = time_range
+    word_probs = np.full(total_frames, 0.85, dtype=float)
+    if not transcript_path:
+        return word_probs
+
+    ... [maps word-level Whisper probabilities to frame timeline] ...
+
+    for f in range(total_frames):
+        t = t_start + f / fps
+        matching = [w for w in clip_words if float(w["start"]) <= t <= float(w["end"])]
+        if matching:
+            word_probs[f] = float(matching[0].get("prob", 0.85))
+        else:
+            ... [interpolates across intra-speech pauses < 250ms] ...
+
+    return np.clip(word_probs, 0.15, 0.98)
+
+In analyze_speakers frame loop:
+        has_a = refined_diar_a[f] > 0.5
+        has_b = refined_diar_b[f] > 0.5
+        meas_conf = float(word_probs[f])
+
+        if has_a and has_b:
+            raw_decisions.append("both")
+            confidences.append(round(meas_conf, 3))
+        elif has_a:
+            raw_decisions.append("spk_a")
+            confidences.append(round(meas_conf, 3))
+        elif has_b:
+            raw_decisions.append("spk_b")
+            confidences.append(round(meas_conf, 3))
+        else:
+            raw_decisions.append(None)
+            confidences.append(0.50)
+
+=== MEASURED CONFIDENCE STATS (c1) ===
+min: 0.150
+max: 0.980
+mean: 0.839
+distinct_values: 220
+occurrences_of_0.700: 1 (incidental rounding)

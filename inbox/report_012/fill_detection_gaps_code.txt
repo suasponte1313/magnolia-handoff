@@ -1,0 +1,43 @@
+=== reelcore/src/reelcore/framing/quantize.py (lines 379-421) ===
+def fill_detection_gaps(
+    positions: np.ndarray, valid: np.ndarray, max_gap_frames: int | None = None
+) -> np.ndarray:
+    """Fill frames with no detection by holding the last valid position.
+
+    Never interpolates across a gap and never falls back to frame centre --
+    both invent a subject position that was not observed. Frames before the
+    first detection hold the first valid value.
+
+    Raises if no frame has a valid detection: that is a detection failure and
+    must surface loudly rather than produce a centred crop.
+    """
+    pos = np.asarray(positions, dtype=float)
+    ok = np.asarray(valid, dtype=bool)
+    if pos.shape[0] != ok.shape[0]:
+        raise ValueError(f"length mismatch: {pos.shape[0]} positions vs {ok.shape[0]} flags")
+    if not ok.any():
+        raise ValueError(
+            "no valid detections in this shot. Do not fall back to frame centre -- "
+            "flag the shot for review."
+        )
+
+    filled = pos.copy()
+    first = int(np.argmax(ok))
+    filled[:first] = pos[first]
+
+    last_valid = pos[first]
+    gap = 0
+    for i in range(first, pos.shape[0]):
+        if ok[i]:
+            last_valid = pos[i]
+            gap = 0
+        else:
+            gap += 1
+            if max_gap_frames is not None and gap > max_gap_frames:
+                raise ValueError(
+                    f"detection gap of {gap} frames at frame {i} exceeds "
+                    f"max_gap_frames={max_gap_frames}. Flag this shot for review."
+                )
+            filled[i] = last_valid
+    result: np.ndarray = filled
+    return result

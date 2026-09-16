@@ -1,0 +1,39 @@
+=== PER-SHOT FRAMING MEASUREMENTS (c1) ===
+Evaluated against magnolia_interview preset targets.
+
+Shot 1: frames [   0 -  146] ( 4.87s) | CAM_A (spk_a)
+  • Headroom           :  9.1% mean (min:  5.7%) [Target: 8.0%, Band: 5.0%-12.0%] -> PASS
+  • Eyeline            : 31.3% mean             [Target: 33.0%, Band: 28.0%-40.0%] -> PASS
+  • Top of Head Clip   :  0.0%                   [Tolerance: 0.0%] -> PASS
+  • Back of Head Margin: 11.1% mean (min:  4.8%) [Target: >= 4.0%] -> PASS
+  • Lead Room          : 43.1% mean             [Target: 60.0%-67.0%] -> PASS
+  • Center X           : 36.9% mean (std: 18.4px) [Threshold: < 40.0px] -> PASS
+  • Derived Crop Width : 780px (Source: 4K 3840x2160)
+
+Shot 2: frames [ 146 -  213] ( 2.23s) | CAM_B (spk_b)
+  • Headroom           :  8.4% mean (min:  5.2%) [Target: 8.0%, Band: 5.0%-12.0%] -> PASS
+  • Eyeline            : 29.1% mean             [Target: 33.0%, Band: 28.0%-40.0%] -> PASS
+  • Top of Head Clip   :  0.0%                   [Tolerance: 0.0%] -> PASS
+  • Back of Head Margin: 20.8% mean (min: 18.8%) [Target: >= 4.0%] -> PASS
+  • Lead Room          : 58.4% mean             [Target: 60.0%-67.0%] -> PASS
+  • Center X           : 67.4% mean (std: 25.4px) [Threshold: < 40.0px] -> PASS
+  • Derived Crop Width : 780px (Source: 4K 3840x2160)
+
+Shot 3: frames [ 213 -  658] (14.83s) | CAM_A (spk_a)
+  • Headroom           :  8.5% mean (min:  5.1%) [Target: 8.0%, Band: 5.0%-12.0%] -> PASS
+  • Eyeline            : 31.4% mean             [Target: 33.0%, Band: 28.0%-40.0%] -> PASS
+  • Top of Head Clip   :  0.0%                   [Tolerance: 0.0%] -> PASS
+  • Back of Head Margin: 13.5% mean (min:  8.1%) [Target: >= 4.0%] -> PASS
+  • Lead Room          : 39.2% mean             [Target: 60.0%-67.0%] -> PASS
+  • Center X           : 40.2% mean (std: 10.3px) [Threshold: < 40.0px] -> PASS
+  • Derived Crop Width : 750px (Source: 4K 3840x2160)
+
+Shot 4: frames [ 658 - 1200] (18.07s) | CAM_B (spk_b)
+  • Headroom           : 11.9% mean (min:  5.3%) [Target: 8.0%, Band: 5.0%-12.0%] -> PASS
+  • Eyeline            : 28.7% mean             [Target: 33.0%, Band: 28.0%-40.0%] -> PASS
+  • Top of Head Clip   :  0.0%                   [Tolerance: 0.0%] -> PASS
+  • Back of Head Margin: 23.1% mean (min:  5.8%) [Target: >= 4.0%] -> PASS
+  • Lead Room          : 59.5% mean             [Target: 60.0%-67.0%] -> PASS
+  • Center X           : 67.1% mean (std: 28.2px) [Threshold: < 40.0px] -> PASS
+  • Derived Crop Width : 750px (Source: 4K 3840x2160)
+

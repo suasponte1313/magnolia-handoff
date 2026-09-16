@@ -1,0 +1,8 @@
+# Synthetic frame set exercising is_both / overlap branch in reelcore/src/reelcore/edit/speaker.py
+frame	desc	sa	sb	is_both	raw_decision	confidence	overlap
+    0	Both moving mouths equally during speech (score-AND)   	0.275	0.275	True   	both        	0.500	True
+    1	Both moving mouths slightly unequal (|sa-sb| < 0.08)   	0.303	0.264	True   	both        	0.500	True
+    2	Transcript marks simultaneous crosstalk (diar-AND)     	0.505	0.505	True   	both        	0.505	True
+    3	Both mouth + both diar strong overlap                  	0.780	0.780	True   	both        	0.780	True
+    4	Unequal mouth (|sa-sb| = 0.11 >= 0.08) -> single speaker	0.330	0.220	False  	spk_a       	0.582	False
+    5	Below speech_threshold (sa < 0.25) -> single speaker   	0.165	0.165	False  	spk_a       	0.500	False

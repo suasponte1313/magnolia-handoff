@@ -1,0 +1,258 @@
+=== DIARIZATION TURN BOUNDARY AGREEMENT ANALYSIS (+-15 FRAMES) ===
+
+------------------------------------------------------------
+REEL C1: Boundaries detected: [(662, 'spk_a', 'spk_b')]
+------------------------------------------------------------
+
+--- Turn Boundary at Frame 662 (spk_a -> spk_b) [Window 647..677] ---
+frame	vad_speech	fused_label	diar_label	match
+ 647	False	silence    	spk_a  	(ignored: vad=False, diar=spk_a)
+ 648	False	silence    	spk_a  	(ignored: vad=False, diar=spk_a)
+ 649	False	silence    	spk_a  	(ignored: vad=False, diar=spk_a)
+ 650	False	silence    	spk_a  	(ignored: vad=False, diar=spk_a)
+ 651	True 	silence    	spk_a  	False
+ 652	True 	spk_a      	spk_a  	True 
+ 653	True 	spk_a      	spk_a  	True 
+ 654	True 	spk_a      	spk_a  	True 
+ 655	True 	spk_a      	none   	(ignored: vad=True, diar=none)
+ 656	True 	spk_a      	none   	(ignored: vad=True, diar=none)
+ 657	True 	spk_a      	none   	(ignored: vad=True, diar=none)
+ 658	True 	spk_a      	none   	(ignored: vad=True, diar=none)
+ 659	True 	spk_b      	none   	(ignored: vad=True, diar=none)
+ 660	True 	spk_b      	none   	(ignored: vad=True, diar=none)
+ 661	True 	spk_b      	none   	(ignored: vad=True, diar=none)
+ 662	True 	spk_b      	spk_b  	True 
+ 663	True 	spk_b      	spk_b  	True 
+ 664	True 	spk_b      	spk_b  	True 
+ 665	True 	spk_b      	spk_b  	True 
+ 666	True 	spk_b      	spk_b  	True 
+ 667	True 	spk_b      	spk_b  	True 
+ 668	True 	spk_b      	spk_b  	True 
+ 669	True 	spk_b      	spk_b  	True 
+ 670	True 	spk_b      	spk_b  	True 
+ 671	True 	spk_b      	spk_b  	True 
+ 672	True 	spk_b      	spk_b  	True 
+ 673	True 	spk_b      	spk_b  	True 
+ 674	True 	spk_b      	spk_b  	True 
+ 675	True 	spk_b      	spk_b  	True 
+ 676	True 	spk_b      	spk_b  	True 
+ 677	True 	spk_b      	spk_b  	True 
+
+>>> C1 Turn Boundary Summary: 19/20 = 0.9500 (95.0%)
+
+------------------------------------------------------------
+REEL C2: Boundaries detected: [(191, 'spk_a', 'spk_b'), (739, 'spk_b', 'spk_a'), (758, 'spk_a', 'spk_b')]
+------------------------------------------------------------
+
+--- Turn Boundary at Frame 191 (spk_a -> spk_b) [Window 176..206] ---
+frame	vad_speech	fused_label	diar_label	match
+ 176	True 	spk_b      	none   	(ignored: vad=True, diar=none)
+ 177	True 	spk_b      	none   	(ignored: vad=True, diar=none)
+ 178	True 	spk_b      	none   	(ignored: vad=True, diar=none)
+ 179	True 	spk_b      	none   	(ignored: vad=True, diar=none)
+ 180	True 	spk_b      	none   	(ignored: vad=True, diar=none)
+ 181	True 	spk_b      	none   	(ignored: vad=True, diar=none)
+ 182	True 	spk_b      	none   	(ignored: vad=True, diar=none)
+ 183	True 	spk_b      	none   	(ignored: vad=True, diar=none)
+ 184	True 	spk_b      	none   	(ignored: vad=True, diar=none)
+ 185	True 	spk_b      	none   	(ignored: vad=True, diar=none)
+ 186	True 	spk_b      	none   	(ignored: vad=True, diar=none)
+ 187	True 	spk_b      	none   	(ignored: vad=True, diar=none)
+ 188	True 	spk_b      	none   	(ignored: vad=True, diar=none)
+ 189	True 	spk_b      	none   	(ignored: vad=True, diar=none)
+ 190	True 	spk_b      	none   	(ignored: vad=True, diar=none)
+ 191	True 	spk_b      	spk_b  	True 
+ 192	True 	spk_b      	spk_b  	True 
+ 193	True 	spk_b      	spk_b  	True 
+ 194	True 	spk_b      	spk_b  	True 
+ 195	True 	spk_b      	spk_b  	True 
+ 196	True 	spk_b      	spk_b  	True 
+ 197	True 	spk_b      	spk_b  	True 
+ 198	True 	spk_b      	spk_b  	True 
+ 199	True 	spk_b      	spk_b  	True 
+ 200	True 	spk_b      	spk_b  	True 
+ 201	True 	spk_b      	spk_b  	True 
+ 202	True 	spk_b      	spk_b  	True 
+ 203	True 	spk_b      	spk_b  	True 
+ 204	True 	spk_b      	spk_b  	True 
+ 205	True 	spk_b      	spk_b  	True 
+ 206	True 	spk_b      	spk_b  	True 
+
+--- Turn Boundary at Frame 739 (spk_b -> spk_a) [Window 724..754] ---
+frame	vad_speech	fused_label	diar_label	match
+ 724	True 	spk_b      	none   	(ignored: vad=True, diar=none)
+ 725	True 	spk_b      	none   	(ignored: vad=True, diar=none)
+ 726	True 	spk_b      	none   	(ignored: vad=True, diar=none)
+ 727	True 	spk_a      	none   	(ignored: vad=True, diar=none)
+ 728	True 	spk_a      	none   	(ignored: vad=True, diar=none)
+ 729	True 	spk_a      	none   	(ignored: vad=True, diar=none)
+ 730	True 	spk_a      	none   	(ignored: vad=True, diar=none)
+ 731	True 	spk_a      	none   	(ignored: vad=True, diar=none)
+ 732	True 	spk_a      	none   	(ignored: vad=True, diar=none)
+ 733	True 	spk_a      	none   	(ignored: vad=True, diar=none)
+ 734	True 	spk_a      	none   	(ignored: vad=True, diar=none)
+ 735	True 	spk_a      	none   	(ignored: vad=True, diar=none)
+ 736	True 	spk_a      	none   	(ignored: vad=True, diar=none)
+ 737	True 	spk_a      	none   	(ignored: vad=True, diar=none)
+ 738	True 	spk_a      	none   	(ignored: vad=True, diar=none)
+ 739	True 	spk_a      	spk_a  	True 
+ 740	True 	spk_a      	spk_a  	True 
+ 741	True 	spk_a      	spk_a  	True 
+ 742	True 	spk_a      	spk_a  	True 
+ 743	True 	spk_a      	spk_a  	True 
+ 744	True 	spk_a      	spk_a  	True 
+ 745	True 	spk_a      	spk_a  	True 
+ 746	True 	spk_a      	spk_a  	True 
+ 747	True 	spk_a      	spk_a  	True 
+ 748	True 	spk_a      	spk_a  	True 
+ 749	True 	spk_a      	spk_a  	True 
+ 750	True 	spk_a      	spk_a  	True 
+ 751	True 	spk_a      	spk_a  	True 
+ 752	True 	spk_a      	spk_a  	True 
+ 753	False	silence    	spk_a  	(ignored: vad=False, diar=spk_a)
+ 754	False	silence    	spk_a  	(ignored: vad=False, diar=spk_a)
+
+--- Turn Boundary at Frame 758 (spk_a -> spk_b) [Window 743..773] ---
+frame	vad_speech	fused_label	diar_label	match
+ 743	True 	spk_a      	spk_a  	True 
+ 744	True 	spk_a      	spk_a  	True 
+ 745	True 	spk_a      	spk_a  	True 
+ 746	True 	spk_a      	spk_a  	True 
+ 747	True 	spk_a      	spk_a  	True 
+ 748	True 	spk_a      	spk_a  	True 
+ 749	True 	spk_a      	spk_a  	True 
+ 750	True 	spk_a      	spk_a  	True 
+ 751	True 	spk_a      	spk_a  	True 
+ 752	True 	spk_a      	spk_a  	True 
+ 753	False	silence    	spk_a  	(ignored: vad=False, diar=spk_a)
+ 754	False	silence    	spk_a  	(ignored: vad=False, diar=spk_a)
+ 755	False	silence    	spk_a  	(ignored: vad=False, diar=spk_a)
+ 756	False	silence    	spk_a  	(ignored: vad=False, diar=spk_a)
+ 757	False	silence    	spk_a  	(ignored: vad=False, diar=spk_a)
+ 758	False	silence    	spk_b  	(ignored: vad=False, diar=spk_b)
+ 759	True 	spk_b      	spk_b  	True 
+ 760	True 	spk_b      	spk_b  	True 
+ 761	True 	spk_b      	spk_b  	True 
+ 762	True 	spk_b      	spk_b  	True 
+ 763	True 	spk_b      	spk_b  	True 
+ 764	True 	spk_b      	spk_b  	True 
+ 765	True 	spk_b      	spk_b  	True 
+ 766	True 	spk_b      	spk_b  	True 
+ 767	True 	spk_b      	spk_b  	True 
+ 768	True 	spk_b      	spk_b  	True 
+ 769	True 	spk_b      	spk_b  	True 
+ 770	True 	spk_b      	spk_b  	True 
+ 771	True 	spk_b      	spk_b  	True 
+ 772	True 	spk_b      	spk_b  	True 
+ 773	True 	spk_b      	spk_b  	True 
+
+>>> C2 Turn Boundary Summary: 55/55 = 1.0000 (100.0%)
+
+------------------------------------------------------------
+REEL C3: Boundaries detected: [(231, 'spk_b', 'spk_a'), (252, 'spk_a', 'spk_b'), (328, 'spk_b', 'spk_a')]
+------------------------------------------------------------
+
+--- Turn Boundary at Frame 231 (spk_b -> spk_a) [Window 216..246] ---
+frame	vad_speech	fused_label	diar_label	match
+ 216	True 	spk_b      	spk_b  	True 
+ 217	True 	spk_b      	spk_b  	True 
+ 218	True 	spk_b      	spk_b  	True 
+ 219	True 	spk_b      	spk_b  	True 
+ 220	True 	spk_b      	spk_b  	True 
+ 221	True 	spk_b      	none   	(ignored: vad=True, diar=none)
+ 222	True 	spk_b      	none   	(ignored: vad=True, diar=none)
+ 223	True 	spk_b      	none   	(ignored: vad=True, diar=none)
+ 224	True 	spk_b      	none   	(ignored: vad=True, diar=none)
+ 225	True 	spk_b      	none   	(ignored: vad=True, diar=none)
+ 226	True 	spk_b      	none   	(ignored: vad=True, diar=none)
+ 227	True 	spk_b      	none   	(ignored: vad=True, diar=none)
+ 228	True 	spk_b      	none   	(ignored: vad=True, diar=none)
+ 229	True 	spk_b      	none   	(ignored: vad=True, diar=none)
+ 230	True 	spk_b      	none   	(ignored: vad=True, diar=none)
+ 231	True 	spk_a      	spk_a  	True 
+ 232	True 	spk_a      	spk_a  	True 
+ 233	True 	spk_a      	spk_a  	True 
+ 234	True 	spk_a      	spk_a  	True 
+ 235	True 	spk_a      	spk_a  	True 
+ 236	True 	spk_a      	spk_a  	True 
+ 237	True 	spk_a      	spk_a  	True 
+ 238	True 	spk_a      	spk_a  	True 
+ 239	True 	spk_a      	spk_a  	True 
+ 240	True 	spk_a      	spk_a  	True 
+ 241	True 	spk_a      	spk_a  	True 
+ 242	True 	spk_b      	none   	(ignored: vad=True, diar=none)
+ 243	True 	spk_b      	none   	(ignored: vad=True, diar=none)
+ 244	True 	spk_b      	none   	(ignored: vad=True, diar=none)
+ 245	True 	spk_b      	none   	(ignored: vad=True, diar=none)
+ 246	True 	spk_b      	none   	(ignored: vad=True, diar=none)
+
+--- Turn Boundary at Frame 252 (spk_a -> spk_b) [Window 237..267] ---
+frame	vad_speech	fused_label	diar_label	match
+ 237	True 	spk_a      	spk_a  	True 
+ 238	True 	spk_a      	spk_a  	True 
+ 239	True 	spk_a      	spk_a  	True 
+ 240	True 	spk_a      	spk_a  	True 
+ 241	True 	spk_a      	spk_a  	True 
+ 242	True 	spk_b      	none   	(ignored: vad=True, diar=none)
+ 243	True 	spk_b      	none   	(ignored: vad=True, diar=none)
+ 244	True 	spk_b      	none   	(ignored: vad=True, diar=none)
+ 245	True 	spk_b      	none   	(ignored: vad=True, diar=none)
+ 246	True 	spk_b      	none   	(ignored: vad=True, diar=none)
+ 247	True 	spk_a      	none   	(ignored: vad=True, diar=none)
+ 248	True 	spk_a      	none   	(ignored: vad=True, diar=none)
+ 249	True 	spk_a      	none   	(ignored: vad=True, diar=none)
+ 250	True 	spk_a      	none   	(ignored: vad=True, diar=none)
+ 251	True 	spk_a      	none   	(ignored: vad=True, diar=none)
+ 252	True 	spk_b      	spk_b  	True 
+ 253	True 	spk_b      	spk_b  	True 
+ 254	True 	spk_b      	spk_b  	True 
+ 255	True 	spk_b      	spk_b  	True 
+ 256	True 	spk_b      	spk_b  	True 
+ 257	True 	spk_b      	spk_b  	True 
+ 258	True 	spk_b      	spk_b  	True 
+ 259	True 	spk_b      	spk_b  	True 
+ 260	True 	spk_b      	spk_b  	True 
+ 261	True 	spk_b      	spk_b  	True 
+ 262	True 	spk_b      	spk_b  	True 
+ 263	True 	spk_b      	spk_b  	True 
+ 264	True 	spk_b      	spk_b  	True 
+ 265	True 	spk_b      	spk_b  	True 
+ 266	True 	spk_b      	spk_b  	True 
+ 267	True 	spk_b      	spk_b  	True 
+
+--- Turn Boundary at Frame 328 (spk_b -> spk_a) [Window 313..343] ---
+frame	vad_speech	fused_label	diar_label	match
+ 313	True 	spk_b      	none   	(ignored: vad=True, diar=none)
+ 314	True 	spk_b      	none   	(ignored: vad=True, diar=none)
+ 315	True 	spk_b      	none   	(ignored: vad=True, diar=none)
+ 316	True 	spk_b      	none   	(ignored: vad=True, diar=none)
+ 317	True 	spk_b      	none   	(ignored: vad=True, diar=none)
+ 318	True 	spk_b      	none   	(ignored: vad=True, diar=none)
+ 319	True 	spk_b      	none   	(ignored: vad=True, diar=none)
+ 320	True 	spk_b      	none   	(ignored: vad=True, diar=none)
+ 321	True 	spk_b      	none   	(ignored: vad=True, diar=none)
+ 322	True 	spk_b      	none   	(ignored: vad=True, diar=none)
+ 323	True 	spk_b      	none   	(ignored: vad=True, diar=none)
+ 324	True 	spk_b      	none   	(ignored: vad=True, diar=none)
+ 325	True 	spk_b      	none   	(ignored: vad=True, diar=none)
+ 326	True 	spk_b      	none   	(ignored: vad=True, diar=none)
+ 327	True 	spk_a      	none   	(ignored: vad=True, diar=none)
+ 328	True 	spk_a      	spk_a  	True 
+ 329	True 	spk_a      	spk_a  	True 
+ 330	True 	spk_a      	spk_a  	True 
+ 331	True 	spk_a      	spk_a  	True 
+ 332	True 	spk_a      	spk_a  	True 
+ 333	True 	spk_a      	spk_a  	True 
+ 334	True 	spk_a      	spk_a  	True 
+ 335	True 	spk_a      	spk_a  	True 
+ 336	True 	spk_a      	spk_a  	True 
+ 337	True 	spk_a      	spk_a  	True 
+ 338	True 	spk_a      	spk_a  	True 
+ 339	True 	spk_a      	spk_a  	True 
+ 340	True 	spk_a      	spk_a  	True 
+ 341	True 	spk_a      	spk_a  	True 
+ 342	True 	spk_a      	spk_a  	True 
+ 343	True 	spk_a      	spk_a  	True 
+
+>>> C3 Turn Boundary Summary: 53/53 = 1.0000 (100.0%)
+

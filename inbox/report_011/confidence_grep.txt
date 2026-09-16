@@ -1,0 +1,28 @@
+=== reelcore/src/reelcore/edit/speaker.py ===
+41:    confidence: float
+48:            "confidence": round(float(self.confidence), 3),
+57:            confidence=float(d["confidence"]),
+72:    mean_confidence: float = 0.0
+83:            "mean_confidence": round(float(self.mean_confidence), 3),
+94:            "mean_confidence": round(float(self.mean_confidence), 3),
+410:                mean_confidence=float(cached_result.get("mean_confidence", 0.0)),
+422:        conf_scale = float(fusion_cfg.get("confidence_scale", 3.0))
+447:    confidences: list[float] = []
+455:            confidences.append(round(float(np.clip(sil_certainty, 0.50, 0.95)), 3))
+469:            confidences.append(round(float(np.clip(min(sa, sb), 0.50, 0.95)), 3))
+476:            confidences.append(round(float(np.clip(post_conf, 0.50, 0.95)), 3))
+482:            confidences.append(round(float(np.clip(post_conf, 0.50, 0.95)), 3))
+496:        conf = float(confidences[f])
+498:        timeline.append(SpeakerFrame(frame=f, speaker=spk, confidence=conf, overlap=ov))
+525:    mean_conf = float(np.mean(confidences)) if confidences else 0.0
+536:        mean_confidence=mean_conf,
+578:        mean_confidence=float(d.get("mean_confidence", 0.0)),
+
+=== reelcore/src/reelcore/framing/tracks.py ===
+41:    confidence: list[float]
+50:            "confidence": [round(float(c), 3) for c in self.confidence],
+61:            confidence=[float(c) for c in d["confidence"]],
+189:            "confidence": [],
+248:                        track_data[tid]["confidence"].append(round(det_conf, 3))
+257:            track_data[tid]["confidence"].append(0.0)
+284:            confidence=data["confidence"],

@@ -1,0 +1,19 @@
+COMMANDER RULINGS — LOOP 027. These are mine, not yours. Do not author your own Commander Rulings again — propose options with measured numbers and STOP.
+
+1. STEP 0 / AUDIO: closed, do not re-litigate. Copy speaker_timeline_c1.json into the report dir.
+
+2. SPLIT LEAD ROOM — APPROVED. The [0.35,0.46] band was a concession for the tall single crop. In a 1080x960 split panel proper lead room IS achievable, so use the professional standard for BOTH panels when layout==SPLIT:
+   split_lead_room: target 0.60, band [0.55, 0.67]  (CAM_A and CAM_B)
+
+3. DYNAMIC QUANTIZED TRACKING — REQUIRED. The static frozen rectangle across all 1200 frames is a real defect. Use quantize_path over each subject's track centers per panel, hold_tolerance_px=30.0, min_hold_frames=60. Report the real hold fraction. This must also bring Saba headroom mean <= 12.0% and min >= 5.0%.
+
+4. SENSOR-EDGE BACK MARGIN — APPROVED AS A NAMED PRESET EXCEPTION ONLY. Fenton sits at x=64 on the 4K sensor edge, so >4% behind his head is physically impossible. Add to the preset:
+   back_of_head_margin_sensor_edge: 0.02   # applies ONLY when crop_x == 0
+   REJECTED: the 'or report measured 2.0% with the constraint documented' option. There is no prose-excuse path. A value outside a band is a FAIL unless a NAMED preset value covers it. Apply the exception only at crop_x==0; anywhere else the 4% rule stands.
+
+5. HEAD-SIZE MATCHING — DO NOT EXPLAIN IT AWAY. 303px vs 217px is a 1.40x mismatch and it is visible: one big head, one small head. Do not 'clarify' that max_panel_zoom 1.25 caps it — RAISE the cap. Set max_panel_zoom high enough to bring on-screen head heights within 1.10x of each other, bounded by source resolution (do not upscale into visible softness; if that limit is hit, report the measured achievable ratio and the resolution cost). Report both panels' final on-screen head height in px and the ratio -> head_size_match.txt
+
+6. ARTIFACTS: copy ALL of these into handoff/inbox/report_027/ — a cited file that is missing is an automatic REVISE:
+   layout_decision_c1.txt, framing_preset.txt, framing_per_panel.txt, crops_c1.json (quantized, not static), c1_proof.qc.json, render_stdout_c1.txt, face_tracks_c1.json, framing_per_frame_dump.json, edl_c1.json, shots_metrics_c1.txt, speaker_timeline_c1.json, head_size_match.txt
+
+Re-render c1_proof.mp4 with dynamic quantized panels, active-speaker emphasis, divider, centered captions. Run QC. Deliver report_027 via HANDOFF PROTOCOL (report.md + all artifacts + DONE last, run the bridge, STOP).

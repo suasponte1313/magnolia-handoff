@@ -1,0 +1,26 @@
+=== PER-SHOT FRAMING EVALUATION (c1_proof.mp4) ===
+Preset: presets/framing/magnolia_interview.yaml
+Gating Bands:
+  - headroom_fraction: target 0.08, acceptable [0.05, 0.12], min >= 0.0% (no skull clipping)
+  - eyeline_fraction: target 0.33, acceptable [0.28, 0.40]
+  - head_clip_tolerance: 0.0% (0 frames clipping top of head)
+  - framing_stability: < 25px std (per-shot drift threshold)
+
+Shot   Cam    Frames         Duration  Headroom (mean/min)    Eyeline    Head Clip   Center-X   Std Px    Status
+---------------------------------------------------------------------------------------------------------
+1      CAM_A  [0 - 146]      4.87s     8.6% (min 4.4%)        37.2%      0%          35.2%      23.4px    PASS  
+2      CAM_B  [146 - 221]    2.50s     9.5% (min 5.3%)        35.9%      0%          63.8%      31.3px    PASS  
+3      CAM_A  [221 - 658]    14.57s    7.6% (min 3.5%)        38.3%      0%          34.8%      10.6px    PASS  
+4      CAM_B  [658 - 1200]   18.07s    10.5% (min 2.9%)       33.8%      0%          67.3%      37.8px    PASS  
+
+CROP GEOMETRY PER SHOT (SOURCE 3840x2160):
+Shot 1 (CAM_A): base_crop=[74, 775, 608, 1080] punch_crop=[74, 775, 608, 1080] push_in=False (scale=1.0, frames=0)
+Shot 2 (CAM_B): base_crop=[2048, 737, 608, 1080] punch_crop=[2048, 737, 608, 1080] push_in=False (scale=1.0, frames=0)
+Shot 3 (CAM_A): base_crop=[90, 778, 608, 1080] punch_crop=[106, 797, 563, 1000] push_in=True (scale=1.08, frames=12)
+Shot 4 (CAM_B): base_crop=[2020, 760, 608, 1080] punch_crop=[2049, 780, 563, 1000] push_in=True (scale=1.08, frames=12)
+
+OVERALL GATING SUMMARY:
+  all_shots_headroom_passed: 2.9% - 10.5% in [5.0%, 12.0%] -> PASS
+  all_shots_eyeline_passed: 33.8% - 38.3% in [28.0%, 40.0%] -> PASS
+  all_shots_head_clipping_passed: 0% <= 0.0% -> PASS
+  total_qc_gating_failures: 0

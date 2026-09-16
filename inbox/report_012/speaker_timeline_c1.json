@@ -1,0 +1,7212 @@
+{
+  "agreement_rate": 0.8302,
+  "flagged": false,
+  "spk_a_frames": 476,
+  "spk_b_frames": 363,
+  "both_frames": 177,
+  "silence_frames": 184,
+  "switch_count": 56,
+  "mean_confidence": 0.699,
+  "timeline": [
+    {
+      "frame": 0,
+      "speaker": "spk_a",
+      "confidence": 0.826,
+      "overlap": false
+    },
+    {
+      "frame": 1,
+      "speaker": "spk_a",
+      "confidence": 0.839,
+      "overlap": false
+    },
+    {
+      "frame": 2,
+      "speaker": "spk_a",
+      "confidence": 0.842,
+      "overlap": false
+    },
+    {
+      "frame": 3,
+      "speaker": "spk_a",
+      "confidence": 0.841,
+      "overlap": false
+    },
+    {
+      "frame": 4,
+      "speaker": "spk_a",
+      "confidence": 0.858,
+      "overlap": false
+    },
+    {
+      "frame": 5,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 6,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 7,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 8,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 9,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 10,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 11,
+      "speaker": "spk_a",
+      "confidence": 0.679,
+      "overlap": false
+    },
+    {
+      "frame": 12,
+      "speaker": "spk_a",
+      "confidence": 0.667,
+      "overlap": false
+    },
+    {
+      "frame": 13,
+      "speaker": "spk_a",
+      "confidence": 0.719,
+      "overlap": false
+    },
+    {
+      "frame": 14,
+      "speaker": "spk_a",
+      "confidence": 0.749,
+      "overlap": false
+    },
+    {
+      "frame": 15,
+      "speaker": "spk_a",
+      "confidence": 0.698,
+      "overlap": false
+    },
+    {
+      "frame": 16,
+      "speaker": "spk_a",
+      "confidence": 0.64,
+      "overlap": false
+    },
+    {
+      "frame": 17,
+      "speaker": "spk_a",
+      "confidence": 0.584,
+      "overlap": false
+    },
+    {
+      "frame": 18,
+      "speaker": "spk_a",
+      "confidence": 0.598,
+      "overlap": false
+    },
+    {
+      "frame": 19,
+      "speaker": "spk_a",
+      "confidence": 0.606,
+      "overlap": false
+    },
+    {
+      "frame": 20,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 21,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 22,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 23,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 24,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 25,
+      "speaker": "spk_a",
+      "confidence": 0.835,
+      "overlap": false
+    },
+    {
+      "frame": 26,
+      "speaker": "spk_a",
+      "confidence": 0.838,
+      "overlap": false
+    },
+    {
+      "frame": 27,
+      "speaker": "spk_a",
+      "confidence": 0.811,
+      "overlap": false
+    },
+    {
+      "frame": 28,
+      "speaker": "spk_a",
+      "confidence": 0.817,
+      "overlap": false
+    },
+    {
+      "frame": 29,
+      "speaker": "spk_a",
+      "confidence": 0.844,
+      "overlap": false
+    },
+    {
+      "frame": 30,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 31,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 32,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 33,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 34,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 35,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 36,
+      "speaker": "both",
+      "confidence": 0.688,
+      "overlap": true
+    },
+    {
+      "frame": 37,
+      "speaker": "spk_a",
+      "confidence": 0.729,
+      "overlap": false
+    },
+    {
+      "frame": 38,
+      "speaker": "spk_a",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 39,
+      "speaker": "spk_a",
+      "confidence": 0.821,
+      "overlap": false
+    },
+    {
+      "frame": 40,
+      "speaker": "spk_a",
+      "confidence": 0.829,
+      "overlap": false
+    },
+    {
+      "frame": 41,
+      "speaker": "spk_a",
+      "confidence": 0.851,
+      "overlap": false
+    },
+    {
+      "frame": 42,
+      "speaker": "spk_a",
+      "confidence": 0.861,
+      "overlap": false
+    },
+    {
+      "frame": 43,
+      "speaker": "spk_a",
+      "confidence": 0.865,
+      "overlap": false
+    },
+    {
+      "frame": 44,
+      "speaker": "spk_a",
+      "confidence": 0.862,
+      "overlap": false
+    },
+    {
+      "frame": 45,
+      "speaker": "spk_a",
+      "confidence": 0.825,
+      "overlap": false
+    },
+    {
+      "frame": 46,
+      "speaker": "spk_a",
+      "confidence": 0.834,
+      "overlap": false
+    },
+    {
+      "frame": 47,
+      "speaker": "spk_a",
+      "confidence": 0.838,
+      "overlap": false
+    },
+    {
+      "frame": 48,
+      "speaker": "spk_a",
+      "confidence": 0.837,
+      "overlap": false
+    },
+    {
+      "frame": 49,
+      "speaker": "spk_a",
+      "confidence": 0.831,
+      "overlap": false
+    },
+    {
+      "frame": 50,
+      "speaker": "spk_a",
+      "confidence": 0.85,
+      "overlap": false
+    },
+    {
+      "frame": 51,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 52,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 53,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 54,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 55,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 56,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 57,
+      "speaker": "spk_a",
+      "confidence": 0.685,
+      "overlap": false
+    },
+    {
+      "frame": 58,
+      "speaker": "spk_a",
+      "confidence": 0.697,
+      "overlap": false
+    },
+    {
+      "frame": 59,
+      "speaker": "spk_a",
+      "confidence": 0.715,
+      "overlap": false
+    },
+    {
+      "frame": 60,
+      "speaker": "spk_a",
+      "confidence": 0.721,
+      "overlap": false
+    },
+    {
+      "frame": 61,
+      "speaker": "spk_a",
+      "confidence": 0.723,
+      "overlap": false
+    },
+    {
+      "frame": 62,
+      "speaker": "spk_a",
+      "confidence": 0.724,
+      "overlap": false
+    },
+    {
+      "frame": 63,
+      "speaker": "spk_a",
+      "confidence": 0.726,
+      "overlap": false
+    },
+    {
+      "frame": 64,
+      "speaker": "spk_a",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 65,
+      "speaker": "spk_a",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 66,
+      "speaker": "spk_a",
+      "confidence": 0.806,
+      "overlap": false
+    },
+    {
+      "frame": 67,
+      "speaker": "spk_a",
+      "confidence": 0.849,
+      "overlap": false
+    },
+    {
+      "frame": 68,
+      "speaker": null,
+      "confidence": 0.855,
+      "overlap": false
+    },
+    {
+      "frame": 69,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 70,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 71,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 72,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 73,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 74,
+      "speaker": null,
+      "confidence": 0.511,
+      "overlap": false
+    },
+    {
+      "frame": 75,
+      "speaker": null,
+      "confidence": 0.513,
+      "overlap": false
+    },
+    {
+      "frame": 76,
+      "speaker": null,
+      "confidence": 0.514,
+      "overlap": false
+    },
+    {
+      "frame": 77,
+      "speaker": null,
+      "confidence": 0.516,
+      "overlap": false
+    },
+    {
+      "frame": 78,
+      "speaker": "spk_a",
+      "confidence": 0.766,
+      "overlap": false
+    },
+    {
+      "frame": 79,
+      "speaker": "spk_a",
+      "confidence": 0.736,
+      "overlap": false
+    },
+    {
+      "frame": 80,
+      "speaker": "spk_a",
+      "confidence": 0.674,
+      "overlap": false
+    },
+    {
+      "frame": 81,
+      "speaker": "spk_a",
+      "confidence": 0.609,
+      "overlap": false
+    },
+    {
+      "frame": 82,
+      "speaker": "spk_a",
+      "confidence": 0.586,
+      "overlap": false
+    },
+    {
+      "frame": 83,
+      "speaker": "spk_a",
+      "confidence": 0.582,
+      "overlap": false
+    },
+    {
+      "frame": 84,
+      "speaker": "spk_a",
+      "confidence": 0.598,
+      "overlap": false
+    },
+    {
+      "frame": 85,
+      "speaker": "spk_a",
+      "confidence": 0.617,
+      "overlap": false
+    },
+    {
+      "frame": 86,
+      "speaker": "spk_a",
+      "confidence": 0.66,
+      "overlap": false
+    },
+    {
+      "frame": 87,
+      "speaker": "spk_a",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 88,
+      "speaker": "spk_a",
+      "confidence": 0.812,
+      "overlap": false
+    },
+    {
+      "frame": 89,
+      "speaker": "spk_a",
+      "confidence": 0.83,
+      "overlap": false
+    },
+    {
+      "frame": 90,
+      "speaker": "spk_a",
+      "confidence": 0.831,
+      "overlap": false
+    },
+    {
+      "frame": 91,
+      "speaker": "spk_a",
+      "confidence": 0.824,
+      "overlap": false
+    },
+    {
+      "frame": 92,
+      "speaker": "spk_a",
+      "confidence": 0.813,
+      "overlap": false
+    },
+    {
+      "frame": 93,
+      "speaker": "spk_a",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 94,
+      "speaker": "spk_a",
+      "confidence": 0.741,
+      "overlap": false
+    },
+    {
+      "frame": 95,
+      "speaker": "spk_a",
+      "confidence": 0.738,
+      "overlap": false
+    },
+    {
+      "frame": 96,
+      "speaker": "spk_a",
+      "confidence": 0.72,
+      "overlap": false
+    },
+    {
+      "frame": 97,
+      "speaker": "spk_a",
+      "confidence": 0.719,
+      "overlap": false
+    },
+    {
+      "frame": 98,
+      "speaker": "spk_a",
+      "confidence": 0.726,
+      "overlap": false
+    },
+    {
+      "frame": 99,
+      "speaker": "spk_a",
+      "confidence": 0.736,
+      "overlap": false
+    },
+    {
+      "frame": 100,
+      "speaker": "spk_a",
+      "confidence": 0.762,
+      "overlap": false
+    },
+    {
+      "frame": 101,
+      "speaker": "spk_a",
+      "confidence": 0.767,
+      "overlap": false
+    },
+    {
+      "frame": 102,
+      "speaker": "spk_a",
+      "confidence": 0.774,
+      "overlap": false
+    },
+    {
+      "frame": 103,
+      "speaker": "spk_a",
+      "confidence": 0.669,
+      "overlap": false
+    },
+    {
+      "frame": 104,
+      "speaker": "spk_a",
+      "confidence": 0.682,
+      "overlap": false
+    },
+    {
+      "frame": 105,
+      "speaker": "spk_a",
+      "confidence": 0.693,
+      "overlap": false
+    },
+    {
+      "frame": 106,
+      "speaker": "spk_a",
+      "confidence": 0.704,
+      "overlap": false
+    },
+    {
+      "frame": 107,
+      "speaker": "spk_a",
+      "confidence": 0.708,
+      "overlap": false
+    },
+    {
+      "frame": 108,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 109,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 110,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 111,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 112,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 113,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 114,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 115,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 116,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 117,
+      "speaker": null,
+      "confidence": 0.508,
+      "overlap": false
+    },
+    {
+      "frame": 118,
+      "speaker": null,
+      "confidence": 0.507,
+      "overlap": false
+    },
+    {
+      "frame": 119,
+      "speaker": null,
+      "confidence": 0.512,
+      "overlap": false
+    },
+    {
+      "frame": 120,
+      "speaker": "spk_a",
+      "confidence": 0.815,
+      "overlap": false
+    },
+    {
+      "frame": 121,
+      "speaker": "spk_a",
+      "confidence": 0.842,
+      "overlap": false
+    },
+    {
+      "frame": 122,
+      "speaker": "spk_a",
+      "confidence": 0.846,
+      "overlap": false
+    },
+    {
+      "frame": 123,
+      "speaker": "spk_a",
+      "confidence": 0.852,
+      "overlap": false
+    },
+    {
+      "frame": 124,
+      "speaker": "spk_a",
+      "confidence": 0.863,
+      "overlap": false
+    },
+    {
+      "frame": 125,
+      "speaker": "spk_a",
+      "confidence": 0.862,
+      "overlap": false
+    },
+    {
+      "frame": 126,
+      "speaker": "spk_a",
+      "confidence": 0.852,
+      "overlap": false
+    },
+    {
+      "frame": 127,
+      "speaker": "spk_a",
+      "confidence": 0.841,
+      "overlap": false
+    },
+    {
+      "frame": 128,
+      "speaker": "spk_a",
+      "confidence": 0.82,
+      "overlap": false
+    },
+    {
+      "frame": 129,
+      "speaker": "spk_a",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 130,
+      "speaker": "spk_a",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 131,
+      "speaker": "spk_a",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 132,
+      "speaker": "spk_a",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 133,
+      "speaker": "spk_a",
+      "confidence": 0.826,
+      "overlap": false
+    },
+    {
+      "frame": 134,
+      "speaker": "spk_a",
+      "confidence": 0.864,
+      "overlap": false
+    },
+    {
+      "frame": 135,
+      "speaker": "spk_a",
+      "confidence": 0.858,
+      "overlap": false
+    },
+    {
+      "frame": 136,
+      "speaker": "spk_a",
+      "confidence": 0.849,
+      "overlap": false
+    },
+    {
+      "frame": 137,
+      "speaker": "spk_a",
+      "confidence": 0.848,
+      "overlap": false
+    },
+    {
+      "frame": 138,
+      "speaker": "spk_a",
+      "confidence": 0.842,
+      "overlap": false
+    },
+    {
+      "frame": 139,
+      "speaker": "spk_a",
+      "confidence": 0.835,
+      "overlap": false
+    },
+    {
+      "frame": 140,
+      "speaker": "spk_a",
+      "confidence": 0.828,
+      "overlap": false
+    },
+    {
+      "frame": 141,
+      "speaker": "spk_a",
+      "confidence": 0.795,
+      "overlap": false
+    },
+    {
+      "frame": 142,
+      "speaker": "spk_a",
+      "confidence": 0.801,
+      "overlap": false
+    },
+    {
+      "frame": 143,
+      "speaker": "spk_a",
+      "confidence": 0.811,
+      "overlap": false
+    },
+    {
+      "frame": 144,
+      "speaker": "spk_a",
+      "confidence": 0.846,
+      "overlap": false
+    },
+    {
+      "frame": 145,
+      "speaker": "spk_a",
+      "confidence": 0.847,
+      "overlap": false
+    },
+    {
+      "frame": 146,
+      "speaker": "spk_a",
+      "confidence": 0.874,
+      "overlap": false
+    },
+    {
+      "frame": 147,
+      "speaker": "spk_a",
+      "confidence": 0.897,
+      "overlap": false
+    },
+    {
+      "frame": 148,
+      "speaker": "spk_a",
+      "confidence": 0.896,
+      "overlap": false
+    },
+    {
+      "frame": 149,
+      "speaker": "spk_a",
+      "confidence": 0.895,
+      "overlap": false
+    },
+    {
+      "frame": 150,
+      "speaker": "spk_a",
+      "confidence": 0.894,
+      "overlap": false
+    },
+    {
+      "frame": 151,
+      "speaker": "spk_a",
+      "confidence": 0.87,
+      "overlap": false
+    },
+    {
+      "frame": 152,
+      "speaker": "spk_a",
+      "confidence": 0.869,
+      "overlap": false
+    },
+    {
+      "frame": 153,
+      "speaker": "spk_a",
+      "confidence": 0.868,
+      "overlap": false
+    },
+    {
+      "frame": 154,
+      "speaker": "spk_a",
+      "confidence": 0.838,
+      "overlap": false
+    },
+    {
+      "frame": 155,
+      "speaker": "spk_a",
+      "confidence": 0.836,
+      "overlap": false
+    },
+    {
+      "frame": 156,
+      "speaker": "spk_a",
+      "confidence": 0.835,
+      "overlap": false
+    },
+    {
+      "frame": 157,
+      "speaker": "spk_a",
+      "confidence": 0.833,
+      "overlap": false
+    },
+    {
+      "frame": 158,
+      "speaker": "spk_a",
+      "confidence": 0.835,
+      "overlap": false
+    },
+    {
+      "frame": 159,
+      "speaker": "spk_a",
+      "confidence": 0.834,
+      "overlap": false
+    },
+    {
+      "frame": 160,
+      "speaker": "spk_a",
+      "confidence": 0.801,
+      "overlap": false
+    },
+    {
+      "frame": 161,
+      "speaker": "spk_a",
+      "confidence": 0.801,
+      "overlap": false
+    },
+    {
+      "frame": 162,
+      "speaker": "spk_a",
+      "confidence": 0.801,
+      "overlap": false
+    },
+    {
+      "frame": 163,
+      "speaker": "spk_a",
+      "confidence": 0.773,
+      "overlap": false
+    },
+    {
+      "frame": 164,
+      "speaker": "spk_a",
+      "confidence": 0.723,
+      "overlap": false
+    },
+    {
+      "frame": 165,
+      "speaker": "spk_a",
+      "confidence": 0.665,
+      "overlap": false
+    },
+    {
+      "frame": 166,
+      "speaker": "spk_a",
+      "confidence": 0.64,
+      "overlap": false
+    },
+    {
+      "frame": 167,
+      "speaker": "spk_a",
+      "confidence": 0.641,
+      "overlap": false
+    },
+    {
+      "frame": 168,
+      "speaker": "spk_a",
+      "confidence": 0.641,
+      "overlap": false
+    },
+    {
+      "frame": 169,
+      "speaker": "spk_a",
+      "confidence": 0.644,
+      "overlap": false
+    },
+    {
+      "frame": 170,
+      "speaker": "spk_a",
+      "confidence": 0.73,
+      "overlap": false
+    },
+    {
+      "frame": 171,
+      "speaker": "spk_a",
+      "confidence": 0.782,
+      "overlap": false
+    },
+    {
+      "frame": 172,
+      "speaker": "spk_a",
+      "confidence": 0.823,
+      "overlap": false
+    },
+    {
+      "frame": 173,
+      "speaker": "spk_a",
+      "confidence": 0.839,
+      "overlap": false
+    },
+    {
+      "frame": 174,
+      "speaker": "spk_a",
+      "confidence": 0.838,
+      "overlap": false
+    },
+    {
+      "frame": 175,
+      "speaker": "spk_a",
+      "confidence": 0.764,
+      "overlap": false
+    },
+    {
+      "frame": 176,
+      "speaker": "spk_a",
+      "confidence": 0.753,
+      "overlap": false
+    },
+    {
+      "frame": 177,
+      "speaker": "spk_a",
+      "confidence": 0.692,
+      "overlap": false
+    },
+    {
+      "frame": 178,
+      "speaker": "spk_a",
+      "confidence": 0.666,
+      "overlap": false
+    },
+    {
+      "frame": 179,
+      "speaker": "spk_a",
+      "confidence": 0.637,
+      "overlap": false
+    },
+    {
+      "frame": 180,
+      "speaker": "spk_a",
+      "confidence": 0.624,
+      "overlap": false
+    },
+    {
+      "frame": 181,
+      "speaker": "spk_a",
+      "confidence": 0.614,
+      "overlap": false
+    },
+    {
+      "frame": 182,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 183,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 184,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 185,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 186,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 187,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 188,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 189,
+      "speaker": "spk_a",
+      "confidence": 0.693,
+      "overlap": false
+    },
+    {
+      "frame": 190,
+      "speaker": "spk_a",
+      "confidence": 0.714,
+      "overlap": false
+    },
+    {
+      "frame": 191,
+      "speaker": "spk_a",
+      "confidence": 0.652,
+      "overlap": false
+    },
+    {
+      "frame": 192,
+      "speaker": "spk_a",
+      "confidence": 0.746,
+      "overlap": false
+    },
+    {
+      "frame": 193,
+      "speaker": "spk_a",
+      "confidence": 0.737,
+      "overlap": false
+    },
+    {
+      "frame": 194,
+      "speaker": "spk_a",
+      "confidence": 0.726,
+      "overlap": false
+    },
+    {
+      "frame": 195,
+      "speaker": "spk_a",
+      "confidence": 0.702,
+      "overlap": false
+    },
+    {
+      "frame": 196,
+      "speaker": "spk_a",
+      "confidence": 0.643,
+      "overlap": false
+    },
+    {
+      "frame": 197,
+      "speaker": "spk_a",
+      "confidence": 0.578,
+      "overlap": false
+    },
+    {
+      "frame": 198,
+      "speaker": "spk_a",
+      "confidence": 0.595,
+      "overlap": false
+    },
+    {
+      "frame": 199,
+      "speaker": "spk_a",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 200,
+      "speaker": "spk_a",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 201,
+      "speaker": "spk_a",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 202,
+      "speaker": "spk_a",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 203,
+      "speaker": "spk_a",
+      "confidence": 0.564,
+      "overlap": false
+    },
+    {
+      "frame": 204,
+      "speaker": "spk_a",
+      "confidence": 0.62,
+      "overlap": false
+    },
+    {
+      "frame": 205,
+      "speaker": "spk_a",
+      "confidence": 0.682,
+      "overlap": false
+    },
+    {
+      "frame": 206,
+      "speaker": "spk_a",
+      "confidence": 0.732,
+      "overlap": false
+    },
+    {
+      "frame": 207,
+      "speaker": "spk_a",
+      "confidence": 0.746,
+      "overlap": false
+    },
+    {
+      "frame": 208,
+      "speaker": "spk_a",
+      "confidence": 0.747,
+      "overlap": false
+    },
+    {
+      "frame": 209,
+      "speaker": "spk_a",
+      "confidence": 0.763,
+      "overlap": false
+    },
+    {
+      "frame": 210,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 211,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 212,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 213,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 214,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 215,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 216,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 217,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 218,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 219,
+      "speaker": "spk_a",
+      "confidence": 0.781,
+      "overlap": false
+    },
+    {
+      "frame": 220,
+      "speaker": "spk_a",
+      "confidence": 0.827,
+      "overlap": false
+    },
+    {
+      "frame": 221,
+      "speaker": "spk_a",
+      "confidence": 0.831,
+      "overlap": false
+    },
+    {
+      "frame": 222,
+      "speaker": "spk_a",
+      "confidence": 0.854,
+      "overlap": false
+    },
+    {
+      "frame": 223,
+      "speaker": "spk_a",
+      "confidence": 0.845,
+      "overlap": false
+    },
+    {
+      "frame": 224,
+      "speaker": "spk_a",
+      "confidence": 0.827,
+      "overlap": false
+    },
+    {
+      "frame": 225,
+      "speaker": "spk_a",
+      "confidence": 0.811,
+      "overlap": false
+    },
+    {
+      "frame": 226,
+      "speaker": "spk_a",
+      "confidence": 0.803,
+      "overlap": false
+    },
+    {
+      "frame": 227,
+      "speaker": "spk_a",
+      "confidence": 0.767,
+      "overlap": false
+    },
+    {
+      "frame": 228,
+      "speaker": "spk_a",
+      "confidence": 0.731,
+      "overlap": false
+    },
+    {
+      "frame": 229,
+      "speaker": "spk_a",
+      "confidence": 0.678,
+      "overlap": false
+    },
+    {
+      "frame": 230,
+      "speaker": "spk_a",
+      "confidence": 0.669,
+      "overlap": false
+    },
+    {
+      "frame": 231,
+      "speaker": "spk_a",
+      "confidence": 0.68,
+      "overlap": false
+    },
+    {
+      "frame": 232,
+      "speaker": "spk_a",
+      "confidence": 0.7,
+      "overlap": false
+    },
+    {
+      "frame": 233,
+      "speaker": "spk_a",
+      "confidence": 0.698,
+      "overlap": false
+    },
+    {
+      "frame": 234,
+      "speaker": "spk_a",
+      "confidence": 0.726,
+      "overlap": false
+    },
+    {
+      "frame": 235,
+      "speaker": "spk_a",
+      "confidence": 0.745,
+      "overlap": false
+    },
+    {
+      "frame": 236,
+      "speaker": "spk_a",
+      "confidence": 0.753,
+      "overlap": false
+    },
+    {
+      "frame": 237,
+      "speaker": "spk_a",
+      "confidence": 0.752,
+      "overlap": false
+    },
+    {
+      "frame": 238,
+      "speaker": "spk_a",
+      "confidence": 0.742,
+      "overlap": false
+    },
+    {
+      "frame": 239,
+      "speaker": "spk_a",
+      "confidence": 0.733,
+      "overlap": false
+    },
+    {
+      "frame": 240,
+      "speaker": "spk_a",
+      "confidence": 0.725,
+      "overlap": false
+    },
+    {
+      "frame": 241,
+      "speaker": "spk_a",
+      "confidence": 0.723,
+      "overlap": false
+    },
+    {
+      "frame": 242,
+      "speaker": "spk_a",
+      "confidence": 0.74,
+      "overlap": false
+    },
+    {
+      "frame": 243,
+      "speaker": "spk_a",
+      "confidence": 0.742,
+      "overlap": false
+    },
+    {
+      "frame": 244,
+      "speaker": "spk_a",
+      "confidence": 0.744,
+      "overlap": false
+    },
+    {
+      "frame": 245,
+      "speaker": "spk_a",
+      "confidence": 0.782,
+      "overlap": false
+    },
+    {
+      "frame": 246,
+      "speaker": "spk_a",
+      "confidence": 0.799,
+      "overlap": false
+    },
+    {
+      "frame": 247,
+      "speaker": "spk_a",
+      "confidence": 0.803,
+      "overlap": false
+    },
+    {
+      "frame": 248,
+      "speaker": "spk_a",
+      "confidence": 0.802,
+      "overlap": false
+    },
+    {
+      "frame": 249,
+      "speaker": "spk_a",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 250,
+      "speaker": "spk_a",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 251,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 252,
+      "speaker": "both",
+      "confidence": 0.749,
+      "overlap": true
+    },
+    {
+      "frame": 253,
+      "speaker": "both",
+      "confidence": 0.723,
+      "overlap": true
+    },
+    {
+      "frame": 254,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 255,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 256,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 257,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 258,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 259,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 260,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 261,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 262,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 263,
+      "speaker": "both",
+      "confidence": 0.778,
+      "overlap": true
+    },
+    {
+      "frame": 264,
+      "speaker": "spk_a",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 265,
+      "speaker": "spk_a",
+      "confidence": 0.78,
+      "overlap": false
+    },
+    {
+      "frame": 266,
+      "speaker": "spk_a",
+      "confidence": 0.781,
+      "overlap": false
+    },
+    {
+      "frame": 267,
+      "speaker": "spk_a",
+      "confidence": 0.77,
+      "overlap": false
+    },
+    {
+      "frame": 268,
+      "speaker": "spk_a",
+      "confidence": 0.765,
+      "overlap": false
+    },
+    {
+      "frame": 269,
+      "speaker": "spk_a",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 270,
+      "speaker": "spk_a",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 271,
+      "speaker": "spk_a",
+      "confidence": 0.762,
+      "overlap": false
+    },
+    {
+      "frame": 272,
+      "speaker": "spk_a",
+      "confidence": 0.745,
+      "overlap": false
+    },
+    {
+      "frame": 273,
+      "speaker": "spk_a",
+      "confidence": 0.712,
+      "overlap": false
+    },
+    {
+      "frame": 274,
+      "speaker": "spk_a",
+      "confidence": 0.71,
+      "overlap": false
+    },
+    {
+      "frame": 275,
+      "speaker": "spk_a",
+      "confidence": 0.727,
+      "overlap": false
+    },
+    {
+      "frame": 276,
+      "speaker": "spk_a",
+      "confidence": 0.736,
+      "overlap": false
+    },
+    {
+      "frame": 277,
+      "speaker": "spk_a",
+      "confidence": 0.73,
+      "overlap": false
+    },
+    {
+      "frame": 278,
+      "speaker": "spk_a",
+      "confidence": 0.736,
+      "overlap": false
+    },
+    {
+      "frame": 279,
+      "speaker": "spk_a",
+      "confidence": 0.751,
+      "overlap": false
+    },
+    {
+      "frame": 280,
+      "speaker": "spk_a",
+      "confidence": 0.765,
+      "overlap": false
+    },
+    {
+      "frame": 281,
+      "speaker": "spk_a",
+      "confidence": 0.81,
+      "overlap": false
+    },
+    {
+      "frame": 282,
+      "speaker": "spk_a",
+      "confidence": 0.8,
+      "overlap": false
+    },
+    {
+      "frame": 283,
+      "speaker": "spk_a",
+      "confidence": 0.781,
+      "overlap": false
+    },
+    {
+      "frame": 284,
+      "speaker": "spk_a",
+      "confidence": 0.77,
+      "overlap": false
+    },
+    {
+      "frame": 285,
+      "speaker": "spk_a",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 286,
+      "speaker": "spk_a",
+      "confidence": 0.775,
+      "overlap": false
+    },
+    {
+      "frame": 287,
+      "speaker": "spk_a",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 288,
+      "speaker": "spk_a",
+      "confidence": 0.701,
+      "overlap": false
+    },
+    {
+      "frame": 289,
+      "speaker": "spk_a",
+      "confidence": 0.696,
+      "overlap": false
+    },
+    {
+      "frame": 290,
+      "speaker": "spk_a",
+      "confidence": 0.696,
+      "overlap": false
+    },
+    {
+      "frame": 291,
+      "speaker": "spk_a",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 292,
+      "speaker": "spk_a",
+      "confidence": 0.739,
+      "overlap": false
+    },
+    {
+      "frame": 293,
+      "speaker": "spk_a",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 294,
+      "speaker": "spk_a",
+      "confidence": 0.736,
+      "overlap": false
+    },
+    {
+      "frame": 295,
+      "speaker": "both",
+      "confidence": 0.725,
+      "overlap": true
+    },
+    {
+      "frame": 296,
+      "speaker": "both",
+      "confidence": 0.726,
+      "overlap": true
+    },
+    {
+      "frame": 297,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 298,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 299,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 300,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 301,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 302,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 303,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 304,
+      "speaker": "spk_a",
+      "confidence": 0.732,
+      "overlap": false
+    },
+    {
+      "frame": 305,
+      "speaker": "spk_a",
+      "confidence": 0.743,
+      "overlap": false
+    },
+    {
+      "frame": 306,
+      "speaker": "spk_a",
+      "confidence": 0.745,
+      "overlap": false
+    },
+    {
+      "frame": 307,
+      "speaker": "spk_a",
+      "confidence": 0.732,
+      "overlap": false
+    },
+    {
+      "frame": 308,
+      "speaker": "spk_a",
+      "confidence": 0.716,
+      "overlap": false
+    },
+    {
+      "frame": 309,
+      "speaker": "spk_a",
+      "confidence": 0.73,
+      "overlap": false
+    },
+    {
+      "frame": 310,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 311,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 312,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 313,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 314,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 315,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 316,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 317,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 318,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 319,
+      "speaker": "spk_a",
+      "confidence": 0.783,
+      "overlap": false
+    },
+    {
+      "frame": 320,
+      "speaker": "spk_a",
+      "confidence": 0.79,
+      "overlap": false
+    },
+    {
+      "frame": 321,
+      "speaker": "spk_a",
+      "confidence": 0.796,
+      "overlap": false
+    },
+    {
+      "frame": 322,
+      "speaker": "spk_a",
+      "confidence": 0.832,
+      "overlap": false
+    },
+    {
+      "frame": 323,
+      "speaker": "spk_a",
+      "confidence": 0.842,
+      "overlap": false
+    },
+    {
+      "frame": 324,
+      "speaker": "spk_a",
+      "confidence": 0.842,
+      "overlap": false
+    },
+    {
+      "frame": 325,
+      "speaker": "spk_a",
+      "confidence": 0.843,
+      "overlap": false
+    },
+    {
+      "frame": 326,
+      "speaker": "spk_a",
+      "confidence": 0.845,
+      "overlap": false
+    },
+    {
+      "frame": 327,
+      "speaker": "spk_a",
+      "confidence": 0.832,
+      "overlap": false
+    },
+    {
+      "frame": 328,
+      "speaker": "spk_a",
+      "confidence": 0.815,
+      "overlap": false
+    },
+    {
+      "frame": 329,
+      "speaker": "spk_a",
+      "confidence": 0.776,
+      "overlap": false
+    },
+    {
+      "frame": 330,
+      "speaker": "spk_a",
+      "confidence": 0.757,
+      "overlap": false
+    },
+    {
+      "frame": 331,
+      "speaker": "spk_a",
+      "confidence": 0.733,
+      "overlap": false
+    },
+    {
+      "frame": 332,
+      "speaker": "spk_a",
+      "confidence": 0.713,
+      "overlap": false
+    },
+    {
+      "frame": 333,
+      "speaker": "spk_a",
+      "confidence": 0.706,
+      "overlap": false
+    },
+    {
+      "frame": 334,
+      "speaker": "spk_a",
+      "confidence": 0.681,
+      "overlap": false
+    },
+    {
+      "frame": 335,
+      "speaker": "spk_a",
+      "confidence": 0.684,
+      "overlap": false
+    },
+    {
+      "frame": 336,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 337,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 338,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 339,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 340,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 341,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 342,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 343,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 344,
+      "speaker": "both",
+      "confidence": 0.804,
+      "overlap": true
+    },
+    {
+      "frame": 345,
+      "speaker": "spk_a",
+      "confidence": 0.806,
+      "overlap": false
+    },
+    {
+      "frame": 346,
+      "speaker": "spk_a",
+      "confidence": 0.805,
+      "overlap": false
+    },
+    {
+      "frame": 347,
+      "speaker": "spk_a",
+      "confidence": 0.799,
+      "overlap": false
+    },
+    {
+      "frame": 348,
+      "speaker": "spk_a",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 349,
+      "speaker": "spk_a",
+      "confidence": 0.79,
+      "overlap": false
+    },
+    {
+      "frame": 350,
+      "speaker": "spk_a",
+      "confidence": 0.732,
+      "overlap": false
+    },
+    {
+      "frame": 351,
+      "speaker": "spk_a",
+      "confidence": 0.727,
+      "overlap": false
+    },
+    {
+      "frame": 352,
+      "speaker": "spk_a",
+      "confidence": 0.728,
+      "overlap": false
+    },
+    {
+      "frame": 353,
+      "speaker": "spk_a",
+      "confidence": 0.73,
+      "overlap": false
+    },
+    {
+      "frame": 354,
+      "speaker": "spk_a",
+      "confidence": 0.738,
+      "overlap": false
+    },
+    {
+      "frame": 355,
+      "speaker": "spk_a",
+      "confidence": 0.747,
+      "overlap": false
+    },
+    {
+      "frame": 356,
+      "speaker": "spk_a",
+      "confidence": 0.753,
+      "overlap": false
+    },
+    {
+      "frame": 357,
+      "speaker": "spk_a",
+      "confidence": 0.736,
+      "overlap": false
+    },
+    {
+      "frame": 358,
+      "speaker": "spk_a",
+      "confidence": 0.731,
+      "overlap": false
+    },
+    {
+      "frame": 359,
+      "speaker": "spk_a",
+      "confidence": 0.733,
+      "overlap": false
+    },
+    {
+      "frame": 360,
+      "speaker": null,
+      "confidence": 0.522,
+      "overlap": false
+    },
+    {
+      "frame": 361,
+      "speaker": null,
+      "confidence": 0.522,
+      "overlap": false
+    },
+    {
+      "frame": 362,
+      "speaker": null,
+      "confidence": 0.518,
+      "overlap": false
+    },
+    {
+      "frame": 363,
+      "speaker": null,
+      "confidence": 0.517,
+      "overlap": false
+    },
+    {
+      "frame": 364,
+      "speaker": null,
+      "confidence": 0.519,
+      "overlap": false
+    },
+    {
+      "frame": 365,
+      "speaker": null,
+      "confidence": 0.519,
+      "overlap": false
+    },
+    {
+      "frame": 366,
+      "speaker": null,
+      "confidence": 0.524,
+      "overlap": false
+    },
+    {
+      "frame": 367,
+      "speaker": null,
+      "confidence": 0.531,
+      "overlap": false
+    },
+    {
+      "frame": 368,
+      "speaker": null,
+      "confidence": 0.531,
+      "overlap": false
+    },
+    {
+      "frame": 369,
+      "speaker": null,
+      "confidence": 0.535,
+      "overlap": false
+    },
+    {
+      "frame": 370,
+      "speaker": null,
+      "confidence": 0.541,
+      "overlap": false
+    },
+    {
+      "frame": 371,
+      "speaker": null,
+      "confidence": 0.54,
+      "overlap": false
+    },
+    {
+      "frame": 372,
+      "speaker": null,
+      "confidence": 0.541,
+      "overlap": false
+    },
+    {
+      "frame": 373,
+      "speaker": null,
+      "confidence": 0.541,
+      "overlap": false
+    },
+    {
+      "frame": 374,
+      "speaker": null,
+      "confidence": 0.541,
+      "overlap": false
+    },
+    {
+      "frame": 375,
+      "speaker": "spk_a",
+      "confidence": 0.586,
+      "overlap": false
+    },
+    {
+      "frame": 376,
+      "speaker": "spk_a",
+      "confidence": 0.63,
+      "overlap": false
+    },
+    {
+      "frame": 377,
+      "speaker": "spk_a",
+      "confidence": 0.706,
+      "overlap": false
+    },
+    {
+      "frame": 378,
+      "speaker": "spk_a",
+      "confidence": 0.711,
+      "overlap": false
+    },
+    {
+      "frame": 379,
+      "speaker": "spk_a",
+      "confidence": 0.707,
+      "overlap": false
+    },
+    {
+      "frame": 380,
+      "speaker": "spk_a",
+      "confidence": 0.746,
+      "overlap": false
+    },
+    {
+      "frame": 381,
+      "speaker": "spk_a",
+      "confidence": 0.777,
+      "overlap": false
+    },
+    {
+      "frame": 382,
+      "speaker": "spk_a",
+      "confidence": 0.789,
+      "overlap": false
+    },
+    {
+      "frame": 383,
+      "speaker": "spk_a",
+      "confidence": 0.744,
+      "overlap": false
+    },
+    {
+      "frame": 384,
+      "speaker": "spk_a",
+      "confidence": 0.742,
+      "overlap": false
+    },
+    {
+      "frame": 385,
+      "speaker": "spk_a",
+      "confidence": 0.732,
+      "overlap": false
+    },
+    {
+      "frame": 386,
+      "speaker": "spk_a",
+      "confidence": 0.733,
+      "overlap": false
+    },
+    {
+      "frame": 387,
+      "speaker": "spk_a",
+      "confidence": 0.765,
+      "overlap": false
+    },
+    {
+      "frame": 388,
+      "speaker": "spk_a",
+      "confidence": 0.748,
+      "overlap": false
+    },
+    {
+      "frame": 389,
+      "speaker": "spk_a",
+      "confidence": 0.74,
+      "overlap": false
+    },
+    {
+      "frame": 390,
+      "speaker": "spk_a",
+      "confidence": 0.736,
+      "overlap": false
+    },
+    {
+      "frame": 391,
+      "speaker": "spk_a",
+      "confidence": 0.729,
+      "overlap": false
+    },
+    {
+      "frame": 392,
+      "speaker": "spk_a",
+      "confidence": 0.718,
+      "overlap": false
+    },
+    {
+      "frame": 393,
+      "speaker": "spk_a",
+      "confidence": 0.721,
+      "overlap": false
+    },
+    {
+      "frame": 394,
+      "speaker": "spk_a",
+      "confidence": 0.691,
+      "overlap": false
+    },
+    {
+      "frame": 395,
+      "speaker": "spk_a",
+      "confidence": 0.7,
+      "overlap": false
+    },
+    {
+      "frame": 396,
+      "speaker": "spk_a",
+      "confidence": 0.712,
+      "overlap": false
+    },
+    {
+      "frame": 397,
+      "speaker": "spk_a",
+      "confidence": 0.734,
+      "overlap": false
+    },
+    {
+      "frame": 398,
+      "speaker": "spk_a",
+      "confidence": 0.707,
+      "overlap": false
+    },
+    {
+      "frame": 399,
+      "speaker": "spk_a",
+      "confidence": 0.724,
+      "overlap": false
+    },
+    {
+      "frame": 400,
+      "speaker": "spk_a",
+      "confidence": 0.684,
+      "overlap": false
+    },
+    {
+      "frame": 401,
+      "speaker": "spk_a",
+      "confidence": 0.684,
+      "overlap": false
+    },
+    {
+      "frame": 402,
+      "speaker": "spk_a",
+      "confidence": 0.681,
+      "overlap": false
+    },
+    {
+      "frame": 403,
+      "speaker": "spk_a",
+      "confidence": 0.677,
+      "overlap": false
+    },
+    {
+      "frame": 404,
+      "speaker": "spk_a",
+      "confidence": 0.663,
+      "overlap": false
+    },
+    {
+      "frame": 405,
+      "speaker": "spk_a",
+      "confidence": 0.693,
+      "overlap": false
+    },
+    {
+      "frame": 406,
+      "speaker": "spk_a",
+      "confidence": 0.699,
+      "overlap": false
+    },
+    {
+      "frame": 407,
+      "speaker": "spk_a",
+      "confidence": 0.747,
+      "overlap": false
+    },
+    {
+      "frame": 408,
+      "speaker": "spk_a",
+      "confidence": 0.736,
+      "overlap": false
+    },
+    {
+      "frame": 409,
+      "speaker": "spk_a",
+      "confidence": 0.744,
+      "overlap": false
+    },
+    {
+      "frame": 410,
+      "speaker": "spk_a",
+      "confidence": 0.744,
+      "overlap": false
+    },
+    {
+      "frame": 411,
+      "speaker": "spk_a",
+      "confidence": 0.75,
+      "overlap": false
+    },
+    {
+      "frame": 412,
+      "speaker": "spk_a",
+      "confidence": 0.76,
+      "overlap": false
+    },
+    {
+      "frame": 413,
+      "speaker": "spk_a",
+      "confidence": 0.743,
+      "overlap": false
+    },
+    {
+      "frame": 414,
+      "speaker": "spk_a",
+      "confidence": 0.741,
+      "overlap": false
+    },
+    {
+      "frame": 415,
+      "speaker": "spk_a",
+      "confidence": 0.743,
+      "overlap": false
+    },
+    {
+      "frame": 416,
+      "speaker": "spk_a",
+      "confidence": 0.736,
+      "overlap": false
+    },
+    {
+      "frame": 417,
+      "speaker": "spk_a",
+      "confidence": 0.707,
+      "overlap": false
+    },
+    {
+      "frame": 418,
+      "speaker": "spk_a",
+      "confidence": 0.703,
+      "overlap": false
+    },
+    {
+      "frame": 419,
+      "speaker": "spk_a",
+      "confidence": 0.702,
+      "overlap": false
+    },
+    {
+      "frame": 420,
+      "speaker": "spk_a",
+      "confidence": 0.536,
+      "overlap": false
+    },
+    {
+      "frame": 421,
+      "speaker": "spk_a",
+      "confidence": 0.537,
+      "overlap": false
+    },
+    {
+      "frame": 422,
+      "speaker": "spk_a",
+      "confidence": 0.538,
+      "overlap": false
+    },
+    {
+      "frame": 423,
+      "speaker": "spk_a",
+      "confidence": 0.736,
+      "overlap": false
+    },
+    {
+      "frame": 424,
+      "speaker": "spk_a",
+      "confidence": 0.766,
+      "overlap": false
+    },
+    {
+      "frame": 425,
+      "speaker": "spk_a",
+      "confidence": 0.76,
+      "overlap": false
+    },
+    {
+      "frame": 426,
+      "speaker": "spk_a",
+      "confidence": 0.747,
+      "overlap": false
+    },
+    {
+      "frame": 427,
+      "speaker": "spk_a",
+      "confidence": 0.737,
+      "overlap": false
+    },
+    {
+      "frame": 428,
+      "speaker": "spk_a",
+      "confidence": 0.732,
+      "overlap": false
+    },
+    {
+      "frame": 429,
+      "speaker": "spk_a",
+      "confidence": 0.724,
+      "overlap": false
+    },
+    {
+      "frame": 430,
+      "speaker": "spk_a",
+      "confidence": 0.719,
+      "overlap": false
+    },
+    {
+      "frame": 431,
+      "speaker": "spk_a",
+      "confidence": 0.707,
+      "overlap": false
+    },
+    {
+      "frame": 432,
+      "speaker": "spk_a",
+      "confidence": 0.691,
+      "overlap": false
+    },
+    {
+      "frame": 433,
+      "speaker": "spk_a",
+      "confidence": 0.691,
+      "overlap": false
+    },
+    {
+      "frame": 434,
+      "speaker": "spk_a",
+      "confidence": 0.693,
+      "overlap": false
+    },
+    {
+      "frame": 435,
+      "speaker": "spk_a",
+      "confidence": 0.695,
+      "overlap": false
+    },
+    {
+      "frame": 436,
+      "speaker": "spk_a",
+      "confidence": 0.693,
+      "overlap": false
+    },
+    {
+      "frame": 437,
+      "speaker": "spk_a",
+      "confidence": 0.734,
+      "overlap": false
+    },
+    {
+      "frame": 438,
+      "speaker": "spk_a",
+      "confidence": 0.749,
+      "overlap": false
+    },
+    {
+      "frame": 439,
+      "speaker": "spk_a",
+      "confidence": 0.777,
+      "overlap": false
+    },
+    {
+      "frame": 440,
+      "speaker": "spk_a",
+      "confidence": 0.797,
+      "overlap": false
+    },
+    {
+      "frame": 441,
+      "speaker": "spk_a",
+      "confidence": 0.81,
+      "overlap": false
+    },
+    {
+      "frame": 442,
+      "speaker": "spk_a",
+      "confidence": 0.854,
+      "overlap": false
+    },
+    {
+      "frame": 443,
+      "speaker": "spk_a",
+      "confidence": 0.866,
+      "overlap": false
+    },
+    {
+      "frame": 444,
+      "speaker": "spk_a",
+      "confidence": 0.849,
+      "overlap": false
+    },
+    {
+      "frame": 445,
+      "speaker": "spk_a",
+      "confidence": 0.858,
+      "overlap": false
+    },
+    {
+      "frame": 446,
+      "speaker": "spk_a",
+      "confidence": 0.859,
+      "overlap": false
+    },
+    {
+      "frame": 447,
+      "speaker": "spk_a",
+      "confidence": 0.863,
+      "overlap": false
+    },
+    {
+      "frame": 448,
+      "speaker": "spk_a",
+      "confidence": 0.842,
+      "overlap": false
+    },
+    {
+      "frame": 449,
+      "speaker": "spk_a",
+      "confidence": 0.809,
+      "overlap": false
+    },
+    {
+      "frame": 450,
+      "speaker": "spk_a",
+      "confidence": 0.805,
+      "overlap": false
+    },
+    {
+      "frame": 451,
+      "speaker": "spk_a",
+      "confidence": 0.8,
+      "overlap": false
+    },
+    {
+      "frame": 452,
+      "speaker": "spk_a",
+      "confidence": 0.79,
+      "overlap": false
+    },
+    {
+      "frame": 453,
+      "speaker": "spk_a",
+      "confidence": 0.79,
+      "overlap": false
+    },
+    {
+      "frame": 454,
+      "speaker": "spk_a",
+      "confidence": 0.793,
+      "overlap": false
+    },
+    {
+      "frame": 455,
+      "speaker": "spk_a",
+      "confidence": 0.828,
+      "overlap": false
+    },
+    {
+      "frame": 456,
+      "speaker": "spk_a",
+      "confidence": 0.859,
+      "overlap": false
+    },
+    {
+      "frame": 457,
+      "speaker": "spk_a",
+      "confidence": 0.868,
+      "overlap": false
+    },
+    {
+      "frame": 458,
+      "speaker": "spk_a",
+      "confidence": 0.879,
+      "overlap": false
+    },
+    {
+      "frame": 459,
+      "speaker": "spk_a",
+      "confidence": 0.89,
+      "overlap": false
+    },
+    {
+      "frame": 460,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 461,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 462,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 463,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 464,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 465,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 466,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 467,
+      "speaker": "spk_a",
+      "confidence": 0.864,
+      "overlap": false
+    },
+    {
+      "frame": 468,
+      "speaker": "spk_a",
+      "confidence": 0.869,
+      "overlap": false
+    },
+    {
+      "frame": 469,
+      "speaker": "spk_a",
+      "confidence": 0.874,
+      "overlap": false
+    },
+    {
+      "frame": 470,
+      "speaker": "spk_a",
+      "confidence": 0.876,
+      "overlap": false
+    },
+    {
+      "frame": 471,
+      "speaker": "spk_a",
+      "confidence": 0.868,
+      "overlap": false
+    },
+    {
+      "frame": 472,
+      "speaker": "spk_a",
+      "confidence": 0.88,
+      "overlap": false
+    },
+    {
+      "frame": 473,
+      "speaker": "spk_a",
+      "confidence": 0.894,
+      "overlap": false
+    },
+    {
+      "frame": 474,
+      "speaker": "spk_a",
+      "confidence": 0.884,
+      "overlap": false
+    },
+    {
+      "frame": 475,
+      "speaker": "spk_a",
+      "confidence": 0.876,
+      "overlap": false
+    },
+    {
+      "frame": 476,
+      "speaker": "spk_a",
+      "confidence": 0.871,
+      "overlap": false
+    },
+    {
+      "frame": 477,
+      "speaker": "spk_a",
+      "confidence": 0.869,
+      "overlap": false
+    },
+    {
+      "frame": 478,
+      "speaker": "spk_a",
+      "confidence": 0.843,
+      "overlap": false
+    },
+    {
+      "frame": 479,
+      "speaker": "spk_a",
+      "confidence": 0.813,
+      "overlap": false
+    },
+    {
+      "frame": 480,
+      "speaker": "spk_a",
+      "confidence": 0.768,
+      "overlap": false
+    },
+    {
+      "frame": 481,
+      "speaker": "spk_a",
+      "confidence": 0.748,
+      "overlap": false
+    },
+    {
+      "frame": 482,
+      "speaker": "spk_a",
+      "confidence": 0.729,
+      "overlap": false
+    },
+    {
+      "frame": 483,
+      "speaker": "spk_a",
+      "confidence": 0.699,
+      "overlap": false
+    },
+    {
+      "frame": 484,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 485,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 486,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 487,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 488,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 489,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 490,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 491,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 492,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 493,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 494,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 495,
+      "speaker": "both",
+      "confidence": 0.83,
+      "overlap": true
+    },
+    {
+      "frame": 496,
+      "speaker": "both",
+      "confidence": 0.822,
+      "overlap": true
+    },
+    {
+      "frame": 497,
+      "speaker": "both",
+      "confidence": 0.816,
+      "overlap": true
+    },
+    {
+      "frame": 498,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 499,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 500,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 501,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 502,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 503,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 504,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 505,
+      "speaker": "spk_a",
+      "confidence": 0.798,
+      "overlap": false
+    },
+    {
+      "frame": 506,
+      "speaker": "spk_a",
+      "confidence": 0.82,
+      "overlap": false
+    },
+    {
+      "frame": 507,
+      "speaker": "spk_a",
+      "confidence": 0.83,
+      "overlap": false
+    },
+    {
+      "frame": 508,
+      "speaker": "spk_a",
+      "confidence": 0.845,
+      "overlap": false
+    },
+    {
+      "frame": 509,
+      "speaker": "spk_a",
+      "confidence": 0.871,
+      "overlap": false
+    },
+    {
+      "frame": 510,
+      "speaker": "spk_a",
+      "confidence": 0.834,
+      "overlap": false
+    },
+    {
+      "frame": 511,
+      "speaker": "spk_a",
+      "confidence": 0.835,
+      "overlap": false
+    },
+    {
+      "frame": 512,
+      "speaker": "spk_a",
+      "confidence": 0.827,
+      "overlap": false
+    },
+    {
+      "frame": 513,
+      "speaker": "spk_a",
+      "confidence": 0.828,
+      "overlap": false
+    },
+    {
+      "frame": 514,
+      "speaker": "spk_a",
+      "confidence": 0.83,
+      "overlap": false
+    },
+    {
+      "frame": 515,
+      "speaker": "spk_a",
+      "confidence": 0.812,
+      "overlap": false
+    },
+    {
+      "frame": 516,
+      "speaker": "spk_a",
+      "confidence": 0.77,
+      "overlap": false
+    },
+    {
+      "frame": 517,
+      "speaker": "spk_a",
+      "confidence": 0.782,
+      "overlap": false
+    },
+    {
+      "frame": 518,
+      "speaker": "spk_a",
+      "confidence": 0.776,
+      "overlap": false
+    },
+    {
+      "frame": 519,
+      "speaker": "spk_a",
+      "confidence": 0.785,
+      "overlap": false
+    },
+    {
+      "frame": 520,
+      "speaker": "spk_a",
+      "confidence": 0.781,
+      "overlap": false
+    },
+    {
+      "frame": 521,
+      "speaker": "spk_a",
+      "confidence": 0.77,
+      "overlap": false
+    },
+    {
+      "frame": 522,
+      "speaker": "spk_a",
+      "confidence": 0.772,
+      "overlap": false
+    },
+    {
+      "frame": 523,
+      "speaker": "spk_a",
+      "confidence": 0.779,
+      "overlap": false
+    },
+    {
+      "frame": 524,
+      "speaker": "spk_a",
+      "confidence": 0.779,
+      "overlap": false
+    },
+    {
+      "frame": 525,
+      "speaker": "spk_a",
+      "confidence": 0.777,
+      "overlap": false
+    },
+    {
+      "frame": 526,
+      "speaker": "spk_a",
+      "confidence": 0.771,
+      "overlap": false
+    },
+    {
+      "frame": 527,
+      "speaker": "spk_a",
+      "confidence": 0.764,
+      "overlap": false
+    },
+    {
+      "frame": 528,
+      "speaker": "spk_a",
+      "confidence": 0.745,
+      "overlap": false
+    },
+    {
+      "frame": 529,
+      "speaker": "spk_a",
+      "confidence": 0.756,
+      "overlap": false
+    },
+    {
+      "frame": 530,
+      "speaker": "spk_a",
+      "confidence": 0.748,
+      "overlap": false
+    },
+    {
+      "frame": 531,
+      "speaker": "spk_a",
+      "confidence": 0.739,
+      "overlap": false
+    },
+    {
+      "frame": 532,
+      "speaker": "spk_a",
+      "confidence": 0.735,
+      "overlap": false
+    },
+    {
+      "frame": 533,
+      "speaker": "spk_a",
+      "confidence": 0.731,
+      "overlap": false
+    },
+    {
+      "frame": 534,
+      "speaker": "spk_a",
+      "confidence": 0.732,
+      "overlap": false
+    },
+    {
+      "frame": 535,
+      "speaker": "spk_a",
+      "confidence": 0.745,
+      "overlap": false
+    },
+    {
+      "frame": 536,
+      "speaker": "spk_a",
+      "confidence": 0.748,
+      "overlap": false
+    },
+    {
+      "frame": 537,
+      "speaker": "spk_a",
+      "confidence": 0.751,
+      "overlap": false
+    },
+    {
+      "frame": 538,
+      "speaker": "spk_a",
+      "confidence": 0.759,
+      "overlap": false
+    },
+    {
+      "frame": 539,
+      "speaker": "spk_a",
+      "confidence": 0.765,
+      "overlap": false
+    },
+    {
+      "frame": 540,
+      "speaker": "spk_a",
+      "confidence": 0.768,
+      "overlap": false
+    },
+    {
+      "frame": 541,
+      "speaker": "spk_a",
+      "confidence": 0.775,
+      "overlap": false
+    },
+    {
+      "frame": 542,
+      "speaker": "spk_a",
+      "confidence": 0.789,
+      "overlap": false
+    },
+    {
+      "frame": 543,
+      "speaker": "spk_a",
+      "confidence": 0.792,
+      "overlap": false
+    },
+    {
+      "frame": 544,
+      "speaker": "spk_a",
+      "confidence": 0.797,
+      "overlap": false
+    },
+    {
+      "frame": 545,
+      "speaker": "spk_a",
+      "confidence": 0.798,
+      "overlap": false
+    },
+    {
+      "frame": 546,
+      "speaker": "spk_a",
+      "confidence": 0.8,
+      "overlap": false
+    },
+    {
+      "frame": 547,
+      "speaker": "spk_a",
+      "confidence": 0.805,
+      "overlap": false
+    },
+    {
+      "frame": 548,
+      "speaker": "spk_a",
+      "confidence": 0.84,
+      "overlap": false
+    },
+    {
+      "frame": 549,
+      "speaker": "spk_a",
+      "confidence": 0.862,
+      "overlap": false
+    },
+    {
+      "frame": 550,
+      "speaker": "spk_a",
+      "confidence": 0.857,
+      "overlap": false
+    },
+    {
+      "frame": 551,
+      "speaker": "spk_a",
+      "confidence": 0.875,
+      "overlap": false
+    },
+    {
+      "frame": 552,
+      "speaker": "spk_a",
+      "confidence": 0.893,
+      "overlap": false
+    },
+    {
+      "frame": 553,
+      "speaker": "spk_a",
+      "confidence": 0.888,
+      "overlap": false
+    },
+    {
+      "frame": 554,
+      "speaker": "spk_a",
+      "confidence": 0.885,
+      "overlap": false
+    },
+    {
+      "frame": 555,
+      "speaker": "spk_a",
+      "confidence": 0.86,
+      "overlap": false
+    },
+    {
+      "frame": 556,
+      "speaker": "spk_a",
+      "confidence": 0.838,
+      "overlap": false
+    },
+    {
+      "frame": 557,
+      "speaker": "spk_a",
+      "confidence": 0.84,
+      "overlap": false
+    },
+    {
+      "frame": 558,
+      "speaker": "spk_a",
+      "confidence": 0.81,
+      "overlap": false
+    },
+    {
+      "frame": 559,
+      "speaker": "spk_a",
+      "confidence": 0.773,
+      "overlap": false
+    },
+    {
+      "frame": 560,
+      "speaker": "spk_a",
+      "confidence": 0.77,
+      "overlap": false
+    },
+    {
+      "frame": 561,
+      "speaker": "spk_a",
+      "confidence": 0.765,
+      "overlap": false
+    },
+    {
+      "frame": 562,
+      "speaker": "spk_a",
+      "confidence": 0.756,
+      "overlap": false
+    },
+    {
+      "frame": 563,
+      "speaker": "spk_a",
+      "confidence": 0.75,
+      "overlap": false
+    },
+    {
+      "frame": 564,
+      "speaker": null,
+      "confidence": 0.536,
+      "overlap": false
+    },
+    {
+      "frame": 565,
+      "speaker": null,
+      "confidence": 0.541,
+      "overlap": false
+    },
+    {
+      "frame": 566,
+      "speaker": null,
+      "confidence": 0.541,
+      "overlap": false
+    },
+    {
+      "frame": 567,
+      "speaker": null,
+      "confidence": 0.536,
+      "overlap": false
+    },
+    {
+      "frame": 568,
+      "speaker": null,
+      "confidence": 0.536,
+      "overlap": false
+    },
+    {
+      "frame": 569,
+      "speaker": null,
+      "confidence": 0.536,
+      "overlap": false
+    },
+    {
+      "frame": 570,
+      "speaker": null,
+      "confidence": 0.535,
+      "overlap": false
+    },
+    {
+      "frame": 571,
+      "speaker": null,
+      "confidence": 0.531,
+      "overlap": false
+    },
+    {
+      "frame": 572,
+      "speaker": null,
+      "confidence": 0.526,
+      "overlap": false
+    },
+    {
+      "frame": 573,
+      "speaker": null,
+      "confidence": 0.52,
+      "overlap": false
+    },
+    {
+      "frame": 574,
+      "speaker": null,
+      "confidence": 0.525,
+      "overlap": false
+    },
+    {
+      "frame": 575,
+      "speaker": null,
+      "confidence": 0.526,
+      "overlap": false
+    },
+    {
+      "frame": 576,
+      "speaker": null,
+      "confidence": 0.527,
+      "overlap": false
+    },
+    {
+      "frame": 577,
+      "speaker": null,
+      "confidence": 0.527,
+      "overlap": false
+    },
+    {
+      "frame": 578,
+      "speaker": null,
+      "confidence": 0.532,
+      "overlap": false
+    },
+    {
+      "frame": 579,
+      "speaker": "spk_a",
+      "confidence": 0.759,
+      "overlap": false
+    },
+    {
+      "frame": 580,
+      "speaker": "spk_a",
+      "confidence": 0.753,
+      "overlap": false
+    },
+    {
+      "frame": 581,
+      "speaker": "spk_a",
+      "confidence": 0.748,
+      "overlap": false
+    },
+    {
+      "frame": 582,
+      "speaker": "spk_a",
+      "confidence": 0.745,
+      "overlap": false
+    },
+    {
+      "frame": 583,
+      "speaker": "spk_a",
+      "confidence": 0.746,
+      "overlap": false
+    },
+    {
+      "frame": 584,
+      "speaker": "spk_a",
+      "confidence": 0.752,
+      "overlap": false
+    },
+    {
+      "frame": 585,
+      "speaker": "spk_a",
+      "confidence": 0.764,
+      "overlap": false
+    },
+    {
+      "frame": 586,
+      "speaker": "spk_a",
+      "confidence": 0.775,
+      "overlap": false
+    },
+    {
+      "frame": 587,
+      "speaker": "spk_a",
+      "confidence": 0.783,
+      "overlap": false
+    },
+    {
+      "frame": 588,
+      "speaker": "spk_a",
+      "confidence": 0.793,
+      "overlap": false
+    },
+    {
+      "frame": 589,
+      "speaker": "spk_a",
+      "confidence": 0.801,
+      "overlap": false
+    },
+    {
+      "frame": 590,
+      "speaker": "spk_a",
+      "confidence": 0.805,
+      "overlap": false
+    },
+    {
+      "frame": 591,
+      "speaker": "spk_a",
+      "confidence": 0.806,
+      "overlap": false
+    },
+    {
+      "frame": 592,
+      "speaker": "spk_a",
+      "confidence": 0.801,
+      "overlap": false
+    },
+    {
+      "frame": 593,
+      "speaker": "spk_a",
+      "confidence": 0.794,
+      "overlap": false
+    },
+    {
+      "frame": 594,
+      "speaker": "spk_a",
+      "confidence": 0.781,
+      "overlap": false
+    },
+    {
+      "frame": 595,
+      "speaker": "spk_a",
+      "confidence": 0.768,
+      "overlap": false
+    },
+    {
+      "frame": 596,
+      "speaker": "spk_a",
+      "confidence": 0.754,
+      "overlap": false
+    },
+    {
+      "frame": 597,
+      "speaker": "spk_a",
+      "confidence": 0.744,
+      "overlap": false
+    },
+    {
+      "frame": 598,
+      "speaker": "spk_a",
+      "confidence": 0.742,
+      "overlap": false
+    },
+    {
+      "frame": 599,
+      "speaker": "spk_a",
+      "confidence": 0.742,
+      "overlap": false
+    },
+    {
+      "frame": 600,
+      "speaker": "spk_a",
+      "confidence": 0.734,
+      "overlap": false
+    },
+    {
+      "frame": 601,
+      "speaker": "spk_a",
+      "confidence": 0.768,
+      "overlap": false
+    },
+    {
+      "frame": 602,
+      "speaker": "spk_a",
+      "confidence": 0.765,
+      "overlap": false
+    },
+    {
+      "frame": 603,
+      "speaker": "spk_a",
+      "confidence": 0.771,
+      "overlap": false
+    },
+    {
+      "frame": 604,
+      "speaker": "spk_a",
+      "confidence": 0.779,
+      "overlap": false
+    },
+    {
+      "frame": 605,
+      "speaker": "spk_a",
+      "confidence": 0.779,
+      "overlap": false
+    },
+    {
+      "frame": 606,
+      "speaker": "spk_a",
+      "confidence": 0.763,
+      "overlap": false
+    },
+    {
+      "frame": 607,
+      "speaker": "spk_a",
+      "confidence": 0.778,
+      "overlap": false
+    },
+    {
+      "frame": 608,
+      "speaker": "spk_a",
+      "confidence": 0.798,
+      "overlap": false
+    },
+    {
+      "frame": 609,
+      "speaker": "spk_a",
+      "confidence": 0.811,
+      "overlap": false
+    },
+    {
+      "frame": 610,
+      "speaker": "spk_a",
+      "confidence": 0.813,
+      "overlap": false
+    },
+    {
+      "frame": 611,
+      "speaker": "spk_a",
+      "confidence": 0.846,
+      "overlap": false
+    },
+    {
+      "frame": 612,
+      "speaker": "spk_a",
+      "confidence": 0.844,
+      "overlap": false
+    },
+    {
+      "frame": 613,
+      "speaker": "spk_a",
+      "confidence": 0.857,
+      "overlap": false
+    },
+    {
+      "frame": 614,
+      "speaker": "spk_a",
+      "confidence": 0.855,
+      "overlap": false
+    },
+    {
+      "frame": 615,
+      "speaker": "spk_a",
+      "confidence": 0.821,
+      "overlap": false
+    },
+    {
+      "frame": 616,
+      "speaker": "spk_a",
+      "confidence": 0.819,
+      "overlap": false
+    },
+    {
+      "frame": 617,
+      "speaker": "spk_a",
+      "confidence": 0.815,
+      "overlap": false
+    },
+    {
+      "frame": 618,
+      "speaker": "spk_a",
+      "confidence": 0.775,
+      "overlap": false
+    },
+    {
+      "frame": 619,
+      "speaker": "spk_a",
+      "confidence": 0.778,
+      "overlap": false
+    },
+    {
+      "frame": 620,
+      "speaker": "spk_a",
+      "confidence": 0.781,
+      "overlap": false
+    },
+    {
+      "frame": 621,
+      "speaker": "spk_a",
+      "confidence": 0.785,
+      "overlap": false
+    },
+    {
+      "frame": 622,
+      "speaker": "spk_a",
+      "confidence": 0.824,
+      "overlap": false
+    },
+    {
+      "frame": 623,
+      "speaker": "spk_a",
+      "confidence": 0.826,
+      "overlap": false
+    },
+    {
+      "frame": 624,
+      "speaker": "spk_a",
+      "confidence": 0.83,
+      "overlap": false
+    },
+    {
+      "frame": 625,
+      "speaker": "spk_a",
+      "confidence": 0.832,
+      "overlap": false
+    },
+    {
+      "frame": 626,
+      "speaker": "spk_a",
+      "confidence": 0.832,
+      "overlap": false
+    },
+    {
+      "frame": 627,
+      "speaker": "spk_a",
+      "confidence": 0.832,
+      "overlap": false
+    },
+    {
+      "frame": 628,
+      "speaker": "spk_a",
+      "confidence": 0.863,
+      "overlap": false
+    },
+    {
+      "frame": 629,
+      "speaker": "spk_a",
+      "confidence": 0.863,
+      "overlap": false
+    },
+    {
+      "frame": 630,
+      "speaker": "spk_a",
+      "confidence": 0.866,
+      "overlap": false
+    },
+    {
+      "frame": 631,
+      "speaker": "spk_a",
+      "confidence": 0.866,
+      "overlap": false
+    },
+    {
+      "frame": 632,
+      "speaker": "spk_a",
+      "confidence": 0.866,
+      "overlap": false
+    },
+    {
+      "frame": 633,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 634,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 635,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 636,
+      "speaker": null,
+      "confidence": 0.536,
+      "overlap": false
+    },
+    {
+      "frame": 637,
+      "speaker": null,
+      "confidence": 0.544,
+      "overlap": false
+    },
+    {
+      "frame": 638,
+      "speaker": null,
+      "confidence": 0.544,
+      "overlap": false
+    },
+    {
+      "frame": 639,
+      "speaker": null,
+      "confidence": 0.544,
+      "overlap": false
+    },
+    {
+      "frame": 640,
+      "speaker": null,
+      "confidence": 0.543,
+      "overlap": false
+    },
+    {
+      "frame": 641,
+      "speaker": null,
+      "confidence": 0.543,
+      "overlap": false
+    },
+    {
+      "frame": 642,
+      "speaker": null,
+      "confidence": 0.544,
+      "overlap": false
+    },
+    {
+      "frame": 643,
+      "speaker": null,
+      "confidence": 0.544,
+      "overlap": false
+    },
+    {
+      "frame": 644,
+      "speaker": null,
+      "confidence": 0.545,
+      "overlap": false
+    },
+    {
+      "frame": 645,
+      "speaker": null,
+      "confidence": 0.544,
+      "overlap": false
+    },
+    {
+      "frame": 646,
+      "speaker": null,
+      "confidence": 0.544,
+      "overlap": false
+    },
+    {
+      "frame": 647,
+      "speaker": null,
+      "confidence": 0.543,
+      "overlap": false
+    },
+    {
+      "frame": 648,
+      "speaker": null,
+      "confidence": 0.544,
+      "overlap": false
+    },
+    {
+      "frame": 649,
+      "speaker": null,
+      "confidence": 0.543,
+      "overlap": false
+    },
+    {
+      "frame": 650,
+      "speaker": null,
+      "confidence": 0.543,
+      "overlap": false
+    },
+    {
+      "frame": 651,
+      "speaker": null,
+      "confidence": 0.681,
+      "overlap": false
+    },
+    {
+      "frame": 652,
+      "speaker": "spk_a",
+      "confidence": 0.729,
+      "overlap": false
+    },
+    {
+      "frame": 653,
+      "speaker": "spk_a",
+      "confidence": 0.724,
+      "overlap": false
+    },
+    {
+      "frame": 654,
+      "speaker": "spk_a",
+      "confidence": 0.715,
+      "overlap": false
+    },
+    {
+      "frame": 655,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 656,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 657,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 658,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 659,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 660,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 661,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 662,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 663,
+      "speaker": "both",
+      "confidence": 0.759,
+      "overlap": true
+    },
+    {
+      "frame": 664,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 665,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 666,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 667,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 668,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 669,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 670,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 671,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 672,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 673,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 674,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 675,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 676,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 677,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 678,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 679,
+      "speaker": "spk_b",
+      "confidence": 0.863,
+      "overlap": false
+    },
+    {
+      "frame": 680,
+      "speaker": "spk_b",
+      "confidence": 0.857,
+      "overlap": false
+    },
+    {
+      "frame": 681,
+      "speaker": "spk_b",
+      "confidence": 0.844,
+      "overlap": false
+    },
+    {
+      "frame": 682,
+      "speaker": "spk_b",
+      "confidence": 0.847,
+      "overlap": false
+    },
+    {
+      "frame": 683,
+      "speaker": "spk_b",
+      "confidence": 0.856,
+      "overlap": false
+    },
+    {
+      "frame": 684,
+      "speaker": "spk_b",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 685,
+      "speaker": "spk_b",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 686,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 687,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 688,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 689,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 690,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 691,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 692,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 693,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 694,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 695,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 696,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 697,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 698,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 699,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 700,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 701,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 702,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 703,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 704,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 705,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 706,
+      "speaker": "both",
+      "confidence": 0.878,
+      "overlap": true
+    },
+    {
+      "frame": 707,
+      "speaker": "both",
+      "confidence": 0.869,
+      "overlap": true
+    },
+    {
+      "frame": 708,
+      "speaker": "both",
+      "confidence": 0.869,
+      "overlap": true
+    },
+    {
+      "frame": 709,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 710,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 711,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 712,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 713,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 714,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 715,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 716,
+      "speaker": "both",
+      "confidence": 0.776,
+      "overlap": true
+    },
+    {
+      "frame": 717,
+      "speaker": "both",
+      "confidence": 0.759,
+      "overlap": true
+    },
+    {
+      "frame": 718,
+      "speaker": "both",
+      "confidence": 0.769,
+      "overlap": true
+    },
+    {
+      "frame": 719,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 720,
+      "speaker": "spk_b",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 721,
+      "speaker": "spk_b",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 722,
+      "speaker": "spk_b",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 723,
+      "speaker": "both",
+      "confidence": 0.839,
+      "overlap": true
+    },
+    {
+      "frame": 724,
+      "speaker": "both",
+      "confidence": 0.842,
+      "overlap": true
+    },
+    {
+      "frame": 725,
+      "speaker": null,
+      "confidence": 0.844,
+      "overlap": false
+    },
+    {
+      "frame": 726,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 727,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 728,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 729,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 730,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 731,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 732,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 733,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 734,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 735,
+      "speaker": "spk_b",
+      "confidence": 0.876,
+      "overlap": false
+    },
+    {
+      "frame": 736,
+      "speaker": "spk_b",
+      "confidence": 0.872,
+      "overlap": false
+    },
+    {
+      "frame": 737,
+      "speaker": "spk_b",
+      "confidence": 0.866,
+      "overlap": false
+    },
+    {
+      "frame": 738,
+      "speaker": "spk_b",
+      "confidence": 0.861,
+      "overlap": false
+    },
+    {
+      "frame": 739,
+      "speaker": "spk_b",
+      "confidence": 0.857,
+      "overlap": false
+    },
+    {
+      "frame": 740,
+      "speaker": "spk_b",
+      "confidence": 0.86,
+      "overlap": false
+    },
+    {
+      "frame": 741,
+      "speaker": "spk_b",
+      "confidence": 0.855,
+      "overlap": false
+    },
+    {
+      "frame": 742,
+      "speaker": "spk_b",
+      "confidence": 0.849,
+      "overlap": false
+    },
+    {
+      "frame": 743,
+      "speaker": "spk_b",
+      "confidence": 0.85,
+      "overlap": false
+    },
+    {
+      "frame": 744,
+      "speaker": "spk_b",
+      "confidence": 0.849,
+      "overlap": false
+    },
+    {
+      "frame": 745,
+      "speaker": "spk_b",
+      "confidence": 0.846,
+      "overlap": false
+    },
+    {
+      "frame": 746,
+      "speaker": "spk_b",
+      "confidence": 0.833,
+      "overlap": false
+    },
+    {
+      "frame": 747,
+      "speaker": "spk_b",
+      "confidence": 0.823,
+      "overlap": false
+    },
+    {
+      "frame": 748,
+      "speaker": "spk_b",
+      "confidence": 0.816,
+      "overlap": false
+    },
+    {
+      "frame": 749,
+      "speaker": "spk_b",
+      "confidence": 0.811,
+      "overlap": false
+    },
+    {
+      "frame": 750,
+      "speaker": "spk_b",
+      "confidence": 0.804,
+      "overlap": false
+    },
+    {
+      "frame": 751,
+      "speaker": "spk_b",
+      "confidence": 0.802,
+      "overlap": false
+    },
+    {
+      "frame": 752,
+      "speaker": "spk_b",
+      "confidence": 0.804,
+      "overlap": false
+    },
+    {
+      "frame": 753,
+      "speaker": "spk_b",
+      "confidence": 0.855,
+      "overlap": false
+    },
+    {
+      "frame": 754,
+      "speaker": "spk_b",
+      "confidence": 0.872,
+      "overlap": false
+    },
+    {
+      "frame": 755,
+      "speaker": "spk_b",
+      "confidence": 0.893,
+      "overlap": false
+    },
+    {
+      "frame": 756,
+      "speaker": "spk_b",
+      "confidence": 0.894,
+      "overlap": false
+    },
+    {
+      "frame": 757,
+      "speaker": "spk_b",
+      "confidence": 0.908,
+      "overlap": false
+    },
+    {
+      "frame": 758,
+      "speaker": "spk_b",
+      "confidence": 0.908,
+      "overlap": false
+    },
+    {
+      "frame": 759,
+      "speaker": "spk_b",
+      "confidence": 0.918,
+      "overlap": false
+    },
+    {
+      "frame": 760,
+      "speaker": "spk_b",
+      "confidence": 0.893,
+      "overlap": false
+    },
+    {
+      "frame": 761,
+      "speaker": "spk_b",
+      "confidence": 0.881,
+      "overlap": false
+    },
+    {
+      "frame": 762,
+      "speaker": "spk_b",
+      "confidence": 0.863,
+      "overlap": false
+    },
+    {
+      "frame": 763,
+      "speaker": "spk_b",
+      "confidence": 0.865,
+      "overlap": false
+    },
+    {
+      "frame": 764,
+      "speaker": "spk_b",
+      "confidence": 0.842,
+      "overlap": false
+    },
+    {
+      "frame": 765,
+      "speaker": "spk_b",
+      "confidence": 0.837,
+      "overlap": false
+    },
+    {
+      "frame": 766,
+      "speaker": "spk_b",
+      "confidence": 0.83,
+      "overlap": false
+    },
+    {
+      "frame": 767,
+      "speaker": "spk_b",
+      "confidence": 0.831,
+      "overlap": false
+    },
+    {
+      "frame": 768,
+      "speaker": "spk_b",
+      "confidence": 0.811,
+      "overlap": false
+    },
+    {
+      "frame": 769,
+      "speaker": "spk_b",
+      "confidence": 0.813,
+      "overlap": false
+    },
+    {
+      "frame": 770,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 771,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 772,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 773,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 774,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 775,
+      "speaker": "spk_b",
+      "confidence": 0.83,
+      "overlap": false
+    },
+    {
+      "frame": 776,
+      "speaker": "spk_b",
+      "confidence": 0.822,
+      "overlap": false
+    },
+    {
+      "frame": 777,
+      "speaker": "spk_b",
+      "confidence": 0.838,
+      "overlap": false
+    },
+    {
+      "frame": 778,
+      "speaker": "spk_b",
+      "confidence": 0.828,
+      "overlap": false
+    },
+    {
+      "frame": 779,
+      "speaker": "spk_b",
+      "confidence": 0.813,
+      "overlap": false
+    },
+    {
+      "frame": 780,
+      "speaker": "spk_b",
+      "confidence": 0.797,
+      "overlap": false
+    },
+    {
+      "frame": 781,
+      "speaker": "spk_b",
+      "confidence": 0.797,
+      "overlap": false
+    },
+    {
+      "frame": 782,
+      "speaker": "spk_b",
+      "confidence": 0.831,
+      "overlap": false
+    },
+    {
+      "frame": 783,
+      "speaker": "spk_b",
+      "confidence": 0.83,
+      "overlap": false
+    },
+    {
+      "frame": 784,
+      "speaker": "spk_b",
+      "confidence": 0.833,
+      "overlap": false
+    },
+    {
+      "frame": 785,
+      "speaker": "spk_b",
+      "confidence": 0.836,
+      "overlap": false
+    },
+    {
+      "frame": 786,
+      "speaker": "spk_b",
+      "confidence": 0.866,
+      "overlap": false
+    },
+    {
+      "frame": 787,
+      "speaker": "spk_b",
+      "confidence": 0.864,
+      "overlap": false
+    },
+    {
+      "frame": 788,
+      "speaker": "spk_b",
+      "confidence": 0.862,
+      "overlap": false
+    },
+    {
+      "frame": 789,
+      "speaker": "spk_b",
+      "confidence": 0.835,
+      "overlap": false
+    },
+    {
+      "frame": 790,
+      "speaker": "spk_b",
+      "confidence": 0.836,
+      "overlap": false
+    },
+    {
+      "frame": 791,
+      "speaker": "spk_b",
+      "confidence": 0.836,
+      "overlap": false
+    },
+    {
+      "frame": 792,
+      "speaker": "spk_b",
+      "confidence": 0.836,
+      "overlap": false
+    },
+    {
+      "frame": 793,
+      "speaker": "spk_b",
+      "confidence": 0.803,
+      "overlap": false
+    },
+    {
+      "frame": 794,
+      "speaker": "spk_b",
+      "confidence": 0.808,
+      "overlap": false
+    },
+    {
+      "frame": 795,
+      "speaker": "spk_b",
+      "confidence": 0.82,
+      "overlap": false
+    },
+    {
+      "frame": 796,
+      "speaker": "spk_b",
+      "confidence": 0.844,
+      "overlap": false
+    },
+    {
+      "frame": 797,
+      "speaker": "spk_b",
+      "confidence": 0.849,
+      "overlap": false
+    },
+    {
+      "frame": 798,
+      "speaker": "spk_b",
+      "confidence": 0.85,
+      "overlap": false
+    },
+    {
+      "frame": 799,
+      "speaker": "spk_b",
+      "confidence": 0.847,
+      "overlap": false
+    },
+    {
+      "frame": 800,
+      "speaker": "spk_b",
+      "confidence": 0.853,
+      "overlap": false
+    },
+    {
+      "frame": 801,
+      "speaker": "spk_b",
+      "confidence": 0.862,
+      "overlap": false
+    },
+    {
+      "frame": 802,
+      "speaker": "spk_b",
+      "confidence": 0.861,
+      "overlap": false
+    },
+    {
+      "frame": 803,
+      "speaker": "spk_b",
+      "confidence": 0.841,
+      "overlap": false
+    },
+    {
+      "frame": 804,
+      "speaker": "spk_b",
+      "confidence": 0.855,
+      "overlap": false
+    },
+    {
+      "frame": 805,
+      "speaker": "spk_b",
+      "confidence": 0.857,
+      "overlap": false
+    },
+    {
+      "frame": 806,
+      "speaker": "spk_b",
+      "confidence": 0.856,
+      "overlap": false
+    },
+    {
+      "frame": 807,
+      "speaker": "spk_b",
+      "confidence": 0.864,
+      "overlap": false
+    },
+    {
+      "frame": 808,
+      "speaker": "spk_b",
+      "confidence": 0.848,
+      "overlap": false
+    },
+    {
+      "frame": 809,
+      "speaker": "spk_b",
+      "confidence": 0.843,
+      "overlap": false
+    },
+    {
+      "frame": 810,
+      "speaker": "spk_b",
+      "confidence": 0.854,
+      "overlap": false
+    },
+    {
+      "frame": 811,
+      "speaker": "spk_b",
+      "confidence": 0.839,
+      "overlap": false
+    },
+    {
+      "frame": 812,
+      "speaker": "spk_b",
+      "confidence": 0.832,
+      "overlap": false
+    },
+    {
+      "frame": 813,
+      "speaker": "spk_b",
+      "confidence": 0.831,
+      "overlap": false
+    },
+    {
+      "frame": 814,
+      "speaker": "spk_b",
+      "confidence": 0.813,
+      "overlap": false
+    },
+    {
+      "frame": 815,
+      "speaker": "spk_b",
+      "confidence": 0.847,
+      "overlap": false
+    },
+    {
+      "frame": 816,
+      "speaker": "spk_b",
+      "confidence": 0.856,
+      "overlap": false
+    },
+    {
+      "frame": 817,
+      "speaker": "spk_b",
+      "confidence": 0.862,
+      "overlap": false
+    },
+    {
+      "frame": 818,
+      "speaker": "spk_b",
+      "confidence": 0.876,
+      "overlap": false
+    },
+    {
+      "frame": 819,
+      "speaker": "spk_b",
+      "confidence": 0.889,
+      "overlap": false
+    },
+    {
+      "frame": 820,
+      "speaker": "spk_b",
+      "confidence": 0.894,
+      "overlap": false
+    },
+    {
+      "frame": 821,
+      "speaker": "spk_b",
+      "confidence": 0.893,
+      "overlap": false
+    },
+    {
+      "frame": 822,
+      "speaker": "spk_b",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 823,
+      "speaker": "spk_b",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 824,
+      "speaker": "spk_b",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 825,
+      "speaker": "spk_b",
+      "confidence": 0.765,
+      "overlap": false
+    },
+    {
+      "frame": 826,
+      "speaker": "spk_b",
+      "confidence": 0.742,
+      "overlap": false
+    },
+    {
+      "frame": 827,
+      "speaker": "spk_b",
+      "confidence": 0.731,
+      "overlap": false
+    },
+    {
+      "frame": 828,
+      "speaker": "spk_b",
+      "confidence": 0.734,
+      "overlap": false
+    },
+    {
+      "frame": 829,
+      "speaker": "spk_b",
+      "confidence": 0.776,
+      "overlap": false
+    },
+    {
+      "frame": 830,
+      "speaker": "spk_b",
+      "confidence": 0.783,
+      "overlap": false
+    },
+    {
+      "frame": 831,
+      "speaker": "spk_b",
+      "confidence": 0.782,
+      "overlap": false
+    },
+    {
+      "frame": 832,
+      "speaker": "spk_b",
+      "confidence": 0.776,
+      "overlap": false
+    },
+    {
+      "frame": 833,
+      "speaker": "spk_b",
+      "confidence": 0.738,
+      "overlap": false
+    },
+    {
+      "frame": 834,
+      "speaker": "spk_b",
+      "confidence": 0.726,
+      "overlap": false
+    },
+    {
+      "frame": 835,
+      "speaker": "spk_b",
+      "confidence": 0.705,
+      "overlap": false
+    },
+    {
+      "frame": 836,
+      "speaker": "spk_b",
+      "confidence": 0.68,
+      "overlap": false
+    },
+    {
+      "frame": 837,
+      "speaker": "spk_b",
+      "confidence": 0.66,
+      "overlap": false
+    },
+    {
+      "frame": 838,
+      "speaker": "spk_b",
+      "confidence": 0.659,
+      "overlap": false
+    },
+    {
+      "frame": 839,
+      "speaker": "spk_b",
+      "confidence": 0.662,
+      "overlap": false
+    },
+    {
+      "frame": 840,
+      "speaker": "spk_b",
+      "confidence": 0.69,
+      "overlap": false
+    },
+    {
+      "frame": 841,
+      "speaker": "spk_b",
+      "confidence": 0.677,
+      "overlap": false
+    },
+    {
+      "frame": 842,
+      "speaker": "spk_b",
+      "confidence": 0.685,
+      "overlap": false
+    },
+    {
+      "frame": 843,
+      "speaker": null,
+      "confidence": 0.546,
+      "overlap": false
+    },
+    {
+      "frame": 844,
+      "speaker": null,
+      "confidence": 0.546,
+      "overlap": false
+    },
+    {
+      "frame": 845,
+      "speaker": null,
+      "confidence": 0.547,
+      "overlap": false
+    },
+    {
+      "frame": 846,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 847,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 848,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 849,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 850,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 851,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 852,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 853,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 854,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 855,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 856,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 857,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 858,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 859,
+      "speaker": "spk_b",
+      "confidence": 0.865,
+      "overlap": false
+    },
+    {
+      "frame": 860,
+      "speaker": "spk_b",
+      "confidence": 0.868,
+      "overlap": false
+    },
+    {
+      "frame": 861,
+      "speaker": "spk_b",
+      "confidence": 0.864,
+      "overlap": false
+    },
+    {
+      "frame": 862,
+      "speaker": "spk_b",
+      "confidence": 0.823,
+      "overlap": false
+    },
+    {
+      "frame": 863,
+      "speaker": "spk_b",
+      "confidence": 0.819,
+      "overlap": false
+    },
+    {
+      "frame": 864,
+      "speaker": "spk_b",
+      "confidence": 0.808,
+      "overlap": false
+    },
+    {
+      "frame": 865,
+      "speaker": "spk_b",
+      "confidence": 0.799,
+      "overlap": false
+    },
+    {
+      "frame": 866,
+      "speaker": "spk_b",
+      "confidence": 0.803,
+      "overlap": false
+    },
+    {
+      "frame": 867,
+      "speaker": "spk_b",
+      "confidence": 0.816,
+      "overlap": false
+    },
+    {
+      "frame": 868,
+      "speaker": "spk_b",
+      "confidence": 0.825,
+      "overlap": false
+    },
+    {
+      "frame": 869,
+      "speaker": "spk_b",
+      "confidence": 0.829,
+      "overlap": false
+    },
+    {
+      "frame": 870,
+      "speaker": "spk_b",
+      "confidence": 0.836,
+      "overlap": false
+    },
+    {
+      "frame": 871,
+      "speaker": "spk_b",
+      "confidence": 0.842,
+      "overlap": false
+    },
+    {
+      "frame": 872,
+      "speaker": "spk_b",
+      "confidence": 0.847,
+      "overlap": false
+    },
+    {
+      "frame": 873,
+      "speaker": "spk_b",
+      "confidence": 0.841,
+      "overlap": false
+    },
+    {
+      "frame": 874,
+      "speaker": "spk_b",
+      "confidence": 0.826,
+      "overlap": false
+    },
+    {
+      "frame": 875,
+      "speaker": "spk_b",
+      "confidence": 0.816,
+      "overlap": false
+    },
+    {
+      "frame": 876,
+      "speaker": "spk_b",
+      "confidence": 0.81,
+      "overlap": false
+    },
+    {
+      "frame": 877,
+      "speaker": "spk_b",
+      "confidence": 0.804,
+      "overlap": false
+    },
+    {
+      "frame": 878,
+      "speaker": "spk_b",
+      "confidence": 0.8,
+      "overlap": false
+    },
+    {
+      "frame": 879,
+      "speaker": "spk_b",
+      "confidence": 0.797,
+      "overlap": false
+    },
+    {
+      "frame": 880,
+      "speaker": "spk_b",
+      "confidence": 0.807,
+      "overlap": false
+    },
+    {
+      "frame": 881,
+      "speaker": "spk_b",
+      "confidence": 0.817,
+      "overlap": false
+    },
+    {
+      "frame": 882,
+      "speaker": "spk_b",
+      "confidence": 0.838,
+      "overlap": false
+    },
+    {
+      "frame": 883,
+      "speaker": "spk_b",
+      "confidence": 0.857,
+      "overlap": false
+    },
+    {
+      "frame": 884,
+      "speaker": "spk_b",
+      "confidence": 0.864,
+      "overlap": false
+    },
+    {
+      "frame": 885,
+      "speaker": "spk_b",
+      "confidence": 0.873,
+      "overlap": false
+    },
+    {
+      "frame": 886,
+      "speaker": "spk_b",
+      "confidence": 0.879,
+      "overlap": false
+    },
+    {
+      "frame": 887,
+      "speaker": "spk_b",
+      "confidence": 0.874,
+      "overlap": false
+    },
+    {
+      "frame": 888,
+      "speaker": "spk_b",
+      "confidence": 0.866,
+      "overlap": false
+    },
+    {
+      "frame": 889,
+      "speaker": "spk_b",
+      "confidence": 0.846,
+      "overlap": false
+    },
+    {
+      "frame": 890,
+      "speaker": "spk_b",
+      "confidence": 0.825,
+      "overlap": false
+    },
+    {
+      "frame": 891,
+      "speaker": "spk_b",
+      "confidence": 0.817,
+      "overlap": false
+    },
+    {
+      "frame": 892,
+      "speaker": "spk_b",
+      "confidence": 0.801,
+      "overlap": false
+    },
+    {
+      "frame": 893,
+      "speaker": "spk_b",
+      "confidence": 0.79,
+      "overlap": false
+    },
+    {
+      "frame": 894,
+      "speaker": "spk_b",
+      "confidence": 0.786,
+      "overlap": false
+    },
+    {
+      "frame": 895,
+      "speaker": "spk_b",
+      "confidence": 0.79,
+      "overlap": false
+    },
+    {
+      "frame": 896,
+      "speaker": "spk_b",
+      "confidence": 0.797,
+      "overlap": false
+    },
+    {
+      "frame": 897,
+      "speaker": "spk_b",
+      "confidence": 0.808,
+      "overlap": false
+    },
+    {
+      "frame": 898,
+      "speaker": "spk_b",
+      "confidence": 0.816,
+      "overlap": false
+    },
+    {
+      "frame": 899,
+      "speaker": "spk_b",
+      "confidence": 0.818,
+      "overlap": false
+    },
+    {
+      "frame": 900,
+      "speaker": "spk_b",
+      "confidence": 0.82,
+      "overlap": false
+    },
+    {
+      "frame": 901,
+      "speaker": "spk_b",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 902,
+      "speaker": "spk_b",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 903,
+      "speaker": "spk_b",
+      "confidence": 0.761,
+      "overlap": false
+    },
+    {
+      "frame": 904,
+      "speaker": "spk_b",
+      "confidence": 0.74,
+      "overlap": false
+    },
+    {
+      "frame": 905,
+      "speaker": "spk_b",
+      "confidence": 0.724,
+      "overlap": false
+    },
+    {
+      "frame": 906,
+      "speaker": "spk_b",
+      "confidence": 0.722,
+      "overlap": false
+    },
+    {
+      "frame": 907,
+      "speaker": "spk_b",
+      "confidence": 0.716,
+      "overlap": false
+    },
+    {
+      "frame": 908,
+      "speaker": "spk_b",
+      "confidence": 0.749,
+      "overlap": false
+    },
+    {
+      "frame": 909,
+      "speaker": "spk_b",
+      "confidence": 0.756,
+      "overlap": false
+    },
+    {
+      "frame": 910,
+      "speaker": "spk_b",
+      "confidence": 0.773,
+      "overlap": false
+    },
+    {
+      "frame": 911,
+      "speaker": "spk_b",
+      "confidence": 0.788,
+      "overlap": false
+    },
+    {
+      "frame": 912,
+      "speaker": "spk_b",
+      "confidence": 0.795,
+      "overlap": false
+    },
+    {
+      "frame": 913,
+      "speaker": "spk_b",
+      "confidence": 0.766,
+      "overlap": false
+    },
+    {
+      "frame": 914,
+      "speaker": "spk_b",
+      "confidence": 0.772,
+      "overlap": false
+    },
+    {
+      "frame": 915,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 916,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 917,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 918,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 919,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 920,
+      "speaker": "both",
+      "confidence": 0.847,
+      "overlap": true
+    },
+    {
+      "frame": 921,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 922,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 923,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 924,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 925,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 926,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 927,
+      "speaker": "both",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 928,
+      "speaker": "spk_b",
+      "confidence": 0.819,
+      "overlap": false
+    },
+    {
+      "frame": 929,
+      "speaker": "spk_b",
+      "confidence": 0.829,
+      "overlap": false
+    },
+    {
+      "frame": 930,
+      "speaker": "spk_b",
+      "confidence": 0.824,
+      "overlap": false
+    },
+    {
+      "frame": 931,
+      "speaker": "spk_b",
+      "confidence": 0.813,
+      "overlap": false
+    },
+    {
+      "frame": 932,
+      "speaker": "spk_b",
+      "confidence": 0.807,
+      "overlap": false
+    },
+    {
+      "frame": 933,
+      "speaker": "spk_b",
+      "confidence": 0.805,
+      "overlap": false
+    },
+    {
+      "frame": 934,
+      "speaker": "spk_b",
+      "confidence": 0.802,
+      "overlap": false
+    },
+    {
+      "frame": 935,
+      "speaker": "spk_b",
+      "confidence": 0.738,
+      "overlap": false
+    },
+    {
+      "frame": 936,
+      "speaker": "spk_b",
+      "confidence": 0.714,
+      "overlap": false
+    },
+    {
+      "frame": 937,
+      "speaker": "spk_b",
+      "confidence": 0.709,
+      "overlap": false
+    },
+    {
+      "frame": 938,
+      "speaker": "spk_b",
+      "confidence": 0.712,
+      "overlap": false
+    },
+    {
+      "frame": 939,
+      "speaker": "spk_b",
+      "confidence": 0.702,
+      "overlap": false
+    },
+    {
+      "frame": 940,
+      "speaker": "spk_b",
+      "confidence": 0.707,
+      "overlap": false
+    },
+    {
+      "frame": 941,
+      "speaker": "spk_b",
+      "confidence": 0.709,
+      "overlap": false
+    },
+    {
+      "frame": 942,
+      "speaker": "spk_b",
+      "confidence": 0.753,
+      "overlap": false
+    },
+    {
+      "frame": 943,
+      "speaker": "spk_b",
+      "confidence": 0.758,
+      "overlap": false
+    },
+    {
+      "frame": 944,
+      "speaker": "spk_b",
+      "confidence": 0.763,
+      "overlap": false
+    },
+    {
+      "frame": 945,
+      "speaker": "spk_b",
+      "confidence": 0.763,
+      "overlap": false
+    },
+    {
+      "frame": 946,
+      "speaker": "spk_b",
+      "confidence": 0.769,
+      "overlap": false
+    },
+    {
+      "frame": 947,
+      "speaker": "spk_b",
+      "confidence": 0.767,
+      "overlap": false
+    },
+    {
+      "frame": 948,
+      "speaker": "spk_b",
+      "confidence": 0.767,
+      "overlap": false
+    },
+    {
+      "frame": 949,
+      "speaker": "spk_b",
+      "confidence": 0.764,
+      "overlap": false
+    },
+    {
+      "frame": 950,
+      "speaker": "spk_b",
+      "confidence": 0.767,
+      "overlap": false
+    },
+    {
+      "frame": 951,
+      "speaker": "spk_b",
+      "confidence": 0.768,
+      "overlap": false
+    },
+    {
+      "frame": 952,
+      "speaker": "spk_b",
+      "confidence": 0.817,
+      "overlap": false
+    },
+    {
+      "frame": 953,
+      "speaker": "spk_b",
+      "confidence": 0.82,
+      "overlap": false
+    },
+    {
+      "frame": 954,
+      "speaker": "spk_b",
+      "confidence": 0.832,
+      "overlap": false
+    },
+    {
+      "frame": 955,
+      "speaker": "spk_b",
+      "confidence": 0.834,
+      "overlap": false
+    },
+    {
+      "frame": 956,
+      "speaker": "spk_b",
+      "confidence": 0.839,
+      "overlap": false
+    },
+    {
+      "frame": 957,
+      "speaker": "spk_b",
+      "confidence": 0.844,
+      "overlap": false
+    },
+    {
+      "frame": 958,
+      "speaker": "spk_b",
+      "confidence": 0.849,
+      "overlap": false
+    },
+    {
+      "frame": 959,
+      "speaker": "spk_b",
+      "confidence": 0.81,
+      "overlap": false
+    },
+    {
+      "frame": 960,
+      "speaker": "spk_b",
+      "confidence": 0.819,
+      "overlap": false
+    },
+    {
+      "frame": 961,
+      "speaker": "spk_b",
+      "confidence": 0.824,
+      "overlap": false
+    },
+    {
+      "frame": 962,
+      "speaker": "spk_b",
+      "confidence": 0.824,
+      "overlap": false
+    },
+    {
+      "frame": 963,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 964,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 965,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 966,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 967,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 968,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 969,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 970,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 971,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 972,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 973,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 974,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 975,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 976,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 977,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 978,
+      "speaker": "spk_b",
+      "confidence": 0.832,
+      "overlap": false
+    },
+    {
+      "frame": 979,
+      "speaker": "spk_b",
+      "confidence": 0.822,
+      "overlap": false
+    },
+    {
+      "frame": 980,
+      "speaker": "spk_b",
+      "confidence": 0.827,
+      "overlap": false
+    },
+    {
+      "frame": 981,
+      "speaker": "spk_b",
+      "confidence": 0.829,
+      "overlap": false
+    },
+    {
+      "frame": 982,
+      "speaker": "spk_b",
+      "confidence": 0.823,
+      "overlap": false
+    },
+    {
+      "frame": 983,
+      "speaker": "spk_b",
+      "confidence": 0.835,
+      "overlap": false
+    },
+    {
+      "frame": 984,
+      "speaker": "spk_b",
+      "confidence": 0.846,
+      "overlap": false
+    },
+    {
+      "frame": 985,
+      "speaker": "spk_b",
+      "confidence": 0.844,
+      "overlap": false
+    },
+    {
+      "frame": 986,
+      "speaker": "spk_b",
+      "confidence": 0.839,
+      "overlap": false
+    },
+    {
+      "frame": 987,
+      "speaker": "spk_b",
+      "confidence": 0.827,
+      "overlap": false
+    },
+    {
+      "frame": 988,
+      "speaker": "spk_b",
+      "confidence": 0.822,
+      "overlap": false
+    },
+    {
+      "frame": 989,
+      "speaker": "spk_b",
+      "confidence": 0.823,
+      "overlap": false
+    },
+    {
+      "frame": 990,
+      "speaker": "spk_b",
+      "confidence": 0.816,
+      "overlap": false
+    },
+    {
+      "frame": 991,
+      "speaker": "spk_b",
+      "confidence": 0.805,
+      "overlap": false
+    },
+    {
+      "frame": 992,
+      "speaker": "spk_b",
+      "confidence": 0.809,
+      "overlap": false
+    },
+    {
+      "frame": 993,
+      "speaker": "spk_b",
+      "confidence": 0.815,
+      "overlap": false
+    },
+    {
+      "frame": 994,
+      "speaker": "spk_b",
+      "confidence": 0.819,
+      "overlap": false
+    },
+    {
+      "frame": 995,
+      "speaker": "spk_b",
+      "confidence": 0.82,
+      "overlap": false
+    },
+    {
+      "frame": 996,
+      "speaker": "spk_b",
+      "confidence": 0.822,
+      "overlap": false
+    },
+    {
+      "frame": 997,
+      "speaker": "spk_b",
+      "confidence": 0.812,
+      "overlap": false
+    },
+    {
+      "frame": 998,
+      "speaker": "spk_b",
+      "confidence": 0.81,
+      "overlap": false
+    },
+    {
+      "frame": 999,
+      "speaker": "spk_b",
+      "confidence": 0.805,
+      "overlap": false
+    },
+    {
+      "frame": 1000,
+      "speaker": "spk_b",
+      "confidence": 0.805,
+      "overlap": false
+    },
+    {
+      "frame": 1001,
+      "speaker": "spk_b",
+      "confidence": 0.811,
+      "overlap": false
+    },
+    {
+      "frame": 1002,
+      "speaker": "spk_b",
+      "confidence": 0.812,
+      "overlap": false
+    },
+    {
+      "frame": 1003,
+      "speaker": "spk_b",
+      "confidence": 0.813,
+      "overlap": false
+    },
+    {
+      "frame": 1004,
+      "speaker": "spk_b",
+      "confidence": 0.813,
+      "overlap": false
+    },
+    {
+      "frame": 1005,
+      "speaker": "spk_b",
+      "confidence": 0.826,
+      "overlap": false
+    },
+    {
+      "frame": 1006,
+      "speaker": "spk_b",
+      "confidence": 0.829,
+      "overlap": false
+    },
+    {
+      "frame": 1007,
+      "speaker": "spk_b",
+      "confidence": 0.827,
+      "overlap": false
+    },
+    {
+      "frame": 1008,
+      "speaker": "spk_b",
+      "confidence": 0.82,
+      "overlap": false
+    },
+    {
+      "frame": 1009,
+      "speaker": "spk_b",
+      "confidence": 0.833,
+      "overlap": false
+    },
+    {
+      "frame": 1010,
+      "speaker": "spk_b",
+      "confidence": 0.835,
+      "overlap": false
+    },
+    {
+      "frame": 1011,
+      "speaker": "spk_b",
+      "confidence": 0.836,
+      "overlap": false
+    },
+    {
+      "frame": 1012,
+      "speaker": "spk_b",
+      "confidence": 0.829,
+      "overlap": false
+    },
+    {
+      "frame": 1013,
+      "speaker": "spk_b",
+      "confidence": 0.833,
+      "overlap": false
+    },
+    {
+      "frame": 1014,
+      "speaker": "spk_b",
+      "confidence": 0.83,
+      "overlap": false
+    },
+    {
+      "frame": 1015,
+      "speaker": "spk_b",
+      "confidence": 0.831,
+      "overlap": false
+    },
+    {
+      "frame": 1016,
+      "speaker": "spk_b",
+      "confidence": 0.821,
+      "overlap": false
+    },
+    {
+      "frame": 1017,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 1018,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 1019,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 1020,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 1021,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 1022,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 1023,
+      "speaker": "spk_b",
+      "confidence": 0.845,
+      "overlap": false
+    },
+    {
+      "frame": 1024,
+      "speaker": "spk_b",
+      "confidence": 0.848,
+      "overlap": false
+    },
+    {
+      "frame": 1025,
+      "speaker": "spk_b",
+      "confidence": 0.851,
+      "overlap": false
+    },
+    {
+      "frame": 1026,
+      "speaker": "spk_b",
+      "confidence": 0.847,
+      "overlap": false
+    },
+    {
+      "frame": 1027,
+      "speaker": "spk_b",
+      "confidence": 0.848,
+      "overlap": false
+    },
+    {
+      "frame": 1028,
+      "speaker": "spk_b",
+      "confidence": 0.854,
+      "overlap": false
+    },
+    {
+      "frame": 1029,
+      "speaker": "spk_b",
+      "confidence": 0.859,
+      "overlap": false
+    },
+    {
+      "frame": 1030,
+      "speaker": "spk_b",
+      "confidence": 0.863,
+      "overlap": false
+    },
+    {
+      "frame": 1031,
+      "speaker": "spk_b",
+      "confidence": 0.862,
+      "overlap": false
+    },
+    {
+      "frame": 1032,
+      "speaker": "spk_b",
+      "confidence": 0.858,
+      "overlap": false
+    },
+    {
+      "frame": 1033,
+      "speaker": "spk_b",
+      "confidence": 0.853,
+      "overlap": false
+    },
+    {
+      "frame": 1034,
+      "speaker": "spk_b",
+      "confidence": 0.845,
+      "overlap": false
+    },
+    {
+      "frame": 1035,
+      "speaker": "spk_b",
+      "confidence": 0.836,
+      "overlap": false
+    },
+    {
+      "frame": 1036,
+      "speaker": "spk_b",
+      "confidence": 0.825,
+      "overlap": false
+    },
+    {
+      "frame": 1037,
+      "speaker": "spk_b",
+      "confidence": 0.816,
+      "overlap": false
+    },
+    {
+      "frame": 1038,
+      "speaker": "spk_b",
+      "confidence": 0.81,
+      "overlap": false
+    },
+    {
+      "frame": 1039,
+      "speaker": "spk_b",
+      "confidence": 0.807,
+      "overlap": false
+    },
+    {
+      "frame": 1040,
+      "speaker": "spk_b",
+      "confidence": 0.808,
+      "overlap": false
+    },
+    {
+      "frame": 1041,
+      "speaker": "spk_b",
+      "confidence": 0.811,
+      "overlap": false
+    },
+    {
+      "frame": 1042,
+      "speaker": "spk_b",
+      "confidence": 0.811,
+      "overlap": false
+    },
+    {
+      "frame": 1043,
+      "speaker": "spk_b",
+      "confidence": 0.813,
+      "overlap": false
+    },
+    {
+      "frame": 1044,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 1045,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 1046,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 1047,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 1048,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 1049,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 1050,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 1051,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 1052,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 1053,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 1054,
+      "speaker": null,
+      "confidence": 0.502,
+      "overlap": false
+    },
+    {
+      "frame": 1055,
+      "speaker": null,
+      "confidence": 0.509,
+      "overlap": false
+    },
+    {
+      "frame": 1056,
+      "speaker": "spk_b",
+      "confidence": 0.804,
+      "overlap": false
+    },
+    {
+      "frame": 1057,
+      "speaker": "spk_b",
+      "confidence": 0.798,
+      "overlap": false
+    },
+    {
+      "frame": 1058,
+      "speaker": "spk_b",
+      "confidence": 0.793,
+      "overlap": false
+    },
+    {
+      "frame": 1059,
+      "speaker": "spk_b",
+      "confidence": 0.787,
+      "overlap": false
+    },
+    {
+      "frame": 1060,
+      "speaker": "spk_b",
+      "confidence": 0.787,
+      "overlap": false
+    },
+    {
+      "frame": 1061,
+      "speaker": "spk_b",
+      "confidence": 0.818,
+      "overlap": false
+    },
+    {
+      "frame": 1062,
+      "speaker": "spk_b",
+      "confidence": 0.831,
+      "overlap": false
+    },
+    {
+      "frame": 1063,
+      "speaker": "spk_b",
+      "confidence": 0.845,
+      "overlap": false
+    },
+    {
+      "frame": 1064,
+      "speaker": "spk_b",
+      "confidence": 0.868,
+      "overlap": false
+    },
+    {
+      "frame": 1065,
+      "speaker": "spk_b",
+      "confidence": 0.871,
+      "overlap": false
+    },
+    {
+      "frame": 1066,
+      "speaker": "spk_b",
+      "confidence": 0.872,
+      "overlap": false
+    },
+    {
+      "frame": 1067,
+      "speaker": "spk_b",
+      "confidence": 0.874,
+      "overlap": false
+    },
+    {
+      "frame": 1068,
+      "speaker": "spk_b",
+      "confidence": 0.85,
+      "overlap": false
+    },
+    {
+      "frame": 1069,
+      "speaker": "spk_b",
+      "confidence": 0.851,
+      "overlap": false
+    },
+    {
+      "frame": 1070,
+      "speaker": "spk_b",
+      "confidence": 0.837,
+      "overlap": false
+    },
+    {
+      "frame": 1071,
+      "speaker": "spk_b",
+      "confidence": 0.829,
+      "overlap": false
+    },
+    {
+      "frame": 1072,
+      "speaker": "spk_b",
+      "confidence": 0.831,
+      "overlap": false
+    },
+    {
+      "frame": 1073,
+      "speaker": "spk_b",
+      "confidence": 0.838,
+      "overlap": false
+    },
+    {
+      "frame": 1074,
+      "speaker": "spk_b",
+      "confidence": 0.811,
+      "overlap": false
+    },
+    {
+      "frame": 1075,
+      "speaker": "spk_b",
+      "confidence": 0.824,
+      "overlap": false
+    },
+    {
+      "frame": 1076,
+      "speaker": "spk_b",
+      "confidence": 0.816,
+      "overlap": false
+    },
+    {
+      "frame": 1077,
+      "speaker": "spk_b",
+      "confidence": 0.815,
+      "overlap": false
+    },
+    {
+      "frame": 1078,
+      "speaker": "spk_b",
+      "confidence": 0.794,
+      "overlap": false
+    },
+    {
+      "frame": 1079,
+      "speaker": "spk_b",
+      "confidence": 0.753,
+      "overlap": false
+    },
+    {
+      "frame": 1080,
+      "speaker": "spk_b",
+      "confidence": 0.743,
+      "overlap": false
+    },
+    {
+      "frame": 1081,
+      "speaker": "spk_b",
+      "confidence": 0.791,
+      "overlap": false
+    },
+    {
+      "frame": 1082,
+      "speaker": "spk_b",
+      "confidence": 0.798,
+      "overlap": false
+    },
+    {
+      "frame": 1083,
+      "speaker": "spk_b",
+      "confidence": 0.791,
+      "overlap": false
+    },
+    {
+      "frame": 1084,
+      "speaker": "spk_b",
+      "confidence": 0.793,
+      "overlap": false
+    },
+    {
+      "frame": 1085,
+      "speaker": "spk_b",
+      "confidence": 0.5,
+      "overlap": true
+    },
+    {
+      "frame": 1086,
+      "speaker": "spk_b",
+      "confidence": 0.788,
+      "overlap": false
+    },
+    {
+      "frame": 1087,
+      "speaker": "spk_b",
+      "confidence": 0.783,
+      "overlap": false
+    },
+    {
+      "frame": 1088,
+      "speaker": "spk_b",
+      "confidence": 0.771,
+      "overlap": false
+    },
+    {
+      "frame": 1089,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 1090,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 1091,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 1092,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 1093,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 1094,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 1095,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 1096,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 1097,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 1098,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 1099,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 1100,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 1101,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 1102,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 1103,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 1104,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 1105,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 1106,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 1107,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 1108,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 1109,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 1110,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 1111,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 1112,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 1113,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 1114,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 1115,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 1116,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 1117,
+      "speaker": null,
+      "confidence": 0.515,
+      "overlap": false
+    },
+    {
+      "frame": 1118,
+      "speaker": null,
+      "confidence": 0.538,
+      "overlap": false
+    },
+    {
+      "frame": 1119,
+      "speaker": null,
+      "confidence": 0.535,
+      "overlap": false
+    },
+    {
+      "frame": 1120,
+      "speaker": null,
+      "confidence": 0.533,
+      "overlap": false
+    },
+    {
+      "frame": 1121,
+      "speaker": null,
+      "confidence": 0.53,
+      "overlap": false
+    },
+    {
+      "frame": 1122,
+      "speaker": "spk_b",
+      "confidence": 0.747,
+      "overlap": false
+    },
+    {
+      "frame": 1123,
+      "speaker": "spk_b",
+      "confidence": 0.756,
+      "overlap": false
+    },
+    {
+      "frame": 1124,
+      "speaker": "spk_b",
+      "confidence": 0.758,
+      "overlap": false
+    },
+    {
+      "frame": 1125,
+      "speaker": "spk_b",
+      "confidence": 0.788,
+      "overlap": false
+    },
+    {
+      "frame": 1126,
+      "speaker": "spk_b",
+      "confidence": 0.787,
+      "overlap": false
+    },
+    {
+      "frame": 1127,
+      "speaker": "spk_b",
+      "confidence": 0.8,
+      "overlap": false
+    },
+    {
+      "frame": 1128,
+      "speaker": "spk_b",
+      "confidence": 0.809,
+      "overlap": false
+    },
+    {
+      "frame": 1129,
+      "speaker": "spk_b",
+      "confidence": 0.805,
+      "overlap": false
+    },
+    {
+      "frame": 1130,
+      "speaker": "spk_b",
+      "confidence": 0.77,
+      "overlap": false
+    },
+    {
+      "frame": 1131,
+      "speaker": "spk_b",
+      "confidence": 0.771,
+      "overlap": false
+    },
+    {
+      "frame": 1132,
+      "speaker": "spk_b",
+      "confidence": 0.765,
+      "overlap": false
+    },
+    {
+      "frame": 1133,
+      "speaker": "spk_b",
+      "confidence": 0.764,
+      "overlap": false
+    },
+    {
+      "frame": 1134,
+      "speaker": "spk_b",
+      "confidence": 0.737,
+      "overlap": false
+    },
+    {
+      "frame": 1135,
+      "speaker": "spk_b",
+      "confidence": 0.712,
+      "overlap": false
+    },
+    {
+      "frame": 1136,
+      "speaker": "spk_b",
+      "confidence": 0.708,
+      "overlap": false
+    },
+    {
+      "frame": 1137,
+      "speaker": "spk_b",
+      "confidence": 0.738,
+      "overlap": false
+    },
+    {
+      "frame": 1138,
+      "speaker": "spk_b",
+      "confidence": 0.732,
+      "overlap": false
+    },
+    {
+      "frame": 1139,
+      "speaker": "spk_b",
+      "confidence": 0.718,
+      "overlap": false
+    },
+    {
+      "frame": 1140,
+      "speaker": "spk_b",
+      "confidence": 0.729,
+      "overlap": false
+    },
+    {
+      "frame": 1141,
+      "speaker": "spk_b",
+      "confidence": 0.738,
+      "overlap": false
+    },
+    {
+      "frame": 1142,
+      "speaker": "spk_b",
+      "confidence": 0.751,
+      "overlap": false
+    },
+    {
+      "frame": 1143,
+      "speaker": "spk_b",
+      "confidence": 0.746,
+      "overlap": false
+    },
+    {
+      "frame": 1144,
+      "speaker": "spk_b",
+      "confidence": 0.747,
+      "overlap": false
+    },
+    {
+      "frame": 1145,
+      "speaker": "spk_b",
+      "confidence": 0.757,
+      "overlap": false
+    },
+    {
+      "frame": 1146,
+      "speaker": "spk_b",
+      "confidence": 0.769,
+      "overlap": false
+    },
+    {
+      "frame": 1147,
+      "speaker": "spk_b",
+      "confidence": 0.763,
+      "overlap": false
+    },
+    {
+      "frame": 1148,
+      "speaker": "spk_b",
+      "confidence": 0.768,
+      "overlap": false
+    },
+    {
+      "frame": 1149,
+      "speaker": "spk_b",
+      "confidence": 0.766,
+      "overlap": false
+    },
+    {
+      "frame": 1150,
+      "speaker": "spk_b",
+      "confidence": 0.764,
+      "overlap": false
+    },
+    {
+      "frame": 1151,
+      "speaker": "spk_b",
+      "confidence": 0.763,
+      "overlap": false
+    },
+    {
+      "frame": 1152,
+      "speaker": "spk_b",
+      "confidence": 0.75,
+      "overlap": false
+    },
+    {
+      "frame": 1153,
+      "speaker": "spk_b",
+      "confidence": 0.73,
+      "overlap": false
+    },
+    {
+      "frame": 1154,
+      "speaker": "spk_b",
+      "confidence": 0.735,
+      "overlap": false
+    },
+    {
+      "frame": 1155,
+      "speaker": "spk_b",
+      "confidence": 0.69,
+      "overlap": false
+    },
+    {
+      "frame": 1156,
+      "speaker": "spk_b",
+      "confidence": 0.688,
+      "overlap": false
+    },
+    {
+      "frame": 1157,
+      "speaker": "spk_b",
+      "confidence": 0.696,
+      "overlap": false
+    },
+    {
+      "frame": 1158,
+      "speaker": "spk_b",
+      "confidence": 0.7,
+      "overlap": false
+    },
+    {
+      "frame": 1159,
+      "speaker": "spk_b",
+      "confidence": 0.719,
+      "overlap": false
+    },
+    {
+      "frame": 1160,
+      "speaker": "spk_b",
+      "confidence": 0.744,
+      "overlap": false
+    },
+    {
+      "frame": 1161,
+      "speaker": "spk_b",
+      "confidence": 0.746,
+      "overlap": false
+    },
+    {
+      "frame": 1162,
+      "speaker": "spk_b",
+      "confidence": 0.791,
+      "overlap": false
+    },
+    {
+      "frame": 1163,
+      "speaker": "spk_b",
+      "confidence": 0.8,
+      "overlap": false
+    },
+    {
+      "frame": 1164,
+      "speaker": "spk_b",
+      "confidence": 0.802,
+      "overlap": false
+    },
+    {
+      "frame": 1165,
+      "speaker": "spk_b",
+      "confidence": 0.801,
+      "overlap": false
+    },
+    {
+      "frame": 1166,
+      "speaker": "spk_b",
+      "confidence": 0.799,
+      "overlap": false
+    },
+    {
+      "frame": 1167,
+      "speaker": "spk_b",
+      "confidence": 0.805,
+      "overlap": false
+    },
+    {
+      "frame": 1168,
+      "speaker": "spk_b",
+      "confidence": 0.795,
+      "overlap": false
+    },
+    {
+      "frame": 1169,
+      "speaker": "spk_b",
+      "confidence": 0.79,
+      "overlap": false
+    },
+    {
+      "frame": 1170,
+      "speaker": "spk_b",
+      "confidence": 0.748,
+      "overlap": false
+    },
+    {
+      "frame": 1171,
+      "speaker": "spk_b",
+      "confidence": 0.736,
+      "overlap": false
+    },
+    {
+      "frame": 1172,
+      "speaker": "spk_b",
+      "confidence": 0.695,
+      "overlap": false
+    },
+    {
+      "frame": 1173,
+      "speaker": "spk_b",
+      "confidence": 0.694,
+      "overlap": false
+    },
+    {
+      "frame": 1174,
+      "speaker": "spk_b",
+      "confidence": 0.692,
+      "overlap": false
+    },
+    {
+      "frame": 1175,
+      "speaker": "spk_b",
+      "confidence": 0.707,
+      "overlap": false
+    },
+    {
+      "frame": 1176,
+      "speaker": "spk_b",
+      "confidence": 0.709,
+      "overlap": false
+    },
+    {
+      "frame": 1177,
+      "speaker": "spk_b",
+      "confidence": 0.75,
+      "overlap": false
+    },
+    {
+      "frame": 1178,
+      "speaker": "spk_b",
+      "confidence": 0.765,
+      "overlap": false
+    },
+    {
+      "frame": 1179,
+      "speaker": "spk_b",
+      "confidence": 0.805,
+      "overlap": false
+    },
+    {
+      "frame": 1180,
+      "speaker": "spk_b",
+      "confidence": 0.803,
+      "overlap": false
+    },
+    {
+      "frame": 1181,
+      "speaker": "spk_b",
+      "confidence": 0.802,
+      "overlap": false
+    },
+    {
+      "frame": 1182,
+      "speaker": "spk_b",
+      "confidence": 0.797,
+      "overlap": false
+    },
+    {
+      "frame": 1183,
+      "speaker": "spk_b",
+      "confidence": 0.802,
+      "overlap": false
+    },
+    {
+      "frame": 1184,
+      "speaker": "spk_b",
+      "confidence": 0.804,
+      "overlap": false
+    },
+    {
+      "frame": 1185,
+      "speaker": "spk_b",
+      "confidence": 0.807,
+      "overlap": false
+    },
+    {
+      "frame": 1186,
+      "speaker": "spk_b",
+      "confidence": 0.799,
+      "overlap": false
+    },
+    {
+      "frame": 1187,
+      "speaker": "spk_b",
+      "confidence": 0.795,
+      "overlap": false
+    },
+    {
+      "frame": 1188,
+      "speaker": null,
+      "confidence": 0.507,
+      "overlap": false
+    },
+    {
+      "frame": 1189,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 1190,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 1191,
+      "speaker": null,
+      "confidence": 0.5,
+      "overlap": false
+    },
+    {
+      "frame": 1192,
+      "speaker": null,
+      "confidence": 0.513,
+      "overlap": false
+    },
+    {
+      "frame": 1193,
+      "speaker": null,
+      "confidence": 0.516,
+      "overlap": false
+    },
+    {
+      "frame": 1194,
+      "speaker": null,
+      "confidence": 0.519,
+      "overlap": false
+    },
+    {
+      "frame": 1195,
+      "speaker": null,
+      "confidence": 0.522,
+      "overlap": false
+    },
+    {
+      "frame": 1196,
+      "speaker": null,
+      "confidence": 0.527,
+      "overlap": false
+    },
+    {
+      "frame": 1197,
+      "speaker": null,
+      "confidence": 0.532,
+      "overlap": false
+    },
+    {
+      "frame": 1198,
+      "speaker": null,
+      "confidence": 0.54,
+      "overlap": false
+    },
+    {
+      "frame": 1199,
+      "speaker": null,
+      "confidence": 0.54,
+      "overlap": false
+    }
+  ]
+}

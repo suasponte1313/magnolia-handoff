@@ -1,0 +1,13 @@
+REVISE. Face-track confidence work is accepted (tracks.py:240/249 confirmed, distributions noisy and real, home_region derived per clip). But §1.2 is not done. Do NOT advance to §1.3. Fix and prove the following, RAW ONLY — no tables, no prose summaries substituting for files:
+
+1. speaker.py confidence: `grep -n 'confidence' reelcore/src/reelcore/edit/speaker.py` and paste the exact line(s) that set SpeakerFrame.confidence. Then dump a distribution: `./venv/bin/python3 -c "import json,collections; d=json.load(open('speaker_timeline_c1.json'))['timeline']; import statistics as s; v=[f['confidence'] for f in d]; print('n',len(v),'min',min(v),'max',max(v),'mean',round(s.mean(v),3),'eq1.0',sum(1 for x in v if x==1.0))"` for c1, c2, c3. The runs of exact 1.000 must be explained by that assignment line or removed.
+
+2. frame-0 = 0.8 seed and the 0.55/0.45 weights: paste the grep lines showing they are loaded from presets/edit/magnolia_interview.yaml, not literals in speaker.py.
+
+3. Agreement rate: all three clips are 0.44/0.72/0.47 — BELOW the 0.8 flag threshold. Stop calling this 'passing.' Emit a per-frame VAD-vs-diarization disagreement artifact (agreement_breakdown_c1.txt: frame, vad_label, diar_label, agree bool) and state in one line whether fusion is trustworthy at 0.44. If the fusion is wrong, fix it; if 0.44 is expected for this footage, justify with the raw disagreement pattern.
+
+4. Channel layout: `ffprobe -show_streams -select_streams a <demuxed source>` and per-channel `ffmpeg ... astats` (or the demux astats you already have) into channel_layout.txt. Prove whether there are two independent mono mics or one pre-mixed stereo, and show the second channel's energy is non-dead. This must land before any speaker logic is trusted.
+
+5. Tests: `./venv/bin/python3 -m pytest reelcore/tests/ -q` redirected to test_stdout.txt. Include the file.
+
+Separately: the Step 0 gating items (0.1-0.6) from PHASE3_BLUEPRINT are still owed and were not in this report. Confirm their status. STOP at this boundary; write report_008 and wait.

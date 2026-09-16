@@ -1,0 +1,26 @@
+{
+  "c1": {
+    "agreement_rate": 0.8302,
+    "flagged": false,
+    "switch_count": 56,
+    "both_frames": 177,
+    "silence_frames": 184,
+    "mean_confidence": 0.699
+  },
+  "c2": {
+    "agreement_rate": 0.8911,
+    "flagged": false,
+    "switch_count": 36,
+    "both_frames": 85,
+    "silence_frames": 49,
+    "mean_confidence": 0.716
+  },
+  "c3": {
+    "agreement_rate": 0.975,
+    "flagged": false,
+    "switch_count": 11,
+    "both_frames": 13,
+    "silence_frames": 6,
+    "mean_confidence": 0.751
+  }
+}

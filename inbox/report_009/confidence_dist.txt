@@ -1,0 +1,9 @@
+# Per-frame confidence distributions (min, max, mean, count of exact 1.000)
+# FACE TRACKS (reel_c1):
+  face_spk_a: n=1200, min=0.000, max=0.712, mean=0.558, eq1.0=0/1200
+  face_spk_b: n=1200, min=0.000, max=0.826, mean=0.278, eq1.0=0/1200
+
+# SPEAKER TIMELINES (c1, c2, c3):
+  speaker_c1: n=1200, min=0.500, max=0.943, mean=0.746, eq1.0=0
+  speaker_c2: n=900, min=0.500, max=0.914, mean=0.757, eq1.0=0
+  speaker_c3: n=600, min=0.500, max=0.943, mean=0.763, eq1.0=0

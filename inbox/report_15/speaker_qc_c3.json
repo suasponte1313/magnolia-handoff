@@ -1,0 +1,8 @@
+{
+  "agreement_rate": 1.0,
+  "flagged": false,
+  "switch_count": 7,
+  "both_frames": 0,
+  "silence_frames": 6,
+  "mean_confidence": 0.76
+}

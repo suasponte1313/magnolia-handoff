@@ -1,0 +1,19 @@
+=== PER-PANEL FRAMING MEASUREMENTS (c1 - SPLIT LAYOUT) ===
+Evaluated against magnolia_interview preset targets and Commander Ruling 2 bands.
+
+Top Panel: CAM_A (Dr. Fenton Lebon) — Verdict: FAIL
+  • Headroom           :  8.2% mean (min:  7.0%) [Target: 8.0%, Band: 5.0%-12.0%] -> PASS
+  • Eyeline            : 34.3% mean             [Target: 33.0%, Band: 28.0%-40.0%] -> PASS
+  • Top of Head Clip   :  0.0%                   [Tolerance: 0.0%] -> PASS
+  • Back of Head Margin:  6.9% mean (min:  1.7%) [Target: >= 2.0% (sensor edge)] -> FAIL
+  • Lead Room          : 68.0% mean             [Band: 55.0%-67.0%] -> FAIL
+  • Center X           : 21.1% mean (std: 14.0px) [Threshold: < 40.0px] -> PASS
+
+Bottom Panel: CAM_B (Dr. Saba Shabnam) — Verdict: PASS
+  • Headroom           :  7.8% mean (min:  5.2%) [Target: 8.0%, Band: 5.0%-12.0%] -> PASS
+  • Eyeline            : 36.7% mean             [Target: 33.0%, Band: 28.0%-40.0%] -> PASS
+  • Top of Head Clip   :  0.0%                   [Tolerance: 0.0%] -> PASS
+  • Back of Head Margin: 26.1% mean (min: 13.4%) [Target: >= 4.0%] -> PASS
+  • Lead Room          : 60.0% mean             [Band: 55.0%-67.0%] -> PASS
+  • Center X           : 66.1% mean (std: 22.3px) [Threshold: < 40.0px] -> PASS
+
