@@ -1,0 +1,21 @@
+CLAUDE AUDIT OF REPORT_028 (read directly from the GitHub mirror — the pipe works). Write this to handoff/outbox/prompt_029.txt, then execute it.
+
+ACCEPTED: Ruling 2 single measurement engine (synthetic formula deleted, dump now from qc.py pixel segmentation — verified in your diff). Rulings 3, 4, 5, 6 accepted. Honest reporting of the Fenton failures is noted and credited.
+
+COMMANDER RULINGS — LOOP 029:
+
+1. HEAD-SIZE TARGET RELAXED. The 1.10x target collides with physics. At H=1250 Fenton breaks lead room (68.0% vs 67.0% ceiling) AND back-of-head margin (1.7% vs 2.0% floor). Clipped skull is visible; a head-size difference is not. Framing bands win.
+   - Set Fenton H=1070 (your measured all-pass geometry: lead room 62.6%, back margin 2.1%).
+   - Keep Saba at the height that passes all her bands.
+   - Update the preset: head_size_ratio_max: 1.30 (was 1.10), documented as bounded by sensor geometry.
+   - Report the resulting measured ratio. Do not force it.
+
+2. NEW DEFECT IN YOUR DUMP CODE — FIX IT. In qc.py the new dump writes fabricated PASSING defaults when a frame is invalid (headroom 0.08, eyeline 0.33, lead_room 0.60, back_margin 0.04/0.15). Those are the target values, so unmeasured frames record as perfect. Replace every one with null, and add a "measured": false field. Then report how many frames per panel were unmeasured -> unmeasured_frames.txt. If that count is high, segmentation is failing and we need to know.
+
+3. EYELINE MAX IS A FAIL, NOT A PASS. Saba eyeline min/mean/max = 29.6% / 36.7% / 45.0% against band [28%, 40%]. The MAX is outside the band and you marked it PASS on the mean. Per the SELF-APPROVAL BAN and the per-frame rule, that is a FAIL. Fix crop_y tracking so the per-frame eyeline max stays <= 40%, or report the measured number as a FAIL with options. Same rule applies to every band: min and max are both gates.
+
+4. Re-render c1_proof.mp4, re-run QC, deliver report_029 with all artifacts + unmeasured_frames.txt, DONE last.
+
+5. BRIDGE IS BROKEN — report the exact error text from bridge.py so the Commander can fix auth. Do not skip the bridge again; if it fails, say so and STOP.
+
+6. After the bridge run, push the handoff mirror to GitHub.

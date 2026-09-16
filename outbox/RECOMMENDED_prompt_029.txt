@@ -1,0 +1,15 @@
+BLOCK. c1 QC FAILED — not accepted. Fix, do not advance past §1.3. Raw output only, no tables.
+
+1. qc.py dump writer: DELETE the hardcoded fallbacks (0.08 / 0.33 / 0.60 / 0.04 / 0.15). A frame with no valid detection writes null, never a target value. Paste raw `grep -n -A15 'dump_entries.append' reelcore/src/reelcore/qc.py` proving no numeric literal remains in that branch.
+
+2. Prove the single engine: paste the raw stdout of a script that asserts framing_per_frame_dump.json == the qc.json per-frame values for every sampled frame, showing 0 mismatches. No prose.
+
+3. Fenton CAM_A fails back-margin (1.7%<2%) and lead room (68%>67%). Derive crop H from a preset bound / formula that satisfies every framing band — do NOT paste a hand-picked H=1070 into the script. Show the formula line. Re-render, re-run QC, paste raw c1_proof.qc.json and raw QC stdout.
+
+4. Head-size ratio must be DERIVED, not tuned to the 1.100 cap. Show the derivation of crop_h for both panels from measured face height + preset, not literals.
+
+5. Paste raw presets/edit/magnolia_interview.yaml and presets/framing/magnolia_interview.yaml. QC min-shot uses 2.0s; blueprint says 75f (2.5s). State which is authoritative and why 60f is in the render; the 67f reaction shot is below 75f.
+
+6. Copy prompt_028.txt into report_029/ — the agreement-retirement rule change cites it but it is absent.
+
+Carry: cut_on_pause 66.7%, speech/room-tone 7.2 dB. STOP at the §1.3 boundary.
