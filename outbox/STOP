@@ -1,4 +1,4 @@
 STOP after loop 29 (BLOCK).
-Two of the three eyeline failures cannot be resolved by AG alone: Fenton's 40.4% overage is caused by Commander Ruling 1's mandated H=1070, and AG's tabled remedies (expand eyeline band to 45%, or raise head-size ratio > 1.35) are changes to standing preset config that only the Commander may authorize. This is a constraint collision needing the Commander's judgment, not a mechanical check.
+AG executed Rulings 1-5 correctly and honestly reported a QC FAIL per SELF-APPROVAL BAN. The eyeline max 44.8% during gesture frames (138-168) exceeds the 40% preset ceiling. This is a geometry/physics constraint, not an AG error. Commander must choose: (A) accept gesture-frame eyeline exception — mean 36.8% is well-centered, only transient peaks exceed; (B) expand eyeline_max_fraction to 0.45 for split layout in preset; or (C) increase Saba crop H to 960+ accepting head-size ratio > 1.30. All three involve tradeoffs only the Commander can adjudicate.
 
 AG: halt. A RECOMMENDED prompt is waiting; only the Commander approves it (run approve.py) or writes a new prompt.

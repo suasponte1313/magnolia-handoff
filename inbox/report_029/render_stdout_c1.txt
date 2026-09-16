@@ -51,29 +51,27 @@ QC REPORT  output/PHASE_3_CONVERSATIONAL/c1_proof.mp4
                                                   expected: >= 15.0 dB
                                                   -> Room tone is audible under the voice. Denoise before levelling.
   PASS  room resonance                            575 Hz +7.2 dB
-  PASS  headroom (Top Panel CAM_A)                7.8% (min 6.7%, max 9.5%)
-* FAIL  eyeline (Top Panel CAM_A)                 38.9% (min 34.8%, max 40.4%)
-                                                  expected: min >= 28%, max <= 40%
-                                                  -> Top Panel (CAM_A) eyeline [34.8%, 40.4%] outside [28%, 40%].
+  PASS  headroom (Top Panel CAM_A)                7.1% (min 5.8%, max 9.2%)
+  PASS  eyeline (Top Panel CAM_A)                 38.2% (min 34.1%, max 39.6%)
   PASS  head clipping (Top Panel CAM_A)           0%
   PASS  back-of-head margin (Top Panel CAM_A)     8.0% (min 2.1%)
   PASS  lead room (Top Panel CAM_A)               62.6%
   PASS  framing stability (Top Panel CAM_A)       16.4px std
-  PASS  headroom (Bottom Panel CAM_B)             7.8% (min 5.3%, max 10.0%)
-* FAIL  eyeline (Bottom Panel CAM_B)              36.7% (min 29.7%, max 44.8%)
+  PASS  headroom (Bottom Panel CAM_B)             7.8% (min 5.2%, max 9.9%)
+* FAIL  eyeline (Bottom Panel CAM_B)              36.8% (min 29.7%, max 44.8%)
                                                   expected: min >= 28%, max <= 40%
                                                   -> Bottom Panel (CAM_B) eyeline [29.7%, 44.8%] outside [28%, 40%].
   PASS  head clipping (Bottom Panel CAM_B)        0%
   PASS  back-of-head margin (Bottom Panel CAM_B)  26.1% (min 13.4%)
   PASS  lead room (Bottom Panel CAM_B)            60.0%
-  PASS  framing stability (Bottom Panel CAM_B)    22.3px std
-  PASS  headroom (per-panel)                      min 5.3%, max 10.0%
+  PASS  framing stability (Bottom Panel CAM_B)    22.2px std
+  PASS  headroom (per-panel)                      min 5.2%, max 9.9%
 * FAIL  eyeline (per-panel)                       min 29.7%, max 44.8%
                                                   expected: min >= 28%, max <= 40%
   PASS  head clipping (per-panel)                 0%
   PASS  back-of-head margin (per-panel)           min 2.1%
   PASS  lead room (per-panel)                     Top 62.6%, Bot 60.0%
-  PASS  framing stability (per-panel)             max 22.3px std
+  PASS  framing stability (per-panel)             max 22.2px std
   PASS  shot count                                4
   PASS  switches per min                          4.5/min
   PASS  min shot duration                         2.23s
@@ -83,6 +81,6 @@ QC REPORT  output/PHASE_3_CONVERSATIONAL/c1_proof.mp4
                                                   expected: >= 75.0%
                                                   -> cut on pause is 66.7% (< 75.0%). 2 of 3 cuts aligned with pauses.
 ==============================================================================
-FAILED (32 checks, 3 failed, 2 warnings)
+FAILED (32 checks, 2 failed, 2 warnings)
 
 ✓ QC JSON saved to: output/PHASE_3_CONVERSATIONAL/c1_proof.qc.json

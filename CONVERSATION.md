@@ -133,3 +133,30 @@ AG — STOP. QC failed (passed:false, 3 FAILs). Do NOT touch any preset band or 
 
 Do NOT re-render as 'passing' by moving a band. Produce artifacts 1-3, DONE last, then STOP. If after (1) Saba is a measurement artifact and after (2) Fenton still can't clear 40% on crop_y alone, report the residual as FAIL with the raw numbers and WAIT — the Commander decides whether the band moves.
 ```
+
+==============================================================================
+## Loop 29 — 2026-09-16 16:13 — verdict: BLOCK  ⛔ STOP
+
+**AG → report_029**  (artifacts: c1_proof.qc.json, crops_c1.json, edl_c1.json, face_tracks_c1.json, framing_per_frame_dump.json, framing_per_panel.txt, framing_preset.txt, head_size_match.txt, layout_decision_c1.txt, render_stdout_c1.txt, shots_metrics_c1.txt, speaker_timeline_c1.json, unmeasured_frames.txt)
+> Loop 029 executed Commander Rulings 1–5 on segment c1: the framing preset head_size_ratio_max was relaxed to 1.30 (framing_preset.txt); with Fenton set to H=1070 (W=1204, on-screen head 311.8px) and Saba kept at H=860 (on-screen head 242.6px, +11.6% upscale from 4K ProRes), the measured head-size ratio is 1.285x which passes the relaxed <= 1.300x target (head_size_match.txt); the dump defect in qc.py was corrected by eliminating synthetic passing defaults on invalid frames, recording null with measured: false instead, and unmeasured_frames.txt audits 0 unmeasured frames out of 200 (100% measured reliability); Fenton at H=1070 with crop_y anchored to headroom target 0.073 passes ALL framing checks: headroom mean 7.1% (min 5.8%, max 9.2% with
+> ...<TRUNCATED 404 chars>...
+> skull clip (0.0%), and eyeline mean at 36.8%, but per-frame eyeline reaches max 44.8% during gestures (frames 138–168) where face and chest skin group into a 395px box whose required 37.03% height geometrically exceeds the preset 35.0% allowable window between headroom floor (5.0%) and eyeline ceiling (40.0%), reported honestly as FAIL per the SELF-APPROVAL BAN (framing_per_panel.txt, c1_proof.qc.json) with options: (A) accept eyeline max exception during gesture frames (mean 36.8% is well-centered); (B) expand eyeline max band for split layout to 45%; or (C) increase H to 960+ accepting a higher head-size ratio (> 1.35x); multi-cam metrics confirm 4 shots, 4.5 switches/min, and 10.0s mean duration (shots_metrics_c1.txt, c1_proof.qc.json).
+> 
+
+**Reviewer (Claude) audit:**
+*Verified:* head_size_ratio_max: 1.30 confirmed in framing_preset.txt; measured head-size ratio 1.285x confirmed in crops_c1.json (head_size_matching.ratio: 1.285, ratio_satisfied: true) and head_size_match.txt; 0 unmeasured frames (200/200 measured) confirmed in unmeasured_frames.txt; Fenton (Top Panel) headroom 7.1% (min 5.8%, max 9.2%) confirmed in c1_proof.qc.json; Fenton eyeline 38.2% (min 34.1%, max 39.6%) confirmed in c1_proof.qc.json — PASS; Fenton lead room 62.6%, back margin min 2.1%, skull clip 0% confirmed — PASS
+*Blocking:* Eyeline max 44.8% exceeds preset ceiling 40% — QC gate formally fails. AG cannot self-approve; Commander must decide path forward.
+*Stopped for Commander:* AG executed Rulings 1-5 correctly and honestly reported a QC FAIL per SELF-APPROVAL BAN. The eyeline max 44.8% during gesture frames (138-168) exceeds the 40% preset ceiling. This is a geometry/physics constraint, not an AG error. Commander must choose: (A) accept gesture-frame eyeline exception — mean 36.8% is well-centered, only transient peaks exceed; (B) expand eyeline_max_fraction to 0.45 for split layout in preset; or (C) increase Saba crop H to 960+ accepting head-size ratio > 1.30. All three involve tradeoffs only the Commander can adjudicate.
+
+**Reviewer → AG next prompt [RECOMMENDED (pending approval)]:**
+```
+COMMANDER RULING REQUIRED — Eyeline max 44.8% (gesture frames 138-168) exceeds 40% ceiling. All other framing passes. Options:
+
+(A) ACCEPT gesture-frame exception — update preset with `eyeline_max_fraction_gesture_tolerance: 0.45` or document this as acceptable transient variance. Mean eyeline 36.8% is well-centered.
+
+(B) EXPAND split-layout eyeline_max to 0.45 — update `presets/framing/magnolia_interview.yaml` to allow wider band for split layout.
+
+(C) INCREASE Saba crop H to 960+ — tighter framing, but head-size ratio will exceed 1.30x, requiring another preset relaxation.
+
+Please select (A), (B), or (C) with any modifications, or provide an alternative ruling.
+```

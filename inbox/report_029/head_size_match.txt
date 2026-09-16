@@ -8,8 +8,8 @@ Directive: Commander Ruling 1 & 3 (prompt_029.txt)
      - Scale Factor            : 0.8972 (960 / 1070)
      - Final On-Screen Head H  : 311.8 px
      - Upscale Factor          : 0.8972x (downscale from 4K)
-     - Headroom min/mean/max   : 6.7% / 7.8% / 9.5% (target 8.0%, band [5.0%, 12.0%]) -> PASS
-     - Eyeline min/mean/max    : 34.8% / 38.9% / 40.4% (target 33.0%, band [28.0%, 40.0%]) -> FAIL
+     - Headroom min/mean/max   : 5.8% / 7.1% / 9.2% (target 8.0%, band [5.0%, 12.0%]) -> PASS
+     - Eyeline min/mean/max    : 34.1% / 38.2% / 39.6% (target 33.0%, band [28.0%, 40.0%]) -> PASS
      - Lead Room Mean          : 62.6% (target 60.0%, band [55.0%, 67.0%]) -> PASS
      - Back Margin Min         : 2.1% (sensor-edge exception target >= 2.0%) -> PASS
 
@@ -19,8 +19,8 @@ Directive: Commander Ruling 1 & 3 (prompt_029.txt)
      - Scale Factor            : 1.1163 (960 / 860)
      - Final On-Screen Head H  : 242.6 px
      - Upscale Factor          : 1.1163x (+11.6% upscale from 4K ProRes)
-     - Headroom min/mean/max   : 5.3% / 7.8% / 10.0% (target 8.0%, band [5.0%, 12.0%]) -> PASS
-     - Eyeline min/mean/max    : 29.7% / 36.7% / 44.8% (target 33.0%, band [28.0%, 40.0%]) -> FAIL
+     - Headroom min/mean/max   : 5.2% / 7.8% / 9.9% (target 8.0%, band [5.0%, 12.0%]) -> PASS
+     - Eyeline min/mean/max    : 29.7% / 36.8% / 44.8% (target 33.0%, band [28.0%, 40.0%]) -> FAIL
      - Lead Room Mean          : 60.0% (target 60.0%, band [55.0%, 67.0%]) -> PASS
      - Back Margin Min         : 13.4% (target >= 4.0%) -> PASS
 
@@ -38,7 +38,7 @@ Directive: Commander Ruling 1 & 3 (prompt_029.txt)
    • Source Acuity               : 4K ProRes 422HQ native master. 1.116x digital upscale is well
                                    within MTF50 optical limits; pristine sharpness, zero visible softness.
    • Dynamic Bounded Tracking    : Anchoring crop_y(t) to headroom target 0.08 with bounded tracking
-                                   holds Saba's headroom between 5.3% (min) and 10.0% (max), mean 7.8%.
+                                   holds Saba's headroom between 5.2% (min) and 9.9% (max), mean 7.8%.
    • Sensor-Edge Geometry Limits : Fenton at H=1070 (W=1204) eliminates skull-clipping and lead-room
                                    stretching, passing all framing bands. Measured head size ratio 1.285x
                                    satisfies the relaxed <= 1.30x target.
