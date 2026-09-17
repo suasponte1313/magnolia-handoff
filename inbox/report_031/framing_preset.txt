@@ -1,0 +1,119 @@
+name: "magnolia_interview"
+description: "Professional adaptive framing profile for 2-person sit-down doctor interview"
+
+targets:
+  headroom_fraction: 0.08          # target 0.08 of frame height above top of head
+  headroom_min_fraction: 0.05      # acceptable band min: 0.05 (enforced on per-frame minimum)
+  headroom_max_fraction: 0.12      # acceptable band max: 0.12
+  eyeline_fraction: 0.33           # subject eyes sit at 0.33 of frame height (upper-third rule)
+  eyeline_min_fraction: 0.28       # acceptable band min: 0.28
+  eyeline_max_fraction: 0.40       # acceptable band max: 0.40
+  head_clip_tolerance: 0.0         # 0% of frames may clip top of head; any top clip is FAIL
+  back_of_head_margin: 0.04        # minimum 0.04 of frame width behind skull; zero top/back clip
+  back_of_head_margin_sensor_edge: 0.02   # applies ONLY when crop_x == 0
+  lead_room_fraction: 0.60         # 0.60-0.67 of frame width in front of face
+  lead_room_min_fraction: 0.60
+  lead_room_max_fraction: 0.67
+  split_lead_room_fraction: 0.60   # professional standard for both panels when layout == SPLIT
+  split_lead_room_min_fraction: 0.55
+  split_lead_room_max_fraction: 0.67
+  shot_size: "medium_close_up"     # head plus upper chest in frame, no neck/chin crop
+  no_joint_cuts: true              # never end bottom of frame at neck, chin, or elbow
+  center_x_ratio: 0.35
+  head_top_ratio: 0.55             # default cranial/hair ratio above face box top
+  eyeline_offset_ratio: 0.35       # default eyeline ratio from face box top
+  head_size_ratio_max: 1.45        # bounded by locked-framing priority on wide-separation source (Commander Ruling Loop 031)
+  max_crop_height_for_lock: 1400   # maximum crop height allowed to achieve static lock (Ruling 1c)
+  locked_frame_in_band_fraction: 0.90 # min fraction of frames in soft band for lock (Ruling 1d)
+  reposition_after_frames: 45      # out-of-band duration (1.5s) before move permitted (Ruling 1e)
+  sustained_window_frames: 15      # rolling median window (0.5s) for sustained measurement (Ruling 2a)
+  transient_max_fraction: 0.45     # instantaneous ceiling for brief excursion (Ruling 2b)
+  transient_max_frames: 45         # max single excursion duration 1.5s (Ruling 2b)
+  transient_total_fraction: 0.10   # max total fraction of shot outside band (Ruling 2b)
+
+# Permanent framing priority stack per Commander Ruling Loop 031
+framing_priority_order:
+  - hard_gates                     # 1. zero frames clipping top of head; back-of-head margin never breached (no tolerance, any duration)
+  - locked_frame                   # 2. one static crop per shot, movement 0 (move only if out of band > reposition_after_frames)
+  - soft_bands                     # 3. sustained rolling median headroom and eyeline inside band, transient limits respected
+  - head_size                      # 4. matched head sizes (sacrificed first when constraints conflict)
+
+
+quantization:
+  hold_tolerance_px: 40.0
+  min_hold_ratio: 0.90
+  transition_frames: 15
+
+exclusion_zones:
+  top_ui:
+    x: 0
+    y: 0
+    w: 1080
+    h: 288                         # 15% safe_top (1920 * 0.15 = 288)
+  bottom_ui:
+    x: 0
+    y: 1536                        # 20% safe_bottom (1920 * 0.80 = 1536)
+    w: 1080
+    h: 384
+  right_engagement:
+    x: 920
+    y: 800
+    w: 160
+    h: 750
+  caption_safe_zone:
+    x: 60
+    y: 1300
+    w: 960
+    h: 220
+
+speaker_search_seeds:
+  # Validated anchor seeds for Dallas1 2-person sit-down interview.
+  # These provide reference anchor positions for 4K source coordinates (3840x2160).
+  saba_shabnam:
+    speaker_id: "spk_b"
+    camera: "CAM_B"
+    raw_center_x: 2368
+    crop_w: 780
+    crop_h: 1387
+    crop_x: 1910
+    crop_y: 722
+    facing_direction: "camera-left"
+    target_center_x_ratio: 0.65
+    head_top_ratio: 0.55
+    eyeline_offset_ratio: 0.35
+    lead_room_fraction: 0.60
+    lead_room_min: 0.55
+    lead_room_max: 0.67
+  fenton_lebon:
+    speaker_id: "spk_a"
+    camera: "CAM_A"
+    raw_center_x: 300
+    crop_w: 780
+    crop_h: 1387
+    crop_x: 0
+    crop_y: 744
+    facing_direction: "camera-right"
+    target_center_x_ratio: 0.35
+    head_top_ratio: 0.55
+    eyeline_offset_ratio: 0.35
+    lead_room_fraction: 0.40
+    lead_room_min: 0.35
+    lead_room_max: 0.46
+
+layout_engine:
+  single_crop_max_width_ratio: 0.5625 # 9/16 aspect ratio: 2160 * 9/16 = 1215px
+  max_panel_zoom: 1.50
+  split:
+    panel_width: 1080
+    panel_height: 960
+    top_speaker: "spk_a"
+    bottom_speaker: "spk_b"
+    split_lead_room_fraction: 0.60
+    split_lead_room_min_fraction: 0.55
+    split_lead_room_max_fraction: 0.67
+    divider_px: 4
+    divider_color: "#1A1A1A"
+    active_emphasis:
+      enabled: true
+      border_color: "#FFE500"
+      border_px: 4

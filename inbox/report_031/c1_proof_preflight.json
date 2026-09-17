@@ -1,0 +1,75 @@
+{
+  "file_path": "/Users/derekgagliano/Projects/podcast-editor/output/PHASE_3_CONVERSATIONAL/temp_c1_proof_raw.wav",
+  "sample_rate": 48000,
+  "duration_seconds": 40.0,
+  "channels": [
+    {
+      "channel_index": 0,
+      "muffle": {
+        "clarity_ratio": 0.008135227537482486,
+        "spectral_rolloff_hz": 3349.3745055379745,
+        "spectral_centroid_hz": 2018.447118887033
+      },
+      "noise": {
+        "speech_rms": 0.07527364986221291,
+        "noise_rms": 0.007588000933028014,
+        "noise_floor_db": -42.39745248764195,
+        "snr_db": 19.930311979202575
+      },
+      "reverb": {
+        "srmr": 13.847530211236865
+      },
+      "clipping": {
+        "clipped_samples": 0,
+        "near_clipped_samples": 0,
+        "clipped_percentage": 0.0
+      },
+      "level": {
+        "integrated_lufs": -22.74557990739436,
+        "peak_db": -2.042282942006325,
+        "true_peak_dbtp": -1.542282942006325,
+        "dynamic_range_db": 40.355169545635626
+      },
+      "resonances": [
+        {
+          "frequency_hz": 275.4,
+          "db_above_mean": 15.3,
+          "q_estimate": 20.0
+        },
+        {
+          "frequency_hz": 416.0,
+          "db_above_mean": 13.0,
+          "q_estimate": 20.0
+        },
+        {
+          "frequency_hz": 480.5,
+          "db_above_mean": 10.5,
+          "q_estimate": 20.0
+        }
+      ],
+      "recommended_highpass_hz": 80.0,
+      "recommended_notches": [
+        275.4,
+        416.0,
+        480.5
+      ],
+      "recommended_gain_db": 8.7
+    }
+  ],
+  "cross_channel": {
+    "channel_count": 1,
+    "correlation_matrix": [
+      [
+        1.0
+      ]
+    ],
+    "bleed_estimates_db": [
+      [
+        0.0
+      ]
+    ]
+  },
+  "recommendation": "LOCAL_NATURAL",
+  "recommendation_reason": "Standard clean studio speech; optimal for adaptive highpass, with measured room notching, gentle compression, and BS.1770 loudnorm.",
+  "analyzed_at": "2026-09-17T00:13:20.757418+00:00"
+}

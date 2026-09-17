@@ -1,0 +1,4002 @@
+[
+  {
+    "frame": 0,
+    "timestamp_s": 0.0,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 106.4,
+      "panel_headroom_fraction": 0.1109,
+      "panel_eyeline_fraction": 0.3556,
+      "lead_room_fraction": 0.6222,
+      "back_margin_fraction": 0.1307
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 103.9,
+      "panel_headroom_fraction": 0.1083,
+      "panel_eyeline_fraction": 0.2873,
+      "lead_room_fraction": 0.5917,
+      "back_margin_fraction": 0.3306
+    }
+  },
+  {
+    "frame": 6,
+    "timestamp_s": 0.2,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 83.7,
+      "panel_headroom_fraction": 0.0872,
+      "panel_eyeline_fraction": 0.3366,
+      "lead_room_fraction": 0.6463,
+      "back_margin_fraction": 0.0854
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 97.7,
+      "panel_headroom_fraction": 0.1018,
+      "panel_eyeline_fraction": 0.2846,
+      "lead_room_fraction": 0.5852,
+      "back_margin_fraction": 0.336
+    }
+  },
+  {
+    "frame": 12,
+    "timestamp_s": 0.4,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 43.9,
+      "panel_headroom_fraction": 0.0458,
+      "panel_eyeline_fraction": 0.3373,
+      "lead_room_fraction": 0.6907,
+      "back_margin_fraction": 0.0345
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 74.0,
+      "panel_headroom_fraction": 0.0771,
+      "panel_eyeline_fraction": 0.3021,
+      "lead_room_fraction": 0.5833,
+      "back_margin_fraction": 0.3081
+    }
+  },
+  {
+    "frame": 18,
+    "timestamp_s": 0.6,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 56.8,
+      "panel_headroom_fraction": 0.0592,
+      "panel_eyeline_fraction": 0.3442,
+      "lead_room_fraction": 0.6963,
+      "back_margin_fraction": 0.0269
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 78.0,
+      "panel_headroom_fraction": 0.0813,
+      "panel_eyeline_fraction": 0.3063,
+      "lead_room_fraction": 0.587,
+      "back_margin_fraction": 0.2916
+    }
+  },
+  {
+    "frame": 24,
+    "timestamp_s": 0.8,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 79.2,
+      "panel_headroom_fraction": 0.0825,
+      "panel_eyeline_fraction": 0.36,
+      "lead_room_fraction": 0.6611,
+      "back_margin_fraction": 0.0706
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 81.1,
+      "panel_headroom_fraction": 0.0845,
+      "panel_eyeline_fraction": 0.3076,
+      "lead_room_fraction": 0.5824,
+      "back_margin_fraction": 0.2973
+    }
+  },
+  {
+    "frame": 30,
+    "timestamp_s": 1.0,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 69.0,
+      "panel_headroom_fraction": 0.0719,
+      "panel_eyeline_fraction": 0.3531,
+      "lead_room_fraction": 0.6593,
+      "back_margin_fraction": 0.0767
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 89.7,
+      "panel_headroom_fraction": 0.0934,
+      "panel_eyeline_fraction": 0.3053,
+      "lead_room_fraction": 0.575,
+      "back_margin_fraction": 0.3185
+    }
+  },
+  {
+    "frame": 36,
+    "timestamp_s": 1.2,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 48.4,
+      "panel_headroom_fraction": 0.0504,
+      "panel_eyeline_fraction": 0.3429,
+      "lead_room_fraction": 0.6741,
+      "back_margin_fraction": 0.064
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 107.3,
+      "panel_headroom_fraction": 0.1118,
+      "panel_eyeline_fraction": 0.2936,
+      "lead_room_fraction": 0.5704,
+      "back_margin_fraction": 0.3519
+    }
+  },
+  {
+    "frame": 42,
+    "timestamp_s": 1.4,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 65.9,
+      "panel_headroom_fraction": 0.0686,
+      "panel_eyeline_fraction": 0.3518,
+      "lead_room_fraction": 0.6611,
+      "back_margin_fraction": 0.0748
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 115.3,
+      "panel_headroom_fraction": 0.1202,
+      "panel_eyeline_fraction": 0.2917,
+      "lead_room_fraction": 0.563,
+      "back_margin_fraction": 0.3646
+    }
+  },
+  {
+    "frame": 48,
+    "timestamp_s": 1.6,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 93.2,
+      "panel_headroom_fraction": 0.0971,
+      "panel_eyeline_fraction": 0.3456,
+      "lead_room_fraction": 0.6472,
+      "back_margin_fraction": 0.0919
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 114.8,
+      "panel_headroom_fraction": 0.1196,
+      "panel_eyeline_fraction": 0.2921,
+      "lead_room_fraction": 0.5741,
+      "back_margin_fraction": 0.3493
+    }
+  },
+  {
+    "frame": 54,
+    "timestamp_s": 1.8,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 59.7,
+      "panel_headroom_fraction": 0.0622,
+      "panel_eyeline_fraction": 0.3491,
+      "lead_room_fraction": 0.6704,
+      "back_margin_fraction": 0.0634
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 83.8,
+      "panel_headroom_fraction": 0.0873,
+      "panel_eyeline_fraction": 0.3058,
+      "lead_room_fraction": 0.5852,
+      "back_margin_fraction": 0.3126
+    }
+  },
+  {
+    "frame": 60,
+    "timestamp_s": 2.0,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 52.5,
+      "panel_headroom_fraction": 0.0547,
+      "panel_eyeline_fraction": 0.3453,
+      "lead_room_fraction": 0.6778,
+      "back_margin_fraction": 0.0581
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 78.5,
+      "panel_headroom_fraction": 0.0818,
+      "panel_eyeline_fraction": 0.3059,
+      "lead_room_fraction": 0.5954,
+      "back_margin_fraction": 0.2854
+    }
+  },
+  {
+    "frame": 66,
+    "timestamp_s": 2.2,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 65.3,
+      "panel_headroom_fraction": 0.0681,
+      "panel_eyeline_fraction": 0.3521,
+      "lead_room_fraction": 0.6667,
+      "back_margin_fraction": 0.0693
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 72.9,
+      "panel_headroom_fraction": 0.0759,
+      "panel_eyeline_fraction": 0.3028,
+      "lead_room_fraction": 0.6028,
+      "back_margin_fraction": 0.2748
+    }
+  },
+  {
+    "frame": 72,
+    "timestamp_s": 2.4,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 64.2,
+      "panel_headroom_fraction": 0.0669,
+      "panel_eyeline_fraction": 0.3529,
+      "lead_room_fraction": 0.6722,
+      "back_margin_fraction": 0.0637
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 74.5,
+      "panel_headroom_fraction": 0.0777,
+      "panel_eyeline_fraction": 0.3017,
+      "lead_room_fraction": 0.5991,
+      "back_margin_fraction": 0.2849
+    }
+  },
+  {
+    "frame": 78,
+    "timestamp_s": 2.6,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 63.2,
+      "panel_headroom_fraction": 0.0659,
+      "panel_eyeline_fraction": 0.3518,
+      "lead_room_fraction": 0.6796,
+      "back_margin_fraction": 0.0542
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 77.1,
+      "panel_headroom_fraction": 0.0803,
+      "panel_eyeline_fraction": 0.3034,
+      "lead_room_fraction": 0.5963,
+      "back_margin_fraction": 0.2994
+    }
+  },
+  {
+    "frame": 84,
+    "timestamp_s": 2.8,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 65.9,
+      "panel_headroom_fraction": 0.0686,
+      "panel_eyeline_fraction": 0.3518,
+      "lead_room_fraction": 0.6796,
+      "back_margin_fraction": 0.052
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 84.4,
+      "panel_headroom_fraction": 0.0879,
+      "panel_eyeline_fraction": 0.3054,
+      "lead_room_fraction": 0.5889,
+      "back_margin_fraction": 0.311
+    }
+  },
+  {
+    "frame": 90,
+    "timestamp_s": 3.0,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 69.0,
+      "panel_headroom_fraction": 0.0719,
+      "panel_eyeline_fraction": 0.3531,
+      "lead_room_fraction": 0.6759,
+      "back_margin_fraction": 0.0557
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 105.4,
+      "panel_headroom_fraction": 0.1098,
+      "panel_eyeline_fraction": 0.2795,
+      "lead_room_fraction": 0.5889,
+      "back_margin_fraction": 0.3494
+    }
+  },
+  {
+    "frame": 96,
+    "timestamp_s": 3.2,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 75.8,
+      "panel_headroom_fraction": 0.0789,
+      "panel_eyeline_fraction": 0.3555,
+      "lead_room_fraction": 0.6741,
+      "back_margin_fraction": 0.064
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 46.5,
+      "panel_headroom_fraction": 0.0484,
+      "panel_eyeline_fraction": 0.2828,
+      "lead_room_fraction": 0.6,
+      "back_margin_fraction": 0.3063
+    }
+  },
+  {
+    "frame": 102,
+    "timestamp_s": 3.4,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 72.6,
+      "panel_headroom_fraction": 0.0757,
+      "panel_eyeline_fraction": 0.3541,
+      "lead_room_fraction": 0.6722,
+      "back_margin_fraction": 0.0658
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 40.1,
+      "panel_headroom_fraction": 0.0418,
+      "panel_eyeline_fraction": 0.2836,
+      "lead_room_fraction": 0.5991,
+      "back_margin_fraction": 0.3008
+    }
+  },
+  {
+    "frame": 108,
+    "timestamp_s": 3.6,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 75.2,
+      "panel_headroom_fraction": 0.0783,
+      "panel_eyeline_fraction": 0.3558,
+      "lead_room_fraction": 0.6722,
+      "back_margin_fraction": 0.0658
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 92.8,
+      "panel_headroom_fraction": 0.0967,
+      "panel_eyeline_fraction": 0.2777,
+      "lead_room_fraction": 0.5944,
+      "back_margin_fraction": 0.3331
+    }
+  },
+  {
+    "frame": 114,
+    "timestamp_s": 3.8,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 54.1,
+      "panel_headroom_fraction": 0.0564,
+      "panel_eyeline_fraction": 0.3442,
+      "lead_room_fraction": 0.6833,
+      "back_margin_fraction": 0.0505
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 108.8,
+      "panel_headroom_fraction": 0.1133,
+      "panel_eyeline_fraction": 0.2858,
+      "lead_room_fraction": 0.5917,
+      "back_margin_fraction": 0.3444
+    }
+  },
+  {
+    "frame": 120,
+    "timestamp_s": 4.0,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 57.9,
+      "panel_headroom_fraction": 0.0603,
+      "panel_eyeline_fraction": 0.3434,
+      "lead_room_fraction": 0.6981,
+      "back_margin_fraction": 0.0335
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 109.2,
+      "panel_headroom_fraction": 0.1138,
+      "panel_eyeline_fraction": 0.2872,
+      "lead_room_fraction": 0.5907,
+      "back_margin_fraction": 0.3369
+    }
+  },
+  {
+    "frame": 126,
+    "timestamp_s": 4.2,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 82.4,
+      "panel_headroom_fraction": 0.0858,
+      "panel_eyeline_fraction": 0.3596,
+      "lead_room_fraction": 0.6667,
+      "back_margin_fraction": 0.0693
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 85.7,
+      "panel_headroom_fraction": 0.0893,
+      "panel_eyeline_fraction": 0.3011,
+      "lead_room_fraction": 0.5944,
+      "back_margin_fraction": 0.314
+    }
+  },
+  {
+    "frame": 132,
+    "timestamp_s": 4.4,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 106.1,
+      "panel_headroom_fraction": 0.1105,
+      "panel_eyeline_fraction": 0.3524,
+      "lead_room_fraction": 0.6537,
+      "back_margin_fraction": 0.0907
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 76.1,
+      "panel_headroom_fraction": 0.0793,
+      "panel_eyeline_fraction": 0.3024,
+      "lead_room_fraction": 0.5944,
+      "back_margin_fraction": 0.3055
+    }
+  },
+  {
+    "frame": 138,
+    "timestamp_s": 4.6,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 61.7,
+      "panel_headroom_fraction": 0.0643,
+      "panel_eyeline_fraction": 0.3511,
+      "lead_room_fraction": 0.6722,
+      "back_margin_fraction": 0.0637
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 50.1,
+      "panel_headroom_fraction": 0.0522,
+      "panel_eyeline_fraction": 0.3316,
+      "lead_room_fraction": 0.5019,
+      "back_margin_fraction": 0.3107
+    }
+  },
+  {
+    "frame": 144,
+    "timestamp_s": 4.8,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 70.4,
+      "panel_headroom_fraction": 0.0734,
+      "panel_eyeline_fraction": 0.3556,
+      "lead_room_fraction": 0.6722,
+      "back_margin_fraction": 0.068
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 79.2,
+      "panel_headroom_fraction": 0.0825,
+      "panel_eyeline_fraction": 0.3225,
+      "lead_room_fraction": 0.5611,
+      "back_margin_fraction": 0.309
+    }
+  },
+  {
+    "frame": 150,
+    "timestamp_s": 5.0,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 78.1,
+      "panel_headroom_fraction": 0.0814,
+      "panel_eyeline_fraction": 0.3607,
+      "lead_room_fraction": 0.6667,
+      "back_margin_fraction": 0.0735
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 80.2,
+      "panel_headroom_fraction": 0.0835,
+      "panel_eyeline_fraction": 0.3423,
+      "lead_room_fraction": 0.5907,
+      "back_margin_fraction": 0.2687
+    }
+  },
+  {
+    "frame": 156,
+    "timestamp_s": 5.2,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 75.0,
+      "panel_headroom_fraction": 0.0781,
+      "panel_eyeline_fraction": 0.3594,
+      "lead_room_fraction": 0.6667,
+      "back_margin_fraction": 0.0735
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 76.9,
+      "panel_headroom_fraction": 0.0801,
+      "panel_eyeline_fraction": 0.3445,
+      "lead_room_fraction": 0.5981,
+      "back_margin_fraction": 0.2624
+    }
+  },
+  {
+    "frame": 162,
+    "timestamp_s": 5.4,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 78.1,
+      "panel_headroom_fraction": 0.0814,
+      "panel_eyeline_fraction": 0.3607,
+      "lead_room_fraction": 0.6667,
+      "back_margin_fraction": 0.0735
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 69.4,
+      "panel_headroom_fraction": 0.0723,
+      "panel_eyeline_fraction": 0.346,
+      "lead_room_fraction": 0.5981,
+      "back_margin_fraction": 0.2581
+    }
+  },
+  {
+    "frame": 168,
+    "timestamp_s": 5.6,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 78.1,
+      "panel_headroom_fraction": 0.0814,
+      "panel_eyeline_fraction": 0.3607,
+      "lead_room_fraction": 0.6667,
+      "back_margin_fraction": 0.0756
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 66.1,
+      "panel_headroom_fraction": 0.0689,
+      "panel_eyeline_fraction": 0.3482,
+      "lead_room_fraction": 0.5556,
+      "back_margin_fraction": 0.2826
+    }
+  },
+  {
+    "frame": 174,
+    "timestamp_s": 5.8,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 79.2,
+      "panel_headroom_fraction": 0.0825,
+      "panel_eyeline_fraction": 0.36,
+      "lead_room_fraction": 0.6667,
+      "back_margin_fraction": 0.0756
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 88.4,
+      "panel_headroom_fraction": 0.0921,
+      "panel_eyeline_fraction": 0.3283,
+      "lead_room_fraction": 0.6167,
+      "back_margin_fraction": 0.2609
+    }
+  },
+  {
+    "frame": 180,
+    "timestamp_s": 6.0,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 79.2,
+      "panel_headroom_fraction": 0.0825,
+      "panel_eyeline_fraction": 0.36,
+      "lead_room_fraction": 0.6667,
+      "back_margin_fraction": 0.0756
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 81.2,
+      "panel_headroom_fraction": 0.0846,
+      "panel_eyeline_fraction": 0.3246,
+      "lead_room_fraction": 0.6231,
+      "back_margin_fraction": 0.248
+    }
+  },
+  {
+    "frame": 186,
+    "timestamp_s": 6.2,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 68.8,
+      "panel_headroom_fraction": 0.0717,
+      "panel_eyeline_fraction": 0.3567,
+      "lead_room_fraction": 0.6694,
+      "back_margin_fraction": 0.0718
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 72.1,
+      "panel_headroom_fraction": 0.0751,
+      "panel_eyeline_fraction": 0.317,
+      "lead_room_fraction": 0.6278,
+      "back_margin_fraction": 0.2519
+    }
+  },
+  {
+    "frame": 192,
+    "timestamp_s": 6.4,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 65.7,
+      "panel_headroom_fraction": 0.0684,
+      "panel_eyeline_fraction": 0.3553,
+      "lead_room_fraction": 0.6769,
+      "back_margin_fraction": 0.0644
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 70.1,
+      "panel_headroom_fraction": 0.073,
+      "panel_eyeline_fraction": 0.3149,
+      "lead_room_fraction": 0.6315,
+      "back_margin_fraction": 0.2567
+    }
+  },
+  {
+    "frame": 198,
+    "timestamp_s": 6.6,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 73.0,
+      "panel_headroom_fraction": 0.076,
+      "panel_eyeline_fraction": 0.3573,
+      "lead_room_fraction": 0.6704,
+      "back_margin_fraction": 0.0719
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 74.3,
+      "panel_headroom_fraction": 0.0774,
+      "panel_eyeline_fraction": 0.3155,
+      "lead_room_fraction": 0.6296,
+      "back_margin_fraction": 0.2628
+    }
+  },
+  {
+    "frame": 204,
+    "timestamp_s": 6.8,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 78.1,
+      "panel_headroom_fraction": 0.0814,
+      "panel_eyeline_fraction": 0.3607,
+      "lead_room_fraction": 0.6667,
+      "back_margin_fraction": 0.0756
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 83.0,
+      "panel_headroom_fraction": 0.0865,
+      "panel_eyeline_fraction": 0.3199,
+      "lead_room_fraction": 0.6296,
+      "back_margin_fraction": 0.2628
+    }
+  },
+  {
+    "frame": 210,
+    "timestamp_s": 7.0,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 62.6,
+      "panel_headroom_fraction": 0.0652,
+      "panel_eyeline_fraction": 0.354,
+      "lead_room_fraction": 0.6759,
+      "back_margin_fraction": 0.0621
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 79.9,
+      "panel_headroom_fraction": 0.0833,
+      "panel_eyeline_fraction": 0.3186,
+      "lead_room_fraction": 0.6278,
+      "back_margin_fraction": 0.2647
+    }
+  },
+  {
+    "frame": 216,
+    "timestamp_s": 7.2,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 49.1,
+      "panel_headroom_fraction": 0.0512,
+      "panel_eyeline_fraction": 0.339,
+      "lead_room_fraction": 0.6852,
+      "back_margin_fraction": 0.055
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 58.6,
+      "panel_headroom_fraction": 0.0611,
+      "panel_eyeline_fraction": 0.2833,
+      "lead_room_fraction": 0.6028,
+      "back_margin_fraction": 0.3014
+    }
+  },
+  {
+    "frame": 222,
+    "timestamp_s": 7.4,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 60.4,
+      "panel_headroom_fraction": 0.063,
+      "panel_eyeline_fraction": 0.3452,
+      "lead_room_fraction": 0.6685,
+      "back_margin_fraction": 0.0695
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 66.8,
+      "panel_headroom_fraction": 0.0696,
+      "panel_eyeline_fraction": 0.2881,
+      "lead_room_fraction": 0.6028,
+      "back_margin_fraction": 0.3003
+    }
+  },
+  {
+    "frame": 228,
+    "timestamp_s": 7.6,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 65.5,
+      "panel_headroom_fraction": 0.0683,
+      "panel_eyeline_fraction": 0.3486,
+      "lead_room_fraction": 0.663,
+      "back_margin_fraction": 0.0794
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 68.4,
+      "panel_headroom_fraction": 0.0712,
+      "panel_eyeline_fraction": 0.2888,
+      "lead_room_fraction": 0.6019,
+      "back_margin_fraction": 0.3013
+    }
+  },
+  {
+    "frame": 234,
+    "timestamp_s": 7.8,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 59.3,
+      "panel_headroom_fraction": 0.0618,
+      "panel_eyeline_fraction": 0.3459,
+      "lead_room_fraction": 0.663,
+      "back_margin_fraction": 0.0772
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 60.5,
+      "panel_headroom_fraction": 0.0631,
+      "panel_eyeline_fraction": 0.2871,
+      "lead_room_fraction": 0.5972,
+      "back_margin_fraction": 0.2942
+    }
+  },
+  {
+    "frame": 240,
+    "timestamp_s": 8.0,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 61.4,
+      "panel_headroom_fraction": 0.064,
+      "panel_eyeline_fraction": 0.3462,
+      "lead_room_fraction": 0.663,
+      "back_margin_fraction": 0.0794
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 67.3,
+      "panel_headroom_fraction": 0.0701,
+      "panel_eyeline_fraction": 0.2895,
+      "lead_room_fraction": 0.5981,
+      "back_margin_fraction": 0.2911
+    }
+  },
+  {
+    "frame": 246,
+    "timestamp_s": 8.2,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 59.9,
+      "panel_headroom_fraction": 0.0624,
+      "panel_eyeline_fraction": 0.3455,
+      "lead_room_fraction": 0.663,
+      "back_margin_fraction": 0.0772
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 63.1,
+      "panel_headroom_fraction": 0.0657,
+      "panel_eyeline_fraction": 0.2889,
+      "lead_room_fraction": 0.6019,
+      "back_margin_fraction": 0.2895
+    }
+  },
+  {
+    "frame": 252,
+    "timestamp_s": 8.4,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 43.5,
+      "panel_headroom_fraction": 0.0453,
+      "panel_eyeline_fraction": 0.3359,
+      "lead_room_fraction": 0.6778,
+      "back_margin_fraction": 0.0581
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 60.0,
+      "panel_headroom_fraction": 0.0625,
+      "panel_eyeline_fraction": 0.2875,
+      "lead_room_fraction": 0.5981,
+      "back_margin_fraction": 0.2911
+    }
+  },
+  {
+    "frame": 258,
+    "timestamp_s": 8.6,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 86.3,
+      "panel_headroom_fraction": 0.0899,
+      "panel_eyeline_fraction": 0.3365,
+      "lead_room_fraction": 0.6667,
+      "back_margin_fraction": 0.0735
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 66.2,
+      "panel_headroom_fraction": 0.069,
+      "panel_eyeline_fraction": 0.2902,
+      "lead_room_fraction": 0.6056,
+      "back_margin_fraction": 0.2944
+    }
+  },
+  {
+    "frame": 264,
+    "timestamp_s": 8.8,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 100.1,
+      "panel_headroom_fraction": 0.1043,
+      "panel_eyeline_fraction": 0.3461,
+      "lead_room_fraction": 0.6463,
+      "back_margin_fraction": 0.1024
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 69.3,
+      "panel_headroom_fraction": 0.0722,
+      "panel_eyeline_fraction": 0.2916,
+      "lead_room_fraction": 0.6046,
+      "back_margin_fraction": 0.2942
+    }
+  },
+  {
+    "frame": 270,
+    "timestamp_s": 9.0,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 91.4,
+      "panel_headroom_fraction": 0.0953,
+      "panel_eyeline_fraction": 0.3399,
+      "lead_room_fraction": 0.6519,
+      "back_margin_fraction": 0.0905
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 62.1,
+      "panel_headroom_fraction": 0.0647,
+      "panel_eyeline_fraction": 0.2878,
+      "lead_room_fraction": 0.6019,
+      "back_margin_fraction": 0.2874
+    }
+  },
+  {
+    "frame": 276,
+    "timestamp_s": 9.2,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 66.1,
+      "panel_headroom_fraction": 0.0689,
+      "panel_eyeline_fraction": 0.3482,
+      "lead_room_fraction": 0.663,
+      "back_margin_fraction": 0.0772
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 60.4,
+      "panel_headroom_fraction": 0.063,
+      "panel_eyeline_fraction": 0.2889,
+      "lead_room_fraction": 0.6019,
+      "back_margin_fraction": 0.2853
+    }
+  },
+  {
+    "frame": 282,
+    "timestamp_s": 9.4,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 72.3,
+      "panel_headroom_fraction": 0.0753,
+      "panel_eyeline_fraction": 0.3509,
+      "lead_room_fraction": 0.6556,
+      "back_margin_fraction": 0.0868
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 74.9,
+      "panel_headroom_fraction": 0.0781,
+      "panel_eyeline_fraction": 0.2946,
+      "lead_room_fraction": 0.6056,
+      "back_margin_fraction": 0.2944
+    }
+  },
+  {
+    "frame": 288,
+    "timestamp_s": 9.6,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 63.0,
+      "panel_headroom_fraction": 0.0656,
+      "panel_eyeline_fraction": 0.3469,
+      "lead_room_fraction": 0.6611,
+      "back_margin_fraction": 0.0769
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 58.0,
+      "panel_headroom_fraction": 0.0604,
+      "panel_eyeline_fraction": 0.2854,
+      "lead_room_fraction": 0.6019,
+      "back_margin_fraction": 0.2874
+    }
+  },
+  {
+    "frame": 294,
+    "timestamp_s": 9.8,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 66.1,
+      "panel_headroom_fraction": 0.0689,
+      "panel_eyeline_fraction": 0.3482,
+      "lead_room_fraction": 0.6611,
+      "back_margin_fraction": 0.0812
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 49.6,
+      "panel_headroom_fraction": 0.0517,
+      "panel_eyeline_fraction": 0.2842,
+      "lead_room_fraction": 0.6019,
+      "back_margin_fraction": 0.2853
+    }
+  },
+  {
+    "frame": 300,
+    "timestamp_s": 10.0,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 64.1,
+      "panel_headroom_fraction": 0.0668,
+      "panel_eyeline_fraction": 0.3461,
+      "lead_room_fraction": 0.6611,
+      "back_margin_fraction": 0.0769
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 55.8,
+      "panel_headroom_fraction": 0.0581,
+      "panel_eyeline_fraction": 0.2869,
+      "lead_room_fraction": 0.6056,
+      "back_margin_fraction": 0.288
+    }
+  },
+  {
+    "frame": 306,
+    "timestamp_s": 10.2,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 49.1,
+      "panel_headroom_fraction": 0.0512,
+      "panel_eyeline_fraction": 0.339,
+      "lead_room_fraction": 0.6833,
+      "back_margin_fraction": 0.0547
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 58.9,
+      "panel_headroom_fraction": 0.0614,
+      "panel_eyeline_fraction": 0.2882,
+      "lead_room_fraction": 0.6046,
+      "back_margin_fraction": 0.2889
+    }
+  },
+  {
+    "frame": 312,
+    "timestamp_s": 10.4,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 67.2,
+      "panel_headroom_fraction": 0.07,
+      "panel_eyeline_fraction": 0.3475,
+      "lead_room_fraction": 0.6704,
+      "back_margin_fraction": 0.0656
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 68.8,
+      "panel_headroom_fraction": 0.0717,
+      "panel_eyeline_fraction": 0.2902,
+      "lead_room_fraction": 0.6074,
+      "back_margin_fraction": 0.2968
+    }
+  },
+  {
+    "frame": 318,
+    "timestamp_s": 10.6,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 95.0,
+      "panel_headroom_fraction": 0.099,
+      "panel_eyeline_fraction": 0.3427,
+      "lead_room_fraction": 0.6481,
+      "back_margin_fraction": 0.0963
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 74.0,
+      "panel_headroom_fraction": 0.0771,
+      "panel_eyeline_fraction": 0.2918,
+      "lead_room_fraction": 0.6056,
+      "back_margin_fraction": 0.2986
+    }
+  },
+  {
+    "frame": 324,
+    "timestamp_s": 10.8,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 69.2,
+      "panel_headroom_fraction": 0.0721,
+      "panel_eyeline_fraction": 0.3496,
+      "lead_room_fraction": 0.6611,
+      "back_margin_fraction": 0.0791
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 73.0,
+      "panel_headroom_fraction": 0.0761,
+      "panel_eyeline_fraction": 0.2908,
+      "lead_room_fraction": 0.6046,
+      "back_margin_fraction": 0.2985
+    }
+  },
+  {
+    "frame": 330,
+    "timestamp_s": 11.0,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 57.3,
+      "panel_headroom_fraction": 0.0597,
+      "panel_eyeline_fraction": 0.3438,
+      "lead_room_fraction": 0.6778,
+      "back_margin_fraction": 0.0603
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 64.2,
+      "panel_headroom_fraction": 0.0669,
+      "panel_eyeline_fraction": 0.2881,
+      "lead_room_fraction": 0.6037,
+      "back_margin_fraction": 0.2919
+    }
+  },
+  {
+    "frame": 336,
+    "timestamp_s": 11.2,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 66.1,
+      "panel_headroom_fraction": 0.0689,
+      "panel_eyeline_fraction": 0.3482,
+      "lead_room_fraction": 0.6704,
+      "back_margin_fraction": 0.0698
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 70.8,
+      "panel_headroom_fraction": 0.0738,
+      "panel_eyeline_fraction": 0.2922,
+      "lead_room_fraction": 0.6074,
+      "back_margin_fraction": 0.2946
+    }
+  },
+  {
+    "frame": 342,
+    "timestamp_s": 11.4,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 75.9,
+      "panel_headroom_fraction": 0.0791,
+      "panel_eyeline_fraction": 0.3519,
+      "lead_room_fraction": 0.6611,
+      "back_margin_fraction": 0.0812
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 63.6,
+      "panel_headroom_fraction": 0.0663,
+      "panel_eyeline_fraction": 0.2885,
+      "lead_room_fraction": 0.6009,
+      "back_margin_fraction": 0.2958
+    }
+  },
+  {
+    "frame": 348,
+    "timestamp_s": 11.6,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 63.0,
+      "panel_headroom_fraction": 0.0656,
+      "panel_eyeline_fraction": 0.3469,
+      "lead_room_fraction": 0.6685,
+      "back_margin_fraction": 0.0695
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 66.8,
+      "panel_headroom_fraction": 0.0695,
+      "panel_eyeline_fraction": 0.2898,
+      "lead_room_fraction": 0.6037,
+      "back_margin_fraction": 0.3005
+    }
+  },
+  {
+    "frame": 354,
+    "timestamp_s": 11.8,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 66.1,
+      "panel_headroom_fraction": 0.0689,
+      "panel_eyeline_fraction": 0.3482,
+      "lead_room_fraction": 0.6685,
+      "back_margin_fraction": 0.0759
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 67.3,
+      "panel_headroom_fraction": 0.0701,
+      "panel_eyeline_fraction": 0.2895,
+      "lead_room_fraction": 0.6046,
+      "back_margin_fraction": 0.2963
+    }
+  },
+  {
+    "frame": 360,
+    "timestamp_s": 12.0,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 64.5,
+      "panel_headroom_fraction": 0.0672,
+      "panel_eyeline_fraction": 0.3476,
+      "lead_room_fraction": 0.6667,
+      "back_margin_fraction": 0.0714
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 67.3,
+      "panel_headroom_fraction": 0.0701,
+      "panel_eyeline_fraction": 0.2895,
+      "lead_room_fraction": 0.6074,
+      "back_margin_fraction": 0.2968
+    }
+  },
+  {
+    "frame": 366,
+    "timestamp_s": 12.2,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 63.0,
+      "panel_headroom_fraction": 0.0656,
+      "panel_eyeline_fraction": 0.3469,
+      "lead_room_fraction": 0.6685,
+      "back_margin_fraction": 0.0717
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 68.4,
+      "panel_headroom_fraction": 0.0712,
+      "panel_eyeline_fraction": 0.2888,
+      "lead_room_fraction": 0.6093,
+      "back_margin_fraction": 0.296
+    }
+  },
+  {
+    "frame": 372,
+    "timestamp_s": 12.4,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 69.8,
+      "panel_headroom_fraction": 0.0727,
+      "panel_eyeline_fraction": 0.3492,
+      "lead_room_fraction": 0.6704,
+      "back_margin_fraction": 0.0719
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 67.8,
+      "panel_headroom_fraction": 0.0707,
+      "panel_eyeline_fraction": 0.2891,
+      "lead_room_fraction": 0.6093,
+      "back_margin_fraction": 0.296
+    }
+  },
+  {
+    "frame": 378,
+    "timestamp_s": 12.6,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 67.2,
+      "panel_headroom_fraction": 0.07,
+      "panel_eyeline_fraction": 0.3475,
+      "lead_room_fraction": 0.6704,
+      "back_margin_fraction": 0.0719
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 68.8,
+      "panel_headroom_fraction": 0.0717,
+      "panel_eyeline_fraction": 0.2902,
+      "lead_room_fraction": 0.6074,
+      "back_margin_fraction": 0.2957
+    }
+  },
+  {
+    "frame": 384,
+    "timestamp_s": 12.8,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 64.1,
+      "panel_headroom_fraction": 0.0668,
+      "panel_eyeline_fraction": 0.3461,
+      "lead_room_fraction": 0.6704,
+      "back_margin_fraction": 0.0698
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 67.3,
+      "panel_headroom_fraction": 0.0701,
+      "panel_eyeline_fraction": 0.2895,
+      "lead_room_fraction": 0.6056,
+      "back_margin_fraction": 0.2954
+    }
+  },
+  {
+    "frame": 390,
+    "timestamp_s": 13.0,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 64.1,
+      "panel_headroom_fraction": 0.0668,
+      "panel_eyeline_fraction": 0.3461,
+      "lead_room_fraction": 0.6704,
+      "back_margin_fraction": 0.0677
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 64.8,
+      "panel_headroom_fraction": 0.0674,
+      "panel_eyeline_fraction": 0.2878,
+      "lead_room_fraction": 0.6056,
+      "back_margin_fraction": 0.2944
+    }
+  },
+  {
+    "frame": 396,
+    "timestamp_s": 13.2,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 63.5,
+      "panel_headroom_fraction": 0.0662,
+      "panel_eyeline_fraction": 0.3465,
+      "lead_room_fraction": 0.6704,
+      "back_margin_fraction": 0.0677
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 64.2,
+      "panel_headroom_fraction": 0.0669,
+      "panel_eyeline_fraction": 0.2881,
+      "lead_room_fraction": 0.6056,
+      "back_margin_fraction": 0.2944
+    }
+  },
+  {
+    "frame": 402,
+    "timestamp_s": 13.4,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 66.1,
+      "panel_headroom_fraction": 0.0689,
+      "panel_eyeline_fraction": 0.3482,
+      "lead_room_fraction": 0.6685,
+      "back_margin_fraction": 0.0738
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 64.2,
+      "panel_headroom_fraction": 0.0669,
+      "panel_eyeline_fraction": 0.2881,
+      "lead_room_fraction": 0.6046,
+      "back_margin_fraction": 0.2963
+    }
+  },
+  {
+    "frame": 408,
+    "timestamp_s": 13.6,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 61.4,
+      "panel_headroom_fraction": 0.064,
+      "panel_eyeline_fraction": 0.3462,
+      "lead_room_fraction": 0.6685,
+      "back_margin_fraction": 0.0695
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 64.8,
+      "panel_headroom_fraction": 0.0674,
+      "panel_eyeline_fraction": 0.2878,
+      "lead_room_fraction": 0.6056,
+      "back_margin_fraction": 0.2954
+    }
+  },
+  {
+    "frame": 414,
+    "timestamp_s": 13.8,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 63.0,
+      "panel_headroom_fraction": 0.0656,
+      "panel_eyeline_fraction": 0.3469,
+      "lead_room_fraction": 0.6685,
+      "back_margin_fraction": 0.0738
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 71.8,
+      "panel_headroom_fraction": 0.0748,
+      "panel_eyeline_fraction": 0.2933,
+      "lead_room_fraction": 0.6019,
+      "back_margin_fraction": 0.3002
+    }
+  },
+  {
+    "frame": 420,
+    "timestamp_s": 14.0,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 63.0,
+      "panel_headroom_fraction": 0.0656,
+      "panel_eyeline_fraction": 0.3469,
+      "lead_room_fraction": 0.6685,
+      "back_margin_fraction": 0.0738
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 65.8,
+      "panel_headroom_fraction": 0.0685,
+      "panel_eyeline_fraction": 0.2888,
+      "lead_room_fraction": 0.5991,
+      "back_margin_fraction": 0.2976
+    }
+  },
+  {
+    "frame": 426,
+    "timestamp_s": 14.2,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 59.9,
+      "panel_headroom_fraction": 0.0624,
+      "panel_eyeline_fraction": 0.3455,
+      "lead_room_fraction": 0.6685,
+      "back_margin_fraction": 0.0717
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 68.3,
+      "panel_headroom_fraction": 0.0711,
+      "panel_eyeline_fraction": 0.2905,
+      "lead_room_fraction": 0.5944,
+      "back_margin_fraction": 0.3033
+    }
+  },
+  {
+    "frame": 432,
+    "timestamp_s": 14.4,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 66.1,
+      "panel_headroom_fraction": 0.0689,
+      "panel_eyeline_fraction": 0.3482,
+      "lead_room_fraction": 0.6685,
+      "back_margin_fraction": 0.0717
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 51.1,
+      "panel_headroom_fraction": 0.0533,
+      "panel_eyeline_fraction": 0.2848,
+      "lead_room_fraction": 0.5981,
+      "back_margin_fraction": 0.2911
+    }
+  },
+  {
+    "frame": 438,
+    "timestamp_s": 14.6,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 60.4,
+      "panel_headroom_fraction": 0.063,
+      "panel_eyeline_fraction": 0.3452,
+      "lead_room_fraction": 0.6685,
+      "back_margin_fraction": 0.0717
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 94.1,
+      "panel_headroom_fraction": 0.098,
+      "panel_eyeline_fraction": 0.3024,
+      "lead_room_fraction": 0.5972,
+      "back_margin_fraction": 0.3059
+    }
+  },
+  {
+    "frame": 444,
+    "timestamp_s": 14.8,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 67.2,
+      "panel_headroom_fraction": 0.07,
+      "panel_eyeline_fraction": 0.3475,
+      "lead_room_fraction": 0.6676,
+      "back_margin_fraction": 0.0737
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 99.8,
+      "panel_headroom_fraction": 0.104,
+      "panel_eyeline_fraction": 0.2765,
+      "lead_room_fraction": 0.5907,
+      "back_margin_fraction": 0.3177
+    }
+  },
+  {
+    "frame": 450,
+    "timestamp_s": 15.0,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 45.1,
+      "panel_headroom_fraction": 0.047,
+      "panel_eyeline_fraction": 0.3348,
+      "lead_room_fraction": 0.687,
+      "back_margin_fraction": 0.0468
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 79.1,
+      "panel_headroom_fraction": 0.0824,
+      "panel_eyeline_fraction": 0.2953,
+      "lead_room_fraction": 0.5972,
+      "back_margin_fraction": 0.3059
+    }
+  },
+  {
+    "frame": 456,
+    "timestamp_s": 15.2,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 63.8,
+      "panel_headroom_fraction": 0.0664,
+      "panel_eyeline_fraction": 0.343,
+      "lead_room_fraction": 0.6815,
+      "back_margin_fraction": 0.0544
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 106.5,
+      "panel_headroom_fraction": 0.111,
+      "panel_eyeline_fraction": 0.2976,
+      "lead_room_fraction": 0.5926,
+      "back_margin_fraction": 0.3265
+    }
+  },
+  {
+    "frame": 462,
+    "timestamp_s": 15.4,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 110.5,
+      "panel_headroom_fraction": 0.1151,
+      "panel_eyeline_fraction": 0.3495,
+      "lead_room_fraction": 0.6481,
+      "back_margin_fraction": 0.1027
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 93.4,
+      "panel_headroom_fraction": 0.0973,
+      "panel_eyeline_fraction": 0.296,
+      "lead_room_fraction": 0.5917,
+      "back_margin_fraction": 0.3221
+    }
+  },
+  {
+    "frame": 468,
+    "timestamp_s": 15.6,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 107.4,
+      "panel_headroom_fraction": 0.1119,
+      "panel_eyeline_fraction": 0.3481,
+      "lead_room_fraction": 0.6417,
+      "back_margin_fraction": 0.1102
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 52.8,
+      "panel_headroom_fraction": 0.055,
+      "panel_eyeline_fraction": 0.2838,
+      "lead_room_fraction": 0.6009,
+      "back_margin_fraction": 0.2883
+    }
+  },
+  {
+    "frame": 474,
+    "timestamp_s": 15.8,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 67.2,
+      "panel_headroom_fraction": 0.07,
+      "panel_eyeline_fraction": 0.3475,
+      "lead_room_fraction": 0.6593,
+      "back_margin_fraction": 0.0809
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 72.4,
+      "panel_headroom_fraction": 0.0754,
+      "panel_eyeline_fraction": 0.2929,
+      "lead_room_fraction": 0.6019,
+      "back_margin_fraction": 0.3002
+    }
+  },
+  {
+    "frame": 480,
+    "timestamp_s": 16.0,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 78.5,
+      "panel_headroom_fraction": 0.0818,
+      "panel_eyeline_fraction": 0.3536,
+      "lead_room_fraction": 0.6546,
+      "back_margin_fraction": 0.0887
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 54.9,
+      "panel_headroom_fraction": 0.0572,
+      "panel_eyeline_fraction": 0.2841,
+      "lead_room_fraction": 0.6,
+      "back_margin_fraction": 0.2967
+    }
+  },
+  {
+    "frame": 486,
+    "timestamp_s": 16.2,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 63.5,
+      "panel_headroom_fraction": 0.0662,
+      "panel_eyeline_fraction": 0.3465,
+      "lead_room_fraction": 0.6602,
+      "back_margin_fraction": 0.0832
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 67.8,
+      "panel_headroom_fraction": 0.0706,
+      "panel_eyeline_fraction": 0.2909,
+      "lead_room_fraction": 0.6037,
+      "back_margin_fraction": 0.2962
+    }
+  },
+  {
+    "frame": 492,
+    "timestamp_s": 16.4,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 71.8,
+      "panel_headroom_fraction": 0.0748,
+      "panel_eyeline_fraction": 0.3495,
+      "lead_room_fraction": 0.6519,
+      "back_margin_fraction": 0.0862
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 49.2,
+      "panel_headroom_fraction": 0.0513,
+      "panel_eyeline_fraction": 0.281,
+      "lead_room_fraction": 0.6,
+      "back_margin_fraction": 0.2999
+    }
+  },
+  {
+    "frame": 498,
+    "timestamp_s": 16.6,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 56.4,
+      "panel_headroom_fraction": 0.0588,
+      "panel_eyeline_fraction": 0.341,
+      "lead_room_fraction": 0.6713,
+      "back_margin_fraction": 0.0657
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 50.1,
+      "panel_headroom_fraction": 0.0522,
+      "panel_eyeline_fraction": 0.2838,
+      "lead_room_fraction": 0.6028,
+      "back_margin_fraction": 0.2961
+    }
+  },
+  {
+    "frame": 504,
+    "timestamp_s": 16.8,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 68.3,
+      "panel_headroom_fraction": 0.0711,
+      "panel_eyeline_fraction": 0.3468,
+      "lead_room_fraction": 0.663,
+      "back_margin_fraction": 0.0772
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 113.9,
+      "panel_headroom_fraction": 0.1186,
+      "panel_eyeline_fraction": 0.2893,
+      "lead_room_fraction": 0.5852,
+      "back_margin_fraction": 0.3296
+    }
+  },
+  {
+    "frame": 510,
+    "timestamp_s": 17.0,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 62.6,
+      "panel_headroom_fraction": 0.0653,
+      "panel_eyeline_fraction": 0.3437,
+      "lead_room_fraction": 0.6667,
+      "back_margin_fraction": 0.0735
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 122.1,
+      "panel_headroom_fraction": 0.1272,
+      "panel_eyeline_fraction": 0.2941,
+      "lead_room_fraction": 0.5824,
+      "back_margin_fraction": 0.3409
+    }
+  },
+  {
+    "frame": 516,
+    "timestamp_s": 17.2,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 71.4,
+      "panel_headroom_fraction": 0.0744,
+      "panel_eyeline_fraction": 0.3481,
+      "lead_room_fraction": 0.6574,
+      "back_margin_fraction": 0.0892
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 67.8,
+      "panel_headroom_fraction": 0.0706,
+      "panel_eyeline_fraction": 0.2909,
+      "lead_room_fraction": 0.5926,
+      "back_margin_fraction": 0.3041
+    }
+  },
+  {
+    "frame": 522,
+    "timestamp_s": 17.4,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 65.2,
+      "panel_headroom_fraction": 0.0679,
+      "panel_eyeline_fraction": 0.3454,
+      "lead_room_fraction": 0.663,
+      "back_margin_fraction": 0.0751
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 71.3,
+      "panel_headroom_fraction": 0.0743,
+      "panel_eyeline_fraction": 0.2936,
+      "lead_room_fraction": 0.6009,
+      "back_margin_fraction": 0.2947
+    }
+  },
+  {
+    "frame": 528,
+    "timestamp_s": 17.6,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 67.2,
+      "panel_headroom_fraction": 0.07,
+      "panel_eyeline_fraction": 0.3475,
+      "lead_room_fraction": 0.6593,
+      "back_margin_fraction": 0.0788
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 60.9,
+      "panel_headroom_fraction": 0.0634,
+      "panel_eyeline_fraction": 0.2903,
+      "lead_room_fraction": 0.6056,
+      "back_margin_fraction": 0.2762
+    }
+  },
+  {
+    "frame": 534,
+    "timestamp_s": 17.8,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 67.8,
+      "panel_headroom_fraction": 0.0706,
+      "panel_eyeline_fraction": 0.3471,
+      "lead_room_fraction": 0.6593,
+      "back_margin_fraction": 0.0788
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 95.0,
+      "panel_headroom_fraction": 0.099,
+      "panel_eyeline_fraction": 0.3052,
+      "lead_room_fraction": 0.6074,
+      "back_margin_fraction": 0.2925
+    }
+  },
+  {
+    "frame": 540,
+    "timestamp_s": 18.0,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 64.6,
+      "panel_headroom_fraction": 0.0673,
+      "panel_eyeline_fraction": 0.3458,
+      "lead_room_fraction": 0.6602,
+      "back_margin_fraction": 0.0832
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 108.9,
+      "panel_headroom_fraction": 0.1135,
+      "panel_eyeline_fraction": 0.3113,
+      "lead_room_fraction": 0.6028,
+      "back_margin_fraction": 0.3056
+    }
+  },
+  {
+    "frame": 546,
+    "timestamp_s": 18.2,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 65.6,
+      "panel_headroom_fraction": 0.0684,
+      "panel_eyeline_fraction": 0.3468,
+      "lead_room_fraction": 0.6593,
+      "back_margin_fraction": 0.0831
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 98.1,
+      "panel_headroom_fraction": 0.1022,
+      "panel_eyeline_fraction": 0.3066,
+      "lead_room_fraction": 0.6019,
+      "back_margin_fraction": 0.3013
+    }
+  },
+  {
+    "frame": 552,
+    "timestamp_s": 18.4,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 64.1,
+      "panel_headroom_fraction": 0.0668,
+      "panel_eyeline_fraction": 0.3461,
+      "lead_room_fraction": 0.6611,
+      "back_margin_fraction": 0.0791
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 90.4,
+      "panel_headroom_fraction": 0.0942,
+      "panel_eyeline_fraction": 0.3014,
+      "lead_room_fraction": 0.6037,
+      "back_margin_fraction": 0.2962
+    }
+  },
+  {
+    "frame": 558,
+    "timestamp_s": 18.6,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 63.5,
+      "panel_headroom_fraction": 0.0662,
+      "panel_eyeline_fraction": 0.3465,
+      "lead_room_fraction": 0.6611,
+      "back_margin_fraction": 0.0769
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 75.4,
+      "panel_headroom_fraction": 0.0785,
+      "panel_eyeline_fraction": 0.296,
+      "lead_room_fraction": 0.6019,
+      "back_margin_fraction": 0.2949
+    }
+  },
+  {
+    "frame": 564,
+    "timestamp_s": 18.8,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 67.2,
+      "panel_headroom_fraction": 0.07,
+      "panel_eyeline_fraction": 0.3475,
+      "lead_room_fraction": 0.6611,
+      "back_margin_fraction": 0.0769
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 58.5,
+      "panel_headroom_fraction": 0.061,
+      "panel_eyeline_fraction": 0.2851,
+      "lead_room_fraction": 0.6028,
+      "back_margin_fraction": 0.2865
+    }
+  },
+  {
+    "frame": 570,
+    "timestamp_s": 19.0,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 67.8,
+      "panel_headroom_fraction": 0.0706,
+      "panel_eyeline_fraction": 0.3471,
+      "lead_room_fraction": 0.6611,
+      "back_margin_fraction": 0.0791
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 54.0,
+      "panel_headroom_fraction": 0.0563,
+      "panel_eyeline_fraction": 0.2812,
+      "lead_room_fraction": 0.6028,
+      "back_margin_fraction": 0.2854
+    }
+  },
+  {
+    "frame": 576,
+    "timestamp_s": 19.2,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 67.8,
+      "panel_headroom_fraction": 0.0706,
+      "panel_eyeline_fraction": 0.3471,
+      "lead_room_fraction": 0.6611,
+      "back_margin_fraction": 0.0812
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 55.4,
+      "panel_headroom_fraction": 0.0578,
+      "panel_eyeline_fraction": 0.2837,
+      "lead_room_fraction": 0.5981,
+      "back_margin_fraction": 0.289
+    }
+  },
+  {
+    "frame": 582,
+    "timestamp_s": 19.4,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 65.2,
+      "panel_headroom_fraction": 0.0679,
+      "panel_eyeline_fraction": 0.3454,
+      "lead_room_fraction": 0.662,
+      "back_margin_fraction": 0.0771
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 67.8,
+      "panel_headroom_fraction": 0.0706,
+      "panel_eyeline_fraction": 0.2909,
+      "lead_room_fraction": 0.5981,
+      "back_margin_fraction": 0.3018
+    }
+  },
+  {
+    "frame": 588,
+    "timestamp_s": 19.6,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 65.2,
+      "panel_headroom_fraction": 0.0679,
+      "panel_eyeline_fraction": 0.3454,
+      "lead_room_fraction": 0.663,
+      "back_margin_fraction": 0.0794
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 106.9,
+      "panel_headroom_fraction": 0.1114,
+      "panel_eyeline_fraction": 0.3007,
+      "lead_room_fraction": 0.5963,
+      "back_margin_fraction": 0.3185
+    }
+  },
+  {
+    "frame": 594,
+    "timestamp_s": 19.8,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 68.3,
+      "panel_headroom_fraction": 0.0711,
+      "panel_eyeline_fraction": 0.3468,
+      "lead_room_fraction": 0.663,
+      "back_margin_fraction": 0.0794
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 90.8,
+      "panel_headroom_fraction": 0.0946,
+      "panel_eyeline_fraction": 0.2943,
+      "lead_room_fraction": 0.5963,
+      "back_margin_fraction": 0.3079
+    }
+  },
+  {
+    "frame": 600,
+    "timestamp_s": 20.0,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 64.6,
+      "panel_headroom_fraction": 0.0673,
+      "panel_eyeline_fraction": 0.3458,
+      "lead_room_fraction": 0.663,
+      "back_margin_fraction": 0.0794
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 56.9,
+      "panel_headroom_fraction": 0.0593,
+      "panel_eyeline_fraction": 0.2861,
+      "lead_room_fraction": 0.6056,
+      "back_margin_fraction": 0.2837
+    }
+  },
+  {
+    "frame": 606,
+    "timestamp_s": 20.2,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 63.1,
+      "panel_headroom_fraction": 0.0657,
+      "panel_eyeline_fraction": 0.3451,
+      "lead_room_fraction": 0.662,
+      "back_margin_fraction": 0.0771
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 87.3,
+      "panel_headroom_fraction": 0.091,
+      "panel_eyeline_fraction": 0.3001,
+      "lead_room_fraction": 0.5926,
+      "back_margin_fraction": 0.3073
+    }
+  },
+  {
+    "frame": 612,
+    "timestamp_s": 20.4,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 64.6,
+      "panel_headroom_fraction": 0.0673,
+      "panel_eyeline_fraction": 0.3458,
+      "lead_room_fraction": 0.663,
+      "back_margin_fraction": 0.0815
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 130.6,
+      "panel_headroom_fraction": 0.1361,
+      "panel_eyeline_fraction": 0.302,
+      "lead_room_fraction": 0.5889,
+      "back_margin_fraction": 0.3312
+    }
+  },
+  {
+    "frame": 618,
+    "timestamp_s": 20.6,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 67.2,
+      "panel_headroom_fraction": 0.07,
+      "panel_eyeline_fraction": 0.3475,
+      "lead_room_fraction": 0.662,
+      "back_margin_fraction": 0.0813
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 125.1,
+      "panel_headroom_fraction": 0.1304,
+      "panel_eyeline_fraction": 0.3057,
+      "lead_room_fraction": 0.5926,
+      "back_margin_fraction": 0.3244
+    }
+  },
+  {
+    "frame": 624,
+    "timestamp_s": 20.8,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 67.2,
+      "panel_headroom_fraction": 0.07,
+      "panel_eyeline_fraction": 0.3475,
+      "lead_room_fraction": 0.662,
+      "back_margin_fraction": 0.0813
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 129.0,
+      "panel_headroom_fraction": 0.1344,
+      "panel_eyeline_fraction": 0.3031,
+      "lead_room_fraction": 0.5963,
+      "back_margin_fraction": 0.3228
+    }
+  },
+  {
+    "frame": 630,
+    "timestamp_s": 21.0,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 64.6,
+      "panel_headroom_fraction": 0.0673,
+      "panel_eyeline_fraction": 0.3458,
+      "lead_room_fraction": 0.662,
+      "back_margin_fraction": 0.075
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 128.0,
+      "panel_headroom_fraction": 0.1333,
+      "panel_eyeline_fraction": 0.3021,
+      "lead_room_fraction": 0.5954,
+      "back_margin_fraction": 0.3216
+    }
+  },
+  {
+    "frame": 636,
+    "timestamp_s": 21.2,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 64.6,
+      "panel_headroom_fraction": 0.0673,
+      "panel_eyeline_fraction": 0.3458,
+      "lead_room_fraction": 0.663,
+      "back_margin_fraction": 0.0794
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 125.4,
+      "panel_headroom_fraction": 0.1307,
+      "panel_eyeline_fraction": 0.3004,
+      "lead_room_fraction": 0.5981,
+      "back_margin_fraction": 0.3188
+    }
+  },
+  {
+    "frame": 642,
+    "timestamp_s": 21.4,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 62.1,
+      "panel_headroom_fraction": 0.0647,
+      "panel_eyeline_fraction": 0.3441,
+      "lead_room_fraction": 0.663,
+      "back_margin_fraction": 0.0794
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 119.3,
+      "panel_headroom_fraction": 0.1243,
+      "panel_eyeline_fraction": 0.2959,
+      "lead_room_fraction": 0.5981,
+      "back_margin_fraction": 0.3124
+    }
+  },
+  {
+    "frame": 648,
+    "timestamp_s": 21.6,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 65.2,
+      "panel_headroom_fraction": 0.0679,
+      "panel_eyeline_fraction": 0.3454,
+      "lead_room_fraction": 0.6639,
+      "back_margin_fraction": 0.0752
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 84.3,
+      "panel_headroom_fraction": 0.0879,
+      "panel_eyeline_fraction": 0.2969,
+      "lead_room_fraction": 0.6009,
+      "back_margin_fraction": 0.3
+    }
+  },
+  {
+    "frame": 654,
+    "timestamp_s": 21.8,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 64.6,
+      "panel_headroom_fraction": 0.0673,
+      "panel_eyeline_fraction": 0.3458,
+      "lead_room_fraction": 0.6639,
+      "back_margin_fraction": 0.0752
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 68.3,
+      "panel_headroom_fraction": 0.0711,
+      "panel_eyeline_fraction": 0.2905,
+      "lead_room_fraction": 0.6019,
+      "back_margin_fraction": 0.2917
+    }
+  },
+  {
+    "frame": 660,
+    "timestamp_s": 22.0,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 74.3,
+      "panel_headroom_fraction": 0.0774,
+      "panel_eyeline_fraction": 0.3905,
+      "lead_room_fraction": 0.6222,
+      "back_margin_fraction": 0.0839
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 90.3,
+      "panel_headroom_fraction": 0.0941,
+      "panel_eyeline_fraction": 0.3032,
+      "lead_room_fraction": 0.6028,
+      "back_margin_fraction": 0.3003
+    }
+  },
+  {
+    "frame": 666,
+    "timestamp_s": 22.2,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 71.2,
+      "panel_headroom_fraction": 0.0742,
+      "panel_eyeline_fraction": 0.3892,
+      "lead_room_fraction": 0.6222,
+      "back_margin_fraction": 0.0839
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 106.4,
+      "panel_headroom_fraction": 0.1108,
+      "panel_eyeline_fraction": 0.2908,
+      "lead_room_fraction": 0.6056,
+      "back_margin_fraction": 0.305
+    }
+  },
+  {
+    "frame": 672,
+    "timestamp_s": 22.4,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 74.3,
+      "panel_headroom_fraction": 0.0774,
+      "panel_eyeline_fraction": 0.3905,
+      "lead_room_fraction": 0.6213,
+      "back_margin_fraction": 0.0859
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 64.0,
+      "panel_headroom_fraction": 0.0667,
+      "panel_eyeline_fraction": 0.2917,
+      "lead_room_fraction": 0.6093,
+      "back_margin_fraction": 0.2843
+    }
+  },
+  {
+    "frame": 678,
+    "timestamp_s": 22.6,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 49.7,
+      "panel_headroom_fraction": 0.0518,
+      "panel_eyeline_fraction": 0.3761,
+      "lead_room_fraction": 0.6444,
+      "back_margin_fraction": 0.0553
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 89.8,
+      "panel_headroom_fraction": 0.0935,
+      "panel_eyeline_fraction": 0.3035,
+      "lead_room_fraction": 0.6056,
+      "back_margin_fraction": 0.2965
+    }
+  },
+  {
+    "frame": 684,
+    "timestamp_s": 22.8,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 69.6,
+      "panel_headroom_fraction": 0.0725,
+      "panel_eyeline_fraction": 0.38,
+      "lead_room_fraction": 0.6556,
+      "back_margin_fraction": 0.0463
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 70.2,
+      "panel_headroom_fraction": 0.0731,
+      "panel_eyeline_fraction": 0.2944,
+      "lead_room_fraction": 0.6056,
+      "back_margin_fraction": 0.2912
+    }
+  },
+  {
+    "frame": 690,
+    "timestamp_s": 23.0,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 126.0,
+      "panel_headroom_fraction": 0.1313,
+      "panel_eyeline_fraction": 0.3937,
+      "lead_room_fraction": 0.6,
+      "back_margin_fraction": 0.1189
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 27.7,
+      "panel_headroom_fraction": 0.0289,
+      "panel_eyeline_fraction": 0.2782,
+      "lead_room_fraction": 0.6241,
+      "back_margin_fraction": 0.2407
+    }
+  },
+  {
+    "frame": 696,
+    "timestamp_s": 23.2,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 106.9,
+      "panel_headroom_fraction": 0.1114,
+      "panel_eyeline_fraction": 0.3842,
+      "lead_room_fraction": 0.6037,
+      "back_margin_fraction": 0.1109
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 39.5,
+      "panel_headroom_fraction": 0.0412,
+      "panel_eyeline_fraction": 0.284,
+      "lead_room_fraction": 0.6278,
+      "back_margin_fraction": 0.2508
+    }
+  },
+  {
+    "frame": 702,
+    "timestamp_s": 23.4,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 73.7,
+      "panel_headroom_fraction": 0.0768,
+      "panel_eyeline_fraction": 0.3909,
+      "lead_room_fraction": 0.625,
+      "back_margin_fraction": 0.08
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 86.5,
+      "panel_headroom_fraction": 0.0901,
+      "panel_eyeline_fraction": 0.3057,
+      "lead_room_fraction": 0.6111,
+      "back_margin_fraction": 0.2803
+    }
+  },
+  {
+    "frame": 708,
+    "timestamp_s": 23.6,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 82.5,
+      "panel_headroom_fraction": 0.0859,
+      "panel_eyeline_fraction": 0.3953,
+      "lead_room_fraction": 0.6157,
+      "back_margin_fraction": 0.0893
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 110.3,
+      "panel_headroom_fraction": 0.1149,
+      "panel_eyeline_fraction": 0.3155,
+      "lead_room_fraction": 0.6019,
+      "back_margin_fraction": 0.2938
+    }
+  },
+  {
+    "frame": 714,
+    "timestamp_s": 23.8,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 65.5,
+      "panel_headroom_fraction": 0.0683,
+      "panel_eyeline_fraction": 0.3861,
+      "lead_room_fraction": 0.6296,
+      "back_margin_fraction": 0.0744
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 102.5,
+      "panel_headroom_fraction": 0.1068,
+      "panel_eyeline_fraction": 0.3121,
+      "lead_room_fraction": 0.6065,
+      "back_margin_fraction": 0.2945
+    }
+  },
+  {
+    "frame": 720,
+    "timestamp_s": 24.0,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 77.4,
+      "panel_headroom_fraction": 0.0806,
+      "panel_eyeline_fraction": 0.3919,
+      "lead_room_fraction": 0.6204,
+      "back_margin_fraction": 0.0836
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 100.0,
+      "panel_headroom_fraction": 0.1042,
+      "panel_eyeline_fraction": 0.3104,
+      "lead_room_fraction": 0.6074,
+      "back_margin_fraction": 0.2946
+    }
+  },
+  {
+    "frame": 726,
+    "timestamp_s": 24.2,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 72.3,
+      "panel_headroom_fraction": 0.0753,
+      "panel_eyeline_fraction": 0.3884,
+      "lead_room_fraction": 0.6278,
+      "back_margin_fraction": 0.0783
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 95.9,
+      "panel_headroom_fraction": 0.0999,
+      "panel_eyeline_fraction": 0.308,
+      "lead_room_fraction": 0.6111,
+      "back_margin_fraction": 0.2952
+    }
+  },
+  {
+    "frame": 732,
+    "timestamp_s": 24.4,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 80.6,
+      "panel_headroom_fraction": 0.084,
+      "panel_eyeline_fraction": 0.3915,
+      "lead_room_fraction": 0.6259,
+      "back_margin_fraction": 0.0802
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 78.4,
+      "panel_headroom_fraction": 0.0817,
+      "panel_eyeline_fraction": 0.2992,
+      "lead_room_fraction": 0.6065,
+      "back_margin_fraction": 0.2913
+    }
+  },
+  {
+    "frame": 738,
+    "timestamp_s": 24.6,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 81.6,
+      "panel_headroom_fraction": 0.085,
+      "panel_eyeline_fraction": 0.3925,
+      "lead_room_fraction": 0.6231,
+      "back_margin_fraction": 0.0819
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 60.9,
+      "panel_headroom_fraction": 0.0634,
+      "panel_eyeline_fraction": 0.2903,
+      "lead_room_fraction": 0.6102,
+      "back_margin_fraction": 0.2716
+    }
+  },
+  {
+    "frame": 744,
+    "timestamp_s": 24.8,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 74.8,
+      "panel_headroom_fraction": 0.078,
+      "panel_eyeline_fraction": 0.3902,
+      "lead_room_fraction": 0.6241,
+      "back_margin_fraction": 0.082
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 49.4,
+      "panel_headroom_fraction": 0.0515,
+      "panel_eyeline_fraction": 0.2877,
+      "lead_room_fraction": 0.6259,
+      "back_margin_fraction": 0.2399
+    }
+  },
+  {
+    "frame": 750,
+    "timestamp_s": 25.0,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 71.7,
+      "panel_headroom_fraction": 0.0747,
+      "panel_eyeline_fraction": 0.3888,
+      "lead_room_fraction": 0.6241,
+      "back_margin_fraction": 0.082
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 58.6,
+      "panel_headroom_fraction": 0.061,
+      "panel_eyeline_fraction": 0.2935,
+      "lead_room_fraction": 0.6426,
+      "back_margin_fraction": 0.2062
+    }
+  },
+  {
+    "frame": 756,
+    "timestamp_s": 25.2,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 75.8,
+      "panel_headroom_fraction": 0.079,
+      "panel_eyeline_fraction": 0.3912,
+      "lead_room_fraction": 0.6241,
+      "back_margin_fraction": 0.082
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 74.5,
+      "panel_headroom_fraction": 0.0777,
+      "panel_eyeline_fraction": 0.3017,
+      "lead_room_fraction": 0.6491,
+      "back_margin_fraction": 0.1955
+    }
+  },
+  {
+    "frame": 762,
+    "timestamp_s": 25.4,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 77.4,
+      "panel_headroom_fraction": 0.0806,
+      "panel_eyeline_fraction": 0.3919,
+      "lead_room_fraction": 0.6222,
+      "back_margin_fraction": 0.0839
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 81.3,
+      "panel_headroom_fraction": 0.0847,
+      "panel_eyeline_fraction": 0.3041,
+      "lead_room_fraction": 0.6444,
+      "back_margin_fraction": 0.2129
+    }
+  },
+  {
+    "frame": 768,
+    "timestamp_s": 25.6,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 74.3,
+      "panel_headroom_fraction": 0.0774,
+      "panel_eyeline_fraction": 0.3905,
+      "lead_room_fraction": 0.6222,
+      "back_margin_fraction": 0.0818
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 73.1,
+      "panel_headroom_fraction": 0.0761,
+      "panel_eyeline_fraction": 0.2993,
+      "lead_room_fraction": 0.6241,
+      "back_margin_fraction": 0.2439
+    }
+  },
+  {
+    "frame": 774,
+    "timestamp_s": 25.8,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 75.8,
+      "panel_headroom_fraction": 0.079,
+      "panel_eyeline_fraction": 0.3912,
+      "lead_room_fraction": 0.6222,
+      "back_margin_fraction": 0.0839
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 85.6,
+      "panel_headroom_fraction": 0.0892,
+      "panel_eyeline_fraction": 0.3029,
+      "lead_room_fraction": 0.6019,
+      "back_margin_fraction": 0.2959
+    }
+  },
+  {
+    "frame": 780,
+    "timestamp_s": 26.0,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 76.8,
+      "panel_headroom_fraction": 0.0801,
+      "panel_eyeline_fraction": 0.3922,
+      "lead_room_fraction": 0.6194,
+      "back_margin_fraction": 0.0899
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 95.3,
+      "panel_headroom_fraction": 0.0993,
+      "panel_eyeline_fraction": 0.2811,
+      "lead_room_fraction": 0.5926,
+      "back_margin_fraction": 0.3126
+    }
+  },
+  {
+    "frame": 786,
+    "timestamp_s": 26.2,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 73.7,
+      "panel_headroom_fraction": 0.0768,
+      "panel_eyeline_fraction": 0.3909,
+      "lead_room_fraction": 0.6204,
+      "back_margin_fraction": 0.0879
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 41.3,
+      "panel_headroom_fraction": 0.043,
+      "panel_eyeline_fraction": 0.2811,
+      "lead_room_fraction": 0.6111,
+      "back_margin_fraction": 0.275
+    }
+  },
+  {
+    "frame": 792,
+    "timestamp_s": 26.4,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 73.7,
+      "panel_headroom_fraction": 0.0768,
+      "panel_eyeline_fraction": 0.3909,
+      "lead_room_fraction": 0.6185,
+      "back_margin_fraction": 0.0876
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 54.1,
+      "panel_headroom_fraction": 0.0564,
+      "panel_eyeline_fraction": 0.288,
+      "lead_room_fraction": 0.6139,
+      "back_margin_fraction": 0.2764
+    }
+  },
+  {
+    "frame": 798,
+    "timestamp_s": 26.6,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 76.8,
+      "panel_headroom_fraction": 0.0801,
+      "panel_eyeline_fraction": 0.3922,
+      "lead_room_fraction": 0.6185,
+      "back_margin_fraction": 0.0876
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 93.0,
+      "panel_headroom_fraction": 0.0969,
+      "panel_eyeline_fraction": 0.3031,
+      "lead_room_fraction": 0.6,
+      "back_margin_fraction": 0.2946
+    }
+  },
+  {
+    "frame": 804,
+    "timestamp_s": 26.8,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 77.4,
+      "panel_headroom_fraction": 0.0806,
+      "panel_eyeline_fraction": 0.3919,
+      "lead_room_fraction": 0.6194,
+      "back_margin_fraction": 0.0856
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 114.1,
+      "panel_headroom_fraction": 0.1189,
+      "panel_eyeline_fraction": 0.2942,
+      "lead_room_fraction": 0.5972,
+      "back_margin_fraction": 0.2963
+    }
+  },
+  {
+    "frame": 810,
+    "timestamp_s": 27.0,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 77.9,
+      "panel_headroom_fraction": 0.0812,
+      "panel_eyeline_fraction": 0.3915,
+      "lead_room_fraction": 0.6194,
+      "back_margin_fraction": 0.0856
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 78.3,
+      "panel_headroom_fraction": 0.0816,
+      "panel_eyeline_fraction": 0.3009,
+      "lead_room_fraction": 0.6056,
+      "back_margin_fraction": 0.2858
+    }
+  },
+  {
+    "frame": 816,
+    "timestamp_s": 27.2,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 77.9,
+      "panel_headroom_fraction": 0.0812,
+      "panel_eyeline_fraction": 0.3915,
+      "lead_room_fraction": 0.6194,
+      "back_margin_fraction": 0.0877
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 87.1,
+      "panel_headroom_fraction": 0.0908,
+      "panel_eyeline_fraction": 0.3036,
+      "lead_room_fraction": 0.6093,
+      "back_margin_fraction": 0.2949
+    }
+  },
+  {
+    "frame": 822,
+    "timestamp_s": 27.4,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 81.0,
+      "panel_headroom_fraction": 0.0844,
+      "panel_eyeline_fraction": 0.3929,
+      "lead_room_fraction": 0.6185,
+      "back_margin_fraction": 0.0897
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 122.1,
+      "panel_headroom_fraction": 0.1272,
+      "panel_eyeline_fraction": 0.3026,
+      "lead_room_fraction": 0.6037,
+      "back_margin_fraction": 0.31
+    }
+  },
+  {
+    "frame": 828,
+    "timestamp_s": 27.6,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 53.5,
+      "panel_headroom_fraction": 0.0558,
+      "panel_eyeline_fraction": 0.3736,
+      "lead_room_fraction": 0.6556,
+      "back_margin_fraction": 0.0378
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 133.0,
+      "panel_headroom_fraction": 0.1385,
+      "panel_eyeline_fraction": 0.3073,
+      "lead_room_fraction": 0.6,
+      "back_margin_fraction": 0.3169
+    }
+  },
+  {
+    "frame": 834,
+    "timestamp_s": 27.8,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 69.4,
+      "panel_headroom_fraction": 0.0723,
+      "panel_eyeline_fraction": 0.3835,
+      "lead_room_fraction": 0.6519,
+      "back_margin_fraction": 0.0457
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 126.8,
+      "panel_headroom_fraction": 0.1321,
+      "panel_eyeline_fraction": 0.3046,
+      "lead_room_fraction": 0.6037,
+      "back_margin_fraction": 0.3143
+    }
+  },
+  {
+    "frame": 840,
+    "timestamp_s": 28.0,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 126.4,
+      "panel_headroom_fraction": 0.1317,
+      "panel_eyeline_fraction": 0.3952,
+      "lead_room_fraction": 0.6019,
+      "back_margin_fraction": 0.1149
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 117.1,
+      "panel_headroom_fraction": 0.122,
+      "panel_eyeline_fraction": 0.3076,
+      "lead_room_fraction": 0.6037,
+      "back_margin_fraction": 0.31
+    }
+  },
+  {
+    "frame": 846,
+    "timestamp_s": 28.2,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 80.5,
+      "panel_headroom_fraction": 0.0839,
+      "panel_eyeline_fraction": 0.3932,
+      "lead_room_fraction": 0.6093,
+      "back_margin_fraction": 0.1011
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 116.6,
+      "panel_headroom_fraction": 0.1215,
+      "panel_eyeline_fraction": 0.2977,
+      "lead_room_fraction": 0.6056,
+      "back_margin_fraction": 0.3061
+    }
+  },
+  {
+    "frame": 852,
+    "timestamp_s": 28.4,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 68.1,
+      "panel_headroom_fraction": 0.0709,
+      "panel_eyeline_fraction": 0.3878,
+      "lead_room_fraction": 0.6352,
+      "back_margin_fraction": 0.0667
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 92.9,
+      "panel_headroom_fraction": 0.0968,
+      "panel_eyeline_fraction": 0.3049,
+      "lead_room_fraction": 0.6083,
+      "back_margin_fraction": 0.2969
+    }
+  },
+  {
+    "frame": 858,
+    "timestamp_s": 28.6,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 86.7,
+      "panel_headroom_fraction": 0.0903,
+      "panel_eyeline_fraction": 0.3959,
+      "lead_room_fraction": 0.6148,
+      "back_margin_fraction": 0.0913
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 81.5,
+      "panel_headroom_fraction": 0.0849,
+      "panel_eyeline_fraction": 0.3005,
+      "lead_room_fraction": 0.6102,
+      "back_margin_fraction": 0.2908
+    }
+  },
+  {
+    "frame": 864,
+    "timestamp_s": 28.8,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 75.4,
+      "panel_headroom_fraction": 0.0785,
+      "panel_eyeline_fraction": 0.3898,
+      "lead_room_fraction": 0.6167,
+      "back_margin_fraction": 0.0873
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 59.8,
+      "panel_headroom_fraction": 0.0623,
+      "panel_eyeline_fraction": 0.291,
+      "lead_room_fraction": 0.6102,
+      "back_margin_fraction": 0.2801
+    }
+  },
+  {
+    "frame": 870,
+    "timestamp_s": 29.0,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 76.9,
+      "panel_headroom_fraction": 0.0802,
+      "panel_eyeline_fraction": 0.3905,
+      "lead_room_fraction": 0.6222,
+      "back_margin_fraction": 0.0839
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 39.8,
+      "panel_headroom_fraction": 0.0414,
+      "panel_eyeline_fraction": 0.2805,
+      "lead_room_fraction": 0.6167,
+      "back_margin_fraction": 0.2641
+    }
+  },
+  {
+    "frame": 876,
+    "timestamp_s": 29.2,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 75.9,
+      "panel_headroom_fraction": 0.0791,
+      "panel_eyeline_fraction": 0.3894,
+      "lead_room_fraction": 0.6204,
+      "back_margin_fraction": 0.0857
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 37.0,
+      "panel_headroom_fraction": 0.0385,
+      "panel_eyeline_fraction": 0.2823,
+      "lead_room_fraction": 0.6185,
+      "back_margin_fraction": 0.2644
+    }
+  },
+  {
+    "frame": 882,
+    "timestamp_s": 29.4,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 78.5,
+      "panel_headroom_fraction": 0.0818,
+      "panel_eyeline_fraction": 0.3911,
+      "lead_room_fraction": 0.6222,
+      "back_margin_fraction": 0.0818
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 67.0,
+      "panel_headroom_fraction": 0.0698,
+      "panel_eyeline_fraction": 0.2948,
+      "lead_room_fraction": 0.6167,
+      "back_margin_fraction": 0.2854
+    }
+  },
+  {
+    "frame": 888,
+    "timestamp_s": 29.6,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 80.0,
+      "panel_headroom_fraction": 0.0834,
+      "panel_eyeline_fraction": 0.3918,
+      "lead_room_fraction": 0.6185,
+      "back_margin_fraction": 0.0855
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 135.0,
+      "panel_headroom_fraction": 0.1406,
+      "panel_eyeline_fraction": 0.3094,
+      "lead_room_fraction": 0.6019,
+      "back_margin_fraction": 0.3204
+    }
+  },
+  {
+    "frame": 894,
+    "timestamp_s": 29.8,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 81.6,
+      "panel_headroom_fraction": 0.085,
+      "panel_eyeline_fraction": 0.3925,
+      "lead_room_fraction": 0.6222,
+      "back_margin_fraction": 0.0839
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 148.3,
+      "panel_headroom_fraction": 0.1545,
+      "panel_eyeline_fraction": 0.3176,
+      "lead_room_fraction": 0.5981,
+      "back_margin_fraction": 0.3284
+    }
+  },
+  {
+    "frame": 900,
+    "timestamp_s": 30.0,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 87.2,
+      "panel_headroom_fraction": 0.0909,
+      "panel_eyeline_fraction": 0.3956,
+      "lead_room_fraction": 0.6148,
+      "back_margin_fraction": 0.0913
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 134.6,
+      "panel_headroom_fraction": 0.1402,
+      "panel_eyeline_fraction": 0.308,
+      "lead_room_fraction": 0.6037,
+      "back_margin_fraction": 0.3196
+    }
+  },
+  {
+    "frame": 906,
+    "timestamp_s": 30.2,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 64.5,
+      "panel_headroom_fraction": 0.0672,
+      "panel_eyeline_fraction": 0.3851,
+      "lead_room_fraction": 0.6315,
+      "back_margin_fraction": 0.0704
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 119.7,
+      "panel_headroom_fraction": 0.1247,
+      "panel_eyeline_fraction": 0.2991,
+      "lead_room_fraction": 0.6093,
+      "back_margin_fraction": 0.313
+    }
+  },
+  {
+    "frame": 912,
+    "timestamp_s": 30.4,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 66.8,
+      "panel_headroom_fraction": 0.0696,
+      "panel_eyeline_fraction": 0.3818,
+      "lead_room_fraction": 0.6444,
+      "back_margin_fraction": 0.0585
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 77.8,
+      "panel_headroom_fraction": 0.0811,
+      "panel_eyeline_fraction": 0.2995,
+      "lead_room_fraction": 0.6111,
+      "back_margin_fraction": 0.292
+    }
+  },
+  {
+    "frame": 918,
+    "timestamp_s": 30.6,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 81.0,
+      "panel_headroom_fraction": 0.0844,
+      "panel_eyeline_fraction": 0.3929,
+      "lead_room_fraction": 0.6074,
+      "back_margin_fraction": 0.1051
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 52.5,
+      "panel_headroom_fraction": 0.0547,
+      "panel_eyeline_fraction": 0.2891,
+      "lead_room_fraction": 0.6176,
+      "back_margin_fraction": 0.2749
+    }
+  },
+  {
+    "frame": 924,
+    "timestamp_s": 30.8,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 76.8,
+      "panel_headroom_fraction": 0.0801,
+      "panel_eyeline_fraction": 0.3922,
+      "lead_room_fraction": 0.6111,
+      "back_margin_fraction": 0.0971
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 52.5,
+      "panel_headroom_fraction": 0.0547,
+      "panel_eyeline_fraction": 0.2891,
+      "lead_room_fraction": 0.6185,
+      "back_margin_fraction": 0.275
+    }
+  },
+  {
+    "frame": 930,
+    "timestamp_s": 31.0,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 67.0,
+      "panel_headroom_fraction": 0.0698,
+      "panel_eyeline_fraction": 0.3885,
+      "lead_room_fraction": 0.6333,
+      "back_margin_fraction": 0.0749
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 77.3,
+      "panel_headroom_fraction": 0.0805,
+      "panel_eyeline_fraction": 0.2999,
+      "lead_room_fraction": 0.613,
+      "back_margin_fraction": 0.2891
+    }
+  },
+  {
+    "frame": 936,
+    "timestamp_s": 31.2,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 73.7,
+      "panel_headroom_fraction": 0.0768,
+      "panel_eyeline_fraction": 0.3909,
+      "lead_room_fraction": 0.6241,
+      "back_margin_fraction": 0.082
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 124.8,
+      "panel_headroom_fraction": 0.13,
+      "panel_eyeline_fraction": 0.3025,
+      "lead_room_fraction": 0.6037,
+      "back_margin_fraction": 0.3175
+    }
+  },
+  {
+    "frame": 942,
+    "timestamp_s": 31.4,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 88.7,
+      "panel_headroom_fraction": 0.0924,
+      "panel_eyeline_fraction": 0.398,
+      "lead_room_fraction": 0.6056,
+      "back_margin_fraction": 0.1069
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 131.0,
+      "panel_headroom_fraction": 0.1365,
+      "panel_eyeline_fraction": 0.3052,
+      "lead_room_fraction": 0.6019,
+      "back_margin_fraction": 0.3194
+    }
+  },
+  {
+    "frame": 948,
+    "timestamp_s": 31.6,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 89.8,
+      "panel_headroom_fraction": 0.0935,
+      "panel_eyeline_fraction": 0.3973,
+      "lead_room_fraction": 0.6037,
+      "back_margin_fraction": 0.1088
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 123.8,
+      "panel_headroom_fraction": 0.129,
+      "panel_eyeline_fraction": 0.3015,
+      "lead_room_fraction": 0.6046,
+      "back_margin_fraction": 0.3134
+    }
+  },
+  {
+    "frame": 954,
+    "timestamp_s": 31.8,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 83.6,
+      "panel_headroom_fraction": 0.0871,
+      "panel_eyeline_fraction": 0.3946,
+      "lead_room_fraction": 0.6111,
+      "back_margin_fraction": 0.0971
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 115.7,
+      "panel_headroom_fraction": 0.1205,
+      "panel_eyeline_fraction": 0.2949,
+      "lead_room_fraction": 0.6093,
+      "back_margin_fraction": 0.3077
+    }
+  },
+  {
+    "frame": 960,
+    "timestamp_s": 32.0,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 83.6,
+      "panel_headroom_fraction": 0.0871,
+      "panel_eyeline_fraction": 0.3946,
+      "lead_room_fraction": 0.6111,
+      "back_margin_fraction": 0.0971
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 81.8,
+      "panel_headroom_fraction": 0.0853,
+      "panel_eyeline_fraction": 0.3037,
+      "lead_room_fraction": 0.613,
+      "back_margin_fraction": 0.2912
+    }
+  },
+  {
+    "frame": 966,
+    "timestamp_s": 32.2,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 81.6,
+      "panel_headroom_fraction": 0.085,
+      "panel_eyeline_fraction": 0.3925,
+      "lead_room_fraction": 0.6176,
+      "back_margin_fraction": 0.0896
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 68.0,
+      "panel_headroom_fraction": 0.0708,
+      "panel_eyeline_fraction": 0.2958,
+      "lead_room_fraction": 0.6167,
+      "back_margin_fraction": 0.2832
+    }
+  },
+  {
+    "frame": 972,
+    "timestamp_s": 32.4,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 79.0,
+      "panel_headroom_fraction": 0.0823,
+      "panel_eyeline_fraction": 0.3908,
+      "lead_room_fraction": 0.6204,
+      "back_margin_fraction": 0.0857
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 53.6,
+      "panel_headroom_fraction": 0.0558,
+      "panel_eyeline_fraction": 0.2883,
+      "lead_room_fraction": 0.6185,
+      "back_margin_fraction": 0.275
+    }
+  },
+  {
+    "frame": 978,
+    "timestamp_s": 32.6,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 79.0,
+      "panel_headroom_fraction": 0.0823,
+      "panel_eyeline_fraction": 0.3908,
+      "lead_room_fraction": 0.6222,
+      "back_margin_fraction": 0.086
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 51.0,
+      "panel_headroom_fraction": 0.0532,
+      "panel_eyeline_fraction": 0.2866,
+      "lead_room_fraction": 0.6185,
+      "back_margin_fraction": 0.2729
+    }
+  },
+  {
+    "frame": 984,
+    "timestamp_s": 32.8,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 75.9,
+      "panel_headroom_fraction": 0.0791,
+      "panel_eyeline_fraction": 0.3894,
+      "lead_room_fraction": 0.6222,
+      "back_margin_fraction": 0.0839
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 59.4,
+      "panel_headroom_fraction": 0.0619,
+      "panel_eyeline_fraction": 0.2879,
+      "lead_room_fraction": 0.6074,
+      "back_margin_fraction": 0.2925
+    }
+  },
+  {
+    "frame": 990,
+    "timestamp_s": 33.0,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 75.4,
+      "panel_headroom_fraction": 0.0785,
+      "panel_eyeline_fraction": 0.3898,
+      "lead_room_fraction": 0.6222,
+      "back_margin_fraction": 0.0839
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 115.6,
+      "panel_headroom_fraction": 0.1204,
+      "panel_eyeline_fraction": 0.2967,
+      "lead_room_fraction": 0.5963,
+      "back_margin_fraction": 0.3292
+    }
+  },
+  {
+    "frame": 996,
+    "timestamp_s": 33.2,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 78.5,
+      "panel_headroom_fraction": 0.0818,
+      "panel_eyeline_fraction": 0.3911,
+      "lead_room_fraction": 0.6204,
+      "back_margin_fraction": 0.0857
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 139.2,
+      "panel_headroom_fraction": 0.145,
+      "panel_eyeline_fraction": 0.31,
+      "lead_room_fraction": 0.5889,
+      "back_margin_fraction": 0.344
+    }
+  },
+  {
+    "frame": 1002,
+    "timestamp_s": 33.4,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 77.9,
+      "panel_headroom_fraction": 0.0812,
+      "panel_eyeline_fraction": 0.3915,
+      "lead_room_fraction": 0.6222,
+      "back_margin_fraction": 0.086
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 132.6,
+      "panel_headroom_fraction": 0.1381,
+      "panel_eyeline_fraction": 0.3059,
+      "lead_room_fraction": 0.5907,
+      "back_margin_fraction": 0.339
+    }
+  },
+  {
+    "frame": 1008,
+    "timestamp_s": 33.6,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 83.6,
+      "panel_headroom_fraction": 0.0871,
+      "panel_eyeline_fraction": 0.3946,
+      "lead_room_fraction": 0.6167,
+      "back_margin_fraction": 0.0916
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 116.2,
+      "panel_headroom_fraction": 0.1211,
+      "panel_eyeline_fraction": 0.2945,
+      "lead_room_fraction": 0.6,
+      "back_margin_fraction": 0.3223
+    }
+  },
+  {
+    "frame": 1014,
+    "timestamp_s": 33.8,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 78.5,
+      "panel_headroom_fraction": 0.0818,
+      "panel_eyeline_fraction": 0.3911,
+      "lead_room_fraction": 0.6185,
+      "back_margin_fraction": 0.0855
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 76.2,
+      "panel_headroom_fraction": 0.0794,
+      "panel_eyeline_fraction": 0.3006,
+      "lead_room_fraction": 0.6111,
+      "back_margin_fraction": 0.292
+    }
+  },
+  {
+    "frame": 1020,
+    "timestamp_s": 34.0,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 72.3,
+      "panel_headroom_fraction": 0.0753,
+      "panel_eyeline_fraction": 0.3884,
+      "lead_room_fraction": 0.6278,
+      "back_margin_fraction": 0.0783
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 63.8,
+      "panel_headroom_fraction": 0.0665,
+      "panel_eyeline_fraction": 0.2952,
+      "lead_room_fraction": 0.6204,
+      "back_margin_fraction": 0.2689
+    }
+  },
+  {
+    "frame": 1026,
+    "timestamp_s": 34.2,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 75.4,
+      "panel_headroom_fraction": 0.0785,
+      "panel_eyeline_fraction": 0.3898,
+      "lead_room_fraction": 0.6222,
+      "back_margin_fraction": 0.0839
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 54.5,
+      "panel_headroom_fraction": 0.0568,
+      "panel_eyeline_fraction": 0.2911,
+      "lead_room_fraction": 0.6259,
+      "back_margin_fraction": 0.2516
+    }
+  },
+  {
+    "frame": 1032,
+    "timestamp_s": 34.4,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 75.4,
+      "panel_headroom_fraction": 0.0785,
+      "panel_eyeline_fraction": 0.3898,
+      "lead_room_fraction": 0.6222,
+      "back_margin_fraction": 0.0818
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 50.3,
+      "panel_headroom_fraction": 0.0524,
+      "panel_eyeline_fraction": 0.2905,
+      "lead_room_fraction": 0.6278,
+      "back_margin_fraction": 0.2476
+    }
+  },
+  {
+    "frame": 1038,
+    "timestamp_s": 34.6,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 75.4,
+      "panel_headroom_fraction": 0.0785,
+      "panel_eyeline_fraction": 0.3898,
+      "lead_room_fraction": 0.6222,
+      "back_margin_fraction": 0.0818
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 49.8,
+      "panel_headroom_fraction": 0.0518,
+      "panel_eyeline_fraction": 0.2909,
+      "lead_room_fraction": 0.6259,
+      "back_margin_fraction": 0.2495
+    }
+  },
+  {
+    "frame": 1044,
+    "timestamp_s": 34.8,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 80.0,
+      "panel_headroom_fraction": 0.0834,
+      "panel_eyeline_fraction": 0.3918,
+      "lead_room_fraction": 0.6222,
+      "back_margin_fraction": 0.0839
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 51.3,
+      "panel_headroom_fraction": 0.0534,
+      "panel_eyeline_fraction": 0.2916,
+      "lead_room_fraction": 0.6259,
+      "back_margin_fraction": 0.2516
+    }
+  },
+  {
+    "frame": 1050,
+    "timestamp_s": 35.0,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 81.6,
+      "panel_headroom_fraction": 0.085,
+      "panel_eyeline_fraction": 0.3925,
+      "lead_room_fraction": 0.6222,
+      "back_margin_fraction": 0.0839
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 53.9,
+      "panel_headroom_fraction": 0.0562,
+      "panel_eyeline_fraction": 0.2915,
+      "lead_room_fraction": 0.6278,
+      "back_margin_fraction": 0.2551
+    }
+  },
+  {
+    "frame": 1056,
+    "timestamp_s": 35.2,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 77.9,
+      "panel_headroom_fraction": 0.0812,
+      "panel_eyeline_fraction": 0.3915,
+      "lead_room_fraction": 0.6222,
+      "back_margin_fraction": 0.0839
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 64.8,
+      "panel_headroom_fraction": 0.0675,
+      "panel_eyeline_fraction": 0.2962,
+      "lead_room_fraction": 0.6204,
+      "back_margin_fraction": 0.2678
+    }
+  },
+  {
+    "frame": 1062,
+    "timestamp_s": 35.4,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 80.5,
+      "panel_headroom_fraction": 0.0839,
+      "panel_eyeline_fraction": 0.3932,
+      "lead_room_fraction": 0.6222,
+      "back_margin_fraction": 0.0839
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 93.7,
+      "panel_headroom_fraction": 0.0976,
+      "panel_eyeline_fraction": 0.3095,
+      "lead_room_fraction": 0.6111,
+      "back_margin_fraction": 0.2899
+    }
+  },
+  {
+    "frame": 1068,
+    "timestamp_s": 35.6,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 77.4,
+      "panel_headroom_fraction": 0.0806,
+      "panel_eyeline_fraction": 0.3919,
+      "lead_room_fraction": 0.6222,
+      "back_margin_fraction": 0.0839
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 102.4,
+      "panel_headroom_fraction": 0.1067,
+      "panel_eyeline_fraction": 0.2867,
+      "lead_room_fraction": 0.6056,
+      "back_margin_fraction": 0.3007
+    }
+  },
+  {
+    "frame": 1074,
+    "timestamp_s": 35.8,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 75.8,
+      "panel_headroom_fraction": 0.079,
+      "panel_eyeline_fraction": 0.3912,
+      "lead_room_fraction": 0.6204,
+      "back_margin_fraction": 0.0857
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 110.0,
+      "panel_headroom_fraction": 0.1146,
+      "panel_eyeline_fraction": 0.2918,
+      "lead_room_fraction": 0.6074,
+      "back_margin_fraction": 0.3106
+    }
+  },
+  {
+    "frame": 1080,
+    "timestamp_s": 36.0,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 74.3,
+      "panel_headroom_fraction": 0.0774,
+      "panel_eyeline_fraction": 0.3905,
+      "lead_room_fraction": 0.6241,
+      "back_margin_fraction": 0.082
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 102.1,
+      "panel_headroom_fraction": 0.1064,
+      "panel_eyeline_fraction": 0.2817,
+      "lead_room_fraction": 0.6019,
+      "back_margin_fraction": 0.313
+    }
+  },
+  {
+    "frame": 1086,
+    "timestamp_s": 36.2,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 75.4,
+      "panel_headroom_fraction": 0.0785,
+      "panel_eyeline_fraction": 0.3898,
+      "lead_room_fraction": 0.6204,
+      "back_margin_fraction": 0.0847
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 83.1,
+      "panel_headroom_fraction": 0.0866,
+      "panel_eyeline_fraction": 0.2994,
+      "lead_room_fraction": 0.6111,
+      "back_margin_fraction": 0.2994
+    }
+  },
+  {
+    "frame": 1092,
+    "timestamp_s": 36.4,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 66.6,
+      "panel_headroom_fraction": 0.0694,
+      "panel_eyeline_fraction": 0.3854,
+      "lead_room_fraction": 0.6352,
+      "back_margin_fraction": 0.0709
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 104.6,
+      "panel_headroom_fraction": 0.109,
+      "panel_eyeline_fraction": 0.2852,
+      "lead_room_fraction": 0.6,
+      "back_margin_fraction": 0.3223
+    }
+  },
+  {
+    "frame": 1098,
+    "timestamp_s": 36.6,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 78.5,
+      "panel_headroom_fraction": 0.0818,
+      "panel_eyeline_fraction": 0.3911,
+      "lead_room_fraction": 0.6222,
+      "back_margin_fraction": 0.0839
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 107.7,
+      "panel_headroom_fraction": 0.1122,
+      "panel_eyeline_fraction": 0.2866,
+      "lead_room_fraction": 0.6,
+      "back_margin_fraction": 0.3233
+    }
+  },
+  {
+    "frame": 1104,
+    "timestamp_s": 36.8,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 66.6,
+      "panel_headroom_fraction": 0.0694,
+      "panel_eyeline_fraction": 0.3854,
+      "lead_room_fraction": 0.6241,
+      "back_margin_fraction": 0.082
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 107.1,
+      "panel_headroom_fraction": 0.1116,
+      "panel_eyeline_fraction": 0.2869,
+      "lead_room_fraction": 0.6037,
+      "back_margin_fraction": 0.3239
+    }
+  },
+  {
+    "frame": 1110,
+    "timestamp_s": 37.0,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 77.0,
+      "panel_headroom_fraction": 0.0803,
+      "panel_eyeline_fraction": 0.3887,
+      "lead_room_fraction": 0.6315,
+      "back_margin_fraction": 0.0746
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 107.7,
+      "panel_headroom_fraction": 0.1122,
+      "panel_eyeline_fraction": 0.2866,
+      "lead_room_fraction": 0.6028,
+      "back_margin_fraction": 0.3216
+    }
+  },
+  {
+    "frame": 1116,
+    "timestamp_s": 37.2,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 73.9,
+      "panel_headroom_fraction": 0.077,
+      "panel_eyeline_fraction": 0.3873,
+      "lead_room_fraction": 0.6259,
+      "back_margin_fraction": 0.0802
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 107.1,
+      "panel_headroom_fraction": 0.1116,
+      "panel_eyeline_fraction": 0.2869,
+      "lead_room_fraction": 0.6019,
+      "back_margin_fraction": 0.3194
+    }
+  },
+  {
+    "frame": 1122,
+    "timestamp_s": 37.4,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 64.1,
+      "panel_headroom_fraction": 0.0668,
+      "panel_eyeline_fraction": 0.3836,
+      "lead_room_fraction": 0.6407,
+      "back_margin_fraction": 0.0611
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 107.1,
+      "panel_headroom_fraction": 0.1116,
+      "panel_eyeline_fraction": 0.2869,
+      "lead_room_fraction": 0.6028,
+      "back_margin_fraction": 0.3184
+    }
+  },
+  {
+    "frame": 1128,
+    "timestamp_s": 37.6,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 64.3,
+      "panel_headroom_fraction": 0.067,
+      "panel_eyeline_fraction": 0.3801,
+      "lead_room_fraction": 0.6574,
+      "back_margin_fraction": 0.037
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 106.6,
+      "panel_headroom_fraction": 0.111,
+      "panel_eyeline_fraction": 0.2873,
+      "lead_room_fraction": 0.6037,
+      "back_margin_fraction": 0.3186
+    }
+  },
+  {
+    "frame": 1134,
+    "timestamp_s": 37.8,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 89.0,
+      "panel_headroom_fraction": 0.0927,
+      "panel_eyeline_fraction": 0.374,
+      "lead_room_fraction": 0.6537,
+      "back_margin_fraction": 0.0481
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 108.1,
+      "panel_headroom_fraction": 0.1127,
+      "panel_eyeline_fraction": 0.288,
+      "lead_room_fraction": 0.6056,
+      "back_margin_fraction": 0.3188
+    }
+  },
+  {
+    "frame": 1140,
+    "timestamp_s": 38.0,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 108.5,
+      "panel_headroom_fraction": 0.113,
+      "panel_eyeline_fraction": 0.3849,
+      "lead_room_fraction": 0.6407,
+      "back_margin_fraction": 0.0632
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 106.6,
+      "panel_headroom_fraction": 0.111,
+      "panel_eyeline_fraction": 0.2873,
+      "lead_room_fraction": 0.6037,
+      "back_margin_fraction": 0.3186
+    }
+  },
+  {
+    "frame": 1146,
+    "timestamp_s": 38.2,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 95.8,
+      "panel_headroom_fraction": 0.0997,
+      "panel_eyeline_fraction": 0.3763,
+      "lead_room_fraction": 0.6296,
+      "back_margin_fraction": 0.0807
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 112.2,
+      "panel_headroom_fraction": 0.1169,
+      "panel_eyeline_fraction": 0.2904,
+      "lead_room_fraction": 0.6019,
+      "back_margin_fraction": 0.3204
+    }
+  },
+  {
+    "frame": 1152,
+    "timestamp_s": 38.4,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 73.2,
+      "panel_headroom_fraction": 0.0762,
+      "panel_eyeline_fraction": 0.3913,
+      "lead_room_fraction": 0.6315,
+      "back_margin_fraction": 0.081
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 111.7,
+      "panel_headroom_fraction": 0.1164,
+      "panel_eyeline_fraction": 0.2907,
+      "lead_room_fraction": 0.5981,
+      "back_margin_fraction": 0.3231
+    }
+  },
+  {
+    "frame": 1158,
+    "timestamp_s": 38.6,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 68.4,
+      "panel_headroom_fraction": 0.0713,
+      "panel_eyeline_fraction": 0.391,
+      "lead_room_fraction": 0.6556,
+      "back_margin_fraction": 0.0452
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 112.8,
+      "panel_headroom_fraction": 0.1175,
+      "panel_eyeline_fraction": 0.29,
+      "lead_room_fraction": 0.5843,
+      "back_margin_fraction": 0.3348
+    }
+  },
+  {
+    "frame": 1164,
+    "timestamp_s": 38.8,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 73.5,
+      "panel_headroom_fraction": 0.0766,
+      "panel_eyeline_fraction": 0.3944,
+      "lead_room_fraction": 0.6685,
+      "back_margin_fraction": 0.0291
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 107.7,
+      "panel_headroom_fraction": 0.1122,
+      "panel_eyeline_fraction": 0.2866,
+      "lead_room_fraction": 0.5722,
+      "back_margin_fraction": 0.3469
+    }
+  },
+  {
+    "frame": 1170,
+    "timestamp_s": 39.0,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 76.1,
+      "panel_headroom_fraction": 0.0793,
+      "panel_eyeline_fraction": 0.3961,
+      "lead_room_fraction": 0.6593,
+      "back_margin_fraction": 0.0319
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 107.2,
+      "panel_headroom_fraction": 0.1117,
+      "panel_eyeline_fraction": 0.2852,
+      "lead_room_fraction": 0.5667,
+      "back_margin_fraction": 0.3535
+    }
+  },
+  {
+    "frame": 1176,
+    "timestamp_s": 39.2,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 58.2,
+      "panel_headroom_fraction": 0.0607,
+      "panel_eyeline_fraction": 0.3841,
+      "lead_room_fraction": 0.6537,
+      "back_margin_fraction": 0.0332
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 108.8,
+      "panel_headroom_fraction": 0.1133,
+      "panel_eyeline_fraction": 0.2858,
+      "lead_room_fraction": 0.5685,
+      "back_margin_fraction": 0.3527
+    }
+  },
+  {
+    "frame": 1182,
+    "timestamp_s": 39.4,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 54.0,
+      "panel_headroom_fraction": 0.0563,
+      "panel_eyeline_fraction": 0.3835,
+      "lead_room_fraction": 0.6685,
+      "back_margin_fraction": 0.0238
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 113.9,
+      "panel_headroom_fraction": 0.1186,
+      "panel_eyeline_fraction": 0.2893,
+      "lead_room_fraction": 0.5741,
+      "back_margin_fraction": 0.3493
+    }
+  },
+  {
+    "frame": 1188,
+    "timestamp_s": 39.6,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 65.3,
+      "panel_headroom_fraction": 0.0681,
+      "panel_eyeline_fraction": 0.3896,
+      "lead_room_fraction": 0.6685,
+      "back_margin_fraction": 0.0206
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 112.8,
+      "panel_headroom_fraction": 0.1175,
+      "panel_eyeline_fraction": 0.29,
+      "lead_room_fraction": 0.5741,
+      "back_margin_fraction": 0.3461
+    }
+  },
+  {
+    "frame": 1194,
+    "timestamp_s": 39.8,
+    "spk_a_fenton": {
+      "measured": true,
+      "panel_head_top_y": 72.6,
+      "panel_headroom_fraction": 0.0757,
+      "panel_eyeline_fraction": 0.3916,
+      "lead_room_fraction": 0.663,
+      "back_margin_fraction": 0.0346
+    },
+    "spk_b_saba": {
+      "measured": true,
+      "panel_head_top_y": 112.8,
+      "panel_headroom_fraction": 0.1175,
+      "panel_eyeline_fraction": 0.29,
+      "lead_room_fraction": 0.5741,
+      "back_margin_fraction": 0.345
+    }
+  }
+]

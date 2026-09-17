@@ -1,0 +1,33 @@
+=== HEAD-SIZE MATCHING & TRADE-OFF REPORT (c1 - SPLIT LAYOUT) ===
+Directive: Commander Ruling 1 & 2 (prompt_030.txt)
+
+1. Panel Head Measurements (On-Screen, Weighted Mean across 4 Shots):
+   • Top Panel: Dr. Fenton Lebon (CAM_A, spk_a)
+     - 4K Mean Face Box Height : 347.5 px
+     - Crop Dimensions (W x H) : H=1070-1204px, W=1204-1354px
+     - Final On-Screen Head H  : 310.2 px (weighted mean)
+     - Headroom Rolling Med    : [5.9%, 11.2%] (raw [4.5%, 13.2%], band [5.0%, 12.0%]) -> PASS
+     - Eyeline Rolling Med     : [33.7%, 39.7%] (raw [33.5%, 39.8%], band [28.0%, 40.0%]) -> PASS
+     - Lead Room Mean          : 64.8% (target 60.0%, band [55.0%, 67.0%]) -> PASS
+     - Back Margin Min         : 2.1% (sensor-edge exception target >= 2.0%) -> PASS
+
+   • Bottom Panel: Dr. Saba Shabnam (CAM_B, spk_b)
+     - 4K Mean Face Box Height : 217.3 px
+     - Crop Dimensions (W x H) : H=1120-1200px, W=1260-1350px
+     - Final On-Screen Head H  : 222.2 px (weighted mean)
+     - Headroom Rolling Med    : [4.1%, 14.1%] (raw [2.9%, 15.4%], band [5.0%, 12.0%]) -> FAIL
+     - Eyeline Rolling Med     : [28.1%, 34.6%] (raw [27.7%, 34.8%], band [28.0%, 40.0%]) -> PASS
+     - Lead Room Mean          : 60.2% (target 60.0%, band [55.0%, 67.0%]) -> PASS
+     - Back Margin Min         : 19.6% (target >= 4.0%) -> PASS
+
+2. Ratio & Compliance:
+   • On-Screen Head-Height Ratio : 1.396x (Fenton / Saba)
+   • Commander Ruling Target     : <= 1.450x (Loop 031)
+   • Target Compliance Status    : PASS (Measured: 1.396x)
+   • Panel Zoom Ratio            : 0.992x (<= 1.50 cap)
+
+3. Trade Analysis (Ruling 1c):
+   • To achieve a completely locked frame (movement = 0px, dead still):
+     - Saba crop height expanded to H=1120-1200px (mean 1152px), reducing head size from 242.6px to 222.2px.
+     - Saba sacrificed ~14px of head size on average (up to ~30px in Shot 4) for stability.
+     - Eyeline passes 100% on both panels without tracking.

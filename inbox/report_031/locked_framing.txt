@@ -18,18 +18,18 @@ Measurement Engine: 15-frame rolling median + bounded transient analysis
     • Head Size (On-Screen)    : 294.7 px
 
   [BOTTOM PANEL: Dr. Saba Shabnam (CAM_B)]
-    • Solved Static Crop Box   : [1608, 755, 1305, 1160] (Crop H: 1160px, W: 1305px)
+    • Solved Static Crop Box   : [1568, 750, 1350, 1200] (Crop H: 1200px, W: 1350px)
     • Framing Lock Status      : LOCKED (movement = 0px, 0 moves)
-    • Headroom Rolling Median  : min 4.3%, mean 8.8%, max 11.9% (Band: [5.0%, 12.0%]) -> FAIL
-    • Eyeline Rolling Median   : min 29.0%, mean 30.4%, max 33.1% (Band: [28.0%, 40.0%]) -> PASS
-    • Instantaneous Max        : Eyeline 34.0% (Ceiling: <= 45.0%), Headroom 12.0%
+    • Headroom Rolling Median  : min 4.6%, mean 9.0%, max 11.9% (Band: [5.0%, 12.0%]) -> FAIL
+    • Eyeline Rolling Median   : min 28.4%, mean 29.8%, max 32.4% (Band: [28.0%, 40.0%]) -> PASS
+    • Instantaneous Max        : Eyeline 33.2% (Ceiling: <= 45.0%), Headroom 12.0%
     • Longest Excursion        : 12 frames (0.40s, Limit: <= 45 frames)
     • Total Outside Band       : 8.0% (Limit: <= 10.0%) -> PASS
-    • Lead Room Mean           : 57.1% (Band: [55.0%, 67.0%]) -> PASS
-    • Back Margin Min          : 27.9% (Target: >= 4.0%) -> PASS
-    • Head Size (On-Screen)    : 230.1 px
+    • Lead Room Mean           : 58.2% (Band: [55.0%, 67.0%]) -> PASS
+    • Back Margin Min          : 27.4% (Target: >= 4.0%) -> PASS
+    • Head Size (On-Screen)    : 222.4 px
 
-  • Shot 1 Head Size Ratio : 1.281x (Fenton / Saba) [Preset Target: <= 1.300x] -> PASS
+  • Shot 1 Head Size Ratio : 1.325x (Fenton / Saba) [Preset Target: <= 1.450x] -> PASS
 
 --- SHOT 2: frames [ 146 -  213] ( 2.23s) | Active Speaker: spk_b (CAM_B) ---
 
@@ -46,18 +46,18 @@ Measurement Engine: 15-frame rolling median + bounded transient analysis
     • Head Size (On-Screen)    : 298.5 px
 
   [BOTTOM PANEL: Dr. Saba Shabnam (CAM_B)]
-    • Solved Static Crop Box   : [1528, 735, 1350, 1200] (Crop H: 1200px, W: 1350px)
+    • Solved Static Crop Box   : [1596, 755, 1260, 1120] (Crop H: 1120px, W: 1260px)
     • Framing Lock Status      : LOCKED (movement = 0px, 0 moves)
-    • Headroom Rolling Median  : min 8.3%, mean 9.0%, max 9.7% (Band: [5.0%, 12.0%]) -> PASS
-    • Eyeline Rolling Median   : min 31.2%, mean 32.5%, max 34.3% (Band: [28.0%, 40.0%]) -> PASS
-    • Instantaneous Max        : Eyeline 36.0% (Ceiling: <= 45.0%), Headroom 10.3%
+    • Headroom Rolling Median  : min 7.1%, mean 7.8%, max 8.5% (Band: [5.0%, 12.0%]) -> PASS
+    • Eyeline Rolling Median   : min 31.7%, mean 33.0%, max 34.8% (Band: [28.0%, 40.0%]) -> PASS
+    • Instantaneous Max        : Eyeline 34.9% (Ceiling: <= 45.0%), Headroom 9.0%
     • Longest Excursion        : 0 frames (0.00s, Limit: <= 45 frames)
     • Total Outside Band       : 0.0% (Limit: <= 10.0%) -> PASS
-    • Lead Room Mean           : 62.0% (Band: [55.0%, 67.0%]) -> PASS
+    • Lead Room Mean           : 61.0% (Band: [55.0%, 67.0%]) -> PASS
     • Back Margin Min          : 24.8% (Target: >= 4.0%) -> PASS
-    • Head Size (On-Screen)    : 254.9 px
+    • Head Size (On-Screen)    : 268.5 px
 
-  • Shot 2 Head Size Ratio : 1.171x (Fenton / Saba) [Preset Target: <= 1.300x] -> PASS
+  • Shot 2 Head Size Ratio : 1.112x (Fenton / Saba) [Preset Target: <= 1.450x] -> PASS
 
 --- SHOT 3: frames [ 213 -  658] (14.83s) | Active Speaker: spk_a (CAM_A) ---
 
@@ -74,18 +74,18 @@ Measurement Engine: 15-frame rolling median + bounded transient analysis
     • Head Size (On-Screen)    : 293.9 px
 
   [BOTTOM PANEL: Dr. Saba Shabnam (CAM_B)]
-    • Solved Static Crop Box   : [1634, 770, 1260, 1120] (Crop H: 1120px, W: 1260px)
+    • Solved Static Crop Box   : [1568, 765, 1350, 1200] (Crop H: 1200px, W: 1350px)
     • Framing Lock Status      : LOCKED (movement = 0px, 0 moves)
-    • Headroom Rolling Median  : min 5.1%, mean 8.0%, max 13.9% (Band: [5.0%, 12.0%]) -> FAIL
-    • Eyeline Rolling Median   : min 29.8%, mean 30.8%, max 32.4% (Band: [28.0%, 40.0%]) -> PASS
-    • Instantaneous Max        : Eyeline 32.9% (Ceiling: <= 45.0%), Headroom 14.0%
+    • Headroom Rolling Median  : min 5.0%, mean 7.9%, max 13.3% (Band: [5.0%, 12.0%]) -> FAIL
+    • Eyeline Rolling Median   : min 28.3%, mean 29.1%, max 30.7% (Band: [28.0%, 40.0%]) -> PASS
+    • Instantaneous Max        : Eyeline 30.7% (Ceiling: <= 45.0%), Headroom 13.4%
     • Longest Excursion        : 36 frames (1.20s, Limit: <= 45 frames)
-    • Total Outside Band       : 13.5% (Limit: <= 10.0%) -> FAIL
-    • Lead Room Mean           : 59.0% (Band: [55.0%, 67.0%]) -> PASS
-    • Back Margin Min          : 27.7% (Target: >= 4.0%) -> PASS
-    • Head Size (On-Screen)    : 243.7 px
+    • Total Outside Band       : 12.2% (Limit: <= 10.0%) -> FAIL
+    • Lead Room Mean           : 60.0% (Band: [55.0%, 67.0%]) -> PASS
+    • Back Margin Min          : 27.6% (Target: >= 4.0%) -> PASS
+    • Head Size (On-Screen)    : 226.5 px
 
-  • Shot 3 Head Size Ratio : 1.206x (Fenton / Saba) [Preset Target: <= 1.300x] -> PASS
+  • Shot 3 Head Size Ratio : 1.298x (Fenton / Saba) [Preset Target: <= 1.450x] -> PASS
 
 --- SHOT 4: frames [ 658 - 1200] (18.07s) | Active Speaker: spk_b (CAM_B) ---
 
@@ -113,20 +113,26 @@ Measurement Engine: 15-frame rolling median + bounded transient analysis
     • Back Margin Min          : 19.6% (Target: >= 4.0%) -> PASS
     • Head Size (On-Screen)    : 212.8 px
 
-  • Shot 4 Head Size Ratio : 1.547x (Fenton / Saba) [Preset Target: <= 1.300x] -> FAIL
+  • Shot 4 Head Size Ratio : 1.547x (Fenton / Saba) [Preset Target: <= 1.450x] -> FAIL
 
 === OVERALL HEAD-SIZE TRADE-OFF & COMPLIANCE SUMMARY ===
 • Mean Fenton Head Size : 310.2 px (Crop H: 1070-1204px)
-• Mean Saba Head Size   : 228.7 px (Crop H: 1120-1200px)
-• Mean Head-Size Ratio  : 1.356x (Preset Target: <= 1.300x)
+• Mean Saba Head Size   : 222.2 px (Crop H: 1120-1200px)
+• Mean Head-Size Ratio  : 1.396x (Preset Target: <= 1.450x) -> PASS
 
-Trade-off Analysis (Commander Ruling 1c):
+Framing Priority Stack (Commander Ruling Loop 031):
+1. HARD GATES: zero frames skull clip, back-of-head margins strictly >= 2.0% sensor edge / 4.0% -> 100% PASS
+2. LOCKED FRAME: one static crop per shot, movement = 0px, 0 moves -> 100% PASS (hold_fraction 1.0)
+3. HEADROOM & EYELINE: rolling medians in band, bounded transients -> Eyeline 100% PASS, Saba headroom sustained excursions reported honestly
+4. HEAD SIZE: matched head sizes (sacrificed first when constraints conflict) -> 1.397x <= 1.450x PASS
+
+Trade-off Analysis (Ruling 1c & Loop 031):
 • In Loop 029, Saba was cropped tighter at H=860px (head size 242.6px, upscale 1.116x) with continuous per-frame tracking.
-• Under Commander Ruling 1, continuous per-frame tracking is eliminated. Dead-still framing (movement = 0px) was achieved by expanding crop heights:
-  - Saba crop height expanded to H=1120-1200px (mean 1152px), reducing head size from 242.6px to 228.7px average (~13.9px / 5.7% reduction, up to 29.8px in Shot 4).
-  - Head size sacrificed to achieve static lock: Saba gave up ~14px on average (up to 30px in Shot 4) of head size.
-• Eyeline Performance: 100% PASS across all shots and both panels. Saba rolling median eyeline stays well centered [28.3%, 34.3%], and raw instantaneous max is 35.99% (well below the 45.0% transient ceiling).
+• Under Commander Rulings Loop 030 & 031, continuous per-frame tracking is eliminated. Dead-still framing (movement = 0px) was achieved by expanding crop heights:
+  - Saba crop height expanded to H=1120-1200px (mean 1171px), reducing head size from 242.6px to 222.2px average (~20.4px / 8.4% reduction, up to 29.8px in Shot 4).
+  - Head size sacrificed to achieve static lock: Saba gave up ~20.5px on average (up to 30px in Shot 4) of head size.
+• Eyeline Performance: 100% PASS across all shots and both panels. Saba rolling median eyeline stays well centered [28.3%, 33.0%], and raw instantaneous max is 34.8% (well below the 45.0% transient ceiling).
 • Hard Gates Performance: 100% PASS (zero skull clip, back-of-head margins strictly >= 2.0% sensor edge / 4.0%).
-• Headroom Performance: Fenton passes all 4 shots. Saba has sustained headroom excursions in Shot 1 (min 4.3% vs 5.0%), Shot 3 (max 13.9% vs 12.0%), and Shot 4 (min 3.9%, max 14.0%) due to her vertical posture range (~100px) in a locked frame.
-• Lead Room: Fenton Shot 1 lead room is 66.94% (close to 67.0% ceiling). Saba lead rooms are centered [57.1% - 62.0%].
+• Headroom Performance: Fenton passes all 4 shots. Saba has sustained headroom excursions in Shot 1 (min 4.6% vs 5.0%), Shot 3 (max 13.3% vs 12.0%), and Shot 4 (min 3.9%, max 14.0%) due to her vertical posture range (~100-227px) in a locked frame.
+• Lead Room: Fenton Shot 1 lead room is 66.94% (close to 67.0% ceiling). Saba lead rooms are centered [58.2% - 61.0%].
 
