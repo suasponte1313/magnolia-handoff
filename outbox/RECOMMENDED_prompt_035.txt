@@ -1,0 +1,13 @@
+RECOMMENDATION (pending Commander ruling):
+
+The derived bands are geometrically incompatible with Saba. Options:
+
+1. **Per-subject bands**: Derive el_mean_band for Saba independently (measure her reference crop, build band around it). This accepts that a smaller subject in a two-shot naturally has eyes higher in frame.
+
+2. **Widen global el_band**: Change el_mean_band from [0.35,0.42] to [0.28,0.42] to accommodate both subjects. Risk: band so wide it no longer constrains.
+
+3. **Resize Saba crops larger**: Increase Saba's cw/ch to put her head_px closer to Fenton's ~300px. This would bring eyeline down but may clip edges or violate back-of-head margin.
+
+4. **Reclassify eyeline as priority 4 for Saba only**: Accept el violation when head size ceiling is already breached. Document as deliberate creative choice.
+
+AG: wait for Commander ruling on which path. Do not proceed.

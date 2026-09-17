@@ -245,3 +245,86 @@ Saba detection failures need diagnosis before tuning. Do this:
 
 Include the extracted PNGs in the report dir. Do not tune crops or bands yet — we need to understand the detection failure mode first.
 ```
+
+==============================================================================
+## Loop 33 — 2026-09-17 14:00 — verdict: REVISE
+
+**AG → report_033**  (artifacts: diagnosis_output.txt, face_vs_skin_comparison.png, outlier_frame_indices.json, saba_shot1_f0.png, saba_shot1_f100.png, saba_shot1_f50.png, saba_shot3_outlier_1_f444.png, saba_shot3_outlier_2_f445.png, solver_output_033.json, solver_stdout.txt)
+> **BRIDGE NOTE**: bridge.py --once failed (claude CLI returned malformed JSON response). Error reported verbatim per protocol. Report submitted for manual Commander review.
+> 
+> Loop 033 diagnosed the Saba detection failure: skin mask was misdetecting the wooden table/furniture as skin due to YCrCb color similarity, causing hr_med_max=0.511 and el_med_max=0.621 on outlier frames 444-445. Implemented face detector (OpenCV YuNet) per pre-authorized fix. Face detection achieved 100% on all frames (Saba shot_1 improved from 0/146 to 146/146). No outlier rejection triggered because face detector correctly ignores non-face objects. However, face detector hr values (~0.19-0.20) differ from skin mask hr values (~0.06) because they measure differently: skin mask used a formula on blob dimensions producing normalized values, while face detector measures actual head position. The existing bands [0.06, 0.11] were calibrated for the skin mask formula. Fenton's accepted crop [0,790,1204,1070] now reports hr=0.185-0.194 with face detection vs hr=0.061 with skin mask on the same frames. Commander ruling requested: either recalibrate bands for face detection, or keep skin mask for Fenton (where it worked) and use face detection only for Saba (where it fixes the wood misdetection).
+> 
+
+**Reviewer (Claude) audit:**
+*Verified:* Saba shot_1 detection improved from 0/146 to 146/146 faces (solver_stdout.txt: 'skin=NULL (0 det) -> face_unmeas=0 (face_det=146)'); Outlier frames 444-445 had skin components at pos=(316,571) and (316,555) — lower frame region, consistent with table/furniture misdetection (diagnosis_output.txt); All shots now have 100% detection rate with face detector (solver_output_033.json detection_stats); Face detector hr values cluster around 0.185-0.205 for all shots (solver_output_033.json hr_mean fields)
+*Blocking:* Clarify detector discrepancy: YuNet vs mediapipe_face — provide actual detector implementation path; Provide raw artifact showing skin mask measurement on Fenton shot_1 frames for direct comparison (run skin mask on same crop, emit JSON with hr values)
+
+**Reviewer → AG next prompt [SENT]:**
+```
+REVISE: Two discrepancies must be resolved before Commander ruling on bands.
+
+1. DETECTOR NAME MISMATCH: report.md says 'OpenCV YuNet', solver_output_033.json says 'mediapipe_face'. Run: `grep -rn 'YuNet\|mediapipe\|FaceDetection' scripts/ reelcore/` and paste raw output. Which detector is actually implemented?
+
+2. MISSING SKIN MASK COMPARISON: You claim hr=0.061 with skin mask vs hr=0.185 with face detector on Fenton shot_1. Provide raw artifact proving this. Run the skin mask measurement on Fenton shot_1 frames (crop [0,790,1204,1070]), emit JSON with per-frame hr values, include in report dir.
+
+3. BAND DEFINITION: Run `grep -rn 'hr_.*band\|0\.06.*0\.11' presets/` and show where the [0.06, 0.11] band is defined.
+
+Once these three are in raw artifacts, we can present the Commander with a clean ruling request: exact detector used, exact band definition, and measured comparison showing why bands must change.
+```
+
+==============================================================================
+## Loop 34 — 2026-09-17 14:09 — verdict: BLOCK  ⛔ STOP
+
+**AG → report_034**  (artifacts: skin_vs_face_fenton_shot1.json, solver_output_034.json)
+> # Report 034 - Derived Bands and Unified Measurement Engine
+> 
+> ## Reviewer Clarifications Resolved
+> 
+> **1. Detector Name**: The actual detector is OpenCV YuNet (FaceDetectorYN), not MediaPipe. The "mediapipe_face" label in solver_output_033.json was an incorrect hardcoded string. Grep output:
+> ```
+> scripts/face_and_color_check.py:20:        import mediapipe as mp  # (unused legacy script)
+> reelcore/src/reelcore/face_framing.py:46:    """Face detector using OpenCV's YuNet (FaceDetectorYN)."""
+> ```
+> The loop 032/033 solver imported from `reelcore.face_framing` which uses YuNet.
+> 
+> **2. Skin vs Face Comparison Artifact**: See `skin_vs_face_fenton_shot1.json`. On Fenton shot_1 (146 frames, crop [0,790,1204,1070]):
+> - Skin mask: hr_mean=0.061, range [0.033,
+> ...<TRUNCATED 1660 chars>...
+> 0/4 - eyeline below band):**
+> | Shot | el_mean | hr_mean | head_px | unmeasured | PASS |
+> |------|---------|---------|---------|------------|------|
+> | shot_1 | 0.293 | 0.201 | 171.9 | 0 | NO |
+> | shot_2 | 0.296 | 0.214 | 168.0 | 3 | NO |
+> | shot_3 | 0.297 | 0.212 | 167.4 | 0 | NO |
+> | shot_4 | 0.309 | 0.211 | 179.3 | 0 | NO |
+> 
+> Saba's eyeline is at 0.29-0.31, below the derived band minimum of 0.35. Her headroom (0.20-0.21) is within band. The crops position her eyes closer to frame top (professional upper-third at 0.33) than Fenton's 0.38.
+> 
+> ## Artifacts in This Directory
+> 
+> - `solver_output_034.json` - Full per-shot metrics with calibration data
+> - `skin_vs_face_fenton_shot1.json` - Comparison proving band miscalibration
+> - `report.md` - This report
+> 
+
+**Reviewer (Claude) audit:**
+*Verified:* skin_vs_face_fenton_shot1.json shows real frame-by-frame comparison: skin_hr mean 0.061, face_hr mean 0.185 — confirms old band [0.06,0.11] was calibrated against skin mask, not face detector; Fenton 4/4 shots pass: hr_mean in [0.185,0.196] within [0.16,0.22], el_mean in [0.375,0.383] within [0.35,0.42]; Saba 0/4 shots fail on eyeline: hr_mean in [0.201,0.214] within band, but el_mean in [0.293,0.309] below band minimum 0.35; Detector is OpenCV YuNet (grep artifact shows face_framing.py:46 uses FaceDetectorYN); Head size ratio 1.749 > ceiling 1.60 (Fenton 300.2px vs Saba 171.6px)
+*Blocking:* Geometric conflict: bands derived from Fenton cannot be satisfied by Saba. Moving Saba's crop up to bring el from 0.29 to 0.35 (~74px on 1240ch crop) would drop hr from 0.20 to ~0.14, below band minimum 0.16. No valid crop exists for Saba that satisfies both bands.; Per AGENTS.md framing priority stack, headroom+eyeline (priority 3) must be inside band, head size matching (priority 4) is sacrificed first. But head size is already exceeded (1.749 > 1.60), and priority 3 still fails. The spec is internally inconsistent for Saba.; Commander ruling required: (a) derive per-subject bands, (b) widen eyeline band globally, (c) accept eyeline violation for Saba as priority 4, or (d) resize Saba crops larger at expense of coverage.
+*Stopped for Commander:* Fundamental spec conflict: Fenton-derived bands cannot be satisfied by Saba's geometry. Adjusting crop to fix eyeline breaks headroom and vice versa. This is a creative/editorial decision about how to frame a smaller subject relative to a larger one, not a tuning bug AG can fix.
+
+**Reviewer → AG next prompt [RECOMMENDED (pending approval)]:**
+```
+RECOMMENDATION (pending Commander ruling):
+
+The derived bands are geometrically incompatible with Saba. Options:
+
+1. **Per-subject bands**: Derive el_mean_band for Saba independently (measure her reference crop, build band around it). This accepts that a smaller subject in a two-shot naturally has eyes higher in frame.
+
+2. **Widen global el_band**: Change el_mean_band from [0.35,0.42] to [0.28,0.42] to accommodate both subjects. Risk: band so wide it no longer constrains.
+
+3. **Resize Saba crops larger**: Increase Saba's cw/ch to put her head_px closer to Fenton's ~300px. This would bring eyeline down but may clip edges or violate back-of-head margin.
+
+4. **Reclassify eyeline as priority 4 for Saba only**: Accept el violation when head size ceiling is already breached. Document as deliberate creative choice.
+
+AG: wait for Commander ruling on which path. Do not proceed.
+```

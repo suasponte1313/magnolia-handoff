@@ -1,0 +1,72 @@
+REVISE: Two discrepancies must be resolved before Commander ruling on bands.
+
+1. DETECTOR NAME MISMATCH: report.md says 'OpenCV YuNet', solver_output_033.json says 'mediapipe_face'. Run: `grep -rn 'YuNet\|mediapipe\|FaceDetection' scripts/ reelcore/` and paste raw output. Which detector is actually implemented?
+
+2. MISSING SKIN MASK COMPARISON: You claim hr=0.061 with skin mask vs hr=0.185 with face detector on Fenton shot_1. Provide raw artifact proving this. Run the skin mask measurement on Fenton shot_1 frames (crop [0,790,1204,1070]), emit JSON with per-frame hr values, include in report dir.
+
+3. BAND DEFINITION: Run `grep -rn 'hr_.*band\|0\.06.*0\.11' presets/` and show where the [0.06, 0.11] band is defined.
+
+Once these three are in raw artifacts, we can present the Commander with a clean ruling request: exact detector used, exact band definition, and measured comparison showing why bands must change.
+=== COMMANDER RULING (prompt_034 addendum) ===
+
+The face-detector fix is ACCEPTED in principle. Confirming the wood-table
+misdetection was the root cause, and taking Saba shot_1 from 0/146 to 146/146,
+is the most valuable finding in thirty loops. That diagnosis is credited.
+
+Resolve the reviewer's three clarifications above FIRST. Then apply this ruling.
+
+--- RULING 1: RECALIBRATE. NO HYBRID. ---
+Do NOT use skin mask for Fenton and face detection for Saba. Two measurement
+systems means two sources of truth, which is exactly the bug we killed in loop
+028 (synthetic formula diverging from qc.py) and loop 030 (dump diverging from
+qc.json). One measurement engine, always. The face detector is the engine.
+
+The bands [0.06, 0.11] were calibrated against the skin mask, which measured a
+blob including hands and chest. Those numbers never described headroom. They
+are wrong by construction and are hereby void — not to be "met", to be replaced.
+
+--- RULING 2: DO NOT INVENT NEW BAND NUMBERS. DERIVE THEM. ---
+Calibrate against a KNOWN-GOOD REFERENCE. Fenton's crop [0,790,1204,1070]
+passed 4/4 at full density AND the Commander watched that render and judged the
+framing good. That is ground truth.
+
+Procedure:
+  1. Measure Fenton's accepted crop under the face detector at full density.
+  2. Those measured values DEFINE the target. Set the target to his mean and
+     the band to his observed range plus a modest margin.
+  3. Write the derivation into the preset as a comment: which crop, which
+     render, which loop the calibration came from.
+Never pick a band because it makes something pass. Derive it from framing that
+was independently judged correct.
+
+--- RULING 3: FACE BOX IS NOT THE TOP OF THE HEAD ---
+A face bounding box starts near the eyebrow/forehead line, not the crown. So
+"headroom" from face-box-top systematically over-reads. Do NOT patch this with
+an offset heuristic — no ht = bb_y - k*bb_h. That formula is banned; it is the
+exact bug deleted in loop 028.
+
+Instead:
+  a) EYELINE BECOMES THE PRIMARY FRAMING GATE. Eye positions are real detected
+     landmarks, not inferred. Professional framing is defined by the eyeline on
+     the upper third. Measure it from the actual eye landmarks.
+  b) For the crown, run the mask search CONSTRAINED to the column directly
+     above and around the face box (width = face width plus a margin, from the
+     preset). Constrained that way, furniture and walls cannot win, because the
+     search never looks where they are.
+  c) HARD GATES (zero skull clip, back-of-head margin) are measured from the
+     CROWN via (b), never from the face box. Those gates stay zero-tolerance.
+
+--- RULING 4: HEAD SIZE ---
+Ratio is now 1.746x against a 1.60 ceiling. Head size remains priority 4 and is
+sacrificed first — but 1.746x is drifting far. Report the measured ratio and the
+best achievable ratio that keeps every higher priority satisfied. Do not raise
+the ceiling again without showing that number.
+
+--- DELIVERABLES ---
+Re-solve both panels on the single face-detector engine with derived bands.
+Report per panel per shot at full density: eyeline (primary) min/mean/max,
+crown-derived headroom, hard-gate results, crop box, LOCKED yes/no, head size
+and ratio, unmeasured frame count. Include the calibration derivation artifact.
+
+Deliver report_034 via the CLAUDE.md protocol: report.md + every cited raw
+artifact, DONE last, bridge, sync, commit, push, STOP.
