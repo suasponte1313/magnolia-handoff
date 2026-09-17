@@ -1,0 +1,60 @@
+COMMANDER RULING — LOOP 037. OPTION A. Dallas is FROZEN. Move to Florida.
+
+Loop 036 ACCEPTED. The crown measurement is verified accurate by the diagnostic
+PNGs, hard gates pass 8/8 (zero skull clip, zero back-margin violations), and
+the constraint conflict is real, not a tuning failure.
+
+RULING: Option A. Dallas c1 is FROZEN AS-IS.
+- Excessive headroom (18-28% vs 5-12%) is accepted as a source limitation and
+  recorded in docs/SOURCE_TIERS.md under dallas-2026-09-03.
+- Head-size ratio 1.749x remains waived for this shoot only.
+- Hard gates passing 8/8 is the win that matters: no skull clipping.
+- NO FURTHER DALLAS FRAMING LOOPS. Do not re-solve, do not re-tune, do not
+  revisit. Append the final measured numbers to docs/SOURCE_TIERS.md and stop.
+
+One cleanup before you move on:
+- face_framing.py:304 has a hardcoded 0.03 crown fallback ratio. Move it to
+  presets/framing/magnolia_interview.yaml as crown_fallback_ratio. That literal
+  must not follow us into Florida.
+
+=== NEW WORK: FLORIDA 2026-09-13 — FULL STANDARD, NO EXCEPTIONS ===
+
+Ingested and ready:
+  input/florida/video/Video-Sep-13-2026-9-44-27-AM.mov
+      3840x2160 HEVC, 30fps, 404.71s, creation_time 2026-09-13T14:44:27Z
+      (= 09:44:27 local CDT)
+  input/florida/mics/TX03_MIC032_20260913_094101_orig.wav
+      30-min chunk starting 09:41:01 local; video begins 206.0s into it
+  input/florida/compare/*_CAMERA.wav    (camera audio extracted)
+  input/florida/compare/*_MIC_TX03.wav  (mic audio, sliced and aligned)
+
+Measured already:
+  CAMERA: -27.6 LUFS, LRA 6.5, peak -4.6 dB
+  MIC TX03: -30.4 LUFS, LRA 18.8, peak 0.0 dB (CLIPPED, flat factor 23),
+            noise floor -58.3 dB
+
+STEP 1 — ANALYZE ONLY. Do not render anything yet.
+  a) Run face detection across the clip. Report per subject: face box ranges,
+     combined span in source px, and whether both fit inside one 1215px 9:16
+     crop. State which layout the engine selects (KEEP_ALL / SPLIT / GRID /
+     FILL) and show the measured numbers behind the decision.
+  b) For the selected layout, solve locked static crops and report per subject
+     per shot at full density against the FULL STANDARD, no waivers:
+       eyeline [0.28, 0.40] target 0.33
+       crown headroom [0.05, 0.12] target 0.08
+       back_of_head_margin >= 0.04
+       zero skull clip, every frame
+       head_size_ratio_max 1.60
+     Report every measured value. Do NOT adjust any band. If something fails,
+     report the failure with numbers — that is the useful result, because this
+     shoot is the calibration reference for the standard.
+  c) Verify mic-to-video sync by CROSS-CORRELATION between the camera audio and
+     the mic slice, not by filename timestamps. Report the measured offset in
+     samples and ms, and how far it differs from the assumed 206.0s.
+  d) Identify which subject wears TX03 by correlating per-mic energy against
+     which face is speaking (mouth movement or diarization). Report the
+     evidence, do not assume.
+
+Deliver report_037 via the CLAUDE.md protocol: report.md + every cited raw
+artifact + the crown/framing diagnostic PNGs, DONE last, bridge, sync, commit,
+push, STOP.

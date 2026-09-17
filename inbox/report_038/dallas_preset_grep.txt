@@ -1,0 +1,1 @@
+presets/framing/magnolia_interview.yaml:25:  crown_fallback_ratio: 0.03       # fallback crown offset (face_top - k*face_height) when constrained search fails

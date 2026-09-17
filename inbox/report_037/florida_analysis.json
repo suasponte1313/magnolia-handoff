@@ -1,0 +1,199 @@
+{
+  "video": "input/florida/video/Video-Sep-13-2026-9-44-27-AM.mov",
+  "fps": 29.99925872847224,
+  "total_frames": 12141,
+  "duration_s": 404.71000000000004,
+  "face_stats": {
+    "left": {
+      "count": 444,
+      "center_x": {
+        "min": 1120,
+        "max": 1368,
+        "mean": 1205.3603603603603
+      },
+      "center_y": {
+        "min": 932,
+        "max": 1983,
+        "mean": 1083.7972972972973
+      },
+      "width": {
+        "min": 213,
+        "max": 457,
+        "mean": 264.94594594594594
+      },
+      "height": {
+        "min": 320,
+        "max": 516,
+        "mean": 360.5788288288288
+      },
+      "leftmost_edge": 953,
+      "rightmost_edge": 1492
+    },
+    "right": {
+      "count": 402,
+      "center_x": {
+        "min": 2614,
+        "max": 3461,
+        "mean": 3020.2611940298507
+      },
+      "center_y": {
+        "min": 841,
+        "max": 1685,
+        "mean": 988.7686567164179
+      },
+      "width": {
+        "min": 181,
+        "max": 367,
+        "mean": 311.09452736318406
+      },
+      "height": {
+        "min": 302,
+        "max": 522,
+        "mean": 442.14179104477614
+      },
+      "leftmost_edge": 2468,
+      "rightmost_edge": 3638
+    }
+  },
+  "layout": "SPLIT",
+  "layout_data": {
+    "combined_span_px": 2685,
+    "left_edge_px": 953,
+    "right_edge_px": 3638,
+    "required_width_with_margin_px": 3490,
+    "single_crop_max_px": 1215
+  },
+  "crops": {
+    "spk_a": {
+      "crop_x": 742,
+      "crop_y": 743,
+      "crop_width": 1158,
+      "crop_height": 1030,
+      "side": "left"
+    },
+    "spk_b": {
+      "crop_x": 2168,
+      "crop_y": 571,
+      "crop_width": 1420,
+      "crop_height": 1263,
+      "side": "right"
+    }
+  },
+  "measurements": {
+    "spk_a": {
+      "crop": {
+        "crop_x": 742,
+        "crop_y": 743,
+        "crop_width": 1158,
+        "crop_height": 1030,
+        "side": "left"
+      },
+      "n_measured": 200,
+      "hr": {
+        "min": 0.0,
+        "max": 0.0,
+        "mean": 0.0
+      },
+      "el": {
+        "min": 0.1643472671508789,
+        "max": 0.20597794850667317,
+        "mean": 0.18259400669733683
+      },
+      "bm": {
+        "min": 0.20722222222222222,
+        "max": 0.31601851851851853,
+        "mean": 0.2627965277777778
+      },
+      "head_px": {
+        "min": 313.0,
+        "max": 358.0,
+        "mean": 333.205
+      },
+      "hard_gates": {
+        "skull_clip_count": 200,
+        "skull_clip_pass": false,
+        "bm_violation_count": 0,
+        "bm_pass": true
+      },
+      "band_checks": {
+        "hr_in_band_frac": 0.0,
+        "hr_band_pass": false,
+        "el_in_band_frac": 0.0,
+        "el_band_pass": false
+      }
+    },
+    "spk_b": {
+      "crop": {
+        "crop_x": 2168,
+        "crop_y": 571,
+        "crop_width": 1420,
+        "crop_height": 1263,
+        "side": "right"
+      },
+      "n_measured": 200,
+      "hr": {
+        "min": 0.0,
+        "max": 0.07291666666666667,
+        "mean": 0.04885416666666667
+      },
+      "el": {
+        "min": 0.1754489580790202,
+        "max": 0.2732595125834147,
+        "mean": 0.23746339933077493
+      },
+      "bm": {
+        "min": 0.285,
+        "max": 0.5073148148148148,
+        "mean": 0.43090231481481484
+      },
+      "head_px": {
+        "min": 278.0,
+        "max": 371.0,
+        "mean": 331.13
+      },
+      "hard_gates": {
+        "skull_clip_count": 3,
+        "skull_clip_pass": false,
+        "bm_violation_count": 0,
+        "bm_pass": true
+      },
+      "band_checks": {
+        "hr_in_band_frac": 0.605,
+        "hr_band_pass": false,
+        "el_in_band_frac": 0.0,
+        "el_band_pass": false
+      }
+    }
+  },
+  "sync_verification": {
+    "measured_offset_samples_8khz": 21479,
+    "measured_offset_ms": 2684.875,
+    "measured_offset_s": 2.684875,
+    "expected_offset_s": 0.0,
+    "delta_from_expected_s": 2.684875,
+    "correlation_peak": -8566.659307050888,
+    "correlation_normalized": -0.027000435786304726,
+    "cam_sr": 48000,
+    "mic_sr": 48000,
+    "cam_duration_s": 404.7133333333333,
+    "mic_duration_s": 404.71
+  },
+  "mic_owner_analysis": {
+    "method": "pending_diarization",
+    "note": "TX03 owner identification requires diarization output correlation. Analysis deferred until diarization is run on the Florida clip."
+  },
+  "standards": {
+    "eyeline_band": [
+      0.28,
+      0.4
+    ],
+    "eyeline_target": 0.33,
+    "headroom_band": [
+      0.05,
+      0.12
+    ],
+    "headroom_target": 0.08,
+    "back_margin_min": 0.04,
+    "head_size_ratio_max": 1.6
+  }
+}

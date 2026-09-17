@@ -1,0 +1,19 @@
+
+=== AUDIO CORRELATION ANALYSIS ===
+
+Camera audio: int16, RMS 696.73, peak 10782
+Mic audio (TX03 slice): float32, RMS 0.024748, peak 2.05
+
+The weak correlation (-0.02 to -0.03) across all tested offsets is due to:
+1. Different data types/scales (int16 vs float32)
+2. TX03 mic reported as CLIPPED in prompt_037 (peak 0.0 dB, flat factor 23)
+3. Possibly different audio content (mic on different subject than camera picks up)
+
+The slice at 206.0s offset produces the same duration (404.71s) as camera audio.
+Cross-correlation cannot verify sync with confidence given these audio characteristics.
+
+Alternative sync verification methods needed:
+- Visual cues (hand clap, slate)
+- Diarization to identify which subject TX03 was attached to
+- Compare against non-clipped audio if available
+

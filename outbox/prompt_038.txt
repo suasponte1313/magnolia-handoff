@@ -1,0 +1,11 @@
+Dallas closure artifacts missing. Before Florida work continues, provide in report_038/:
+
+1. grep -rn 'crown_fallback_ratio' presets/ > dallas_preset_grep.txt
+2. grep -rn '0\.03' scripts/ reelcore/ > literal_check.txt  (should be empty or unrelated hits only)
+3. tail -50 docs/SOURCE_TIERS.md > source_tiers_tail.txt
+
+Also for Florida:
+4. ffprobe -v error -show_streams input/florida/video/Video-Sep-13-2026-9-44-27-AM.mov > florida_ffprobe.txt
+5. Explain the expected_offset_s discrepancy: report says 206.0s expected but JSON shows 0.0
+
+Raw output only. No tables. Then DONE, bridge, STOP.

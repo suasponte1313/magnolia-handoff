@@ -1,0 +1,50 @@
+  WAIVED FOR THIS SHOOT ONLY. It must be REPORTED and COUNTED, never hidden:
+  every report must state the clipped-frame count per panel per shot.
+- Head-size ratio may exceed the ceiling. Report the measured value.
+
+**What is NOT waived, here or anywhere:**
+- Honest reporting. A waived gate is still measured and still reported. A
+  waiver is not a pass.
+- Band-fitting. No gate may be widened to make a number pass. The Dallas
+  exception is scoped by shoot, not by convenience.
+- One measurement engine. No hybrid detectors.
+
+**Status:** Dallas is BEST-EFFORT and is to be FROZEN once c1 passes under the
+standard bands. Do not spend further loops optimizing it.
+
+**FINAL MEASUREMENTS (c1 frozen, Loop 036):**
+- Hard gates: PASS 8/8 (zero skull clip, zero back-margin violations)
+- Skull clip count: 0/1200 frames
+- Fenton crop: cx=0, cy=790, cw=1204, ch=1070
+- Saba crops: per-shot (shot_1: cx=1528,cy=740,cw=1395,ch=1240; shot_2: cx=1474,cy=720,cw=1485,ch=1320; shot_3: cx=1528,cy=740,cw=1395,ch=1240; shot_4: cx=1582,cy=760,cw=1305,ch=1160)
+- Headroom measured: Fenton [0.195, 0.281], Saba [0.182, 0.257] (exceeds [0.05, 0.12] band — accepted as source limitation)
+- Eyeline measured: Fenton [0.335, 0.458], Saba [0.261, 0.346] (partial out-of-band — accepted as source limitation)
+- Head size ratio: 1.749 (Fenton 300.2px / Saba 171.6px — ceiling 1.60 waived for this shoot)
+
+---
+
+## DEFAULT TIER — every other shoot, including florida-2026-09-13
+
+Full professional standard, no exceptions:
+- Zero skull clipping, every frame. Hard gate.
+- back_of_head_margin >= 0.04.
+- eyeline in [0.28, 0.40], target 0.33 (eyes on the upper third — researched
+  broadcast/interview standard, NOT derived from any single clip).
+- locked headroom band [0.03, 0.18], mean band [0.06, 0.11].
+- Locked frame, movement 0, one static crop per shot.
+- head_size_ratio_max 1.60.
+
+The engine is to be TUNED AND VALIDATED on a properly-framed shoot, not on
+Dallas. Dallas proved the architecture works under adverse conditions; it is a
+poor calibration reference precisely because it is degraded.
+
+---
+
+## florida-2026-09-13 — PENDING INGEST
+
+- Mic audio EXISTS: TX04 card, Sep 13, 09:40-16:10, ~4 GB continuous.
+- Camera video NOT YET OFFLOADED. Not present anywhere on the MacBook as of
+  2026-09-17. Still on the camera or its card.
+- BLOCKER: offload the video before the engine can be tuned on this shoot.
+- When ingested, expect the layout engine to select KEEP_ALL or FILL rather
+  than SPLIT if the subjects were framed closer together.

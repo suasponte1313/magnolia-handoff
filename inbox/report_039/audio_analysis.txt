@@ -1,0 +1,3 @@
+Camera: SR=48000, peak=10782, dtype=int16
+Mic: SR=48000, peak=2, dtype=float32
+Mic clipped samples (>=99% of peak): 1 (0.00%)

@@ -1,0 +1,11 @@
+
+    # Fallback: if constrained search fails, use face-box heuristic
+    # Crown offset ratio from preset (crown_fallback_ratio).
+    if crown_y is None:
+        crown_y = face_top - crown_fallback_ratio * face_height
+        crown_source = f"fallback_{crown_fallback_ratio}"
+    else:
+        crown_source = "constrained_mask"
+
+    # Headroom from crown position (for HARD GATES per Ruling 3c)
+    hr = crown_y / panel_h

@@ -1,0 +1,21 @@
+scripts/solve_loop033.py:30:HR_BAND_MIN, HR_BAND_MAX = 0.03, 0.18
+scripts/solve_loop036.py:6:1. Crown fallback reduced from 0.15 to 0.03 per visual diagnostic
+scripts/solve_loop036.py:78:            if result["crown_source"] == "fallback_0.03":
+scripts/solve_loop036.py:217:        "crown_fallback": "0.03 (reduced from 0.15 per Ruling 036)",
+scripts/solve_loop036.py:236:    print(f"Crown fallback: face_top - 0.03*face_height (reduced from 0.15)")
+scripts/solve_loop035.py:7:2. Headroom band: locked-frame behaviour bands from Ruling Loop 032 [0.03, 0.18] / [0.06, 0.11]
+scripts/solve_loop035.py:36:HR_BAND_MIN, HR_BAND_MAX = 0.03, 0.18  # crown headroom for locked frames
+scripts/solve_loop035.py:270:                  f"hr_med_range=[{hr_med[0]:.3f}, {hr_med[2]:.3f}] vs [0.03,0.18] "
+scripts/solve_loop035.py:301:                  f"hr_med_range=[{hr_med[0]:.3f}, {hr_med[2]:.3f}] vs [0.03,0.18] "
+scripts/diagnose_crown_036.py:135:    # Crown search - use same fallback as face_framing.py (0.03 per Ruling 036)
+scripts/diagnose_crown_036.py:138:        crown_y = fy - 0.03 * fh
+scripts/diagnose_crown_036.py:139:        crown_source = "fallback_0.03"
+scripts/solve_loop032.py:28:HR_BAND_MIN, HR_BAND_MAX = 0.03, 0.18
+scripts/analyze_florida_037.py:45:CROWN_FALLBACK_RATIO = preset.get("crown_fallback_ratio", 0.03)
+reelcore/src/reelcore/face_framing.py:260:    crown_fallback_ratio: float = 0.03
+reelcore/src/reelcore/face_framing.py:277:        crown_fallback_ratio: fallback crown offset ratio (from preset, default 0.03)
+reelcore/src/reelcore/audio/dsp.py:520:        speech_rms = float(noise_data.get("speech_rms", 0.03))
+reelcore/src/reelcore/framing/tracks.py:120:            if cx_blob > box_cx + bw * 0.03:
+reelcore/src/reelcore/framing/tracks.py:122:            elif cx_blob < box_cx - bw * 0.03:
+reelcore/src/reelcore/framing/tracks.py:233:                        if cx_blob > box_cx + bw * 0.03:
+reelcore/src/reelcore/framing/tracks.py:235:                        elif cx_blob < box_cx - bw * 0.03:

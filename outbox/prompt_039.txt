@@ -1,0 +1,9 @@
+Loop 038 REVISE. Three items required:
+
+1. **face_framing.py line 304**: Paste lines 300-310 from `reelcore/src/reelcore/face_framing.py` showing the variable `crown_fallback_ratio` is used (not a literal). One artifact: `face_framing_304.txt`.
+
+2. **Florida video status**: The source_tiers doc says video NOT YET OFFLOADED as of 2026-09-17, but you provided ffprobe output. Clarify: (a) What file path did ffprobe run on? (b) Was video offloaded today? If yes, update source_tiers doc. Artifact: full ffprobe command with path.
+
+3. **Florida audio alignment**: The -0.027 correlation is too weak to trust. Either (a) verify the slice extraction by showing the ffmpeg command that created `*_MIC_TX03.wav` and the original file duration, OR (b) re-slice from the original using the correct offset and re-run correlation. Artifact: slice verification or re-slice + new correlation result.
+
+Raw output only. No tables. Stop at the next boundary.
