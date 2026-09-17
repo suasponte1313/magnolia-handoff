@@ -1,0 +1,56 @@
+LOOP 033: Face-detector based solver
+Outlier rejection threshold: 80px
+======================================================================
+
+======================================================================
+FENTON (CAM_A) - face detection with skin fallback
+======================================================================
+  shot_1: loading 146 frames... loaded 146. [ WARN:0@2.268] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[FAIL] hr=0.185 el=0.375 face=146 skin=0 rej=0 (4.3s)
+  shot_2: loading 67 frames... loaded 67. [FAIL] hr=0.192 el=0.377 face=67 skin=0 rej=0 (2.1s)
+  shot_3: loading 445 frames... loaded 445. [FAIL] hr=0.189 el=0.380 face=445 skin=0 rej=0 (11.9s)
+  shot_4: loading 542 frames... loaded 542. [FAIL] hr=0.194 el=0.383 face=540 skin=2 rej=0 (17.1s)
+
+======================================================================
+SABA (CAM_B) - face detection with skin fallback
+======================================================================
+  shot_1: loading 146 frames... loaded 146. [FAIL] hr=0.194 el=0.293 face=146 skin=0 rej=0 (4.5s)
+  shot_2: loading 67 frames... loaded 67. [FAIL] hr=0.203 el=0.297 face=67 skin=0 rej=0 (2.1s)
+  shot_3: loading 445 frames... loaded 445. [FAIL] hr=0.201 el=0.297 face=445 skin=0 rej=0 (12.6s)
+  shot_4: loading 542 frames... loaded 542. [FAIL] hr=0.205 el=0.309 face=542 skin=0 rej=0 (17.2s)
+
+======================================================================
+LOOP 033 SOLVER SUMMARY
+======================================================================
+
+Fenton (CAM_A): SOME FAIL
+  shot_1: FAIL hr=0.185 el=0.375 measured=146/146 (face=146, skin=0, rejected=0)
+  shot_2: FAIL hr=0.192 el=0.377 measured=67/67 (face=67, skin=0, rejected=0)
+  shot_3: FAIL hr=0.189 el=0.380 measured=445/445 (face=445, skin=0, rejected=0)
+  shot_4: FAIL hr=0.194 el=0.383 measured=540/542 (face=540, skin=2, rejected=0)
+
+Saba (CAM_B): SOME FAIL
+  shot_1: FAIL hr=0.194 el=0.293 measured=146/146 (face=146, skin=0, rejected=0)
+  shot_2: FAIL hr=0.203 el=0.297 measured=67/67 (face=67, skin=0, rejected=0)
+  shot_3: FAIL hr=0.201 el=0.297 measured=445/445 (face=445, skin=0, rejected=0)
+  shot_4: FAIL hr=0.205 el=0.309 measured=542/542 (face=542, skin=0, rejected=0)
+
+Head size ratio (Fenton/Saba): 1.746x (ceiling: 1.60)
+
+Saved: output/PHASE_3_CONVERSATIONAL/solver_output_033.json
+
+======================================================================
+BEFORE/AFTER: Unmeasured frames (skin mask vs face detector)
+======================================================================
+
+FENTON:
+  shot_1: skin_unmeas=0 -> face_unmeas=0 (face_det=146, outlier_rej=0)
+  shot_2: skin_unmeas=0 -> face_unmeas=0 (face_det=67, outlier_rej=0)
+  shot_3: skin_unmeas=0 -> face_unmeas=0 (face_det=445, outlier_rej=0)
+  shot_4: skin_unmeas=0 -> face_unmeas=2 (face_det=540, outlier_rej=0)
+
+SABA:
+  shot_1: skin=NULL (0 det) -> face_unmeas=0 (face_det=146)
+  shot_2: skin_unmeas=0 -> face_unmeas=0 (face_det=67, outlier_rej=0)
+  shot_3: skin_unmeas=0 -> face_unmeas=0 (face_det=445, outlier_rej=0)
+  shot_4: skin_unmeas=0 -> face_unmeas=0 (face_det=542, outlier_rej=0)

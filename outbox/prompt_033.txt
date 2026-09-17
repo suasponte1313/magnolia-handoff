@@ -9,3 +9,45 @@ Saba detection failures need diagnosis before tuning. Do this:
 4. Report: (a) the outlier frame indices, (b) your visual diagnosis of what's going wrong, (c) whether this is fixable via outlier rejection, detection parameter tuning, or requires switching to face-box detection instead of skin detection.
 
 Include the extracted PNGs in the report dir. Do not tune crops or bands yet — we need to understand the detection failure mode first.
+=== COMMANDER ADDENDUM (prompt_033) ===
+
+Do the diagnosis above first — do not skip it. But you are PRE-AUTHORIZED for
+the likely fix so we do not burn a loop.
+
+CONTEXT YOU NEED: the framing measurement rests on an HSV SKIN-COLOR MASK. That
+is the same mechanism that produced the Step 0 centre-X bug, where the wood wall
+behind the subjects was measured as skin and reported 50% instead of 35%. We
+patched it then with largest-connected-component, but the underlying technique
+is still color-based guessing. Saba's hr_med_max=0.511 and el_med_max=0.621 are
+not plausible head positions; they are near-certainly the detector finding wall,
+hair, or clothing. Shot_1's 0/146 detections is the same mechanism failing the
+other direction.
+
+IF the diagnosis confirms skin-mask misdetection (background, hair, clothing, or
+lighting/tone failure), then implement this WITHOUT waiting for another ruling:
+
+1. REPLACE the skin mask as the source of head geometry with a real face
+   detector plus landmarks. MediaPipe, RetinaFace and InsightFace are already
+   in the project's dependency list. Derive:
+     - head_top_y  from the face bounding box / landmark extremum, not skin
+     - eyeline_y   from the actual eye landmarks, not an assumed fraction of
+                   the box (delete any remaining ht = bb_y - k*bb_h heuristic)
+     - face width  from landmarks, for lead room and back-of-head margin
+2. KEEP the skin mask ONLY as a fallback when the face detector returns nothing,
+   and mark those frames measured=false rather than substituting a value.
+3. OUTLIER REJECTION regardless of detector: a frame whose head position jumps
+   more than outlier_reject_px (new preset key) from the rolling median is
+   marked measured=false, not fed into the gate. Report the count.
+4. Re-run the locked solve for BOTH panels on the new measurement and report
+   per shot at full density.
+5. Report the before/after: how many frames were unmeasured under the skin mask
+   versus the face detector, per panel per shot.
+
+Do NOT widen any band to make this pass. The bands are fine; the measurement
+was wrong. This is the same class of error as the synthetic-formula bug in
+loop 028 and the instantaneous-eyeline bug in loop 029 — fix the measurement,
+not the gate.
+
+Fenton's solve at crop [0,790,1204,1070] PASSES 4/4 at full density and is
+ACCEPTED. Do not disturb it unless the new detector changes his numbers, and if
+it does, report both.

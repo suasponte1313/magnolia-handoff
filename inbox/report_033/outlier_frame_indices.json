@@ -1,0 +1,28 @@
+{
+  "shot_3": {
+    "total_frames": 445,
+    "frames_with_detection": 445,
+    "outlier_count": 2,
+    "outlier_frames": [
+      {
+        "f_idx": 444,
+        "hr": 0.5369270833333334,
+        "el": 0.6316145833333333
+      },
+      {
+        "f_idx": 445,
+        "hr": 0.51109375,
+        "el": 0.6207812500000001
+      }
+    ]
+  },
+  "shot_1": {
+    "total_frames": 146,
+    "frames_sampled": [
+      0,
+      50,
+      100
+    ],
+    "note": "See PNGs for visual diagnosis"
+  }
+}

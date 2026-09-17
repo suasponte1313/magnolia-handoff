@@ -1,0 +1,70 @@
+DIAGNOSIS REPORT - Loop 033 Saba Detection Failures
+======================================================================
+
+## SHOT_3 ANALYSIS (frames 213-658)
+Looking for frames where hr > 0.30 OR el > 0.50
+
+Total frames analyzed: 445
+Frames with detections: 445
+Outlier frames (hr>0.30 OR el>0.50): 2
+
+OUTLIER FRAME INDICES:
+  Frame 444: hr=0.537, el=0.632
+  Frame 445: hr=0.511, el=0.621
+
+Saved: saba_shot3_outlier_1_f444.png
+  Frame 444: hr=0.537, el=0.632
+  Components detected: 3
+    - Label 1: pos=(678,213), size=(53x57), area=2074
+    - Label 2: pos=(648,262), size=(75x130), area=6734
+    - Label 7: pos=(316,571), size=(140x101), area=6848
+
+Saved: saba_shot3_outlier_2_f445.png
+  Frame 445: hr=0.511, el=0.621
+  Components detected: 3
+    - Label 1: pos=(680,211), size=(56x62), area=2215
+    - Label 2: pos=(650,262), size=(78x131), area=6991
+    - Label 7: pos=(316,555), size=(136x117), area=7682
+
+
+## SHOT_1 ANALYSIS (frames 0-146)
+Extracting frames 0, 50, 100 to diagnose 0 detections
+
+  Frame 0: DETECTED hr=0.112, el=0.287
+    Components found: 3
+      - Label 1: pos=(670,210), size=(41x43), area=1314
+      - Label 2: pos=(644,261), size=(76x135), area=6688
+      - Label 7: pos=(376,638), size=(66x34), area=1514
+    Saved: saba_shot1_f0.png
+
+  Frame 50: DETECTED hr=0.120, el=0.290
+    Components found: 3
+      - Label 1: pos=(659,215), size=(51x52), area=1869
+      - Label 2: pos=(632,265), size=(79x131), area=7322
+      - Label 7: pos=(384,583), size=(147x89), area=6120
+    Saved: saba_shot1_f50.png
+
+  Frame 100: DETECTED hr=0.044, el=0.280
+    Components found: 4
+      - Label 1: pos=(695,181), size=(53x51), area=1978
+      - Label 2: pos=(656,225), size=(90x170), area=10532
+      - Label 4: pos=(708,396), size=(39x37), area=1003
+      - Label 6: pos=(323,616), size=(118x56), area=2919
+    Saved: saba_shot1_f100.png
+
+
+## VISUAL DIAGNOSIS
+--------------------------------------------------
+The annotated PNGs show:
+  LEFT: Cropped panel with detected skin components (green boxes)
+        and fused bounding box (red), headroom line (blue), eyeline (yellow)
+  CENTER: Full skin mask
+  RIGHT: Head region mask (top 70% of panel)
+
+Examine the PNGs to determine:
+  1. Is the skin mask detecting background (wall, furniture)?
+  2. Is the skin mask detecting hair or clothing?
+  3. Is the face occluded or turned away?
+  4. Is lighting/skin tone causing detection failure?
+
+Saved: outlier_frame_indices.json
