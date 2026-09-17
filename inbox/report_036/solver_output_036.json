@@ -1,0 +1,602 @@
+{
+  "loop": 36,
+  "detector": "opencv_yunet",
+  "crown_fallback": "0.03 (reduced from 0.15 per Ruling 036)",
+  "professional_standard_bands": {
+    "eyeline": {
+      "band": [
+        0.28,
+        0.4
+      ],
+      "target": 0.33,
+      "mean_band": [
+        0.3,
+        0.37
+      ]
+    },
+    "headroom": {
+      "band": [
+        0.05,
+        0.12
+      ],
+      "target": 0.08,
+      "mean_band": [
+        0.06,
+        0.1
+      ]
+    }
+  },
+  "dallas_waiver": "Head size ratio waived per SOURCE_TIERS.md - report but don't chase",
+  "fenton": {
+    "crop": {
+      "cx": 0,
+      "cy": 790,
+      "cw": 1204,
+      "ch": 1070
+    },
+    "shots": {
+      "shot_1": {
+        "crop_box": [
+          0,
+          790,
+          1204,
+          1070
+        ],
+        "cx": 0,
+        "cy": 790,
+        "cw": 1204,
+        "ch": 1070,
+        "locked": true,
+        "movement": 0,
+        "hr_mean": 0.22207505707762554,
+        "hr_mean_ok": false,
+        "hr_med": [
+          0.19461458333333334,
+          0.22208497431506846,
+          0.271875
+        ],
+        "hr_raw": [
+          0.18646875,
+          0.22207505707762554,
+          0.2760416666666667
+        ],
+        "hr_med_band_ok": false,
+        "crown_y_px": [
+          179.01,
+          213.19205479452054,
+          265.0
+        ],
+        "el_mean": 0.37469662313591945,
+        "el_mean_ok": false,
+        "el_med": [
+          0.334577751159668,
+          0.3747283935546875,
+          0.4562387466430664
+        ],
+        "el_raw": [
+          0.32848021189371746,
+          0.37469662313591945,
+          0.45839544932047527
+        ],
+        "el_med_band_ok": false,
+        "bm_min": 0.06162037037037038,
+        "lr_mean": 0.631627346524607,
+        "in_band_frac": 0.0,
+        "max_exc_frames": 146,
+        "head_px": 305.3,
+        "frames_measured": 146,
+        "frames_requested": 146,
+        "unmeasured_frames": 0,
+        "skull_clip_count": 0,
+        "bm_violations": 0,
+        "hard_gate_pass": true,
+        "soft_band_pass": false,
+        "pass": false
+      },
+      "shot_2": {
+        "crop_box": [
+          0,
+          790,
+          1204,
+          1070
+        ],
+        "cx": 0,
+        "cy": 790,
+        "cw": 1204,
+        "ch": 1070,
+        "locked": true,
+        "movement": 0,
+        "hr_mean": 0.2293487251243781,
+        "hr_mean_ok": false,
+        "hr_med": [
+          0.20893750000000003,
+          0.2298711131840796,
+          0.24323958333333331
+        ],
+        "hr_raw": [
+          0.20363541666666668,
+          0.2293487251243781,
+          0.24655208333333334
+        ],
+        "hr_med_band_ok": false,
+        "crown_y_px": [
+          195.49,
+          220.174776119403,
+          236.69
+        ],
+        "el_mean": 0.37706824155589247,
+        "el_mean_ok": false,
+        "el_med": [
+          0.3635670344034831,
+          0.3774887184598553,
+          0.39953606923421225
+        ],
+        "el_raw": [
+          0.3535209019978841,
+          0.37706824155589247,
+          0.4006309509277344
+        ],
+        "el_med_band_ok": true,
+        "bm_min": 0.11712962962962963,
+        "lr_mean": 0.6298231066887784,
+        "in_band_frac": 0.0,
+        "max_exc_frames": 67,
+        "head_px": 297.7,
+        "frames_measured": 67,
+        "frames_requested": 67,
+        "unmeasured_frames": 0,
+        "skull_clip_count": 0,
+        "bm_violations": 0,
+        "hard_gate_pass": true,
+        "soft_band_pass": false,
+        "pass": false
+      },
+      "shot_3": {
+        "crop_box": [
+          0,
+          790,
+          1204,
+          1070
+        ],
+        "cx": 0,
+        "cy": 790,
+        "cw": 1204,
+        "ch": 1070,
+        "locked": true,
+        "movement": 0,
+        "hr_mean": 0.22675393258426968,
+        "hr_mean_ok": false,
+        "hr_med": [
+          0.1993125,
+          0.22681793071161047,
+          0.28125
+        ],
+        "hr_raw": [
+          0.19259374999999998,
+          0.22675393258426968,
+          0.28541666666666665
+        ],
+        "hr_med_band_ok": false,
+        "crown_y_px": [
+          184.89,
+          217.68377528089889,
+          274.0
+        ],
+        "el_mean": 0.37992202051569907,
+        "el_mean_ok": false,
+        "el_med": [
+          0.34470701217651367,
+          0.37974606210372874,
+          0.4580995559692383
+        ],
+        "el_raw": [
+          0.34460223515828453,
+          0.37992202051569907,
+          0.4593506177266439
+        ],
+        "el_med_band_ok": false,
+        "bm_min": 0.08361111111111112,
+        "lr_mean": 0.6221660424469413,
+        "in_band_frac": 0.0,
+        "max_exc_frames": 445,
+        "head_px": 300.9,
+        "frames_measured": 445,
+        "frames_requested": 445,
+        "unmeasured_frames": 0,
+        "skull_clip_count": 0,
+        "bm_violations": 0,
+        "hard_gate_pass": true,
+        "soft_band_pass": false,
+        "pass": false
+      },
+      "shot_4": {
+        "crop_box": [
+          0,
+          790,
+          1204,
+          1070
+        ],
+        "cx": 0,
+        "cy": 790,
+        "cw": 1204,
+        "ch": 1070,
+        "locked": true,
+        "movement": 0,
+        "hr_mean": 0.23064366883116885,
+        "hr_mean_ok": false,
+        "hr_med": [
+          0.2021875,
+          0.23070214904143474,
+          0.2760416666666667
+        ],
+        "hr_raw": [
+          0.19559375,
+          0.23064366883116885,
+          0.28125
+        ],
+        "hr_med_band_ok": false,
+        "crown_y_px": [
+          187.77,
+          221.4179220779221,
+          270.0
+        ],
+        "el_mean": 0.3826027566441505,
+        "el_mean_ok": false,
+        "el_med": [
+          0.3503477414449056,
+          0.3825197362575401,
+          0.4544806480407715
+        ],
+        "el_raw": [
+          0.34733346303304036,
+          0.3826027566441505,
+          0.4663477897644043
+        ],
+        "el_med_band_ok": false,
+        "bm_min": 0.04870370370370371,
+        "lr_mean": 0.6267985982271697,
+        "in_band_frac": 0.0,
+        "max_exc_frames": 539,
+        "head_px": 296.9,
+        "frames_measured": 539,
+        "frames_requested": 542,
+        "unmeasured_frames": 3,
+        "skull_clip_count": 0,
+        "bm_violations": 0,
+        "hard_gate_pass": true,
+        "soft_band_pass": false,
+        "pass": false
+      }
+    },
+    "detection_stats": {
+      "shot_1": {
+        "face": 146,
+        "fallback_crown": 141,
+        "constrained_mask": 5,
+        "none": 0,
+        "outlier_rejected": 0
+      },
+      "shot_2": {
+        "face": 67,
+        "fallback_crown": 67,
+        "constrained_mask": 0,
+        "none": 0,
+        "outlier_rejected": 0
+      },
+      "shot_3": {
+        "face": 445,
+        "fallback_crown": 434,
+        "constrained_mask": 11,
+        "none": 0,
+        "outlier_rejected": 0
+      },
+      "shot_4": {
+        "face": 539,
+        "fallback_crown": 503,
+        "constrained_mask": 36,
+        "none": 3,
+        "outlier_rejected": 0
+      }
+    }
+  },
+  "saba": {
+    "crops": {
+      "shot_1": {
+        "cx": 1528,
+        "cy": 740,
+        "cw": 1395,
+        "ch": 1240
+      },
+      "shot_2": {
+        "cx": 1474,
+        "cy": 720,
+        "cw": 1485,
+        "ch": 1320
+      },
+      "shot_3": {
+        "cx": 1528,
+        "cy": 740,
+        "cw": 1395,
+        "ch": 1240
+      },
+      "shot_4": {
+        "cx": 1582,
+        "cy": 760,
+        "cw": 1305,
+        "ch": 1160
+      }
+    },
+    "shots": {
+      "shot_1": {
+        "crop_box": [
+          1528,
+          740,
+          1395,
+          1240
+        ],
+        "cx": 1528,
+        "cy": 740,
+        "cw": 1395,
+        "ch": 1240,
+        "locked": true,
+        "movement": 0,
+        "hr_mean": 0.21459853025114153,
+        "hr_mean_ok": false,
+        "hr_med": [
+          0.1819375,
+          0.21472766837899543,
+          0.22916666666666666
+        ],
+        "hr_raw": [
+          0.17994791666666668,
+          0.21459853025114153,
+          0.22916666666666666
+        ],
+        "hr_med_band_ok": false,
+        "crown_y_px": [
+          172.75,
+          206.0145890410959,
+          220.0
+        ],
+        "el_mean": 0.29305301855688226,
+        "el_mean_ok": false,
+        "el_med": [
+          0.26089194615681965,
+          0.2930287624602993,
+          0.3162055969238281
+        ],
+        "el_raw": [
+          0.2594869136810303,
+          0.29305301855688226,
+          0.3162055969238281
+        ],
+        "el_med_band_ok": false,
+        "bm_min": 0.25601851851851853,
+        "lr_mean": 0.5919203450025368,
+        "in_band_frac": 0.0,
+        "max_exc_frames": 146,
+        "head_px": 171.9,
+        "frames_measured": 146,
+        "frames_requested": 146,
+        "unmeasured_frames": 0,
+        "skull_clip_count": 0,
+        "bm_violations": 0,
+        "hard_gate_pass": true,
+        "soft_band_pass": false,
+        "pass": false
+      },
+      "shot_2": {
+        "crop_box": [
+          1474,
+          720,
+          1485,
+          1320
+        ],
+        "cx": 1474,
+        "cy": 720,
+        "cw": 1485,
+        "ch": 1320,
+        "locked": true,
+        "movement": 0,
+        "hr_mean": 0.22232503255208336,
+        "hr_mean_ok": false,
+        "hr_med": [
+          0.21458333333333332,
+          0.22234602864583333,
+          0.23229166666666667
+        ],
+        "hr_raw": [
+          0.21458333333333332,
+          0.22232503255208336,
+          0.23333333333333334
+        ],
+        "hr_med_band_ok": false,
+        "crown_y_px": [
+          206.0,
+          213.43203125000002,
+          224.0
+        ],
+        "el_mean": 0.29632052580515544,
+        "el_mean_ok": false,
+        "el_med": [
+          0.28429546356201174,
+          0.2962803140282631,
+          0.31978836059570315
+        ],
+        "el_raw": [
+          0.28428675333658854,
+          0.29632052580515544,
+          0.32033138275146483
+        ],
+        "el_med_band_ok": true,
+        "bm_min": 0.25569444444444445,
+        "lr_mean": 0.6004195601851852,
+        "in_band_frac": 0.0,
+        "max_exc_frames": 64,
+        "head_px": 168.0,
+        "frames_measured": 64,
+        "frames_requested": 67,
+        "unmeasured_frames": 3,
+        "skull_clip_count": 0,
+        "bm_violations": 0,
+        "hard_gate_pass": true,
+        "soft_band_pass": false,
+        "pass": false
+      },
+      "shot_3": {
+        "crop_box": [
+          1528,
+          740,
+          1395,
+          1240
+        ],
+        "cx": 1528,
+        "cy": 740,
+        "cw": 1395,
+        "ch": 1240,
+        "locked": true,
+        "movement": 0,
+        "hr_mean": 0.2207116338951311,
+        "hr_mean_ok": false,
+        "hr_med": [
+          0.2006875,
+          0.22070395599250933,
+          0.24791666666666667
+        ],
+        "hr_raw": [
+          0.19765625,
+          0.2207116338951311,
+          0.24800000000000003
+        ],
+        "hr_med_band_ok": false,
+        "crown_y_px": [
+          189.75,
+          211.88316853932585,
+          238.08
+        ],
+        "el_mean": 0.29651342806298187,
+        "el_mean_ok": false,
+        "el_med": [
+          0.27449556986490886,
+          0.29650617763790754,
+          0.3283517837524414
+        ],
+        "el_raw": [
+          0.2736356735229492,
+          0.29651342806298187,
+          0.32842175165812176
+        ],
+        "el_med_band_ok": false,
+        "bm_min": 0.25763888888888886,
+        "lr_mean": 0.603227215980025,
+        "in_band_frac": 0.0,
+        "max_exc_frames": 445,
+        "head_px": 167.4,
+        "frames_measured": 445,
+        "frames_requested": 445,
+        "unmeasured_frames": 0,
+        "skull_clip_count": 0,
+        "bm_violations": 0,
+        "hard_gate_pass": true,
+        "soft_band_pass": false,
+        "pass": false
+      },
+      "shot_4": {
+        "crop_box": [
+          1582,
+          760,
+          1305,
+          1160
+        ],
+        "cx": 1582,
+        "cy": 760,
+        "cw": 1305,
+        "ch": 1160,
+        "locked": true,
+        "movement": 0,
+        "hr_mean": 0.22593340636531364,
+        "hr_mean_ok": false,
+        "hr_med": [
+          0.18377083333333333,
+          0.22597047970479706,
+          0.25729166666666664
+        ],
+        "hr_raw": [
+          0.18373958333333332,
+          0.22593340636531364,
+          0.259375
+        ],
+        "hr_med_band_ok": false,
+        "crown_y_px": [
+          176.39,
+          216.89607011070112,
+          249.0
+        ],
+        "el_mean": 0.30902858328848604,
+        "el_mean_ok": true,
+        "el_med": [
+          0.2622445424397786,
+          0.30904726920532566,
+          0.3460615793863932
+        ],
+        "el_raw": [
+          0.2612920125325521,
+          0.30902858328848604,
+          0.3468359629313151
+        ],
+        "el_med_band_ok": false,
+        "bm_min": 0.19467592592592592,
+        "lr_mean": 0.6009242175755092,
+        "in_band_frac": 0.0,
+        "max_exc_frames": 542,
+        "head_px": 179.3,
+        "frames_measured": 542,
+        "frames_requested": 542,
+        "unmeasured_frames": 0,
+        "skull_clip_count": 0,
+        "bm_violations": 0,
+        "hard_gate_pass": true,
+        "soft_band_pass": false,
+        "pass": false
+      }
+    },
+    "detection_stats": {
+      "shot_1": {
+        "face": 146,
+        "fallback_crown": 88,
+        "constrained_mask": 58,
+        "none": 0,
+        "outlier_rejected": 0
+      },
+      "shot_2": {
+        "face": 64,
+        "fallback_crown": 25,
+        "constrained_mask": 39,
+        "none": 3,
+        "outlier_rejected": 0
+      },
+      "shot_3": {
+        "face": 445,
+        "fallback_crown": 187,
+        "constrained_mask": 258,
+        "none": 0,
+        "outlier_rejected": 0
+      },
+      "shot_4": {
+        "face": 542,
+        "fallback_crown": 367,
+        "constrained_mask": 175,
+        "none": 0,
+        "outlier_rejected": 0
+      }
+    }
+  },
+  "head_size_ratio": 1.749,
+  "head_size_ratio_ceiling": 1.6,
+  "head_size_ratio_waived": true,
+  "fenton_mean_head_px": 300.2,
+  "saba_mean_head_px": 171.6,
+  "fenton_hard_gate_pass": 4,
+  "saba_hard_gate_pass": 4,
+  "hard_gates_pass": true
+}

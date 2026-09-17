@@ -1,0 +1,66 @@
+COMMANDER RULING — LOOP 036. Verify the crown measurement before touching bands.
+
+Loop 035 ACCEPTED: professional eyeline band applied, HARD GATES PASS 8/8 (zero
+skull clip, back margins satisfied on every shot), bands proposed rather than
+self-approved. That last part is exactly right.
+
+--- RULING 1: DO NOT RECALIBRATE THE HEADROOM BAND YET ---
+You report the crown search measuring 0.14-0.28 headroom on framing that the
+skin mask read as 0.03-0.18. One of those is wrong and I will not move a gate
+until I know which.
+
+Read the standard plainly: professional headroom is 5-12% of frame height above
+the TOP OF THE HEAD, target 8%. That is already a crown measurement. If the
+crown search is accurate, then 14-28% means there is genuinely too much empty
+space above the head — a real framing defect that is fixed by MOVING THE CROP,
+not by widening the band.
+
+Three times now the fix has been the measurement, not the gate: the synthetic
+ht = bb_y - k*bb_h formula (loop 028), instantaneous eyeline (loop 029), and the
+skin mask reading the wooden table as a face (loop 033). Verify first.
+
+--- RULING 2: PRODUCE VISUAL PROOF OF THE CROWN LINE ---
+For each panel, pick 3 frames (one per shot where possible) and render a
+diagnostic PNG with overlays drawn on the actual rendered frame:
+  - the detected face bounding box
+  - the eye landmarks
+  - a horizontal line at the measured CROWN y
+  - a horizontal line at the panel top
+  - the measured headroom fraction printed on the image
+Include these PNGs in the report dir. I need to see whether the crown line sits
+on the top of the actual head, on the hair halo, or somewhere above it.
+
+Then state your own read: is the crown search accurate, or is it over-reading?
+
+--- RULING 3: THE TWO OUTCOMES ---
+a) If the crown line is ACCURATE: the framing has too much headroom. Re-solve
+   the locked crops to bring measured headroom to the professional target
+   (0.08, band [0.05, 0.12]) using the crown measurement. Do not change the
+   band. Report the new crops and what it costs in head size.
+b) If the crown line OVER-READS (catching hair halo, background, or motion
+   blur above the head): fix the crown search — tighten the constrained column,
+   raise the mask threshold, or reject components not contiguous with the face
+   box. Then re-measure and report.
+
+Either way, the professional headroom band [0.05, 0.12] target 0.08 STANDS. It
+is the researched standard, not a fitted value.
+
+--- RULING 4: DALLAS IS A DEGRADED SOURCE — STOP OPTIMIZING IT ---
+Read docs/SOURCE_TIERS.md. Head-size ratio 1.749x is WAIVED for the Dallas
+shoot: report the measured value, count it, do not chase it, do not raise the
+ceiling. The waiver is scoped to dallas-2026-09-03 only and does not apply to
+any other shoot.
+
+Once headroom is resolved per Ruling 3, c1 is FROZEN. No further Dallas framing
+loops. The engine gets tuned on the Florida 2026-09-13 shoot, which was
+properly framed, under the full standard with no exceptions.
+
+--- DELIVERABLES ---
+report_036 with the diagnostic PNGs, your read on the crown search, the
+re-solve or the fix per Ruling 3, and per panel per shot at full density:
+eyeline min/mean/max, crown headroom min/mean/max, hard-gate results and
+clipped-frame counts, crop box, LOCKED yes/no, head size and ratio, unmeasured
+frame count.
+
+Deliver via the CLAUDE.md protocol: report.md + every cited raw artifact, DONE
+last, bridge, sync, commit, push, STOP.

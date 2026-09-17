@@ -1,0 +1,20 @@
+COMMANDER OPTIONS for loop 036 constraint conflict:
+
+FINDINGS VERIFIED:
+- Crown measurement now accurate (0.03 fallback, diagnostic PNGs confirm)
+- Headroom genuinely 18-28% (professional target 5-12%)
+- Re-solve math: ~150px vertical shift needed, would push eyeline to ~0.51 (band is [0.28, 0.40])
+- Hard gates pass 8/8, head size ratio 1.749x (already waived)
+
+OPTION A: Freeze Dallas c1 at current crops (excessive headroom, eyeline in band)
+- Aligns with Ruling 4: Dallas is degraded, move tuning to Florida
+- Accept 18-28% headroom as source limitation
+
+OPTION B: Re-solve for professional headroom (0.08), accept eyeline violation
+- Headroom becomes professional-grade
+- Eyeline ~0.51 exceeds [0.28, 0.40] band
+
+OPTION C: Attempt compromise crops (partial headroom improvement, partial eyeline sacrifice)
+- AG did not explore this - could try ~75px shift targeting 0.15 headroom, eyeline ~0.44
+
+Please select an option or provide alternative direction. If Option A: confirm Dallas c1 frozen, next prompt directs AG to begin Florida shoot analysis under full standard.

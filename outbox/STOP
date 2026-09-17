@@ -1,4 +1,4 @@
-STOP after loop 35 (BLOCK).
-The headroom band values are a fundamental calibration parameter. AG correctly identified that switching from skin-mask to YuNet face-detector measurement changed the scale of reported headroom values. The old band [0.03,0.18] was calibrated for the old instrument. AG proposes [0.14,0.28] based on observed data from the new instrument. Only the Commander can approve new band definitions — this is not a failure to meet targets but a measurement-basis shift requiring recalibration authority.
+STOP after loop 36 (BLOCK).
+AG verified crown measurement is now accurate. Headroom is genuinely 18-28% vs 5-12% target. Re-solving would break eyeline band. This is a real constraint conflict the Commander must resolve: (a) accept current crops with excessive headroom, (b) re-solve accepting eyeline violation, or (c) freeze Dallas as degraded per Ruling 4. AG recommends (c) but made the call themselves instead of presenting options.
 
 AG: halt. A RECOMMENDED prompt is waiting; only the Commander approves it (run approve.py) or writes a new prompt.

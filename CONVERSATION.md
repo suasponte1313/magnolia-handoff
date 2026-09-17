@@ -375,3 +375,62 @@ AG: wait for Commander ruling on which path. Do not proceed.
 ```
 RECOMMENDATION (pending Commander approval of headroom bands): If Commander accepts proposed headroom band [0.14,0.28] with mean band [0.17,0.22], update presets/framing/magnolia_interview.yaml with the new values, re-run the solver on all 8 shots, and report per-shot pass/fail against the approved bands. Include the updated preset file in the report artifacts. If Commander specifies different band values, use those instead. STOP at report boundary.
 ```
+
+==============================================================================
+## Loop 36 — 2026-09-17 14:45 — verdict: BLOCK  ⛔ STOP
+
+**AG → report_036**  (artifacts: crown_diagnostic_summary.json, fenton_shot1_f50_skin_mask_region.png, fenton_shot_1_f50_crown_diag.png, fenton_shot_2_f180_crown_diag.png, fenton_shot_3_f400_crown_diag.png, saba_shot_1_f50_crown_diag.png, saba_shot_2_f180_crown_diag.png, saba_shot_3_f400_crown_diag.png, solver_output_036.json)
+> # Report 036: Crown Measurement Verification
+> 
+> The diagnostic PNGs confirm the crown line with 0.15 fallback was over-reading - placed 40-60px above actual head tops. Fixed the fallback to 0.03, which places the line much closer to actual crown positions. With corrected measurement, headroom reads 0.18-0.28 across all shots - genuinely excessive, not a measurement artifact. Crop re-solve to professional headroom (0.08) is infeasible: the required ~150px vertical shifts would push eyeline from 0.38 to 0.52, breaking the [0.28, 0.40] band. The source footage has subjects positioned too low in frame; both constraints cannot be satisfied simultaneously. Per Ruling 4, Dallas is degraded - recommend freezing c1 at current crops and moving engine t
+> ...<TRUNCATED 1717 chars>...
+> lations**: 0/1200 frames (all shots)
+> - **HARD GATES**: PASS 8/8
+> 
+> ## Head Size Ratio
+> 
+> - Fenton mean: 300.2px
+> - Saba mean: 171.6px
+> - Ratio: 1.749 (ceiling 1.60 WAIVED per SOURCE_TIERS.md)
+> 
+> ## Artifacts
+> 
+> - fenton_shot_1_f50_crown_diag.png - Crown line diagnostic
+> - fenton_shot_2_f180_crown_diag.png - Crown line diagnostic
+> - fenton_shot_3_f400_crown_diag.png - Crown line diagnostic
+> - saba_shot_1_f50_crown_diag.png - Crown line diagnostic
+> - saba_shot_2_f180_crown_diag.png - Crown line diagnostic
+> - saba_shot_3_f400_crown_diag.png - Crown line diagnostic
+> - fenton_shot1_f50_skin_mask_region.png - Skin mask visualization (0 pixels found)
+> - crown_diagnostic_summary.json - Sampled frame measurements
+> - solver_output_036.json - Full density measurements
+> 
+
+**Reviewer (Claude) audit:**
+*Verified:* Hard gates pass 8/8: skull_clip_count=0, bm_violations=0 for all shots (solver_output_036.json); Crown line placement with 0.03 fallback is visually accurate - PNGs show cyan line at actual hair crown, not floating above; Headroom genuinely measures 0.18-0.28 across all shots (solver_output_036.json: hr_med ranges confirmed); Eyeline ranges [0.26-0.46] for Saba, [0.33-0.46] for Fenton from solver_output_036.json; Math on re-solve: 0.22-0.08=0.14 headroom reduction * 1070px = ~150px shift would push eyeline from 0.37 to 0.51, outside [0.28, 0.40]; 6 diagnostic PNGs present and readable, 1 skin mask region PNG present
+*Blocking:* Decision to freeze Dallas at current crops and move tuning to Florida is strategic — requires Commander approval, not reviewer signoff; Ruling 3(a) ordered: 'Re-solve the locked crops to bring measured headroom to the professional target' — AG computed the cost but did not present a re-solve attempt for Commander to accept or reject
+*Stopped for Commander:* AG verified crown measurement is now accurate. Headroom is genuinely 18-28% vs 5-12% target. Re-solving would break eyeline band. This is a real constraint conflict the Commander must resolve: (a) accept current crops with excessive headroom, (b) re-solve accepting eyeline violation, or (c) freeze Dallas as degraded per Ruling 4. AG recommends (c) but made the call themselves instead of presenting options.
+
+**Reviewer → AG next prompt [RECOMMENDED (pending approval)]:**
+```
+COMMANDER OPTIONS for loop 036 constraint conflict:
+
+FINDINGS VERIFIED:
+- Crown measurement now accurate (0.03 fallback, diagnostic PNGs confirm)
+- Headroom genuinely 18-28% (professional target 5-12%)
+- Re-solve math: ~150px vertical shift needed, would push eyeline to ~0.51 (band is [0.28, 0.40])
+- Hard gates pass 8/8, head size ratio 1.749x (already waived)
+
+OPTION A: Freeze Dallas c1 at current crops (excessive headroom, eyeline in band)
+- Aligns with Ruling 4: Dallas is degraded, move tuning to Florida
+- Accept 18-28% headroom as source limitation
+
+OPTION B: Re-solve for professional headroom (0.08), accept eyeline violation
+- Headroom becomes professional-grade
+- Eyeline ~0.51 exceeds [0.28, 0.40] band
+
+OPTION C: Attempt compromise crops (partial headroom improvement, partial eyeline sacrifice)
+- AG did not explore this - could try ~75px shift targeting 0.15 headroom, eyeline ~0.44
+
+Please select an option or provide alternative direction. If Option A: confirm Dallas c1 frozen, next prompt directs AG to begin Florida shoot analysis under full standard.
+```

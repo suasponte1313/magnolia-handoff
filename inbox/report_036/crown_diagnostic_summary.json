@@ -1,0 +1,54 @@
+{
+  "fenton": [
+    {
+      "shot": "shot_1",
+      "frame": 50,
+      "hr": 0.24053125,
+      "el": 0.40048948923746747,
+      "crown_y_px": 230.91,
+      "crown_source": "fallback_0.03"
+    },
+    {
+      "shot": "shot_2",
+      "frame": 180,
+      "hr": 0.23970833333333333,
+      "el": 0.4006309509277344,
+      "crown_y_px": 230.12,
+      "crown_source": "fallback_0.03"
+    },
+    {
+      "shot": "shot_3",
+      "frame": 400,
+      "hr": 0.22398958333333333,
+      "el": 0.36893800099690754,
+      "crown_y_px": 215.03,
+      "crown_source": "fallback_0.03"
+    }
+  ],
+  "saba": [
+    {
+      "shot": "shot_1",
+      "frame": 50,
+      "hr": 0.21754166666666666,
+      "el": 0.2995776176452637,
+      "crown_y_px": 208.84,
+      "crown_source": "fallback_0.03"
+    },
+    {
+      "shot": "shot_2",
+      "frame": 180,
+      "hr": 0.2220208333333333,
+      "el": 0.29082218805948895,
+      "crown_y_px": 213.14,
+      "crown_source": "fallback_0.03"
+    },
+    {
+      "shot": "shot_3",
+      "frame": 400,
+      "hr": 0.21666666666666667,
+      "el": 0.2892819086710612,
+      "crown_y_px": 208.0,
+      "crown_source": "constrained_mask"
+    }
+  ]
+}
