@@ -328,3 +328,50 @@ The derived bands are geometrically incompatible with Saba. Options:
 
 AG: wait for Commander ruling on which path. Do not proceed.
 ```
+
+==============================================================================
+## Loop 35 — 2026-09-17 14:29 — verdict: BLOCK  ⛔ STOP
+
+**AG → report_035**  (artifacts: solver_output_035.json)
+> # Report 035 - Professional Standard Bands
+> 
+> ## Commander Rulings Applied
+> 
+> **Ruling 1 (Professional Standard Eyeline):** Set eyeline_band [0.28, 0.40], target 0.33, per broadcast/interview standard. Applied to BOTH subjects. Fenton-derived bands deleted from preset.
+> 
+> **Ruling 2 (Headroom Same Logic):** Attempted to use locked_headroom_band [0.03, 0.18] from prompt_032. FINDING: These bands were calibrated for SKIN MASK measurement, not YuNet face detector crown search. The measurement basis has shifted (see analysis below).
+> 
+> **Ruling 3 (Hard Gates):** Zero skull clip, back-of-head margin never breached. PASS 8/8 shots (100%).
+> 
+> **Ruling 4 (Head Size):** Ratio 1.749 vs 1.60 ceiling. Commander requested best achievable ratio—see below.
+> 
+> ## Full
+> ...<TRUNCATED 3312 chars>...
+> e proposed with numbers for Commander ruling.
+> 
+> ## Head Size (Ruling 4)
+> 
+> Current: 1.749x (Fenton 300.2px / Saba 171.6px)
+> Ceiling: 1.60x
+> 
+> Saba crop heights: 1160-1320px. To reduce ratio toward 1.60, Saba crop must shrink, which increases her head_px. At H=1000px, her head would be ~200px, giving ratio ~1.50. At H=900px, ~225px, ratio ~1.33.
+> 
+> However, smaller crops reduce the ability to lock frame statically (less posture tolerance). Trade-off: head-size ratio vs. static lock compliance.
+> 
+> **Best achievable:** With crops at H~950-1000px for Saba, ratio could reach ~1.45-1.50 while maintaining hard gates. Exact value depends on re-solve with new bands.
+> 
+> ## Artifacts
+> 
+> - `solver_output_035.json` - Full per-shot metrics
+> - `report.md` - This report
+> 
+
+**Reviewer (Claude) audit:**
+*Verified:* Hard gates pass 8/8 shots: skull_clip_count=0 and bm_min≥0.049 for all Fenton shots, bm_min≥0.195 for all Saba shots (from solver_output_035.json); Locked frame confirmed: all shots show 'locked':true, 'movement':0 in JSON; Head size ratio 1.749 calculated correctly: Fenton mean 300.2px / Saba mean 171.6px (verified arithmetic from per-shot head_px values); Eyeline table matches JSON: Fenton shot_2 el_med [0.364,0.400] inside [0.28,0.40], others exceed max; Saba shot_2 el_med [0.284,0.320] inside band, others dip below 0.28; Headroom values systematically exceed [0.03,0.18] upper bound: Fenton hr_med max 0.21-0.28, Saba hr_med max 0.23-0.26 — measurement shows the old band does not describe this detector's output
+*Blocking:* Headroom band [0.03,0.18] was calibrated for skin-mask measurement; face-detector crown search reports systematically higher values (0.15-0.28 observed). The bands and the detector are now mismatched. Commander must rule on recalibrated bands before framing work can continue.
+*Stopped for Commander:* The headroom band values are a fundamental calibration parameter. AG correctly identified that switching from skin-mask to YuNet face-detector measurement changed the scale of reported headroom values. The old band [0.03,0.18] was calibrated for the old instrument. AG proposes [0.14,0.28] based on observed data from the new instrument. Only the Commander can approve new band definitions — this is not a failure to meet targets but a measurement-basis shift requiring recalibration authority.
+
+**Reviewer → AG next prompt [RECOMMENDED (pending approval)]:**
+```
+RECOMMENDATION (pending Commander approval of headroom bands): If Commander accepts proposed headroom band [0.14,0.28] with mean band [0.17,0.22], update presets/framing/magnolia_interview.yaml with the new values, re-run the solver on all 8 shots, and report per-shot pass/fail against the approved bands. Include the updated preset file in the report artifacts. If Commander specifies different band values, use those instead. STOP at report boundary.
+```

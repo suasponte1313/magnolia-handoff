@@ -1,0 +1,61 @@
+COMMANDER RULING — LOOP 035. Correcting my own band error.
+
+Loop 034 ACCEPTED on execution: detector confirmed as YuNet, skin-vs-face
+comparison artifact produced, band location identified, single engine enforced,
+eyeline made primary. Fenton 4/4 PASS. Reporting Saba's 0/4 honestly instead of
+forcing it is correct behaviour and is credited.
+
+--- THE ERROR WAS MINE, NOT YOURS ---
+In prompt_034 Ruling 2 I told you to derive the bands from Fenton's accepted
+framing. That was wrong. Fenton and Saba sit at different distances from the
+camera, so eyeline-as-a-fraction-of-panel differs between them for reasons that
+have nothing to do with framing quality. I fitted a band to a sample of one.
+
+Evidence: the Fenton-derived band has min 0.35. Saba measures 0.29-0.31. But
+the researched professional standard is eyeline in [0.28, 0.40], target 0.33 —
+eyes on the upper third. Saba is INSIDE the professional standard. She fails
+only a band I derived badly.
+
+--- RULING 1: RESTORE THE PROFESSIONAL STANDARD BAND ---
+Do NOT use per-subject bands. Do NOT widen a global band arbitrarily. Do NOT
+demote eyeline to priority 4. All three would be fitting the gate to the data.
+
+Set, for BOTH subjects, in presets/framing/magnolia_interview.yaml:
+    eyeline_target: 0.33
+    eyeline_band:   [0.28, 0.40]
+with a comment recording that this is the researched broadcast/interview
+standard (eyes on the upper third), NOT a value derived from any single clip.
+
+Delete the Fenton-derived eyeline band and the comment claiming it as
+calibration. A one-subject sample is not a calibration reference. Keep the
+DERIVATION PRINCIPLE for things that are genuinely camera- or room-specific
+(sensor-edge margins, resonance frequencies); framing standards come from
+practice, not from one person's seat.
+
+--- RULING 2: HEADROOM, SAME LOGIC ---
+Headroom is measured from the CROWN via the constrained mask search above the
+face box, per prompt_034 Ruling 3. Use the locked-frame bands already ruled in
+prompt_032 (locked_headroom_band [0.03, 0.18], mean band [0.06, 0.11]) — those
+were reasoned from locked-framing behaviour, not fitted to one subject. If the
+crown search shifts the measurement basis, report the measured numbers for BOTH
+subjects and say plainly whether the bands still describe good framing. Propose
+with numbers; do not self-approve.
+
+--- RULING 3: HARD GATES UNCHANGED ---
+Zero skull clipping, back-of-head margin never breached, every frame, measured
+from the crown. Never relaxed under any ruling.
+
+--- RULING 4: HEAD SIZE ---
+1.749x against a 1.60 ceiling is drifting too far. Head size stays priority 4,
+but report: the best achievable ratio that keeps hard gates, the lock, and the
+standard bands all satisfied — and what crop heights produce it. I will rule on
+the ceiling from that number, not before.
+
+--- DELIVERABLES ---
+Re-solve both panels under the standard bands. Report per panel per shot at full
+density: eyeline min/mean/max vs [0.28, 0.40], crown headroom min/mean/max,
+hard-gate results, crop box, LOCKED yes/no, head size px and ratio, unmeasured
+frame count.
+
+Deliver report_035 via the CLAUDE.md protocol: report.md + every cited raw
+artifact, DONE last, bridge, sync, commit, push, STOP.
