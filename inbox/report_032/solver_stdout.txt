@@ -1,0 +1,38 @@
+PERFORMANCE DIRECTIVE: search on every 6th frame, verify at full density
+Optimized: preload shot frames once, reuse for search and verify
+
+======================================================================
+FENTON (CAM_A) - search sampled, verify full density
+HR mean band: [0.06, 0.11], EL mean band: [0.3, 0.38]
+======================================================================
+  Shot 1: loading 146 frames... loaded 146. SEARCH[OK] VERIFY[PASS] ch=1070 hr=6.1% el=37.3% (3.4s)
+  Shot 2: loading 67 frames... loaded 67. SEARCH[OK] VERIFY[PASS] ch=1070 hr=6.2% el=37.7% (1.7s)
+  Shot 3: loading 445 frames... loaded 445. SEARCH[OK] VERIFY[PASS] ch=1070 hr=6.6% el=37.7% (9.1s)
+  Shot 4: loading 542 frames... loaded 542. SEARCH[OK] VERIFY[PASS] ch=1070 hr=6.8% el=37.7% (12.8s)
+
+======================================================================
+SABA (CAM_B) - search sampled, verify full density
+Priority: hard gates > locked > soft bands > head size
+======================================================================
+  Shot 1: loading 146 frames... loaded 146. SEARCH[OK] VERIFY[DETECT FAIL] (5.7s)
+  Shot 2: loading 67 frames... loaded 67. SEARCH[OK] VERIFY[FAIL] ch=1320 hr=8.9% el=30.9% (2.0s)
+  Shot 3: loading 445 frames... loaded 445. SEARCH[OK] VERIFY[FAIL] ch=1240 hr=9.8% el=30.3% (15.5s)
+  Shot 4: loading 542 frames... loaded 542. SEARCH[OK] VERIFY[PASS] ch=1160 hr=10.8% el=30.8% (23.9s)
+
+======================================================================
+LOOP 032 SOLVER SUMMARY
+======================================================================
+Fenton (CAM_A): ALL PASS
+  shot_1: PASS hr=0.061 el=0.373 measured=146/146
+  shot_2: PASS hr=0.062 el=0.377 measured=67/67
+  shot_3: PASS hr=0.066 el=0.377 measured=445/445
+  shot_4: PASS hr=0.068 el=0.377 measured=542/542
+Saba (CAM_B): SOME FAIL
+  shot_1: NO DETECTION
+  shot_2: FAIL hr=0.089 el=0.309 measured=67/67
+  shot_3: FAIL hr=0.098 el=0.303 measured=445/445
+  shot_4: PASS hr=0.108 el=0.308 measured=542/542
+Head size ratio (Fenton/Saba): 1.497x (ceiling: 1.60)
+
+Saved: output/PHASE_3_CONVERSATIONAL/solver_output_032.json
+Saved: output/PHASE_3_CONVERSATIONAL/locked_framing_032.txt

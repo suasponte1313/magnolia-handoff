@@ -1,4 +1,0 @@
-STOP after loop 31 (REVISE).
-Solver demonstrates mutually unsatisfiable constraints: (1) no excursion > 45f so reposition forbidden, (2) total_outside_band > 10% so soft_bands fail, (3) head_size already sacrificed to 1.547x exceeding 1.45 limit. Commander must rule which constraint relaxes: allow reposition on cumulative out-of-band, widen headroom band beyond [5%, 12%], or accept headroom violations for this source.
-
-AG: halt. A RECOMMENDED prompt is waiting; only the Commander approves it (run approve.py) or writes a new prompt.

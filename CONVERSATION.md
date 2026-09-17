@@ -217,3 +217,31 @@ Re-run the solver to completion OR explain the artifact provenance. Paste the ra
 
 STOP after providing the clarification.
 ```
+
+==============================================================================
+## Loop 32 — 2026-09-17 13:00 — verdict: REVISE
+
+**AG → report_032**  (artifacts: locked_framing_032.txt, solver_output_032.json, solver_stdout.txt)
+> # Loop 032 Report: FAIL
+> 
+> PERFORMANCE DIRECTIVE implemented: search sampled every 6th frame (200 of 1200), verify winning crop at full density. Solver completed in ~74s vs previous 600s timeout. Fenton (CAM_A) ALL PASS with all 4 shots verified at full density. Saba (CAM_B) FAIL: Shot 1 no detection at full density (skin detection failed all 146 frames), Shot 2 hr_med_min=0.030 (boundary of [0.03,0.18] band but hr_raw min=0.017 indicates near-skull-clip frames), Shot 3 hr_med_max=0.511 and el_med_max=0.621 (severe outliers from misdetection), Shot 4 PASS. The sampled search found passing crops, but full-density verify exposes unreliable skin detection on certain frames producing outlier measurements that blow the rolling median outside bands. Head size ratio 1.497x (within 1.60 ceiling). Artifacts: solver_output_032.json, locked_framing_032.txt, solver_stdout.txt.
+> 
+
+**Reviewer (Claude) audit:**
+*Verified:* Performance directive implemented: search every 6th frame, verify full density — confirmed in solver_stdout.txt and JSON structure; Fenton (CAM_A) all 4 shots PASS — JSON verify sections show pass=true, all hr_med and el_med within bands [0.03,0.18] and [0.26,0.44]; Saba shot_1 NO DETECTION — JSON verify.shot_1=null confirmed; Saba shot_2 FAIL — JSON shows hr_med_ok=false, hr_med_min=0.030 at band boundary, hr_raw_min=0.017 below band; Saba shot_3 FAIL — JSON shows hr_med_max=0.511, el_med_max=0.621, both massively outside bands (misdetection outliers); Saba shot_4 PASS — JSON shows pass=true, hr_med=[0.042,0.178], el_med=[0.291,0.335] within bands
+*Blocking:* Saba shots 1-3 fail verification. Before tuning crops or widening bands, must determine whether failures are detection errors (spurious outliers from bad frames) or actual framing violations (real skull-clip/eyeline breach)
+
+**Reviewer → AG next prompt [SENT]:**
+```
+Saba detection failures need diagnosis before tuning. Do this:
+
+1. For Saba shot_3 (worst outliers: hr_med_max=0.511, el_med_max=0.621), dump the frame indices where hr > 0.30 or el > 0.50. These are the misdetection frames.
+
+2. Extract 3-5 of those outlier frames as PNGs. Visually inspect: is there a face detected? Is the skin mask spurious (detecting background, hair, clothing)? Is the face occluded/turned?
+
+3. For Saba shot_1 (0/146 detections), extract frames 0, 50, 100 as PNGs. Inspect: is Saba visible? Is skin detection failing due to lighting/tone/position?
+
+4. Report: (a) the outlier frame indices, (b) your visual diagnosis of what's going wrong, (c) whether this is fixable via outlier rejection, detection parameter tuning, or requires switching to face-box detection instead of skin detection.
+
+Include the extracted PNGs in the report dir. Do not tune crops or bands yet — we need to understand the detection failure mode first.
+```

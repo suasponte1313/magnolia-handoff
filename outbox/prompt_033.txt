@@ -1,0 +1,11 @@
+Saba detection failures need diagnosis before tuning. Do this:
+
+1. For Saba shot_3 (worst outliers: hr_med_max=0.511, el_med_max=0.621), dump the frame indices where hr > 0.30 or el > 0.50. These are the misdetection frames.
+
+2. Extract 3-5 of those outlier frames as PNGs. Visually inspect: is there a face detected? Is the skin mask spurious (detecting background, hair, clothing)? Is the face occluded/turned?
+
+3. For Saba shot_1 (0/146 detections), extract frames 0, 50, 100 as PNGs. Inspect: is Saba visible? Is skin detection failing due to lighting/tone/position?
+
+4. Report: (a) the outlier frame indices, (b) your visual diagnosis of what's going wrong, (c) whether this is fixable via outlier rejection, detection parameter tuning, or requires switching to face-box detection instead of skin detection.
+
+Include the extracted PNGs in the report dir. Do not tune crops or bands yet — we need to understand the detection failure mode first.

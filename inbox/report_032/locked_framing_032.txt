@@ -1,0 +1,43 @@
+LOCKED FRAMING OUTPUT - LOOP 032
+======================================================================
+PERFORMANCE DIRECTIVE: search every 6th frame, verify full density
+HR mean band: [0.06, 0.11], HR med band: [0.03, 0.18]
+EL mean band: [0.3, 0.38], EL med band: [0.26, 0.44]
+======================================================================
+
+FENTON (CAM_A / spk_a / Top Panel)
+--------------------------------------------------
+shot_1: [PASS] crop=[0,790,1204,1070]
+  SEARCH (25f): hr_mean=0.062, el_mean=0.374
+  VERIFY (146/146f): hr_mean=0.061 OK, hr_med=[0.033,0.115]
+    el_mean=0.373 OK, el_med=[0.357,0.388], max_exc=0f, head_px=332.8
+shot_2: [PASS] crop=[0,790,1204,1070]
+  SEARCH (11f): hr_mean=0.061, el_mean=0.377
+  VERIFY (67/67f): hr_mean=0.062 OK, hr_med=[0.042,0.068]
+    el_mean=0.377 OK, el_med=[0.369,0.380], max_exc=0f, head_px=336.3
+shot_3: [PASS] crop=[0,790,1204,1070]
+  SEARCH (74f): hr_mean=0.066, el_mean=0.377
+  VERIFY (445/445f): hr_mean=0.066 OK, hr_med=[0.039,0.128]
+    el_mean=0.377 OK, el_med=[0.364,0.390], max_exc=0f, head_px=332.1
+shot_4: [PASS] crop=[0,790,1204,1070]
+  SEARCH (90f): hr_mean=0.068, el_mean=0.377
+  VERIFY (542/542f): hr_mean=0.068 OK, hr_med=[0.043,0.121]
+    el_mean=0.377 OK, el_med=[0.360,0.385], max_exc=0f, head_px=329.0
+
+SABA (CAM_B / spk_b / Bottom Panel)
+--------------------------------------------------
+shot_1: NO SOLUTION
+shot_2: [FAIL] crop=[1474,720,1485,1320]
+  SEARCH (11f): hr_mean=0.091, el_mean=0.308
+  VERIFY (67/67f): hr_mean=0.089 OK, hr_med=[0.030,0.105]
+    el_mean=0.309 OK, el_med=[0.294,0.356], max_exc=2f, head_px=235.2
+shot_3: [FAIL] crop=[1528,740,1395,1240]
+  SEARCH (74f): hr_mean=0.102, el_mean=0.306
+  VERIFY (445/445f): hr_mean=0.098 OK, hr_med=[0.062,0.511]
+    el_mean=0.303 OK, el_med=[0.291,0.621], max_exc=2f, head_px=218.5
+shot_4: [PASS] crop=[1582,760,1305,1160]
+  SEARCH (90f): hr_mean=0.108, el_mean=0.308
+  VERIFY (542/542f): hr_mean=0.108 OK, hr_med=[0.042,0.178]
+    el_mean=0.308 OK, el_med=[0.291,0.335], max_exc=1f, head_px=212.7
+
+Head size ratio (Fenton/Saba): 1.497x (ceiling: 1.60)

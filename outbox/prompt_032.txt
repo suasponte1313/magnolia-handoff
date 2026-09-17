@@ -1,0 +1,70 @@
+COMMANDER RULING — LOOP 032. Breaking the locked-framing deadlock.
+
+Loop 031 ACCEPTED on execution: you ran the full protocol, produced
+locked_framing.txt, ran the bridge, synced and pushed, and reported the Saba
+failures honestly instead of forcing a pass. That is correct behaviour.
+
+The reviewer is right that the constraints are mutually unsatisfiable. Here is
+the ruling that breaks it.
+
+=== RULING 1: THE HEADROOM BAND IS WRONG FOR LOCKED FRAMING ===
+
+The band [0.05, 0.12] was designed for a TRACKING crop that actively holds
+headroom constant. With a LOCKED frame the subject's headroom necessarily
+varies as they shift posture — that is what a real tripod shot looks like, and
+it is not a defect. Judging a locked frame with a tracking-crop band is a
+measurement error, the same class of error as the instantaneous-eyeline problem
+we already fixed.
+
+What the eye judges is where the head sits ON AVERAGE. Replace the gate:
+
+Add to presets/framing/magnolia_interview.yaml a locked-frame band set:
+  locked_headroom_band:      [0.03, 0.18]   # rolling-median tolerance
+  locked_headroom_mean_band: [0.06, 0.11]   # the shot MEAN must land here
+  locked_eyeline_band:       [0.26, 0.44]
+  locked_eyeline_mean_band:  [0.30, 0.38]
+
+Gate logic when layout is locked (movement == 0):
+  - the shot MEAN must sit inside the *_mean_band  <- this is the real gate
+  - the rolling median must stay inside the wider *_band
+  - DELETE the transient_total_fraction 10% rule for locked shots. It is
+    redundant once the band is correct and it is what makes the constraint set
+    unsatisfiable. Keep transient_max_frames as a sanity bound.
+
+Hard gates are UNCHANGED and remain zero tolerance at every frame:
+zero skull clipping, back-of-head margin never breached. Those are never
+relaxed, for any duration, under any ruling.
+
+=== RULING 2: HEAD SIZE CEILING ===
+
+Per the framing priority stack, head size is priority 4 and is sacrificed
+first. Shot 4 measured 1.547x. Set head_size_ratio_max: 1.60 with a comment
+that it is bounded by locked-framing priority on wide-separation source.
+Report the measured ratio honestly against the new ceiling. Do not zoom to
+chase parity — that is priority 4 breaking priority 2 or 3.
+
+=== RULING 3: ARTIFACT PROVENANCE — MUST BE RESOLVED ===
+
+The reviewer found solver_output.txt and locked_framing.txt disagreeing on
+Saba crop heights (Shot 2: 1360 vs 1200; Shot 3: 1200 vs 1120), and the solver
+exited with code 144 before finishing Saba Shot 4. Two artifacts describing the
+same render cannot disagree.
+
+  a) Re-run the solver to COMPLETION under the new bands. If it exits non-zero
+     again, paste the raw stderr verbatim and STOP — do not work around it.
+  b) locked_framing.txt must be regenerated from THAT run, not from any earlier
+     run. Every artifact in the report must come from one single run.
+  c) State in report.md which run produced each artifact.
+
+=== DELIVERABLES ===
+
+Re-solve, re-render, re-run QC under the new locked bands. Report per panel per
+shot: static crop box and height, LOCKED yes/no, movement count, headroom and
+eyeline rolling-median min/mean/max, the shot MEAN against the mean band,
+longest excursion, head size px, ratio, and the head size given up.
+
+Deliver report_032 via the protocol in CLAUDE.md: report.md + every cited raw
+artifact, DONE last, bridge.py --once, sync the mirror, commit and push, STOP.
+
+If a shot still cannot satisfy the hard gates plus the mean bands, say so
+plainly with the measured numbers. Do not force a pass.
