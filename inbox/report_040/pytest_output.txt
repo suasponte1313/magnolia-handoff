@@ -1,0 +1,27 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.11.16, pytest-9.1.1, pluggy-1.6.0 -- /Users/derekgagliano/Projects/podcast-editor/venv/bin/python3
+cachedir: .pytest_cache
+hypothesis profile 'default'
+rootdir: /Users/derekgagliano/Projects/podcast-editor/reelcore
+configfile: pyproject.toml
+plugins: anyio-4.15.1, hypothesis-6.168.0
+collecting ... collected 16 items
+
+reelcore/tests/test_preflight.py::TestClippingDetection::test_no_clipping_single_peak PASSED [  6%]
+reelcore/tests/test_preflight.py::TestClippingDetection::test_clipping_flat_top_3_samples PASSED [ 12%]
+reelcore/tests/test_preflight.py::TestClippingDetection::test_clipping_flat_top_5_samples PASSED [ 18%]
+reelcore/tests/test_preflight.py::TestClippingDetection::test_multiple_clip_runs PASSED [ 25%]
+reelcore/tests/test_preflight.py::TestClippingDetection::test_float_exceeding_1_not_clipped PASSED [ 31%]
+reelcore/tests/test_preflight.py::TestClippingDetection::test_float_exceeding_1_with_flat_top PASSED [ 37%]
+reelcore/tests/test_preflight.py::TestClippingDetection::test_negative_peak_clipping PASSED [ 43%]
+reelcore/tests/test_preflight.py::TestClippingDetection::test_empty_audio PASSED [ 50%]
+reelcore/tests/test_preflight.py::TestClippingDetection::test_run_of_2_not_counted PASSED [ 56%]
+reelcore/tests/test_preflight.py::TestTruePeakMeasurement::test_sine_wave_true_peak_higher_than_sample_peak PASSED [ 62%]
+reelcore/tests/test_preflight.py::TestTruePeakMeasurement::test_square_wave_true_peak_has_overshoot PASSED [ 68%]
+reelcore/tests/test_preflight.py::TestTruePeakMeasurement::test_empty_audio_returns_small_value PASSED [ 75%]
+reelcore/tests/test_preflight.py::TestTruePeakMeasurement::test_dc_offset_measured_with_edge_effects PASSED [ 81%]
+reelcore/tests/test_preflight.py::TestTruePeakMeasurement::test_true_peak_exceeds_0dbfs PASSED [ 87%]
+reelcore/tests/test_preflight.py::TestClippingWithRealFile::test_write_read_clipped_pcm16 PASSED [ 93%]
+reelcore/tests/test_preflight.py::TestClippingWithRealFile::test_clean_float32_no_clipping PASSED [100%]
+
+============================== 16 passed in 1.36s ==============================

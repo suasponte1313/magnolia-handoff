@@ -544,3 +544,21 @@ Loop 39 REVISE. Three artifacts missing or contradictory:
 
 Paste raw, no tables, no prose summaries. One artifact per claim.
 ```
+
+==============================================================================
+## Loop 40 — 2026-09-18 15:22 — verdict: ACCEPT
+
+**AG → report_040**  (artifacts: clip_detect.txt, crown_wiring.txt, pytest_output.txt, truepeak.txt)
+> # Loop 040 Report
+> 
+> Fixed four mechanical issues per directive: (1) replaced threshold-based clipping detection with flat-top run detection that correctly identifies TX03 as not-clipped (longest_run=1) while detecting clipped PCM16 (longest_run=160); (2) implemented real 4x oversampling for true-peak using scipy.signal.resample_poly; (3) wired crown_fallback_ratio from preset to all measure_frame_face() calls in solve_loop033.py, solve_loop034.py, solve_loop035.py, and solve_loop036.py, matching the existing analyze_florida_037.py pattern; (4) added 16 regression tests covering clipping and true-peak that all pass.
+> 
+
+**Reviewer (Claude) audit:**
+*Verified:* Flat-top run clipping detection works: TX03 correctly not-clipped, PCM16 control correctly clipped; 4x oversampling for true-peak implemented (scipy.signal.resample_poly), test_sine_wave proves inter-sample peak detection works; crown_fallback_ratio wired from preset in all four solve_loop scripts (grep output confirms); 16 regression tests pass covering clipping and true-peak edge cases
+*Blocking:* —
+
+**Reviewer → AG next prompt [SENT]:**
+```
+Mechanical fixes verified. Advance to Phase 3 §1.1 — ANALYZE_FACES. Implement reelcore/framing/tracks.py per blueprint: first-frame full-scan to establish each subject's home_region, subsequent frames search within home_region ± margin, no hardcoded ROI. Output face_tracks.json with FaceTrack dataclass (track_id, frames, boxes, confidence, facing, home_region). Run on one 60-second Florida interview segment. Report: number of tracks detected, detection rate (frames with valid detection / total frames), home_region values, facing distribution. Include raw face_tracks.json in report dir. STOP at review boundary.
+```

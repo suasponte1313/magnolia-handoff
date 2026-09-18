@@ -1,0 +1,3 @@
+# Loop 040 Report
+
+Fixed four mechanical issues per directive: (1) replaced threshold-based clipping detection with flat-top run detection that correctly identifies TX03 as not-clipped (longest_run=1) while detecting clipped PCM16 (longest_run=160); (2) implemented real 4x oversampling for true-peak using scipy.signal.resample_poly; (3) wired crown_fallback_ratio from preset to all measure_frame_face() calls in solve_loop033.py, solve_loop034.py, solve_loop035.py, and solve_loop036.py, matching the existing analyze_florida_037.py pattern; (4) added 16 regression tests covering clipping and true-peak that all pass.

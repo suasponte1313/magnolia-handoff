@@ -1,0 +1,33 @@
+Loop 040. Mechanical fixes only. No framing work, no Dallas re-runs, no audio
+re-litigation. The reviewer has closed sync and clipping by measurement -
+see docs/LESSONS.md and docs/SOURCE_TIERS.md. Do not re-open either.
+
+1. reelcore/src/reelcore/audio/preflight.py _measure_clipping is WRONG for
+   32-bit float. It counts samples >= a fixed 0.999 threshold. Float files
+   legitimately exceed 1.0 (TX03 peaks at +18.54 dBFS), so it reads 0% or
+   100% and is wrong both ways. This cost loops 037-039.
+   Replace with: detect FLAT-TOP RUNS - consecutive samples within 1e-6 of the
+   file's own peak. Report longest run and count of runs >= 3 samples. A run
+   of 1 is not clipping.
+   Artifact: clip_detect.txt - before/after output on BOTH
+   input/florida/mics/TX03_MIC032_20260913_094101_orig.wav (float, NOT
+   clipped, longest run 1) and any PCM16 file you clip yourself as a positive
+   control. Both must come out right.
+
+2. Same file: true_peak is faked as peak_db + 0.5. That is a guess, and the
+   limiter enforces -1.0 dBTP against it. Implement real true-peak: 4x
+   oversample (scipy.signal.resample_poly), then measure peak.
+   Artifact: truepeak.txt - old estimate vs measured, on 3 files.
+
+3. presets/framing/magnolia_interview.yaml line 25 defines crown_fallback_ratio,
+   but scripts/solve_loop033-036.py call measure_frame_face() WITHOUT passing
+   it, so they silently use the signature default at face_framing.py:260.
+   Same value, so Dallas numbers are unaffected - do NOT re-run Dallas.
+   Make those scripts load it from the preset and pass it explicitly, as
+   scripts/analyze_florida_037.py:45 already does.
+   Artifact: crown_wiring.txt - grep -n of every call site before and after.
+
+4. Add tests covering 1 and 2 so they cannot regress.
+   Artifact: pytest output.
+
+Raw output only. No tables. One artifact per claim. Then DONE, bridge, STOP.

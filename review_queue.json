@@ -1,0 +1,32 @@
+{
+  "items": [
+    {
+      "slug": "Long_forms_ready_to_send",
+      "title": "All three long forms — ready to send today",
+      "status": "waiting",
+      "context": "All three Florida interviews, native camera framing as you ruled, two-lav treated audio on every one. Both lavs were running for the Sep 12 interviews too, so they get the same treatment Eduardo's got. Sync was measured on each, never taken from filenames. Cross-check that gives me confidence: on BOTH Sep 12 clips the two recorders' anchors differ by exactly 5.85s, consistent to 5 milliseconds. Two independent measurements agreeing that closely is not luck.",
+      "ask": "Spot-check each one - open it, jump to a few points, confirm the audio is in sync and sounds right. Then they go to Dropbox. Also: tell me which speaker is Dr. Perajoc on the Sep 12 clips so I can label TX03/TX04 properly.",
+      "files": [
+        {
+          "name": "Eduardo_Fenton_0913_LONGFORM.mov",
+          "src": "~/Magnolia/Florida-2026-09/Finished/Eduardo_Fenton_0913_LONGFORM.mov",
+          "label": "Eduardo / Fenton — 6.7 min",
+          "note": "The one you already approved. Rebuilt through the new pipeline, identical anchors."
+        },
+        {
+          "name": "Interview_0912_2224_LONGFORM.mov",
+          "src": "~/Magnolia/Florida-2026-09/Finished/Interview_0912_2224_LONGFORM.mov",
+          "label": "Sep 12, 22:24 — 22.9 min",
+          "note": "New. Best correlation of the three (0.87 / 0.75)."
+        },
+        {
+          "name": "Interview_0912_2250_LONGFORM.mov",
+          "src": "~/Magnolia/Florida-2026-09/Finished/Interview_0912_2250_LONGFORM.mov",
+          "label": "Sep 12, 22:50 — 21.7 min",
+          "note": "New. Correlation 0.83 / 0.74."
+        }
+      ],
+      "numbers": "                        length   camera SNR -> two-lav mix\n  Eduardo / Fenton      6.7 min     37.3  ->  47.9 dB\n  Sep 12 22:24         22.9 min     44.6  ->  55.8 dB\n  Sep 12 22:50         21.7 min     43.6  ->  53.8 dB\n\nMEASURED SYNC ANCHORS (r = correlation; above 0.6 is solid, all pass)\n  Eduardo/Fenton   Fenton 158.335s r=0.81   Eduardo 216.405s r=0.72\n  Sep 12 22:24     TX03   824.675s r=0.75   TX04    830.525s r=0.87\n  Sep 12 22:50     TX03   640.575s r=0.74   TX04    646.430s r=0.83\n\n  The 5.85s gap between the two recorders is identical on both Sep 12 clips\n  (5.850 and 5.855). That is the constant clock offset between the units,\n  independently recovered twice.\n\nFOLDERS  ~/Magnolia/Florida-2026-09/\n  Originals/  10 GB   camera masters + the exact mic chunks used. Never deleted.\n  Finished/  8.2 GB   these three files + a report.json each\n  Work/      3.5 GB   intermediates, regenerable, safe to delete"
+    }
+  ]
+}

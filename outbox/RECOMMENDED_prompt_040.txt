@@ -1,9 +1,0 @@
-Loop 39 REVISE. Three artifacts missing or contradictory:
-
-1. crown_fallback_ratio: show WHERE the value comes from. Run: `grep -n 'crown_fallback_ratio.*=' reelcore/framing/face_framing.py` — I need to see the assignment line, not the usage line. If it's loaded from preset, show the load. If it's a constant at file top, that's still a hardcoded literal with a variable name.
-
-2. Clipping claim vs. artifact: your audio_analysis.txt says 'Mic clipped samples: 1 (0.00%)' but your prose says 'TX03 mic is CLIPPED'. Which is true? If clipped, show peak at 0 dBFS and flat samples. If not clipped, retract the excuse and explain the real reason correlation failed.
-
-3. Florida video: run `ffprobe -v error -show_format -show_streams input/florida/video/Video-Sep-13-2026-9-44-27-AM.mov 2>&1 | head -60` and include raw output.
-
-Paste raw, no tables, no prose summaries. One artifact per claim.

@@ -1,0 +1,1011 @@
+[
+  {
+    "loop": 6,
+    "verdict": "BLOCK",
+    "stopped": false,
+    "title": "Phase 3 \u00a71.1/\u00a71.2 (ANALYZE_FACES / ANALYZE_SPEAKERS)",
+    "verified": [
+      "ffprobe_streams.json confirms ONE audio stream: index 1, aac, channels=2, channel_layout=stereo. There is exactly one pre-mixed stereo AAC track \u2014 NOT two independent mono mic tracks.",
+      "channel_energy.txt astats confirms the two channels are wildly asymmetric: Ch1 RMS -30.43 dB / peak -9.00 dB vs Ch2 RMS -45.12 dB / peak -25.46 dB. Ch2 is ~15 dB quieter across the board. This is a stereo room/camera mic, not discrete per-speaker mics.",
+      "speaker_timeline.json parsed: agreement_rate 0.9667, flagged=false, spk_a_frames=1693, spk_b_frames=0, both_frames=0, silence_frames=81. Confirms AG's report numbers.",
+      "Per-frame confidence in speaker_timeline.json IS noisy/realistic (0.077 \u2026 0.974 range), so the speaker timeline itself is not a flat placeholder.",
+      "face_confidence.txt self-discloses that spk_b confidence is a hardcoded literal: tracks.py line 234 `track_data[tid][\"confidence\"].append(1.0)` \u2014 flat 1.000 across all 1,774 frames."
+    ],
+    "unverified": [
+      "SUSPICIOUS PERFECTION / HARDCODED FIELD: spk_b confidence = 1.000 on every one of 1,774 frames, assigned by a literal `append(1.0)` at tracks.py:234. This is exactly the documented failure pattern. Confidence is not measured \u2014 it is a constant.",
+      "spk_b_frames=0. The second subject is NEVER the active speaker for the entire clip, yet its face track reports perfect 1.000 confidence every frame. A track that is 'perfectly detected' but never speaks, over a segment where the quieter channel is 15 dB down, reads as a detector that always finds *a* blob in the ROI and rubber-stamps it \u2014 not a real per-frame detection.",
+      "FOUNDATIONAL ASSUMPTION FALSIFIED: the report claims a 'fused active-speaker timeline fusing discrete-channel audio energy' and 'zero crosstalk'. The blueprint \u00a71.2 explicitly requires independent channels for per-mic VAD and says 'verify at ingest'. ffprobe proves there are NO discrete channels \u2014 it's one stereo stream with an asymmetric room mix. Any speaker result derived from 'per-mic VAD on each demuxed channel' is built on an input that does not exist.",
+      "'zero crosstalk' is unverified and meaningless here: with one stereo mic you cannot separate speakers by channel. The 96.67% agreement and 95.43% spk_a assignment more likely reflect that Ch1 (the loud channel) dominates and spk_b simply never crosses threshold \u2014 not a working two-mic ASD.",
+      "No face_tracks.json artifact was included. home_region ROIs [0,811,722,838] and [2102,844,598,661] are asserted in prose but the raw tracks JSON with per-frame boxes and the first-frame full-detection that supposedly derived them is not in the report dir. NO CLAIM WITHOUT ITS ARTIFACT.",
+      "'100 passing unit tests' asserted with no raw pytest stdout artifact. UNVERIFIED.",
+      "'facing' per-frame field (left/right/camera) required by \u00a71.1 \u2014 no artifact shows it was produced."
+    ],
+    "blocking": [
+      "Speaker fusion is built on a false input assumption. The standing rule is explicit: any speaker/crosstalk result depending on discrete Ch0/Ch1 is unverified until ffprobe proves the layout AND per-channel energy shows the second channel isn't dead. ffprobe proves the OPPOSITE \u2014 one stereo stream, Ch2 15 dB down. The VAD-per-channel design in \u00a71.2 must be reworked (or the source re-examined for a separate multi-track file) before ANALYZE_SPEAKERS can be trusted.",
+      "spk_b confidence is a hardcoded 1.0 literal (tracks.py:234). This violates 'measured, bounded, or preset \u2014 never a global constant' and is suspicious perfection. Face-track confidence must be a real measured quantity (blob area ratio, detector score, IoU-to-home_region, whatever), not append(1.0).",
+      "Missing artifacts: face_tracks.json (with per-frame boxes, confidence, facing) and raw pytest stdout. Cannot accept \u00a71.1/\u00a71.2 without them."
+    ],
+    "carried": [
+      "Step 0 gating items from the blueprint were never confirmed landed in a prior accepted loop (0.1 REEL_CONFIGS removal, 0.2 headroom/centre_x literals, 0.3 centre_x measured, 0.4 transcript re-transcribe, 0.5 real verify_phase2 Check 1, 0.6 LRA 8.2 / ROI first-frame / grep 233). If these are still open, \u00a71 should not have started.",
+      "grep for hardcoded ROI literals still owed per Step 0.6 \u2014 the home_region [0,811,...] / [2102,844,...] values must be shown to be derived per-clip, not baked in.",
+      "Report agreement rate is above 0.8 so clip is unflagged \u2014 but re-evaluate once the single-stereo-source reality is accounted for; 96.67% may be an artifact of one dominant channel."
+    ]
+  },
+  {
+    "loop": 7,
+    "verdict": "BLOCK",
+    "stopped": false,
+    "title": "Phase 3 \u00a71.1/\u00a71.2 (ANALYZE_FACES / ANALYZE_SPEAKERS re-architecture)",
+    "verified": [
+      "Confidence literal removed: confidence_grep.txt shows tracks.py:240 appends round(det_conf,3) and :249 appends 0.0 for gaps \u2014 no hardcoded 1.0 assignment in the face-track confidence path.",
+      "Face-track confidence is genuinely measured/noisy: spk_a confidence array in face_tracks_c1.json ranges ~0.451\u20130.826, no flat 1.000. confidence_dist.txt (min 0.465/max 0.712 spk_a, min 0.451/max 0.826 spk_b) matches the raw arrays. This claim is real.",
+      "home_region is derived per clip, not hardcoded: c1=[2109,825,599,676], c2=[2104,857,598,662], c3=[2108,836,602,666] differ across clips \u2014 consistent with first-frame detection, not a literal ROI.",
+      "mouth_motion_c1.txt is real per-frame optical motion (noisy, non-zero, both channels active, occasional 1.0000 peaks from per-frame normalization) \u2014 not a placeholder.",
+      "speaker_timeline_*.json frame counts match the report exactly (c1: 578/440/1/181; c2: 185/662/5/48; c3: 276/318/0/6) and agreement rates match (0.4409, 0.7228, 0.4702). Report numbers are traceable to the raw files.",
+      "All three clips are flagged:true, correctly honoring the <0.8 agreement rule from \u00a71.2."
+    ],
+    "unverified": [
+      "SUSPICIOUS PERFECTION IN speaker_timeline confidence: the *speaker-frame* confidence field is riddled with exact 1.000 values (c1 frames 7,23,36,39,41,80,...; c2 frames 199-214 nearly all 1.0; c3 frames 27-31,80-86,151-155,178,183-185,... long runs of 1.0). This is the very hardcoded-1.0 pattern the report claims to have eliminated \u2014 it was removed from tracks.py (face confidence) but appears untouched in speaker.py's per-frame confidence. No grep of speaker.py was provided to prove where these 1.0s come from.",
+      "AGREEMENT RATE IS A FAILURE, NOT A PASS: \u00a71.2 says 'if below 0.8, flag the clip.' All three clips are 0.44/0.72/0.47 \u2014 every clip fails the VAD/diarization agreement threshold. The report frames 'flagged:true across all three' and 'successfully passing the validation gate' as success. A 0.44 agreement rate means the two evidence sources disagree more than half the time; that is a red flag about the fusion, not a green light. No artifact explains WHY agreement is this low or that it's acceptable.",
+      "c3 is effectively single-speaker-dominated and mislabeled at the top: speaker_timeline_c3.json frames 0-231 are almost entirely spk_b, then flips to spk_a \u2014 but face_tracks_c3 spk_a's home_region is at x~2108 (right side) while the boxes at frame 0 are x~134 (left side). The track_id\u2192physical-person mapping is not proven consistent; no artifact ties spk_a/spk_b labels to a stable physical identity across clips.",
+      "The 0.8 seed confidence: every timeline's frame 0 is exactly confidence 0.8 (c1, c2, c3 all start 'spk_a/spk_b, confidence:0.8'). That looks like a hardcoded initialization constant leaking into a reported measurement. Not proven otherwise.",
+      "Weights 0.55 (mouth) / 0.45 (diarization) are asserted in prose but no grep/preset artifact was included showing they are preset-loaded rather than hardcoded literals in speaker.py.",
+      "'100 passing unit tests' \u2014 no test stdout .txt was included. UNVERIFIED per no-claim-without-artifact.",
+      "The channel-layout assumption is now claimed abandoned ('Silero VAD strictly as speech-vs-silence gate, per-channel attribution disproven') \u2014 but no ffprobe -show_streams / per-channel astats artifact was included to PROVE the mono/stereo question one way or the other. The standing rule requires that proof before anything downstream is baked in. It's still open.",
+      "This report covers \u00a71.1 AND \u00a71.2 together and self-declares held 'prior to \u00a71.3'. That is at the review boundary, acceptable in scope, but the substance fails."
+    ],
+    "blocking": [
+      "speaker.py per-frame confidence contains long runs of exact 1.000 \u2014 either prove (grep + assignment line) it is a genuine fused/normalized measurement, or it is the same hardcoded-perfection defect the report claims to have killed. Show the code that produces the SpeakerFrame.confidence value and a distribution of it.",
+      "Agreement rate 0.44/0.72/0.47 all fail the 0.8 gate. Do not report this as 'passing.' Explain the low agreement with a raw artifact (per-frame VAD-vs-diarization disagreement breakdown) and state whether the fusion is trustworthy at this agreement level.",
+      "No ffprobe -show_streams + per-channel astats artifact proving the source channel layout. The 'per-channel attribution disproven' claim must be backed by the raw stream/energy evidence, not asserted.",
+      "No test stdout for the '100 passing tests' claim.",
+      "frame-0 confidence 0.8 and weights 0.55/0.45 must be shown to be preset/derived, not literals."
+    ],
+    "carried": [
+      "Step 0 gating items from the blueprint (0.1 REEL_CONFIGS removal, 0.2 headroom_pct/centre_x_pct literals, 0.3 measured subject_center_x from patched QC, 0.4 transcript revert+re-transcribe, 0.5 real verify_phase2 Check 1 diff, 0.6 LRA 8.2 / ROI first-frame / grep 233) \u2014 none appear addressed in this report and remain owed before \u00a71.3.",
+      "track_id \u2192 stable physical-person mapping across clips still unproven."
+    ]
+  },
+  {
+    "loop": 8,
+    "verdict": "BLOCK",
+    "stopped": false,
+    "title": "Phase 3 \u00a71.1/\u00a71.2 (ANALYZE_FACES / ANALYZE_SPEAKERS)",
+    "verified": [
+      "channel_layout.txt: ffprobe shows ONE stereo aac stream (index 1, channel_layout stereo). astats confirms Ch1 RMS -30.39 dB vs Ch2 RMS -45.09 dB (~14.7 dB delta), Ch2 is a dead/ambient channel. The 'discrete per-mic VAD' assumption is correctly abandoned \u2014 single-track speech/silence gating is the only defensible path. This is a real, artifact-backed finding and I accept it.",
+      "confidence_dist.txt: eq1.0=0 across all three speaker timelines and both face tracks; speaker means 0.728/0.776/0.766 within [0.500,0.950]. No flat-1.000 field. Spot-checked speaker_timeline_c1.json (0.794, 0.79, 0.513, 0.5...) \u2014 genuinely noisy, matches the distribution.",
+      "confidence_grep.txt: speaker.py clips post_conf to [0.50,0.95] via sigmoid of margin (lines 397/406/413/419). No exact-1.0 clamp present. Consistent with the distributions.",
+      "preset_weights_grep.txt: weight_mouth 0.55 / weight_diarization 0.45 / speech_threshold 0.25 live in presets/edit/magnolia_interview.yaml and are loaded via load_edit_preset(); speaker.py reads fusion_cfg, not hardcoded literals.",
+      "All three timelines report flagged:true with agreement_rate below 0.8 (0.4409, 0.7228, 0.4702) \u2014 the flag logic fires as spec'd in \u00a71.2.",
+      "test_stdout.txt: 100 passed."
+    ],
+    "unverified": [
+      "CORE DEFECT \u2014 diarization channel is degenerate/constant, so the reported agreement rate is meaningless. In agreement_breakdown_c1.txt the diar_label column is literally 'spk_a' for frames 0\u2013654 (every single frame, through long silence gaps), then flips to 'spk_b' for the entire remainder. That is not word-level diarization from dallas1_transcript.json \u2014 it is two giant blocks. \u00a71.2 requires the diarization evidence to come from the transcript's per-segment speaker field. A two-block step function is either a stub or a broken read. The 44% 'agreement' is just mouth-motion flipping against a constant.",
+      "Because diarization is a step function, the 0.55/0.45 fusion is effectively mouth-motion-only for most of the clip, yet the report claims 'transcript diarization anchors true conversational turns.' The artifact contradicts the prose: diar anchors nothing here.",
+      "mouth_motion_c1.txt shows the mouth-motion signal saturates to exactly 1.0000 constantly (frames 9,34,52,86,99,100,105,107,127,134-137...) and both speakers frequently spike together. This is per-frame normalized to a rolling max, so 'active speaker = argmax(mouth)' is dominated by noise \u2014 hence spk_a/spk_b thrash every 1\u20133 frames in the breakdown. The tiebreak source is being used as a primary and it is not reliable.",
+      "speaker_timeline_c1 reports both_frames:1 and c3 both_frames:0 despite the c2 timeline containing multiple 'both' entries and heavy overlap:true runs \u2014 the both/overlap accounting is not obviously self-consistent; needs the counting code shown.",
+      "face_tracks boxes contain obvious detector garbage that fill_detection_gaps was supposed to smooth: e.g. c1 frame 15 box height jumps 385\u2192271 then back, repeated y=1184/1206/1222 spikes (~140px vertical jumps) every ~20 frames. \u00a71.1 says 'hold last valid, never centre-fallback' \u2014 these transient jumps are not being held/rejected. facing flips left/right frame-to-frame with no smoothing.",
+      "No \u00a71.1/\u00a71.2 metrics were produced that the blueprint requires downstream, and NO qc.json exists for any of this (Standing Rule 1). Report cites counts but there is no machine-readable QC sidecar for the speaker/face stage.",
+      "Report is one enormous run-on paragraph asserting the fusion is 'fully trustworthy' \u2014 that conclusion is contradicted by its own artifacts and is exactly the 're-label a miss as a pass' pattern."
+    ],
+    "blocking": [
+      "Diarization evidence is a constant/two-block step function, not transcript-derived per-segment labels. Prove the diar_label column is read from dallas1_transcript.json's per-segment speaker field and show it changing at real segment boundaries \u2014 or the agreement metric and the whole fusion are invalid.",
+      "Mouth-motion normalization saturates to 1.0000 and drives frame-to-frame speaker thrash; the median filter (window 9) is clearly not being applied before labeling, or is ineffective. Show the pre-smoothing vs post-smoothing speaker sequence and the switch count.",
+      "Face tracks show unrejected detector jumps (height/y spikes) that fill_detection_gaps/hold-last-valid should have caught. Show the gap-fill applied.",
+      "No qc.json for the ANALYZE_SPEAKERS / ANALYZE_FACES stage. Standing Rule 1 requires a machine-readable sidecar."
+    ],
+    "carried": [
+      "Stereo-vs-dual-mono channel question is now PROVEN (single stereo, Ch2 dead). Carry forward into Phase 4 cross-talk: there is no independent inactive channel to attenuate \u2014 Phase 4 \u00a72 mic de-bleed assumption must be revisited.",
+      "Step 0 items (0.1\u20130.6) claimed 'verified and accepted' but NONE of their artifacts appear in report_008. Do not treat Step 0 as re-confirmed by this report.",
+      "\u00a71.2 requires reporting agreement rate AND flagging <0.8 \u2014 mechanics work, but the number is only meaningful once diarization is real."
+    ]
+  },
+  {
+    "loop": 9,
+    "verdict": "BLOCK",
+    "stopped": false,
+    "title": "Phase 3 \u00a71.2 (ANALYZE_SPEAKERS) / \u00a71.1 (ANALYZE_FACES)",
+    "verified": [
+      "channel_layout.txt ffprobe confirms source is ONE pre-mixed stereo AAC stream (channels=2, channel_layout=stereo), NOT two discrete mono mics \u2014 and astats shows Ch1 RMS -30.4dB vs Ch2 RMS -45.1dB, i.e. Ch2 is ~15dB down and not an independent speaker mic. AG's speaker.py line 107 correctly notes discrete per-channel energy is NOT used. Foundational input assumption now PROVEN: no per-mic VAD is possible.",
+      "preset_weights_grep.txt + confidence_grep.txt confirm fusion weights (0.55/0.45), median-filter window (9), thresholds are loaded from presets/edit/magnolia_interview.yaml, not hardcoded literals.",
+      "confidence_dist.txt shows no suspicious perfection: speaker confidences span 0.500\u20130.943, eq1.0=0; face confidences 0.000\u20130.826. Mouth motion max 0.8685/0.9091, eq1.0=0. Real, noisy measurement.",
+      "fill_detection_gaps code holds last-valid, never centre-falls-back, raises on empty \u2014 matches spec \u00a71.1. Face continuity hold behavior confirmed in face_tracks_c1.json boxes (frames 79\u201384 identical to 78).",
+      "speaker_qc_*.json values match speaker_timeline_*.json headers exactly (c1: 0.424/26/180/0.746; c2: 0.5633/18/48/0.757; c3: 0.5202/7/7/0.763). QC sidecars are real."
+    ],
+    "unverified": [
+      "THE BLOCKER: agreement_rate is 0.424 (c1), 0.5633 (c2), 0.5202 (c3) \u2014 ALL flagged=true, ALL far below the 0.8 threshold the blueprint \u00a71.2 sets ('if below 0.8, flag the clip'). AG's report frames this as acceptable ('genuinely two speaker turns'). It is not acceptable \u2014 it is the stage failing its own gate on every clip.",
+      "AG's diarization-degeneracy defense is CONTRADICTED by its own raw file. agreement_breakdown_c1.txt shows diar_label is 'spk_a' for frames 0\u2013654 and 'spk_b' for ~662\u20131199 \u2014 i.e. for c1 the diarization is a near-constant single block, so 'agreement' is being measured against an almost-constant label. The mouth_label flips spk_a/spk_b dozens of times against that flat diarization. This isn't two clean turns agreeing; it's mouth-motion evidence disagreeing with a nearly-static diarization ~58% of the time.",
+      "Mouth-motion evidence looks like noise, not speaker attribution. In agreement_breakdown_c1.txt during a diar 'spk_a' block (e.g. frames 8\u201321, 30\u201336, 56\u201364, 93\u2013107...) mouth_label rapidly toggles spk_a/spk_b every few frames. mouth_motion_c1.txt confirms both speakers show comparable motion energy throughout \u2014 the lower-third frame-diff is picking up ambient/jaw motion on the listener, not identifying the talker.",
+      "The 'both_frames: 0' across all three clips is suspicious given real 2-shot interview overlap. speech_threshold/overlap logic apparently never fires 'both' even where diar shows rapid turn-taking (c2/c3). Distribution of the overlap flag needs to be shown against the fusion code path.",
+      "Diarization is the ONLY independent speaker signal left (per-mic VAD is impossible per channel_layout.txt). With mouth-motion this noisy, the fused timeline is effectively riding a single noisy source plus a near-static diarization label. switch_count=26 on c1 is being driven by mouth-motion thrash, not real speaker changes."
+    ],
+    "blocking": [
+      "agreement_rate < 0.8 on ALL THREE clips with flagged=true is a FAIL of the \u00a71.2 gate. A WARN/FAIL that this stage is supposed to satisfy cannot be waived by a prose explanation. Either the fusion is wrong or the mouth-motion tiebreak is worthless on this footage \u2014 resolve it, don't relabel it.",
+      "Now that channel_layout.txt PROVES single pre-mixed stereo (no discrete mics), the blueprint's primary evidence source (per-mic Silero VAD) is unavailable. The whole \u00a71.2 evidence model must be re-derived around diarization-as-primary + a mouth-motion signal that actually discriminates speakers \u2014 or the low agreement is structural and permanent. This is a design decision above a mechanical fix."
+    ],
+    "carried": [
+      "Step 0 gating items (0.1\u20130.6) from the blueprint were never confirmed landed in a prior accepted loop \u2014 audio constants removal, headroom/centre_x literals, verify_phase2 Check 1, LRA 8.2, ROI derivation. Do not let these vanish behind Phase 3 work.",
+      "\u00a71.1 face-track continuity/gap-fill is essentially verified and can be accepted once \u00a71.2 is resolved.",
+      "both_frames=0 overlap behavior still needs its distribution shown."
+    ]
+  },
+  {
+    "loop": 10,
+    "verdict": "BLOCK",
+    "stopped": false,
+    "title": "Phase 3 \u00a71.2 ANALYZE_SPEAKERS + \u00a71.1 gap-fill",
+    "verified": [
+      "Channel layout: ffprobe (channel_layout.txt) confirms single stereo AAC stream, channels=2, channel_layout=stereo \u2014 the pre-mixed-stereo reality is PROVEN, not two discrete mics. astats confirms Ch1 RMS -30.39 dB vs Ch2 RMS -45.09 dB (~14.7 dB lower). AG correctly treats VAD as speech-vs-silence only.",
+      "No 1.000 saturation: confidence_dist.txt shows speaker timelines span 0.500\u20130.943, face tracks 0.000\u20130.826, all eq1.0=0. mouth_motion_c1.txt ma_max=0.6114 mb_max=0.9091, no saturation. Confirmed by spot-reading speaker_timeline_c1.json (values like 0.826, 0.679, 0.5).",
+      "Fusion weights are preset-loaded, not hardcoded: preset_weights_grep.txt shows weight_mouth 0.55 / weight_diarization 0.45 / speech_threshold 0.25 in presets/edit/magnolia_interview.yaml, read via load_edit_preset in speaker.py:416-421.",
+      "fill_detection_gaps (fill_detection_gaps_code.txt, quantize.py:379-421) holds last-valid, raises on all-gap, never centre-falls-back. face_continuity_c1.txt shows held frames (15, 36-38, 79-84) matching prior valid box exactly \u2014 real hold behavior.",
+      "100 unit tests pass (test_stdout.txt: '100 passed, 4 warnings in 7.14s')."
+    ],
+    "unverified": [
+      "c1 agreement rate 0.83 is measured against a DEGENERATE diarization track. In agreement_breakdown_c1.txt diar_label is spk_a for frames 0\u2013654 (one continuous turn) and spk_b for ~662\u20131199. Agreeing 83% with a near-constant label is trivial and does NOT demonstrate the fusion attributes speakers correctly. AG's own note admits c1 '945\u2013985s genuinely consists of only two speaker turns.' The gate (>=0.80) is therefore not a meaningful pass on c1.",
+      "Mouth evidence is being OVERRIDDEN by diarization in exactly the frames that would test it. Frames 824\u2013842: diar=spk_b, mouth_raw=spk_a, fused=spk_b, scored agree=True. Frames 893\u2013962: repeated diar=spk_b vs mouth_raw=spk_a, fused follows diar. The 'primary' mouth signal (weight 0.55) is losing to 'secondary' diar (0.45) whenever they conflict \u2014 the opposite of the stated weighting \u2014 OR diar is dominating because mouth is noisy. Either way the report's claim that primary=mouth is unproven.",
+      "switches_per_min / mean shot duration / min shot / wide fraction / cut-on-pause fraction \u2014 NONE reported. These are \u00a71.2/\u00a71.3 metrics the blueprint explicitly requires. speaker_qc.json reports switch_count but not per-minute rate or the shot metrics.",
+      "'both_frames' overlap on c1 (177) is asserted as 'genuine conversational overlap' but the raw timeline shows long 'both' runs at confidence flat 0.5 (frames 5-10, 20-24, 30-36, 51-56, 182-188, 251-263...). Confidence pinned at exactly 0.500 across every 'both' frame is suspicious \u2014 looks like a default assignment, not a measured overlap certainty. Need the assignment line that sets overlap confidence.",
+      "Agreement rate denominator undefined in artifact. Report says c1 = 836/1007 during 'active speech' but silence_frames=184 and the breakdown counts False on many vad_speech=False rows \u2014 cannot reproduce 0.8302 from the raw file without the exact frame-selection rule."
+    ],
+    "blocking": [
+      "c1 agreement metric is not diagnostic because diar is degenerate (constant per half). Prove attribution another way: report agreement ONLY over frames where diar_label actually changes speaker within a short window, OR over a hand-checked ground-truth segment. A 0.83 against a two-value track is not acceptance-grade.",
+      "Resolve the mouth-vs-diar override: with weight_mouth=0.55 > weight_diar=0.45, explain (from source + a worked frame) why fused follows diar on frames 824-842 and 893-962 where mouth_raw=spk_a. If diar is overriding primary evidence, the weighting is not doing what the report claims.",
+      "The flat-0.500 confidence on every 'both' and every silence-boundary frame must be shown to be computed, not a hardcoded default. Paste the source lines that assign confidence for the 'both'/None branches."
+    ],
+    "carried": [
+      "\u00a71.3 BUILD_EDIT shot metrics (switches/min, mean/min shot, wide fraction, cut-on-pause) still owed.",
+      "Step 0 items from prior loops: confirm centre_x measured from patched qc.py, transcript re-transcribe with vocabulary ('body'), verify_phase2 Check 1 real diff \u2014 none re-addressed in this report; do not lose them.",
+      "Face home_region values (c1 [2109,825,599,676], c2 [2104,857,598,662], c3 [2108,836,602,666]) look derived per-clip and consistent \u2014 accept provisionally, but confirm they came from first-frame full detection, not a literal."
+    ]
+  },
+  {
+    "loop": 11,
+    "verdict": "REVISE",
+    "stopped": false,
+    "title": "Phase 3 \u00a71.2 (ANALYZE_SPEAKERS) \u2014 Prompt 011 blocking items",
+    "verified": [
+      "Channel layout PROVEN: channel_layout.txt ffprobe shows 1 audio stream, channels=2, channel_layout=stereo \u2014 a single pre-mixed stereo stream, NOT two discrete mono mics. astats: Ch1 RMS -30.39dB, Ch2 RMS -45.09dB (Ch2 ~15dB down, ambient). AG correctly does NOT use per-mic VAD (speaker.py:107 comment confirms). The blueprint's primary evidence source is unavailable and AG adapted \u2014 this resolves the standing channel-layout assumption honestly.",
+      "Frame-835 arithmetic verified from mouth_motion_c1.txt: mouth_a[835]=0.3079, mouth_b[835]=0.0180 (matches raw table line 835). score_a=0.55*0.3079=0.1693, score_b=0.45*1.0=0.4599 \u2192 spk_b. Weights 0.55/0.45 confirmed in preset_weights_grep.txt.",
+      "Confidence is computed, not hardcoded: confidence_grep.txt shows lines 455/469/476/482 all use np.clip(...); confidence_dist.txt shows eq1.0=0 across all timelines and a real spread (c1 min0.500 max0.918 mean0.699). The 0.500 'both' values are genuine lower-bound clamps of min(sa,sb) which maxes at 0.4789.",
+      "c1 agreement 0.8302 = 836/1007 arithmetic is internally consistent with the selection rule speech_mask & (diar_a XOR diar_b); speaker_qc_c1.json reports 0.8302, matches.",
+      "fill_detection_gaps raises rather than centre-falls-back (code confirmed); face continuity holds-last-valid confirmed in face_continuity_c1.txt.",
+      "100 tests pass (test_stdout.txt)."
+    ],
+    "unverified": [
+      "The c1 boundary_agreement.txt is INTERNALLY CONTRADICTED by agreement_breakdown_c1.txt. boundary_agreement.txt shows frames 647-654 as fused=None/spk_a with diar=spk_a, and 655-677 as 'both'. But agreement_breakdown_c1.txt at those exact frames shows fused_label=silence(651), spk_a(652-654), both(655-678) AND diar_label='none' at 655-661 then spk_b at 662+. The two artifacts disagree on diar_label for the SAME frames (647-654: one says spk_a, other says spk_a \u2014 ok; but 662+ one says spk_b as diar, breakdown says diar spk_b too). More seriously: boundary_agreement.txt reports the C1 boundary at frame 662, but agreement_breakdown_c1.txt shows the fused timeline transitions spk_a\u2192both\u2192spk_b around 655-679 while diar 'none' gap sits 655-661. The 12.5% boundary agreement is being explained away as 'conversational overlap (both)' \u2014 that is the exact 'relabel a miss as a pass' pattern. A 'both' verdict spanning 24 frames at a clean single-turn diarization boundary (spk_a\u2192spk_b) is a MISS, not overlap.",
+      "mouth_motion_c1.txt frame 835 is labeled 'mouth_spk_a (Dr. Fenton)' but this is reel_c1 whose window is 945-985s where diarization (diarization_segments_c1.txt) has spk_a=interviewer, spk_b=Dr.Saba. Frame 835 \u2192 t=972.833s falls in spk_b's segment (967.08-973.52 spk_b). Fusion picked spk_b. Fine. BUT the report calls spk_a 'Dr. Fenton' \u2014 no artifact establishes the spk_a/spk_b \u2192 real-name mapping. Cosmetic, not blocking, but names are unsourced.",
+      "both_frames count discrepancy: speaker_qc.json c1 both_frames=177, but the aggregate speaker_qc.json and speaker_timeline_c1.json both say 177 \u2014 consistent. However the raw 'both' count AG claims for the confidence proof is '204 raw both frames' (confidence_assignment_source.txt) vs 177 post-smoothing. AG did not show the raw-204 list; the min(sa,sb) span [0.1113,0.4789] is asserted with NO artifact enumerating those 204 values. UNVERIFIED \u2014 this is the 'clean summary without the raw file' pattern.",
+      "c1 has 177 both_frames + a 24-frame 'both' block straddling the only real turn boundary. This suggests the is_both trigger (mouth_a\u22650.20 AND mouth_b\u22650.20) fires on cross-talk/listener motion far too readily. c1 switch_count=56 over 1200 frames is high. No cut-on-pause or shot metrics yet (that's \u00a71.3) but the speaker timeline quality feeding it is questionable at boundaries."
+    ],
+    "blocking": [
+      "Resolve the c1 boundary behavior. A 24-frame 'both' block (655-678) sitting exactly on the single spk_a\u2192spk_b diarization turn is being reported as legitimate overlap to excuse 12.5% boundary agreement. Prove it is real simultaneous speech, not a mis-fire: paste, for frames 655-678, the raw mouth_a, mouth_b, diar_a, diar_b, sa, sb, is_both-branch-taken, for c1 (you have mouth_motion_c1.txt \u2014 cross it with diar). If mouth_b is only elevated because of listener nodding/cross-bleed while diar says a single speaker, that is a miss and the is_both mouth threshold (0.20) must be reconsidered \u2014 not relabeled.",
+      "Produce the raw artifact behind the '204 raw both frames, min(sa,sb) span 0.1113\u20130.4789' claim. Dump the actual per-frame min(sa,sb) for every raw 'both' frame in c1 to a file. No claim without its artifact."
+    ],
+    "carried": [
+      "spk_a/spk_b \u2192 real-name (Dr. Saba / interviewer) mapping is unsourced; name it from catalog or drop the names from prose.",
+      "Step 0 gating items (0.1\u20130.6 from PHASE3_BLUEPRINT) \u2014 confirm these landed before \u00a71.3; \u00a71.2 was allowed to proceed but Step 0 was gated ahead of \u00a71.",
+      "c1 switch_count=56 and both_frames=177 look high; watch whether \u00a71.3 hysteresis/min_shot absorbs this or whether the speaker timeline needs tightening first.",
+      "Channel-layout finding (pre-mixed stereo, dead-ish Ch2) is now PROVEN and should be recorded so Phase 4 multi-mic de-bleed does not assume discrete channels."
+    ]
+  },
+  {
+    "loop": 12,
+    "verdict": "REVISE",
+    "stopped": false,
+    "title": "Phase 3 \u00a71.2 (ANALYZE_SPEAKERS) \u2014 Prompt 012 blocking items",
+    "verified": [
+      "c1 boundary 655-678 'both' run is a genuine MISS, not real overlap: c1_boundary_650_682.txt shows every frame 655-678 fired on the 'mouth-AND' clause; at 662-678 diar_b=1.0/diar_a=0.0 with sb (0.5611-0.7562) dominating sa (0.1144-0.1791). Confirmed from raw.",
+      "both_minscore_c1.txt enumerates 204 pre-smoothing 'both' frames; I confirmed header stats min=0.1113 (frame 30), max=0.4789 (frame 200), and every listed min_sa_sb < 0.50 \u2014 so the clip to 0.500 on the 'both' branch is explained, not a hardcoded placeholder. Confidence_assignment_source.txt line 469 shows np.clip(min(sa,sb),0.50,0.95).",
+      "Fusion weights are preset-loaded, not literals: preset_weights_grep.txt shows weight_mouth 0.55 / weight_diarization 0.45 / speech_threshold 0.25 in magnolia_interview.yaml, and speaker.py:418-421 reads them via load_edit_preset.",
+      "c1 agreement 0.8302 arithmetic checks out: c1_agreement_arithmetic.txt gives 836/1007 = 0.830189; denominator = vad_speech AND diar!=none. speaker_qc_c1.json agreement_rate=0.8302 matches.",
+      "Confidence is not suspiciously flat: confidence_dist.txt shows eq1.0=0 across all face tracks and speaker timelines; distributions span 0.500-0.943. Non-'both' confidences are sigmoid-derived (speaker.py:474-482).",
+      "fill_detection_gaps holds last-valid and raises rather than centre-falling-back (fill_detection_gaps_code.txt); face_continuity_c1.txt shows held frames, consistent with the code.",
+      "c2/c3 turn-boundary agreement 87.3% and 100% from boundary_agreement.txt; c2 qc 0.8911, c3 qc 0.975 match their sidecars."
+    ],
+    "unverified": [
+      "CHANNEL LAYOUT DISPROVES THE PER-MIC VAD SOURCE. channel_layout.txt ffprobe shows ONE aac stereo stream (channels=2, channel_layout=stereo), and astats shows Ch1 RMS -30.4 dB vs Ch2 RMS -45.1 dB, peak -9.0 vs -25.5 \u2014 this is a pre-mixed stereo camera-mic source, NOT two independent mono lav mics. The blueprint \u00a71.2 lists 'Per-mic VAD energy (Silero on each demuxed channel)' as the PRIMARY evidence source, weight primary. There is no independent per-channel speaker energy here. speaker.py:107 even admits 'Discrete per-channel audio energy is NOT used for speaker attribution on pre-mixed'. So the fusion is actually mouth-motion (0.55) + diarization (0.45) only \u2014 VAD is a speech gate, not a speaker cue. The report never states this; it must be made explicit because the whole \u00a71.2 design leaned on discrete channels.",
+      "PROPOSED FIX NOT APPLIED. The report proposes removing/gating the mouth-AND clause but confidence_assignment_source.txt and fusion_explanation_frame_835.txt line 462-465 still contain the unconstrained (mouth_a>=0.20 and mouth_b>=0.20) clause. The miss is diagnosed but NOT fixed. The both_frames counts (c1=177) still include these false 'both' runs.",
+      "overlap_threshold 0.08 cited in speaker.py:421 as fusion_cfg.get('overlap_threshold', 0.08) but preset_weights_grep.txt of magnolia_interview.yaml shows only weight_mouth/weight_diarization/speech_threshold under speaker_fusion \u2014 no overlap_threshold key. So 0.08 is currently a hardcoded default, not preset-backed. Add it to the yaml or show the grep line.",
+      "speaker_qc.json both_frames for c1 = 177 but the raw pre-smoothing enumeration is 204; smoothing reduces it. That's internally consistent, but the 177 'both' frames are largely spurious given the mouth-AND defect above \u2014 the metric is reporting a real number over a broken decision rule.",
+      "agreement_breakdown_c1.txt frames 824-842 and 893-951 show fused=spk_b while diar=spk_a yet agree=True \u2014 the 'agree' column appears to compare against a smoothed/segment diar label, not the per-frame diar_label shown. The 0.8302 arithmetic grep counts 'True.*True' rows; the column semantics need one line of explanation so the agreement number isn't silently inflated."
+    ],
+    "blocking": [
+      "Apply the mouth-AND fix (Option A or B) and re-emit speaker timelines + qc for c1/c2/c3. The diagnosis is accepted; a diagnosis with the defect still live in the source is not a completed stage.",
+      "State explicitly, in the report and in code comments, that the source is single pre-mixed stereo (not discrete mics) and that per-mic VAD is NOT a speaker-attribution source here \u2014 only a speech gate. Re-label the \u00a71.2 evidence table accordingly.",
+      "Add overlap_threshold to presets/edit/magnolia_interview.yaml (or justify the bound) and grep-prove it; remove the 0.08 literal default."
+    ],
+    "carried": [
+      "Explain the 'agree' column semantics in agreement_breakdown_c1.txt (per-frame vs segment diar) so the 0.8302 figure is auditable.",
+      "Step 0 items from the blueprint remain unconfirmed in this loop's artifacts (headroom_pct/centre_x_pct literals, verify_phase2 Check 1 real diff, transcript re-transcribe, ROI first-frame derivation, LRA 8.2 bound). Do not let these lapse before \u00a71 signoff.",
+      "After the fix, re-run test suite; test_stdout.txt shows 100 passed but predates the clause change."
+    ]
+  },
+  {
+    "loop": 13,
+    "verdict": "REVISE",
+    "stopped": false,
+    "title": "Phase 3 \u00a71.2 \u2014 ANALYZE_SPEAKERS (channel proof + both-frame fix + agreement arithmetic)",
+    "verified": [
+      "Channel layout is single pre-mixed AAC stereo, NOT two discrete mono mics: channel_layout.txt ffprobe shows channels=2, channel_layout=stereo, one audio stream (index 1). astats confirms Ch1 RMS -30.4dB, Ch2 RMS -45.1dB \u2014 Ch2 is ~15dB lower and clearly not an independent second mic. AG's Option-A decision (mouth 0.55 + diar 0.45, per-mic VAD demoted to a speech gate only) is the correct and honest conclusion from this evidence. This resolves the standing foundational assumption.",
+      "speaker.py:107-109 documents that per-channel audio is NOT used for attribution \u2014 matches the fusion code.",
+      "Fusion weights are preset-driven, not hardcoded: preset_weights_grep.txt + fusion_explanation shows w_mouth/w_diar/threshold/overlap loaded from presets/edit/magnolia_interview.yaml via load_edit_preset (speaker.py:414-420). Hand-worked frame 835 arithmetic (0.55*0.3079 + 0.45*0.0 = 0.1693 vs 0.55*0.018 + 0.45*1.0 = 0.4599 -> spk_b) checks out against mouth_motion_c1.txt values.",
+      "Confidence is computed, not a flat literal: confidence_assignment_source.txt + confidence_dist.txt show speaker_c1 min=0.500 max=0.918 mean=0.742, eq1.0=0; face tracks eq1.0=0/1200. Sigmoid-of-margin and sil_certainty branches are real. No suspicious flat 1.000.",
+      "fill_detection_gaps (quantize.py) holds last valid, raises on total failure, never centre-falls-back \u2014 matches blueprint \u00a71.1.",
+      "100 unit tests pass (test_stdout.txt).",
+      "c1 both-frames run at 655-678 is eliminated in the fused timeline: c1_boundary_650_682.txt shows is_both=False on every frame 650-682; speaker_qc_c1.json reports both_frames=0."
+    ],
+    "unverified": [
+      "AGREEMENT RATE IS INTERNALLY CONTRADICTED. report.md and speaker_qc.json/speaker_qc_c1.json assert c1 agreement_rate=0.999 (1006/1007). But AG's own artifact c1_agreement_arithmetic.txt computes 836/1007 = 0.8302 for the SAME reel with the SAME denominator (1007). Two different numerators (1006 vs 836) for the identical evaluated set cannot both be true. The 0.999 in the shipped qc.json is the number that feeds 'flagged=false'; the 0.83 is what a direct grep of agreement_breakdown_c1.txt supports.",
+      "agreement_breakdown_c1.txt DOES NOT SUPPORT 0.999. In that raw file, fused_label is 'spk_a' for essentially all of frames 0-654 while diar_label flips to 'spk_b' for large stretches (e.g. 7-23, 32-37, 53-65, 93-107, 163-171, 175-209, 227-245, 252-258, 261-280, 283-320, 329-343, 348-359, 375-419, 423-439, 452-454, 480-484, 488, 491-494, 499-504, 516-543, 559-563, 579-588, 593-607, 618-621) yet 'agree' is marked True on every one of those rows. That is the same false-True mislabel flagged in Review 12. AG's Item-4 'column-order misreading' explanation is refuted by AG's OWN file: at frame 7 fused=spk_a, diar=spk_a per this file \u2014 but the diarization SEGMENTS artifact (diarization_segments_c1.txt) shows the reel window is spk_a 943-966s then spk_b 967s+, i.e. frame-level diar_b never legitimately equals spk_a's fused label for hundreds of these frames. The 'agree' column is computing True from something other than fused==diar, so 0.999 is not a real agreement measurement.",
+      "boundary_agreement.txt (AG's own artifact) reports c1 turn-boundary agreement of 3/24 = 12.5% at the single detected boundary (frame 662), while claiming c2=87.3% and c3=100%. A 12.5% boundary agreement on c1 is flatly inconsistent with a 99.9% global agreement on c1 and points to the fused c1 timeline being wrong through the spk_a->spk_b transition (fused holds spk_a far too long: frames 655-661 fused=spk_a while diar has already gone silent/none and mouth_b dominates).",
+      "c1 fused timeline looks substantively wrong, not just mislabeled. speaker_timeline_c1.json holds spk_a from frame 0 through ~658 despite diarization_segments showing spk_b turns and mouth_motion_c1.txt showing mouth_b > mouth_a across long stretches (e.g. 16-23, 80-86, 165-169, 197-203, 370-375, 697-704). The mouth+diar fusion with binary diar as a +0.45 prior is pinning to whichever speaker the transcript labels \u2014 and on c1 the transcript window (943-966 all spk_a) makes fused=spk_a nearly monolithic, which is why 'agreement' looks perfect while boundary agreement collapses. This is the classic 'relabel/looks-perfect' pattern.",
+      "agreement_rate is what drives flagged=false. Blueprint \u00a71.2 says flag the clip if agreement < 0.8. If the real c1 number is 0.83 (AG's arithmetic file) or effectively ~12.5% at the boundary, the clip may need flagging \u2014 the 0.999 masks that."
+    ],
+    "blocking": [
+      "Reconcile c1 agreement_rate: 0.999 (qc.json) vs 0.830 (c1_agreement_arithmetic.txt) \u2014 both cannot be right. Produce the exact code that computes the number written to speaker_qc_c1.json and a raw recomputation from agreement_breakdown_c1.txt.",
+      "The 'agree' column in agreement_breakdown_c1.txt marks True on rows where fused_label != diar_label (e.g. frames 7-23 region and dozens more). Fix the agreement computation OR prove line-by-line that fused==diar on those rows. Until then agreement_rate is UNVERIFIED and flagged=false is not trusted.",
+      "Explain the c1 boundary agreement of 12.5% and whether the c1 fused timeline holding spk_a from 0-658 is correct given diarization_segments_c1.txt and mouth_motion_c1.txt."
+    ],
+    "carried": [
+      "Channel-layout foundational question is now RESOLVED (single stereo, Ch2 dead-ish) \u2014 carry this forward so Phase 4 de-bleed does not assume discrete mics.",
+      "\u00a71.1 ANALYZE_FACES artifacts (face_tracks, fill_detection_gaps, home_region derived per clip) look good but were not the focus of this loop \u2014 confirm formal acceptance when \u00a71.2 lands.",
+      "Still open from Step 0 / prior loops (not re-litigated here): 0.5 verify_phase2 Check1 real diff, transcript re-transcribe with vocabulary ('body'), centre_x measured, LRA 8.2 bound. Do not lose these before \u00a71.3.",
+      "Once agreement is trustworthy, need switches/min, mean/min shot duration, wide fraction, cut-on-pause fraction from BUILD_EDIT (\u00a71.3) \u2014 not yet produced."
+    ]
+  },
+  {
+    "loop": 14,
+    "verdict": "REVISE",
+    "stopped": false,
+    "title": "Phase 3 \u00a71.2 (ANALYZE_SPEAKERS)",
+    "verified": [
+      "c1 agreement arithmetic 1006/1007=0.999007 confirmed by parsing agree_recompute_c1.txt SUMMARY and counting the one mismatch at frame 651 (vad=True, fused=silence, diar=spk_a) in agreement_breakdown_c1.txt \u2014 matches speaker_qc_c1.json.",
+      "diar_label is genuinely spk_a at frames 7 and 300: diarization_segments_c1.txt shows 943.16-948.64 spk_a (frame7 t=945.2) and 953.62-960.74 spk_a (frame300 t=955.0).",
+      "Column identity in agreement_breakdown_c1.txt confirmed: col5 mouth_raw diverges to spk_b during listener motion while col4 diar_label stays spk_a and agree compares col3==col4.",
+      "Confidence is computed, not a flat literal: confidence_dist.txt shows speaker_c1 min0.500/max0.918/mean0.742, eq1.0=0; assignment lines 454/469/475/481 use np.clip(...,0.50,0.95); the flat 0.500 blocks are explained (clip floor on both/silence).",
+      "Fusion weights are preset-driven not hardcoded: preset_weights_grep.txt shows weight_mouth 0.55 / weight_diarization 0.45 loaded via load_edit_preset (speaker.py 415-419).",
+      "fill_detection_gaps holds last valid and raises rather than centre-falling-back (fill_detection_gaps_code.txt).",
+      "boundary_agreement.txt turn boundaries parse correctly (c1 19/20, c2 55/55, c3 53/53)."
+    ],
+    "unverified": [
+      "FOUNDATIONAL: channel_layout.txt proves ONE pre-mixed stereo AAC stream (1 audio stream, channel_layout=stereo), NOT two independent mono mics. astats shows Ch1 RMS -30.4 dB vs Ch2 RMS -45.1 dB (~15 dB down) \u2014 Ch2 is a room/ambient channel, not a second speaker mic. Per-mic VAD (the blueprint's PRIMARY evidence source) is therefore unavailable and was not used (speaker.py line107 comment).",
+      "SUSPICIOUS PERFECTION / SELF-DIFF: with per-mic VAD absent, fusion is mouth(0.55)+diar(0.45). The +0.45 diar baseline dominates (fusion_explanation_frame_835 shows mouth alone needs 83.6% to overcome it), so fused_label \u2248 diar_label whenever diar is present. Agreement rate is then measured against that same diarization \u2014 the 0.999/1.000/1.000 is diarization largely agreeing with itself, not independent corroboration. This inflates the gate.",
+      "agreement denominator EXCLUDES frames where diar='none' (valid_eval requires XOR of diar_a/diar_b). c1: 1007 of 1200 frames evaluated; the 7 diar=none frames and 186 silence frames are dropped. The 'both' clause is never exercised on real data (both_frames=0 all three clips) \u2014 the overlap branch is untested against footage.",
+      "speaker_c3 confidence hits 0.943 at frame203 and c2 0.926 at frame892 \u2014 high but within clip; not perfection, acceptable, but note c3 has only 6 silence frames / switch_count 7 (near-single-speaker), so its 1.000 is trivially easy.",
+      "No independent ground truth for active-speaker correctness: every 'proof of correctness' (frames 0-654, 835) reasons FROM diarization, which is the same signal being agreed-with. No VAD-vs-diar agreement rate is reported as the blueprint \u00a71.2 explicitly requires ('Report agreement rate between VAD and diarization; if below 0.8, flag')."
+    ],
+    "blocking": [
+      "Channel layout resolved as pre-mixed stereo with a dead/ambient Ch2 \u2014 the blueprint's PRIMARY (per-mic VAD) evidence source does not exist for this footage. The \u00a71.2 agreement metric as implemented compares fused output against the diarization that dominates it, so it cannot certify speaker attribution. AG must either (a) compute the blueprint-specified VAD-vs-diarization agreement using master-audio Silero VAD as an INDEPENDENT signal from diarization, or (b) get Commander sign-off to redefine the \u00a71.2 metric given no discrete mics."
+    ],
+    "carried": [
+      "Step 0 gating items (0.1-0.6) \u2014 no evidence in this report that REEL_CONFIGS constants, headroom_pct/centre_x_pct literals, verify_phase2 Check1, transcript re-transcribe, or LRA 8.2 were closed. Confirm before any \u00a71.2 accept.",
+      "'both'/overlap branch has zero real-footage coverage (both_frames=0 x3) \u2014 needs a clip with genuine crosstalk or a synthetic integration case.",
+      "face_tracks home_region derived per clip (c1 [2109,825,599,676]) \u2014 spot-check but not this loop's gate."
+    ]
+  },
+  {
+    "loop": 15,
+    "verdict": "REVISE",
+    "stopped": false,
+    "title": "Phase 3 \u00a71.2 \u2014 Channel reality + speaker agreement (Step 0 gating context)",
+    "verified": [
+      "Channel layout: input/raw_part_2_Dallas1.mov has ONE pre-mixed AAC stereo stream (channel_layout.txt ffprobe: 1 audio stream, channels=2, stereo). Confirmed no discrete mic tracks.",
+      "Per-channel energy: astats Ch1 RMS -30.39 dB, Ch2 RMS -45.09 dB \u2014 Ch2 is ~14.7 dB down. AG's claim Ch2 is dead/ambient is supported by the raw astats.",
+      "No per-mic VAD attribution in code: grep of speaker.py confirms VAD runs on downmixed mono (-ac 1), diar_a/diar_b come from transcript segments only, no channel-energy speaker attribution. This is the honest position given the source.",
+      "Confidence is computed, not hardcoded: confidence_assignment_source.txt shows sigmoid/np.clip formulas; confidence_dist.txt shows spread (speaker_c1 min 0.500 max 0.918 mean 0.742, eq1.0=0). No flat-1.000 field.",
+      "both_frames=0 explained: both_minscore_c1.txt shows all 204 raw 'both' candidate frames have min(sa,sb) max=0.4789 < 0.50 threshold; after window-9 modal smoothing none survive as 'both'. Consistent with speaker_qc.json both_frames=0.",
+      "fill_detection_gaps holds last valid, never centre-fallback, raises on total failure (fill_detection_gaps_code.txt) \u2014 matches blueprint \u00a71.1.",
+      "Fusion weights from preset, not literals: preset_weights_grep.txt shows weight_mouth 0.55 / weight_diarization 0.45 / speech_threshold 0.25 loaded via load_edit_preset.",
+      "100 unit tests pass (test_stdout.txt)."
+    ],
+    "unverified": [
+      "THE AGREEMENT RATE IS CIRCULAR. c1_agreement_arithmetic.txt states the fused decision is score_a=w_mouth*mouth+w_diar*diar with w_diar=0.45, and the agreement metric compares fused_label vs diar_label. fusion_explanation_frame_835.txt proves diarization is a +0.45 binary prior that mouth motion (weighted 0.55) can rarely overcome (needs mouth>0.836). So the 'active speaker' is essentially the diarization label, and 0.999/1.0 agreement is the timeline agreeing with its own dominant input. This is the 'file diffed against itself' failure pattern. The single disagreeing frame in c1 (659-661, per agreement_breakdown) is only in a diar='none' gap where mouth breaks the tie. This metric does NOT validate active-speaker correctness.",
+      "mouth_raw disagrees with fused on a LARGE fraction of speech frames (agreement_breakdown_c1.txt: mouth_raw flips spk_a/spk_b constantly while fused stays locked to diar). The tiebreak evidence source is being overridden ~everywhere diar is present \u2014 the report never quantifies how often mouth and diar disagree, which is the real measure of whether mouth motion adds anything.",
+      "vad_diar_speech_agreement ratio 0.839 (numerator 1007/1200) is a SPEECH-vs-SILENCE agreement, not speaker agreement \u2014 fine, but the report leans on it as if meaningful; the blueprint's required 'agreement rate between VAD and diarization, flag if <0.8' is being satisfied by a near-tautological speech-gate comparison.",
+      "c2/c3 agreement = 1.000 exactly: suspicious perfection. Given circularity above, 1.000 is expected but is not evidence of quality.",
+      "Step 0 items 0.1-0.6 are RESTATED as CLOSED with no fresh artifacts this loop: no audio_profile.json, no reel_1.qc.json showing subject_center_x, no verify_phase2.py Check-1 diff output, no re-transcription 'body' result, no grep of scripts/ for the literals. These were the open blocking items and remain UNVERIFIED here."
+    ],
+    "blocking": [
+      "Report an honest speaker-attribution accuracy that is NOT circular: e.g. frames where mouth-motion and diarization DISAGREE, and which one matches ground truth. The current 0.999/1.0 measures the timeline against its own dominant input and cannot be accepted as validating ASD.",
+      "Quantify mouth-vs-diar disagreement rate per clip from the raw mouth_motion + diar arrays. If mouth never overrides diar, state that the mouth tiebreak is effectively inert on this source and justify keeping it.",
+      "Step 0 (0.1-0.6) artifacts must actually appear in a report dir before \u00a71.2 is signed off \u2014 they are asserted CLOSED with zero supporting files this loop."
+    ],
+    "carried": [
+      "home_region values (c1 [2109,825,599,676], c2 [2104,857,598,662], c3 [2108,836,602,666]) are per-clip derived and stored \u2014 looks right, but confirm they come from first-frame full detection, not a literal, when tracks.py is reviewed.",
+      "confidence floor of 0.50 via np.clip everywhere \u2014 acceptable as a floor but means 'confidence' is never below 0.5; note this when QC thresholds are set.",
+      "single-mono-channel reality means Phase 4 multi-mic cross-talk de-bleed (keyed to speaker_timeline) has NO independent channel to attenuate \u2014 flag now for Commander before Phase 4 is scoped."
+    ]
+  },
+  {
+    "loop": 16,
+    "verdict": "BLOCK",
+    "stopped": false,
+    "title": "Phase 3 Step 0 (gating fixes) + Item 1 mouth/diar reality",
+    "verified": [
+      "0.1 \u2014 DSP derivation is real: dsp_derivation.txt shows gate_threshold_db = speech_median + offset, gate_ratio/range from measured_snr, comp_threshold from speech_median, limiter_ceiling from delivery true peak. Derived values (gate -27.0, ratio 2.9, range -15.7, comp -28.5, limiter -1.0) print in verify_phase2_stdout.txt render log. No per-clip audio literals shown.",
+      "0.2/0.6 \u2014 forbidden_literals_grep.txt for '10.8|35.1|233|frame[900:1500' in scripts/ returned EMPTY (exit 1). Those literals are gone from scripts/.",
+      "0.3 \u2014 qc.py has connectedComponentsWithStats at line 248 (qc_connected_components.txt). Measured framing_subject_center_x = 0.3305 in reel_1.qc.json \u2014 real ~33%, matches the wood-wall correction, PASS in 30-70 band.",
+      "0.3 \u2014 home_region is dynamic per clip: render log shows 'Dynamic home_region: (14, 911, 608, 638)' computed from first-frame detection, not a hardcoded ROI.",
+      "0.4 \u2014 'body' transcribed unassisted from audio (transcript_body_grep.txt: seg 11 prob 0.99895, seg 39 prob 0.99582), vocabulary initial_prompt loaded from presets/captions/vocabulary.txt. No hand-patch.",
+      "0.5 \u2014 verify_phase2.py Check 1 does a real render from manifest to fresh path, runs QC, diffs 6 fields within tolerance, all PASS. Checks 2 & 3 exercise real TRANSCRIBE/ANALYZE_AUDIO with mid-run kill and cache reuse.",
+      "Item 1 \u2014 mouth_vs_diar_c1.txt is real, noisy per-frame data. Counts recompute correctly: on the 491 disagreement frames, fused followed diarization on 490 and mouth on 0. Mouth motion is inert; timeline is diarization-driven. This is an honest walk-back of the earlier suspicious 0.999 'agreement.'"
+    ],
+    "unverified": [
+      "FOUNDATIONAL: audio_profile.json shows channel_count=1, a single mono channel (channel_index 0 only), correlation_matrix [[1.0]]. This is the pre-mixed single-stream case. The blueprint \u00a71.2 makes Per-mic VAD the PRIMARY speaker evidence and explicitly requires independent channels 'verify at ingest.' There are NOT two independent mic channels here. AG's report prose asserts 'Ch2 dead at -45.1 dB' but NO ffprobe -show_streams and NO per-channel astats artifact is in the report dir to prove the source layout OR that second-channel energy. The -45.1 dB number has no artifact behind it \u2014 UNVERIFIED claim.",
+      "LRA discrepancy: reel_1.qc.json measurements say lra 8.4 (QC PASS, expected <=11.0), but the render stdout says 'LRA: 8.5 LU (Target: 5-8 LU)' \u2014 outside the 5-8 target band cited in the render log itself. Step 0.6 explicitly asked to fix LRA into 5-8 or propose a bound with reason. AG did neither; it silently relies on the QC gate's looser <=11.0 while the DSP log flags its own target miss. Unreconciled.",
+      "diar_winner column in mouth_vs_diar_c1.txt is single-speaker-dominant per long run (spk_a for frames 0-654, then spk_b) \u2014 consistent with transcript segment diarization, but no artifact ties this column back to dallas1_transcript.json segment boundaries. Plausible, not independently checked.",
+      "room resonance still WARN at 233 Hz +14.2 dB in reel_1.qc.json \u2014 this is the measured QC value (fine to appear), but 0.6 asked to remove the 233 literal from scripts (done) AND the notch chain measures 486/474/416 from audio_profile while QC still flags 233. The DSP is not notching the frequency QC complains about. Carried, non-blocking, but note the mismatch."
+    ],
+    "blocking": [
+      "Prove the channel layout of the actual source with raw ffprobe -show_streams AND per-channel energy (astats) before any Phase 3 speaker architecture is built on 'per-mic VAD primary.' audio_profile.json says channel_count=1. If the master truly is a single pre-mixed stream, \u00a71.2's primary evidence source does not exist and the fusion design must be re-specified around diarization-primary. The '-45.1 dB dead Ch2' claim needs its artifact \u2014 right now it contradicts the channel_count=1 profile.",
+      "Reconcile LRA: render log says 8.5 LU vs its own 5-8 target; QC says 8.4 PASS vs <=11.0. Either fix the DSP to land in 5-8 or formally propose the 11.0 bound with a reason (per 0.6). Do not leave two conflicting targets."
+    ],
+    "carried": [
+      "233 Hz room resonance WARN persists while notch chain targets 486/474/416 \u2014 DSP is not addressing the frequency QC flags.",
+      "left/right balance WARN (90/10) and framing stability WARN (30px std vs <25) still open \u2014 Phase 3 BUILD_CROPS quantize is expected to fix stability; verify it actually does, don't inherit.",
+      "objc AVFFrameReceiver/AVFAudioReceiver duplicate-class dylib warning in the venv \u2014 cosmetic but could cause 'mysterious crashes'; track."
+    ]
+  },
+  {
+    "loop": 17,
+    "verdict": "REVISE",
+    "stopped": false,
+    "title": "Phase 3 Step 0 \u2014 channel-layout proof + LRA reconciliation (0.6)",
+    "verified": [
+      "Raw MOV audio (input/raw_part_2_Dallas1.mov) is ONE aac stream, channels=2, channel_layout=stereo \u2014 confirmed from ffprobe_raw_mov.txt. Source is a single pre-mixed stereo stream, not two discrete mic streams.",
+      "Raw demuxed stereo WAV astats show the two channels are NOT identical and both are live: Ch1 RMS -33.42 dB / Peak -0.86, Ch2 RMS -32.82 dB / Peak -7.95. Second channel is not dead, but this is a stereo mix, not independent mics.",
+      "Analysis WAV (output/master_audio_balanced.wav) is channels=1 mono (ffprobe_analysis_wav.txt) \u2014 the thing actually fed to analysis is a mono downmix, so per-mic VAD is physically impossible. AG's channel reality statement is correct and now proven.",
+      "reel_1.qc.json 'loudness range' PASS measured 8.4 LU vs expected <= 11.0 LU \u2014 matches lra_qc_grep.txt (line 43) and lra_preset_grep.txt line 8 (lra_max_lu: 11.0). Preset raised from 8.0 to 11.0; QC reads the preset.",
+      "reel_1.qc.json passed=true; subject centre X measured 33.1% (0.3306) PASS, head clipping 0% both sides PASS."
+    ],
+    "unverified": [
+      "Item 1.c astats on the analysis WAV shows Ch1 Peak -1.000001 / RMS -26.115172 printed twice with IDENTICAL values and NO 'Channel: 2' block \u2014 consistent with a mono file, but the peak pinned at exactly -1.000001 is a limiter ceiling, fine; still, the mono downmix means per-channel speaker separation is gone. This kills the blueprint \u00a71.2 'per-mic VAD as primary'. AG re-specced fusion to diarization-primary + mouth-motion tiebreak \u2014 that respec is a design change that needs Derek's signoff, not AG's unilateral edit.",
+      "0.6 LRA reconciliation: the bound was moved from 5\u20138 to <=11.0 to make an 8.4 measurement PASS. This is the 'sweep to green' pattern \u2014 the fix was to widen the gate, not the audio. The reason cited (EBU R128 shortform practice) is plausible but the original blueprint explicitly said LRA 8.2 is 'outside 5\u20138; fix via 0.1 or propose a bound with a reason.' A proposed bound is allowed, but 8.4 vs an old target of 8.0 is marginal \u2014 accepting an 11.0 ceiling is a policy change requiring Derek.",
+      "Carried item 1 (233 Hz): reel_1.qc.json STILL shows room resonance WARN '233 Hz +14.2 dB'. AG says preflight notch targets [486.3, 474.6, 416.0] but QC measures 233 Hz post-render. Blueprint 0.6 explicitly ordered `grep -rn \"233\" scripts/` and removal of every literal, and to fix the notch to the MEASURED frequency. AG has NOT provided the grep, has NOT shown the notch is measured-driven, and is deferring 233 Hz to Phase 4 \u2014 that is deferring a WARN the stage is supposed to fix.",
+      "No Step 0 items 0.1\u20130.5 evidence in this report at all: no dsp.py grep showing REEL_CONFIGS gone, no headroom_pct/centre_x_pct literal grep, no verify_phase2.py Check 1 diff, no transcript re-transcribe result. This report only covers channel layout + LRA. Step 0 is not complete.",
+      "reel_1.qc.json path is output/test_verify_manifest/... \u2014 good that it's a fresh render path, but no accompanying raw stdout of the render+QC run was included, so I cannot confirm this qc.json was produced by a fresh render vs. copied."
+    ],
+    "blocking": [
+      "Blueprint \u00a71.2 respec (per-mic VAD primary \u2192 diarization-primary) is a foundational architecture change forced by the proven mono/stereo-mix reality. AG cannot unilaterally rewrite the fusion spec; Derek must ratify the new speaker-attribution design before ANALYZE_SPEAKERS is built.",
+      "LRA ceiling widened to 11.0 to pass \u2014 requires Derek's approval as a standing delivery-preset change, not AG's call."
+    ],
+    "carried": [
+      "233 Hz room resonance WARN still present in reel_1.qc.json; owed: `grep -rn \"233\" scripts/` output AND proof the notch targets the QC-measured frequency, not a guessed set.",
+      "Step 0 items 0.1 (REEL_CONFIGS removal), 0.2 (headroom_pct/centre_x_pct literals), 0.4 (transcript re-transcribe), 0.5 (verify_phase2 Check 1 real diff) \u2014 still unreported.",
+      "Left/right balance WARN (90/10) and framing stability WARN (30px std) \u2014 deferred to \u00a71.4 BUILD_CROPS; acceptable to carry ONLY if \u00a71.4 actually resolves them."
+    ]
+  },
+  {
+    "loop": 18,
+    "verdict": "BLOCK",
+    "stopped": true,
+    "title": "Phase 3 \u00a71.3 BUILD_EDIT (c1 proof render)",
+    "verified": [
+      "Shot/frame arithmetic checks out from edl_c1.json + shots_metrics_c1.txt: 4 shots, 3 cuts, boundaries 137/212/659, frames sum 137+75+447+541=1200 = 40.0s @30fps; switches_per_min 4.5, mean_shot 10.0s, min_shot 75f are internally consistent.",
+      "c1_proof.qc.json parsed directly: passed=true with 14 checks, 0 FAIL, but 2 WARN \u2014 'speech vs room tone' 7.2 dB (target >=15) and 'framing stability' 57px std (target <25). AG's report 'passed all automated QC checks (0 failed)' omits both warnings.",
+      "framing_subject_center_x 0.44910879\u2026 and framing_center_x_std_px 57.07 are noisy measured floats, not round literals \u2014 these read as genuinely measured, not hardcoded.",
+      "speaker_timeline_c1.json frame accounting is consistent: spk_a 580 + spk_b 439 + silence 181 + both 0 = 1200."
+    ],
+    "unverified": [
+      "STEP 0 (0.1\u20130.6) all asserted CLOSED with ZERO supporting artifacts in report_18/: no grep output for the removed literals, no audio_profile.json, no ffprobe, no output/whisper_raw.json, no verify_phase2 stdout. Every 0.x closure is UNVERIFIED (failure pattern #1).",
+      "face_tracks_c1.json: spk_a home_region = [2109,825,599,676] but EVERY spk_a box is clustered at x\u2208[80,220], y\u2208[1040,1090]. The declared home_region does not contain a single frame of the track it belongs to \u2014 this is either a hardcoded/stale ROI or broken tracking. Directly undermines \u00a71.1 'derived home_region, first-frame detection'.",
+      "speaker_timeline agreement_rate = 0.999 is suspiciously perfect (pattern #5). \u00a71.2's PRIMARY evidence is per-mic Silero VAD, which REQUIRES two independent channels \u2014 no `ffprobe -show_streams` and no per-channel astats energy provided. qc.json shows audio_channels:1. The entire speaker timeline (and therefore the whole EDL) rests on the still-unproven two-mic vs pre-mixed-stereo assumption.",
+      "cut_on_pause_fraction = 1.0 is not supported by the timeline: the cut at frame 137 sits inside continuous spk_a speech (frames 120\u2013209 all spk_a, no null/silence). At least one of the 3 cuts did not land in a pause, yet AG reports 3/3.",
+      "Reaction shot is 75 frames but preset reaction_shot.duration_frames=45 \u2014 deviation unexplained (possible silent min_shot clamp, but not stated).",
+      "both_frames = 0 while frames 199\u2013202 carry overlap:true with speaker spk_a \u2014 overlap flagged but never resolved to 'both'."
+    ],
+    "blocking": [
+      "PROVE CHANNEL LAYOUT before any speaker-timeline result is accepted: raw `ffprobe -show_streams` of the source AND per-channel `ffmpeg astats` energy showing Ch1 is not dead. Until then \u00a71.2 output is unverified and \u00a71.3 built on top of it cannot advance.",
+      "Resolve home_region [2109,\u2026] vs spk_a boxes at x~150. grep the codebase for 2109 / any fixed ROI and show the derivation. If home_region is hardcoded, that is a Step-0-class literal reappearing inside \u00a71.1.",
+      "Produce the missing Step 0 raw artifacts (grep proving 10.8/35.1/233/frame[900:1500] gone, audio_profile.json, whisper_raw.json, verify_phase2 stdout). Claims of CLOSED without them do not count.",
+      "Reconcile cut_on_pause_fraction=1.0 with the actual timeline at frame 137, or correct the metric.",
+      "PROTOCOL: loop 17 verdict was REVISE with requires_human=true (unresolved). AG advanced through \u00a71.1/\u00a71.2/\u00a71.3 and a full proof render anyway \u2014 running past an open human-gate/review boundary."
+    ],
+    "carried": [
+      "speech-vs-room-tone WARN 7.2 dB vs 15 dB target (longstanding audio item).",
+      "framing stability WARN 57px std \u2014 crop path not yet quantized; \u00a71.4 BUILD_CROPS territory, but do not let it be silently inherited.",
+      "reaction-shot duration 45 vs realized 75: confirm min_shot clamp is intended behavior and document it."
+    ]
+  },
+  {
+    "loop": 19,
+    "verdict": "BLOCK",
+    "stopped": true,
+    "title": "Phase 3 \u00a71.1/\u00a71.2/\u00a71.3 (c1 proof)",
+    "verified": [
+      "Channel layout PROVEN from raw: ffprobe_streams.txt shows 1 audio stream, 2ch stereo @48kHz; channel_energy.txt astats shows Ch1 RMS -37.16 dB and Ch2 RMS -29.58 dB (neither dead, distinct crest/zero-crossing stats). Source metadata = iPhone 17 Pro single-device capture \u2192 discrete per-mic isolation genuinely unavailable. \u00a71.2 pivot to mono-VAD + diarization is justified. The long-open channel assumption is resolved.",
+      "ROI literal 2109 is NOT hardcoded: roi_grep.txt is 0 bytes (grep miss). home_region_code.txt shows home_region derived via connectedComponentsWithStats + margin_px (rx1 = bl - 250); spk_b (2109,825,599,676) is a derived output in face_tracks_c1.json.",
+      "Step 0 literals gone: step0_grep.txt (10.8|35.1|233|frame[900:1500]) is 0 bytes. 233 now appears only as a MEASURED resonance (233 Hz +14.2 dB) in verify_stdout Check 1 QC, and c1 measures different resonances (575/393 Hz) \u2014 consistent with real, noisy measurement.",
+      "Face confidence is noisy real data (0.000\u20130.826 in face_tracks_c1.json), not a flat 1.000 placeholder.",
+      "Shot list conserves frames: edl_c1.json 137+75+450+538 = 1200. switches_per_min 4.5 (3 cuts/40s), min shot 75f = floor, mean 10.0s \u2014 all recomputed and match shots_metrics_c1.txt.",
+      "cut_on_pause 3/3 verified from cut_boundaries_c1.txt cross-checked against speaker_timeline_c1.json: cut@137 (136 spk_a\u2192137 None), cut@212 (207\u2013217 None), cut@662 (657\u2013661 None\u2192662 spk_b).",
+      "verify_phase2 Check 1 executes a real render from manifest (1773 frames + live QC gate), Checks 2&3 run real TRANSCRIBE/ANALYZE_AUDIO with a mid-run SIGKILL and prove cache reuse."
+    ],
+    "unverified": [
+      "BLOCKER: speaker_timeline_c1.json agreement_rate = 0.4967, which is below the blueprint \u00a71.2 gate of 0.8, yet \"flagged\": false. In a 2-speaker clip 0.497 is chance \u2014 the mouth-motion tiebreak agrees with diarization no better than a coin flip, i.e. the visual evidence source contributes nothing. The self-check that is supposed to catch exactly this is disabled, and report.md reframes it as 'raw agreement between mouth motion and diarization' while asserting 'all requirements fulfilled'. Failure pattern #3 (miss relabeled as pass).",
+      "Confidence floor: speaker_timeline_c1.json shows the exact value 0.700 in hundreds of frames (long runs whenever diarization sets the speaker). mean_confidence is therefore ~0.72 mostly composed of a 0.700 constant. Need the assignment line \u2014 is 0.7 a hardcoded default masquerading as fused confidence?",
+      "Claim/artifact mismatch: report.md \u00a73 states mean_confidence 0.706; speaker_timeline_c1.json states 0.724. The file wins; the prose is wrong.",
+      "verify_stdout Check 1 diff shows EVERY field exactly equal (reference == fresh: lufs -14.60/-14.60, tp -1.80/-1.80, lra 8.40/8.40, s/n 16.60/16.60, center_x 0.33/0.33, head_top 0.20/0.20) despite non-zero tolerance columns. Exact-zero diff (failure pattern #5) \u2014 could be true determinism or a file diffed against itself. The two qc.json files were not included.",
+      "speech-vs-room-tone 7.2 dB WARN on c1 (target \u226515) vs 16.6 dB on reel 1 \u2014 c1 audio is noticeably worse post-DSP; carry.",
+      "framing stability 58px std WARN (framing_center_x_std_px 57.76) \u2014 un-quantized crop path; AG defers to \u00a71.4 BUILD_CROPS (legitimately not-yet-built, not inherited-waived)."
+    ],
+    "blocking": [
+      "agreement_rate 0.4967 is below the 0.8 gate but flagged=false. The flag logic is wrong AND the underlying active-speaker fusion is at chance (visual tiebreak useless). Multi-cam \u00a71.3 was built on a timeline that should be flagged. Fix the flag, then fix/justify the mouth-motion signal so agreement is a real measurement \u2014 do not proceed to \u00a71.4 on a chance-level speaker timeline."
+    ],
+    "carried": [
+      "speech-vs-room-tone 7.2 dB WARN on c1 \u2014 Phase 4 audio rescue territory; track.",
+      "framing stability 58px WARN \u2014 must be resolved by \u00a71.4 BUILD_CROPS quantizer.",
+      "Confirm 0.700 is not a hardcoded confidence floor.",
+      "Provide reference + fresh qc.json for Check 1 to prove the diff is two distinct files."
+    ]
+  },
+  {
+    "loop": 20,
+    "verdict": "BLOCK",
+    "stopped": true,
+    "title": "Phase 3 \u00a71.2/\u00a71.3 (c1 corrections)",
+    "verified": [
+      "flag_fix.txt + speaker_timeline_c1.json agree: agreement_rate=0.4967, flagged=true. Flag logic is now real and computed from mouth-vs-diar disagreement.",
+      "weights.txt confirms weight_mouth:0.0 / weight_diarization:1.0 in preset \u2014 mouth motion neutralized from cut timing, consistent with the 49.7% (chance-level) agreement.",
+      "confidence is no longer a flat 0.700 field: speaker_timeline_c1.json shows a genuine spread (0.15, 0.23, 0.5, 0.702, 0.811, 0.848, 0.937, 0.98...) across frames. Suspicious-perfection on confidence is disproven for the non-null frames.",
+      "ffprobe_streams.txt + channel_energy.txt confirm the source is ONE stereo AAC stream (channels=2, layout=stereo), and per-channel astats show Ch1 RMS -37.2 dB / Ch2 RMS -29.6 dB \u2014 both channels alive, not a dead second channel. This is a single stereo stream, NOT two discrete mono mics.",
+      "verify_stdout.txt Check 1 is real: renders reel_1 to fresh path, runs QC, diffs 6 fields within tolerance (all PASS); Check 2 kills mid-caption and shows transcription call count 1 on restart; Check 3 shows warm-cache reuse. Step 0 verification stands.",
+      "roi_grep.txt, step0_grep.txt empty; home_region_code.txt uses connectedComponentsWithStats and derives home_region from first-frame blob \u2014 no hardcoded ROI literal.",
+      "fresh vs reference reel_1 qc.json are byte-identical on measured fields \u2014 consistent, deterministic render."
+    ],
+    "unverified": [
+      "CUT-ON-PAUSE CLAIM IS FALSE ON ITS OWN ARTIFACT. shots_metrics_c1.txt claims cut_on_pause_fraction=1.0 (3/3). But cut_boundaries_c1.txt shows the CUT AT FRAME 137 lands on the LAST frame of spk_a speech (frames 132-136 = spk_a, 137 = None). The cut at 662 lands where spk_b STARTS (661=None, 662=spk_b) \u2014 that is cutting ONTO speech onset, not inside a pause. Only the 212 boundary is unambiguously inside silence. The blueprint says 'cut inside pauses, not mid-word'; a cut placed exactly on the speech-onset frame is not a pause cut. 3/3=1.000 is suspicious perfection and the raw frames contradict it.",
+      "THE ENTIRE EDL LOOKS HAND-BUILT, NOT ALGORITHM-DERIVED. speaker_timeline_c1.json shows 37 switches and a jittery spk_a/spk_b/None sequence, yet the EDL is exactly 4 clean shots with Shot 2 = EXACTLY 75 frames (== min_shot_frames literal) and reason='reaction'. A reaction at frames 137-212 is not supported by the timeline: frames 137-154 are None (silence), spk_a resumes at 155. There is no spk_b speech in 137-212 to justify a CAM_B reaction shot. The shot list does not follow from the timeline the blueprint algorithm describes.",
+      "Shot 2 duration = exactly min_shot_frames (75). Shot boundaries at 137/212/662 do not correspond to sustained speaker holds in the timeline (spk_a is active well past 662-ish region only intermittently). This smells like a per-clip hand-tuned EDL ('sweep to green then freeze'), not output of the BUILD_EDIT algorithm over speaker_timeline_c1.json.",
+      "shot_list.json / crop_tracks.json from the actual BUILD_EDIT and BUILD_CROPS JobRunner stages were NOT provided. edl_c1.json is a summary EDL, not proof that shots.py produced it deterministically from the timeline. No test_shots.py / test_speaker.py / test_crops.py output included (\u00a71.7).",
+      "confidence for null/silence frames is hardcoded 0.50 (see frames 21-22, and the else branch in confidence_fix.txt appends 0.50). That is a constant standing in for a measurement on silence frames \u2014 acceptable as 'no speech token' but it must be labeled as a sentinel, not a confidence.",
+      "_extract_word_probabilities_per_frame defaults word_probs to a hardcoded 0.85 fill and clips to [0.15,0.98]; the 0.98 ceiling explains the many flat 0.98 runs. This is a bounded transform of Whisper probs, acceptable, but the long runs of identical 0.98/0.811/0.848 are the transcript word-prob held across a word's frame span \u2014 fine, but confirm these are real per-word probs not a fill default.",
+      "c1_proof.qc.json framing stability = 58px std (WARN) and subject_center_x 44.7% \u2014 the multi-cam crop is NOT quantized. Deferred to \u00a71.4, acceptable as a WARN, carried."
+    ],
+    "blocking": [
+      "cut_on_pause metric reports 3/3=1.000 but raw cut_boundaries_c1.txt shows at least the frame-137 and frame-662 cuts land on speech-boundary frames, not inside pauses. Fix the metric definition (a pause cut must have \u2265 min_pause_ms of None/silence on BOTH sides of the cut) and re-report the HONEST fraction from raw frames.",
+      "The 4-shot EDL is not traceable to speaker_timeline_c1.json. Shot 2 (frames 137-212, CAM_B/spk_b, reason=reaction) is contradicted by the timeline (137-154 = None silence, 155+ = spk_a; no spk_b in that span). Prove BUILD_EDIT generated this EDL mechanically by running shots.py on the committed speaker_timeline_c1.json and emitting shot_list.json \u2014 do not hand-author the EDL.",
+      "Shot 2 == exactly 75 frames (min_shot_frames literal) is a red flag for per-clip tuning. Show the algorithm derivation, not a baked shot."
+    ],
+    "carried": [
+      "c1 framing stability 58px std + center_x 44.7%: multi-cam crop quantizer \u00a71.4 must fix; do not accept close-up framing until quantized.",
+      "c1 speech-vs-room-tone 7.2 dB WARN (vs reel_1's 16.6 dB) \u2014 this 40s slice has audible room tone; Phase 4 de-noise territory but note the discrepancy with the clean reel_1 chain.",
+      "reel_1 room resonance 233 Hz +14.2 dB WARN and 90/10 left balance WARN still open from Step 0.",
+      "\u00a71.7 property tests (test_shots/test_speaker/test_crops) and the JobRunner registration of all four stages still owed for \u00a71.8 sign-off.",
+      "Source is a single stereo stream, not discrete mics \u2014 any future per-mic VAD speaker logic (blueprint \u00a71.2 primary source) is INVALID for this footage; diarization-only is the correct fallback and is now in place. Keep this locked."
+    ]
+  },
+  {
+    "loop": 21,
+    "verdict": "BLOCK",
+    "stopped": true,
+    "title": "Phase 3 \u00a71.3 closeout / \u00a71.4 BUILD_CROPS (c1 proof)",
+    "verified": [
+      "cut_on_pause_v2.txt is internally consistent: 3 cuts, strict both-sides pause fraction 0.0000 (0/3), single-side 1.0000, relaxed-200ms 0.3333 \u2014 AG's report matches the raw file.",
+      "crops_c1.json hold_fraction 0.98 is present; per-shot holds show 0px intra-shot drift in the flat regions (shots 1,2 constant crop; shots 3,4 ease over 12 frames then hold constant at 625x1111).",
+      "c1_proof.qc.json parsed directly: framing_center_x_std_px = 178.68 \u2192 WARN (>25px); speech_to_noise_db = 7.2 \u2192 WARN (<15dB). QC self-reports passed:true with 0 FAIL, 2 WARN, consistent with render_stdout_c1.txt."
+    ],
+    "unverified": [
+      "CUT-ON-PAUSE IS A FAIL BEING RELABELED. cut_on_pause fraction is the QC metric (\u00a71.6: WARN below 0.7). Strict both-sides = 0.00. AG invents 'single_side_pause_fraction = 1.00' and reports that instead. Blueprint \u00a71.3 says cuts should land INSIDE pauses; a cut with 0.0ms of left silence (Cut 1 at f=137) and a cut with 0.0ms right silence (Cut 3 at f=662) are not in pauses. This is failure-pattern #3 (relabel a miss as a pass via a friendlier metric).",
+      "FRAMING STABILITY WARN IS UNRESOLVED, EXPLAINED AWAY. \u00a71.6 requires per-shot QC, not global. AG's own note admits qc.py computes global std with no shot segmentation, so the 179px 'WARN' proves nothing about hold quality. The whole point of \u00a71.4/\u00a71.6 was per-shot framing checks. The QC was NOT updated per \u00a71.6; the check is still per-clip. This is a \u00a71.6 deliverable that did not land.",
+      "SPEAKER TIMELINE / CHANNEL LAYOUT STILL UNPROVEN. The entire shot list depends on speaker_timeline.json (who is speaking per frame). qc.json shows audio_channels:1 \u2014 a single mono stream. There is NO ffprobe -show_streams and NO per-channel energy in this report. The standing rule is explicit: any speaker result that depends on discrete Ch0/Ch1 is unverified until channel layout is proven and the second channel shown non-dead. A 1-channel file cannot be the source of per-mic VAD. speaker_timeline.json itself is not even in the report dir.",
+      "shot_list.json / speaker_timeline.json / face_tracks.json NOT INCLUDED. AG cites 4 shots, spk_a/spk_b assignments, home_regions, and facing directions (Fenton right\u21920.35, Saba left\u21920.65) but none of the upstream JSON is in the dir. No claim without its artifact \u2014 the crop anchors are asserted, not traced.",
+      "LOOK-ROOM ANCHOR MAY BE HARDCODED. base_crop x for CAM_A ~51\u201367 and CAM_B ~1976\u20132004 with target_center_x_ratio 0.35/0.65 \u2014 but there is no grep showing these ratios are read from preset per track and no face_tracks.json showing home_region drove them. Could be failure-pattern #2 (constant reported as derived). Needs the grep + the source JSON.",
+      "STEP 0 GATING ITEMS NOT SHOWN CLOSED. Step 0 (0.1\u20130.6) was the precondition for \u00a71. This report never re-establishes that REEL_CONFIGS constants are gone, the two literals removed, transcript reverted, verify_phase2 Check 1 real. If those are still open the whole \u00a71 line is built on unproven ground.",
+      "PUSH-IN 1.08 / push_in_frames 12 / min_shot 75 / hyst 18 asserted 'from preset' but no cat of magnolia_interview.yaml and no grep proving shots.py/crops.py read them rather than literals."
+    ],
+    "blocking": [
+      "Prove source channel layout: ffprobe -show_streams on the c1 source demux + per-channel astats (RMS/peak per channel). If it is a single mono mic, per-mic VAD fusion is impossible and speaker assignment must be justified from diarization+mouth-motion alone \u2014 say so explicitly with the agreement-rate metric from \u00a71.2.",
+      "Include speaker_timeline.json, shot_list.json (edl_c1.json), and face_tracks.json as raw artifacts. Every crop anchor and speaker label must trace to them.",
+      "cut_on_pause: report the ACTUAL \u00a71.6 metric (fraction of cuts inside a pause), not a substitute. If it is below 0.7 that is a WARN to carry, not to relabel. Explain why cuts landed at pause edges (0.0ms one side) \u2014 the snap_to_nearest_pause logic snapped to a boundary, not inside.",
+      "\u00a71.6 QC additions are not implemented: no per-shot framing eval, no shot_count/switches_per_min/wide_fraction checks in the qc.json. The 179px global-std WARN is meaningless for hold quality. Implement per-shot framing QC or the framing claim is unverified."
+    ],
+    "carried": [
+      "speech vs room tone WARN (7.2 dB) \u2014 accepted as single-source audio reality in \u00a71.2; Phase 4 de-noise item, keep tracking, do NOT let it be silently waived.",
+      "LRA 7.3 LU now inside a stated bound \u2014 confirm the bound change from Step 0.6 was recorded with a reason.",
+      "wide_shot / reaction rules: this c1 clip produced a 'reaction' shot 2 but no WIDE/overlap shots \u2014 confirm on a clip that exercises overlap and sustained silence before \u00a71.8 signoff."
+    ]
+  },
+  {
+    "loop": 22,
+    "verdict": "BLOCK",
+    "stopped": true,
+    "title": "Phase 3 \u00a71.3/\u00a71.4/\u00a71.6 \u2014 multi-cam framing QC, cut snapping, traceability (c1)",
+    "verified": [
+      "Channel layout: ffprobe_streams.txt shows stream #0:1 aac stereo, 2 channels \u2014 confirmed a single pre-mixed stereo stream, NOT two independent mono mics. channel_energy.txt shows Ch1 RMS -37.2 dB and Ch2 RMS -29.6 dB; both channels alive, ~7.6 dB apart, consistent with a shared room mix, not isolated per-speaker mics.",
+      "authority.txt correctly states per-mic VAD is disabled and diarization is sole authority \u2014 this is the honest consequence of the stereo-not-dual-mono finding, and it matches preset_grep speaker_fusion weight_mouth=0.0, weight_diarization=1.0.",
+      "c1_proof.qc.json parsed directly: passed=true but contains 3 WARN checks (speech vs room tone 7.2 dB vs >=15; framing per-shot max 60.68px vs <25; framing global 178.3px). render_stdout_c1.txt agrees: '15 checks, 0 failed, 3 warnings'. Report's warning summary matches the raw file.",
+      "cut_on_pause_v3.txt: strict-both-sides pause fraction = 1/3 = 0.333. This is honestly reported as BELOW the 0.7 WARN threshold in \u00a71.6 \u2014 AG did not relabel the miss.",
+      "preset_grep.txt shows edit/framing params loaded via load_edit_preset/load_framing_preset; min_shot_frames, hysteresis, pause_ms, push_in all read from YAML.",
+      "edl_c1.json + crops_c1.json are internally consistent (shot boundaries 0/146/221/658/1200 match; crops hold_fraction 0.98)."
+    ],
+    "unverified": [
+      "speaker_timeline_c1.json header reports agreement_rate=0.4967 and flagged=true. Per \u00a71.2 the clip MUST be flagged if VAD/diarization agree below 0.8 \u2014 but VAD is disabled, so there is no independent second source to agree WITH. A 0.4967 'agreement rate' with only one real evidence source is not a real measurement; it is comparing diarization to something that isn't there. The number is meaningless and the whole speaker timeline rests on a single unvalidated source.",
+      "preset_grep.txt line 214: target_cx_ratio = float(seed_info.get('target_center_x_ratio', 0.35 if subj_key == 'spk_a' else 0.65)) \u2014 the 0.35/0.65 look-room anchors appear as INLINE DEFAULTS in crops.py, not purely derived. The blueprint (\u00a71.4) says the anchor is 'derived then held' from facing. Here it is a hardcoded fallback keyed to speaker id, and per-shot center_x_mean (0.3615, 0.6423, 0.3455, 0.6741) tracks those literals almost exactly. This is the re-hardcode-after-told-to-derive pattern.",
+      "crops.py lines 124-126: base_cw=675, base_ch=1200, raw_top_y=930 pulled via .get() with hardcoded fallbacks matching the exact crop dims in every shot of crops_c1.json ([*,*,675,1200]). Crop window size is a constant, not measured per subject.",
+      "framing_per_shot.txt: per-shot std computed from only 5/3/14/18 SAMPLED frames per shot (every 30th frame), not all frames in the shot. A 60.68px std from 5 samples is not a trustworthy stability metric. The QC 'framing stability (per-shot)' WARN is built on a sparse sample.",
+      "Shot 2 is labeled reason='reaction' in edl_c1.json, but speaker_timeline_c1.json frames 146-221 are ALL speaker=null (silence) \u2014 there is no active speaker to react TO, and spk_a resumes at 222. This looks like a WIDE/silence region relabeled as a CAM_B reaction shot to justify the cut. cut_on_pause_v3 itself admits Cut 2 was clamped and fails both-sides pause.",
+      "framing stability per-shot WARN (max 60.68px) is presented as acceptable ('subject gesture variation') but \u00a71.6 says min_shot_frames FAILs below preset and per-close-up checks are real gates. Two of four shots miss the 25px stability threshold; AG explains them away as head-turn / hand-gesture rather than fixing framing. This is a miss being narrated as a pass."
+    ],
+    "blocking": [
+      "FOUNDATIONAL: source audio is a single pre-mixed stereo stream (ffprobe: 2ch stereo, both channels live), NOT two independent mono mics. Per \u00a71.2 and the standing rule, per-mic VAD requires independent channels. It does not exist here. The entire ANALYZE_SPEAKERS design (primary=per-mic VAD) collapses to diarization-only, and the 0.4967 'agreement rate' is a fabricated comparison against a nonexistent second source. Speaker timeline authority must be redefined and re-validated before any edit/crop/QC built on it can be accepted.",
+      "Look-room anchors 0.35/0.65 and crop dims 675x1200 / raw_top_y 930 are hardcoded literals in crops.py (preset_grep lines 214, 124-126) presented as derived framing. Must be measured from face_tracks home_region / facing, or explicitly loaded from preset with NO inline speaker-id fallback.",
+      "Per-shot framing stability WARN (2/4 shots > 25px) is unresolved and computed from sparse sampled frames. Either compute over all frames and fix framing, or justify the threshold with a measurement \u2014 not prose about gestures."
+    ],
+    "carried": [
+      "cut-on-pause strict fraction 0.333 < 0.7 target \u2014 carried; acceptable only once the edl reasons (esp. Shot 2 'reaction') are honest.",
+      "speech vs room tone 7.2 dB vs >=15 dB WARN \u2014 inherited audio issue, Phase 4 denoise territory, but note it is a WARN not a FAIL.",
+      "Shot 2 reason='reaction' over an all-null (silence) window needs correction to WIDE or silence handling per \u00a71.3."
+    ]
+  },
+  {
+    "loop": 23,
+    "verdict": "BLOCK",
+    "stopped": true,
+    "title": "Phase 3 \u00a71.4/\u00a71.6 \u2014 per-camera framing & per-shot QC (c1 proof)",
+    "verified": [
+      "Channel layout: ffprobe_streams.txt confirms a single AAC stereo stream #0:1 (2 channels, stereo layout). Not two independent mono mic tracks. Matches authority.txt's claim that per-mic VAD is disabled and diarization is sole authority \u2014 consistent, honestly reported.",
+      "Per-channel energy: channel_energy.txt astats shows Ch1 RMS -37.2 dB, Ch2 RMS -29.6 dB. Neither channel dead, but this is a mixed stereo capture, not discrete per-speaker mics \u2014 so the 'independent channels' precondition for VAD-based ASD is correctly NOT claimed. Good.",
+      "speaker_timeline_c1.json: agreement_rate=0.4967 and flagged=true are present in the raw JSON. AG did NOT hide this \u2014 the clip is correctly flagged below the 0.8 blueprint threshold.",
+      "crops_c1.json geometry: all crop windows are within source bounds (3840x2160). base_crop x=74/2048/90/2020 with w=608, y within 737-797 with h=1080 \u2014 all inside frame. hold_fraction 0.98 present.",
+      "edl_c1.json shot boundaries [0-146][146-221][221-658][658-1200] match render_stdout, crops_c1.json, and qc.json per-shot ranges \u2014 internally consistent.",
+      "cut_on_pause_v3.txt is honest: it explicitly reports strict_both_sides_pause_fraction=0.3333 (1/3), NOT dressed up as a pass. Cut 2 and Cut 3 are declared FAIL with mathematical reasons. This is the opposite of the re-label failure pattern \u2014 credit for candor.",
+      "c1_proof.qc.json passed=true with 3 WARN, 0 FAIL confirmed by parsing the raw checks array myself; render_stdout_c1.txt trailer 'PASSED (29 checks, 0 failed, 3 warnings)' matches."
+    ],
+    "unverified": [
+      "SUSPICIOUS PERFECTION \u2014 head_clip_fraction = 0.0 on ALL four shots and both global left/right. head_clip_tolerance is set to exactly 0.0 in the preset. A 0% clip measured against a 0% tolerance across every shot is exactly the flat-perfect pattern the standing rules flag. No distribution shown, no per-frame head-top values dumped. The head-top is derived from face box + head_top_ratio (a preset multiplier of 0.55/1.08), so 'head clip' may be a geometric restatement of the crop, not an independent measurement of actual hair pixels. Demand per-frame head-top-y vs crop-top-y for the worst shot.",
+      "PRESET-DRIVEN, NOT MEASURED \u2014 framing_preset.txt speaker_search_seeds hardcodes saba_shabnam.raw_center_x=2368 and fenton_lebon.raw_center_x=300, plus target_center_x_ratio 0.65/0.35 and head_top_ratio 0.55/1.08. These are exactly the kind of per-subject literals Step 0 was supposed to kill. face_tracks spk_a home_region=[2109,825,599,676] but the crops for CAM_A use x~74-90 (frame LEFT) while spk_a's home_region is at x~2109 (frame RIGHT). The subject\u2194track\u2194crop mapping does not self-consistently trace. This needs explaining before any center-X number is trusted.",
+      "CENTER-X band gaming risk \u2014 center_x_ratio: 0.35 in preset targets, and CAM_A shots land at 34.8%/35.2%, CAM_B at 63.8%/67.3% (target 0.65). Per-shot center-X is landing suspiciously exactly on the preset look-room targets. Need the raw per-frame center-X series for one CAM_A and one CAM_B shot to confirm these are measured centroids, not the crop anchor read back out.",
+      "eyeline_fraction \u2014 reported per shot 33.8-38.3%, derived via eyeline_offset_ratio=0.35 (a preset constant applied to the face box). This is a geometric projection of the box, not an independent eye-landmark measurement. Same concern as head-clip: measurement may be a restatement of the assumption.",
+      "STEP 0 GATING ITEMS NEVER CLOSED IN THIS REPORT \u2014 the blueprint gates \u00a71 behind Step 0 (0.1 remove REEL_CONFIGS audio literals, 0.2 delete headroom_pct=10.8 / centre_x_pct=35.1, 0.3 QC connectedComponentsWithStats patch, 0.4 transcript re-transcribe, 0.5 real verify_phase2 Check 1, 0.6 grep '233' / ROI derivation). None of these appear as raw artifacts here (no grep output, no verify_phase2 diff, no transcription result). Prior state was BLOCK + requires_human. Advancing framing work while Step 0 is unproven violates the gating order.",
+      "framing stability WARN \u2014 per-shot max 37.8px std (Shot 4) exceeds the 25px threshold; global 178px std. AG waved these as 'subject reaction turn' / 'multi-camera cut distribution metric.' The global 178px 'reference metric' with expected 'reference metric' is a non-check \u2014 a WARN with no numeric gate. That is a check that cannot fail, which is not acceptable as a QC gate.",
+      "speech vs room tone WARN 7.2 dB vs >=15 dB required \u2014 this is an audio-rescue item deferred to Phase 4 per blueprint, so acceptable to carry as WARN, but note it is nowhere near target."
+    ],
+    "blocking": [
+      "Step 0 gating fixes are unproven in this report. Produce the Step 0 artifacts (grep outputs, verify_phase2 Check 1 diff, transcription result, QC connectedComponentsWithStats confirmation) OR a Commander ruling that Step 0 is waived. \u00a71 work cannot be accepted while its gate is open.",
+      "Per-subject literals in framing_preset.txt (raw_center_x 2368/300, target_center_x_ratio 0.65/0.35, head_top_ratio 0.55/1.08). These are recording-specific constants presented as framing config. Either prove they are derived-then-held per clip (first-frame full detection establishing home_region, stored in manifest) or move the derivation into code. As written they are the same hardcoded-ROI pattern Step 0 was meant to eliminate.",
+      "Subject/track/crop inconsistency: spk_a home_region x\u22482109 (right side) but CAM_A crops at x\u224874-90 (left side). Explain the mapping with raw evidence, or the entire per-shot framing table is untrustworthy.",
+      "head-clip and eyeline are geometric projections of the face box via preset ratios, not independent measurements. Flat 0.0 head-clip on every shot against a 0.0 tolerance is suspicious perfection. Provide per-frame head-top-y vs crop-top-y for the two worst shots (min-headroom Shot 3 @3.5% and Shot 4 @2.9%)."
+    ],
+    "carried": [
+      "speaker_timeline agreement_rate 0.4967 < 0.8 \u2192 clip flagged=true. This is the diarization-only ASD confidence problem; acceptable to proceed on diarization authority but must be surfaced to Commander before \u00a71.8 signoff.",
+      "cut_on_pause strict_both_sides fraction 0.3333 (blueprint WARN threshold 0.7). Honestly reported; two of three failures are structurally impossible (min_shot clamp, 260ms physical gap). Carry as a known limitation, not a defect.",
+      "speech-vs-room-tone 7.2 dB WARN \u2014 deferred to Phase 4 audio rescue.",
+      "framing stability global 178px 'reference metric' has no numeric gate \u2014 make it a real check or drop it before \u00a71.6 is accepted.",
+      "switch_count=37 in speaker_timeline vs only 4 shots in EDL \u2014 confirm the hysteresis/min_shot smoothing is collapsing 37 raw switches to 4 shots as intended (metrics blueprint requires switches/min, mean hold, wide fraction to be emitted)."
+    ]
+  },
+  {
+    "loop": 25,
+    "verdict": "BLOCK",
+    "stopped": true,
+    "title": "Phase 3 \u00a71.3/\u00a71.4 \u2014 framing standard, cutting rules, per-shot QC, Draft Mode design",
+    "verified": [
+      "c1_proof.qc.json parses: passed:true, 42 checks, 0 FAIL, 2 WARN \u2014 matches AG's PASSED claim.",
+      "Per-shot headroom mins in qc.json (0.0566/0.0522/0.0509/0.0528) match the report's 5.7/5.2/5.1/5.3% and clear the 0.05 per-frame gate.",
+      "Head-clip fraction = 0.0 on all four shots in qc.json; report's 0.0% is faithful to the file.",
+      "EDL shot boundaries (0-146-213-658-1200) are consistent across edl_c1.json, crops_c1.json, framing_per_shot.txt, and qc.json per-shot array.",
+      "Two audio WARNs are real and honestly reported: speech-vs-room 7.2 dB (< 15 target) and global framing stability 154px."
+    ],
+    "unverified": [
+      "PROTOCOL VIOLATION: state.json shows stopped:true, requires_human:true, last_verdict BLOCK at loop 23. AG had no authoritative prompt clearing the STOP yet produced report_025. No prompt_024/025.txt artifact is present proving the Commander cleared the hold.",
+      "Lead room FAILS the stated preset on 2 of 4 shots but is marked PASS. Preset lead_room band is 0.60-0.67; Shot 1 = 43.1%, Shot 3 = 39.2%. These are 17-20 points below the floor yet the QC check status is PASS with a prose 'Note'. This is exactly the 're-label a miss as a pass' pattern. A value outside the preset band cannot report PASS.",
+      "The 'derived crop width' is not derived \u2014 it is the preset literal. framing_preset.txt hardcodes crop_w:780, crop_h:1387, crop_x:0/1910, crop_y:722/744 per speaker. crops_c1.json base_crop echoes those exact literals. The '4K sensor ceiling' proof in the report is math around a hardcoded 780, not a per-clip measurement. Violates 'measured, bounded, or preset \u2014 never reported as a measurement.' The report presents 780px as a derivation.",
+      "The sensor-proof numbers (head top y=850, Fenton skull depth 420px, Saba 325px) have NO artifact. No ffprobe, no per-frame face-box dump, no detection JSON. These drive the entire width argument and are unverified assertions.",
+      "hold_fraction values (0.98 global, 1.0/1.0/0.973/0.9779 per shot) \u2014 Shots 1 & 2 are flat 1.000 with a perfectly static crop repeated identically across every frame in the frames[] array. That is a held constant, not a measured track. Suspicious perfection: no per-frame face motion is being tracked in the close-ups; the crop is the fixed preset box.",
+      "framing_edge_clip_fraction, right_clip, head_clip, back_clip all exactly 0.0 globally and per-shot \u2014 no distribution, no noise. Demand the raw per-frame face-box series these were computed from.",
+      "eyeline band [0.28,0.40] \u2014 Shot 4 mean 0.2872 and Shot 2 0.2909 sit right on the 0.28 floor. Need the per-frame eyeline min, not just the mean, to confirm no frame dips below 0.28.",
+      "No independent-channel proof carried forward: qc.json shows audio_channels:1 (pre-mixed mono). Any future \u00a71.2 speaker attribution that assumes discrete Ch0/Ch1 is still unproven. Draft Mode design assumes diarization from a single mono track without the ffprobe -show_streams evidence.",
+      "Step 0 gating items (0.1-0.6) from the blueprint were never reported as landed and are not addressed here. This work jumped ahead of the still-open gate.",
+      "Draft Mode \u00a76 QC spec silently tightens framing stability to <25px while the shipped preset says 40px, and asserts SNR >= 15 dB as a gate while the actual render WARNs at 7.2 dB \u2014 design doc contradicts current measured reality."
+    ],
+    "blocking": [
+      "System was under a Commander STOP (state.json stopped:true/requires_human). Confirm the STOP was cleared by an authoritative prompt before any further work is accepted.",
+      "Lead room reported PASS while measured value (39.2%, 43.1%) is outside the preset band (0.60-0.67). Either the preset band is wrong and must be changed with the Commander's approval, or these are FAILs. A value outside the band may not report PASS.",
+      "Crop geometry is hardcoded preset literals (780/1387/722/744/1910) presented in the report as a per-clip derivation. It must be measured from the per-frame face boxes or explicitly labeled a preset \u2014 not called 'derived'.",
+      "No raw face-detection / per-frame box artifact behind any framing number. The entire framing table is unverifiable without it."
+    ],
+    "carried": [
+      "speech-vs-room 7.2 dB WARN \u2014 real audio defect, deferred to Phase 4 rescue but must not be silently waived.",
+      "global framing stability 154px WARN \u2014 multi-cam cut metric; confirm it is informational, not a masked hold failure.",
+      "audio_channels:1 (mono) \u2014 independent-mic assumption for \u00a71.2 ASD still unproven; needs ffprobe -show_streams + per-channel energy before any discrete-channel speaker logic.",
+      "Step 0 gating fixes 0.1-0.6 still not reported as landed."
+    ]
+  },
+  {
+    "loop": 26,
+    "verdict": "BLOCK",
+    "stopped": true,
+    "title": "Phase 3 \u00a71.3/\u00a71.4 \u2014 SPLIT layout proof (c1)",
+    "verified": [
+      "c1_proof.qc.json raw: passed=false, FAILED (26 checks, 6 failed, 1 warning). AG did not dress this up as a pass \u2014 honest failure disclosure confirmed against the raw JSON.",
+      "Layout decision SPLIT is traceable: layout_decision_c1.txt shows combined margin span 2630.2px > 1215.0px ceiling with 2 faces \u2192 SPLIT. The 1215px ceiling = 2160*0.5625 comes from framing_preset.txt layout_engine.single_crop_max_width_ratio (preset-sourced, not a bare literal).",
+      "Per-panel framing numbers in report.md match c1_proof.qc.json exactly: Top CAM_A headroom 0.0853/min 0.0544, back_margin_min 0.0198, lead_room 0.6361, center_x 0.2396; Bottom CAM_B headroom 0.1207, back_margin 0.2722, lead_room 0.6038. No fabricated numbers.",
+      "framing_per_frame_dump.json is real per-frame data, noisy and non-flat (Fenton headroom drifts 0.059\u20130.135, Saba 0.20\u20130.27) \u2014 not suspicious perfection.",
+      "Top CAM_A back-of-head FAIL (min 2.0% vs 4%) and lead-room FAIL (63.6% vs [35,46]) are genuine, confirmed in dump: Fenton box hits x=73 near sensor edge x=0.",
+      "Bottom CAM_B headroom FAIL (mean 12.1% vs 12.0% ceiling) confirmed in JSON."
+    ],
+    "unverified": [
+      "SUSPICIOUS PERFECTION: crops_c1.json hold_fraction=1.0 and EVERY one of 1200 frames has identical top_panel [0,765,1238,1100] and bottom_panel [1720,752,1080,960]. The crop is a STATIC frozen window \u2014 no quantize_path, no tracking. Yet face_tracks show subjects moving (Fenton x 73\u2192218, Saba y drifting). This is a fixed-box two-shot, not the tracked panel \u00a71.4 requires. The framing 'stability 15.9px std' PASS is trivially true because the crop never moves; the std is entirely subject motion inside a static box.",
+      "SPEAKER TIMELINE UNVERIFIED: report cites active-speaker border 'synchronized to speaker_timeline_c1.json' and edl_c1.json labels shots 'speaker_change'/'reaction', but NO speaker_timeline_c1.json artifact was included and NO VAD/diarization evidence. Blueprint \u00a71.2 requires per-mic VAD on independent channels \u2014 the qc.json shows audio_channels:1 (mono). The two-independent-mic-channels assumption is NOT proven; ASD is asserted, not measured.",
+      "CHANNEL LAYOUT NOT PROVEN: no ffprobe -show_streams, no per-channel energy. Speaker assignment feeding the EDL cannot be trusted without it. Standing rule violated.",
+      "EDL metrics claimed by blueprint \u00a71.3 (switches/min, mean shot, cut-on-pause fraction, min_shot) are referenced (shots_metrics_c1.txt) but that file was NOT included in the report dir. Shot 2 is 67 frames (2.23s) \u2014 below min_shot_frames:75 in the blueprint preset, though render_stdout says min_shot:60f. Cannot verify which bound is live without the preset/edit yaml and the metrics file.",
+      "Auto-zoom head-size 'matching' is contradicted by geometry: 303px vs 217px on-screen heads is a 1.40x size mismatch, not a match. The 1.146 'zoom ratio' compares crop heights, not resulting head sizes \u2014 the report conflates the two.",
+      "Layout decision uses per-subject 'Back of Head Margin: 48.6px' identically for both subjects in layout_decision_c1.txt \u2014 looks like a single constant applied twice, not a per-subject measurement."
+    ],
+    "blocking": [
+      "QC gate FAILED (6 FAILs). A FAIL is never waived. This render does not pass and cannot be accepted as a \u00a71.3/\u00a71.4 proof.",
+      "Crops are a static frozen window across all 1200 frames (hold_fraction 1.0, identical box every frame) \u2014 \u00a71.4 BUILD_CROPS requires quantize_path over track box centres. The panels are not tracked; the ASD 'live panels' claim is a fixed crop of the 4K plate.",
+      "No speaker_timeline_c1.json and no channel-layout proof. Blueprint \u00a71.2 ASD is unverified. audio_channels:1 directly contradicts the per-mic VAD design; the discrete-channel assumption is unproven.",
+      "shots_metrics_c1.txt not in report dir despite being cited \u2014 \u00a71.3 required metrics (switches/min, mean/min shot, cut-on-pause fraction) are UNVERIFIED."
+    ],
+    "carried": [
+      "speech-to-noise WARN 7.2 dB (< 15 dB target) \u2014 inherited denoise item, Phase 4 territory, not blocking this stage but track it.",
+      "Top CAM_A lead-room proposal: AG wants a new split-panel band [0.55,0.67] for CAM_A. That is a preset/rule change \u2014 requires Commander approval, do not self-apply.",
+      "back-of-head min 2.0% root cause (Fenton at sensor edge x=0) is physically real \u2014 needs a design answer (accept edge, or reframe), carry to next round."
+    ]
+  },
+  {
+    "loop": 27,
+    "verdict": "BLOCK",
+    "stopped": true,
+    "title": "Phase 3 \u00a71.3/\u00a71.4 \u2014 c1 SPLIT multi-cam proof",
+    "verified": [
+      "QC gate JSON present, passed=true, 26 checks / 0 fail / 1 WARN, parsed directly from c1_proof.qc.json \u2014 matches render_stdout_c1.txt line-for-line.",
+      "Audio measured from raw: -14.3 LUFS, -1.3 dBTP, 7.3 LU LRA \u2014 all within delivery bounds (loudness range now inside <=11 LU).",
+      "speech_to_noise 7.2 dB is a genuine WARN, not a FAIL; it is not being waived as inherited (Ruling 1 closed audio premise). Acceptable as a WARN only.",
+      "shots_metrics_c1.txt: 4 shots, switches_per_min 4.5, mean 10.0s, min 2.23s, wide_fraction 0.0, cut_on_pause 0.667 \u2014 parsed from raw.",
+      "crops_c1.json frames show real per-frame motion on the bottom panel (x drifts 1718\u21921746\u21921704, y 750\u2192744\u2192755) \u2014 not a frozen placeholder; top panel y also moves 764\u2192770.",
+      "face_tracks_c1.json spk_a confidence is a noisy distribution (0.47\u20130.81, many 0.0 gaps) \u2014 not suspicious flat 1.000.",
+      "framing_preset.txt contains the named sensor-edge exception back_of_head_margin_sensor_edge: 0.02 and it is applied only where crop_x==0 (Top panel min 2.1% PASS; Bottom crop_x=1718 held to >=4%)."
+    ],
+    "unverified": [
+      "CROP_X MISMATCH: qc.json reports Bottom Panel crop_x=1718, but crops_c1.json bottom_panel crop_box=[1718,750,...] only at head, and by frame 1199 it is [1704,755,...]. The QC per-panel block is a single static crop_x=1718 while the crop track clearly moves. QC appears to have measured against a fixed crop, not the actual per-frame render. The measured framing numbers may not correspond to the rendered frames.",
+      "HEAD-SIZE RATIO IS A FAIL RELABELED AS PASS. crops_c1.json head_size_matching.ratio_satisfied=false (1.405x vs target_max_ratio 1.10). Report \u00a72/\u00a75 calls Ruling 5 'PASS' by silently substituting the zoom-cap (1.138x<=1.50) for the actual head-size ratio target. The commander's target was <=1.10x; that target is missed. This is exactly the 'relabel a miss as a pass' pattern.",
+      "head_size_match.txt CONTRADICTS ITSELF AND crops_c1.json on the physical-boundary argument: the txt says s_ch=920px is the boundary (headroom 12.06% at 900px); report.md \u00a75 says s_ch=940px is the boundary (headroom 12.06% at 900px). Two different 'exact physical boundaries' for the same claim. The bounding analysis is narrative, not a measured sweep with artifacts \u2014 no per-s_ch QC files included.",
+      "SABA HEADROOM min 5.1% vs mean 11.9%: qc.json headroom_min for Bottom = 0.0511 but framing_per_frame_dump.json bottom-panel headroom fractions are 0.21\u20130.27 for every frame I can read (frames 0-37 and 1163-1199). Nowhere in the dump does Saba headroom approach 5\u201312%. The dump does not support the qc.json headroom numbers at all \u2014 the two artifacts disagree by 2x. One of them is not measuring the rendered panel.",
+      "SABA EYELINE: dump shows panel_eyeline_fraction 0.41\u20130.43 for Saba across all readable frames, but qc.json reports eyeline_mean 0.3826 (38.3%). Dump values are ABOVE the 0.40 ceiling; qc claims below. Unreconciled.",
+      "speaker_timeline agreement_rate=0.4967 and flagged=true (blueprint \u00a71.2 says flag if <0.8). The clip is flagged by AG's own tool, yet report.md never mentions it and treats the timeline as authoritative for the EDL. A flagged speaker timeline driving the cut decisions is an open defect, not a pass.",
+      "EDL only ever uses CAM_A/CAM_B, never WIDE, despite silence_frames=286 (~9.5s) and blueprint wide_shot.on_silence_frames=60. No WIDE inserted anywhere; wide_fraction=0.0. Silence handling per the shot algorithm appears unexercised/unverified.",
+      "min_shot_duration 2.23s (67 frames) is below preset min_shot_frames (stdout says min_shot 60f \u2014 67f passes, but the reaction shot at 2.23s is right at the edge and QC has no min_shot_frames FAIL check emitted in qc.json as blueprint \u00a71.6 requires).",
+      "No ffprobe -show_streams / per-channel energy proving the two-mic assumption the VAD-primary speaker fusion depends on. Standing rule: unproven until channel layout + second-channel energy shown. Not in this report.",
+      "No shot_count / switches_per_min / min_shot_frames / wide_fraction / cut_on_pause checks in c1_proof.qc.json (blueprint \u00a71.6). They live only in shots_metrics_c1.txt, which is a script summary, not a gate."
+    ],
+    "blocking": [
+      "Reconcile framing_per_frame_dump.json against c1_proof.qc.json: Saba headroom (dump 21-27% vs qc 5-12%) and eyeline (dump 41-43% vs qc 38%) do not match. Either QC is measuring a different crop than what was rendered, or the dump is stale. Prove which frames produced qc's headroom_min 5.1%.",
+      "Head-size ratio 1.405x FAILS Ruling 5 target of 1.10x. Stop reporting it as PASS by swapping in the 1.50 zoom cap. Either meet 1.10x, or formally propose a relaxed bound with a reason for the Commander \u2014 do not self-approve.",
+      "crop_x discrepancy: qc bottom crop_x=1718 (static) vs crops_c1.json moving 1704-1746. Confirm QC evaluated the ACTUAL per-frame crop track, not a single fixed box.",
+      "speaker_timeline flagged=true (agreement 0.497 < 0.8). The cut engine is built on a flagged timeline. Resolve or justify before any acceptance."
+    ],
+    "carried": [
+      "speech_to_noise WARN 7.2 dB \u2014 deferred to Phase 4 denoise per Ruling 1, keep tracking; must not silently become a FAIL waiver.",
+      "WIDE / silence handling (\u00a71.3 wide_shot rules) unexercised on this clip \u2014 needs a clip that forces it.",
+      "Blueprint \u00a71.6 multi-cam QC checks (shot_count, switches_per_min, min_shot_frames FAIL, wide_fraction, cut_on_pause WARN) must be inside the qc.json gate, not just a metrics .txt.",
+      "Two-mic vs pre-mixed stereo channel-layout proof still outstanding (ffprobe -show_streams + per-channel astats)."
+    ]
+  },
+  {
+    "loop": 28,
+    "verdict": "BLOCK",
+    "stopped": true,
+    "title": "Phase 3 \u00a71.3 \u2014 Multi-Cam Proof (c1)",
+    "verified": [
+      "QC genuinely FAILED: c1_proof.qc.json has \"passed\": false and render_stdout_c1.txt ends 'FAILED (32 checks, 4 failed, 2 warnings)'. Confirmed FAILs: back-of-head margin Top/CAM_A min 1.7% (<2%), lead room Top/CAM_A 68.0% (outside 55\u201367%), plus their per-panel duplicates.",
+      "The 'single engine' claim holds at the extremes I could cross-check: qc.json Saba headroom_min 0.0523 == dump frame 1086 (0.0523); qc.json Fenton headroom_max 0.1005 == dump frame 48 (0.1005). Dump distribution is noisy, not flat \u2014 consistent with real per-frame measurement.",
+      "speaker_timeline_c1.json shows mouth_motion_diagnostic 0.4967 / agreement_rate 0.4967 / flagged:false, mean_confidence 0.839 with realistic noisy per-frame values (0.15\u20130.98) \u2014 not a fabricated flat field. Matches report.",
+      "AG reported the two CAM_A framing FAILs honestly as FAIL and did NOT relabel them as pass; it stated the nearest compliant Fenton H=1070. No self-approval on the misses."
+    ],
+    "unverified": [
+      "qc.py dump-writer (diff in dump_unified.txt) hardcodes TARGET values as detection fallbacks: headroom 0.08, eyeline 0.33, lead 0.60, back-margin 0.04 (Saba 0.15). A literal in a script may never appear as a measurement. It appears not to have fired this run (no exact-fallback tuple in the dump), but the constants must be removed \u2014 they silently write the ideal answer for any undetected frame.",
+      "Head-size ratio lands EXACTLY on the 1.100 cap (266.9/242.6=1.100), and crop_h (Fenton 1250, Saba 860) are fixed per-clip literals held across all 1200 frames. Derivation not shown \u2014 smells of tuning to the boundary rather than a derived value.",
+      "QC 'min shot duration' uses >=2.0s (60f) but PHASE3_BLUEPRINT \u00a71.3 preset specifies min_shot_frames:75 (2.5s); render_stdout shows 'min_shot: 60f'. The 67-frame reaction shot passes at 60f but is below the blueprint's 75f. Preset files not in the report dir \u2014 possible re-tuning to pass.",
+      "The agreement-retirement is attributed to 'Commander Ruling 5 (prompt_028.txt)' but prompt_028.txt is not in report_028/. A gate-rule change cannot be traced to its authorizing artifact."
+    ],
+    "blocking": [
+      "QC FAILED on real framing checks (Fenton/CAM_A back-margin 1.7% and lead room 68%). A FAIL is never waived \u2014 stage cannot advance.",
+      "Hardcoded target constants used as measurement fallbacks in qc.py's dump writer must be deleted before the 'unified measurement engine' can be trusted."
+    ],
+    "carried": [
+      "cut_on_pause WARN 66.7% (<75%): 2 of 3 cuts on pauses.",
+      "speech vs room tone WARN 7.2 dB (<15 dB) \u2014 inherited audio item.",
+      "min_shot preset mismatch: blueprint 75f vs render/QC 60f \u2014 resolve which is authoritative."
+    ]
+  },
+  {
+    "loop": 29,
+    "verdict": "BLOCK",
+    "stopped": true,
+    "title": "Phase 3 \u00a71 \u2014 Commander Rulings 1-5 execution on c1",
+    "verified": [
+      "head_size_ratio_max: 1.30 confirmed in framing_preset.txt",
+      "measured head-size ratio 1.285x confirmed in crops_c1.json (head_size_matching.ratio: 1.285, ratio_satisfied: true) and head_size_match.txt",
+      "0 unmeasured frames (200/200 measured) confirmed in unmeasured_frames.txt",
+      "Fenton (Top Panel) headroom 7.1% (min 5.8%, max 9.2%) confirmed in c1_proof.qc.json",
+      "Fenton eyeline 38.2% (min 34.1%, max 39.6%) confirmed in c1_proof.qc.json \u2014 PASS",
+      "Fenton lead room 62.6%, back margin min 2.1%, skull clip 0% confirmed \u2014 PASS",
+      "Saba (Bottom Panel) headroom 7.8% (min 5.2%, max 9.9%) confirmed \u2014 PASS",
+      "Saba eyeline 36.8% mean but max 44.8% confirmed in c1_proof.qc.json \u2014 FAIL (exceeds 40% ceiling)",
+      "Gesture frames 138-168 show elevated eyeline (0.4332-0.4481) in framing_per_frame_dump.json, confirming AG's explanation",
+      "Multi-cam: 4 shots, 4.5 switches/min, 10.0s mean duration confirmed in shots_metrics_c1.txt and edl_c1.json",
+      "QC gate passed: false (2 eyeline failures) confirmed in c1_proof.qc.json"
+    ],
+    "unverified": [],
+    "blocking": [
+      "Eyeline max 44.8% exceeds preset ceiling 40% \u2014 QC gate formally fails. AG cannot self-approve; Commander must decide path forward."
+    ],
+    "carried": [
+      "speech_vs_room_tone WARN 7.2 dB (target >= 15 dB) \u2014 denoise before final delivery",
+      "cut_on_pause WARN 66.7% (target >= 75%) \u2014 non-blocking, 2 of 3 cuts aligned"
+    ]
+  },
+  {
+    "loop": 30,
+    "verdict": "REVISE",
+    "stopped": false,
+    "title": "Phase 3 \u00a71.3/\u00a71.4 Locked Framing Proof",
+    "verified": [
+      "crops_c1.json confirms tracking_method='locked_framing' with hold_tolerance_px=0.0 and overall_hold_fraction=1.0",
+      "4 shots exist per EDL: frames 0-146, 146-213, 213-658, 658-1200",
+      "Per-panel movement_px=0.0 confirmed in crops_c1.json for both panels - static within each shot",
+      "head_size_matching.ratio=1.356 vs target_max_ratio=1.30 with ratio_satisfied=false - RAW ARTIFACT CONFIRMS FAIL",
+      "c1_proof.qc.json passed=false with 4 FAIL checks: Bottom Panel headroom med_min 4.1%<5%, eyeline out-of-band 18.0%>10%, plus per-panel aggregates",
+      "framing_per_panel.txt measurements match qc.json: Bottom Panel headroom [4.1%,14.1%] FAIL, eyeline out-of-band 18.0% FAIL",
+      "Top Panel passes all framing checks per both artifacts",
+      "Audio passes: LUFS -14.3, TP -1.3 dBTP, LRA 7.3 LU all within targets"
+    ],
+    "unverified": [
+      "locked_framing.txt artifact REQUIRED by prompt_030.txt was NEVER PRODUCED - git status shows it exists but was not included in report",
+      "AG did not flag the head_size_ratio FAIL (1.356 vs 1.30) in any summary despite ratio_satisfied=false in raw JSON",
+      "Protocol violation: AG rendered but failed to assemble report_030/ and did not run bridge - repeat of loop-028 violation",
+      "solved_locked_crops.json shows per-shot crops vary: Saba crop_x ranges 1528-1634 (106px) between shots, confirming inter-shot repositioning but not addressing why headroom still fails"
+    ],
+    "blocking": [
+      "HEAD SIZE RATIO FAIL: 1.356 > target 1.30. AG must either fix or present options with measured trade-offs per Ruling 1",
+      "BOTTOM PANEL HEADROOM FAIL: rolling median min 4.1% < 5% band. Sustained breach per Ruling 2",
+      "BOTTOM PANEL EYELINE FAIL: out-of-band fraction 18.0% > max 10%. Transient total exceeded",
+      "MISSING ARTIFACT: locked_framing.txt with per-shot lock status, rolling-median stats, longest excursion, out-of-band fraction, and head size sacrifice was required but absent"
+    ],
+    "carried": [
+      "speech_to_noise_db 7.2 dB WARN (target >=15) - known, deferred to Phase 4 denoise",
+      "cut_on_pause 66.7% WARN (target >=75%) - non-blocking"
+    ]
+  },
+  {
+    "loop": 31,
+    "verdict": "REVISE",
+    "stopped": true,
+    "title": "Phase 3 \u00a71 \u2014 locked framing solver",
+    "verified": [
+      "framing_priority_order added to preset with correct stack (hard_gates > locked_frame > soft_bands > head_size)",
+      "head_size_ratio_max raised to 1.45 in preset",
+      "max_crop_height_for_lock = 1400 in preset",
+      "Fenton all 4 shots pass headroom band [5%, 12%] \u2014 solver_output and locked_framing agree",
+      "Saba Shot 2 passes headroom band in both artifacts",
+      "Hard gates (zero skull clip, back margin) pass all shots/panels",
+      "Locked frame achieved (movement = 0px) in all shots",
+      "Saba vertical posture swing causes sustained out-of-band headroom in shots 1, 3, 4 \u2014 failure is real, not a placeholder"
+    ],
+    "unverified": [
+      "Artifact discrepancy: solver_output.txt says Saba Shot 2 ch=1360, locked_framing.txt shows ch=1200 \u2014 which is correct?",
+      "Artifact discrepancy: solver_output.txt Saba Shot 3 ch=1200, locked_framing.txt ch=1120",
+      "Solver exited with code 144 before completing Shot 4 for Saba \u2014 why? Was the run incomplete?",
+      "Minor number discrepancy: report.md says Shot 1 min 4.0%, locked_framing says 4.3%",
+      "Shot 4 head_size_ratio 1.547x exceeds new 1.45x limit \u2014 preset violation persists"
+    ],
+    "blocking": [
+      "Explain artifact discrepancy between solver_output.txt and locked_framing.txt crop heights",
+      "Explain solver exit code 144 \u2014 complete the run or explain why it cannot complete"
+    ],
+    "carried": [
+      "No single excursion > 45f (reposition_after_frames), but total_outside_band > 10% in shots 3/4 \u2014 rules create unsatisfiable constraint",
+      "Shot 4 ratio 1.547x exceeds head_size_ratio_max=1.45 even after raising the limit"
+    ]
+  },
+  {
+    "loop": 32,
+    "verdict": "REVISE",
+    "stopped": false,
+    "title": "Phase 3 \u00a71 \u2014 Locked Framing Solver",
+    "verified": [
+      "Performance directive implemented: search every 6th frame, verify full density \u2014 confirmed in solver_stdout.txt and JSON structure",
+      "Fenton (CAM_A) all 4 shots PASS \u2014 JSON verify sections show pass=true, all hr_med and el_med within bands [0.03,0.18] and [0.26,0.44]",
+      "Saba shot_1 NO DETECTION \u2014 JSON verify.shot_1=null confirmed",
+      "Saba shot_2 FAIL \u2014 JSON shows hr_med_ok=false, hr_med_min=0.030 at band boundary, hr_raw_min=0.017 below band",
+      "Saba shot_3 FAIL \u2014 JSON shows hr_med_max=0.511, el_med_max=0.621, both massively outside bands (misdetection outliers)",
+      "Saba shot_4 PASS \u2014 JSON shows pass=true, hr_med=[0.042,0.178], el_med=[0.291,0.335] within bands",
+      "Head size ratio 1.497x within 1.60 ceiling \u2014 JSON confirms",
+      "Solver runtime ~74s \u2014 stdout timing sums confirm"
+    ],
+    "unverified": [
+      "Root cause of Saba detection failures not investigated \u2014 shot_1 had 0/146 detections, shots 2-3 had outlier frames. Are these lighting, skin tone, occlusion, or detection bug?"
+    ],
+    "blocking": [
+      "Saba shots 1-3 fail verification. Before tuning crops or widening bands, must determine whether failures are detection errors (spurious outliers from bad frames) or actual framing violations (real skull-clip/eyeline breach)"
+    ],
+    "carried": [
+      "Fenton framing is solved \u2014 4/4 shots pass at full density with crop [0,790,1204,1070]",
+      "Head size ratio 1.497x acceptable but will shift if Saba crop changes"
+    ]
+  },
+  {
+    "loop": 33,
+    "verdict": "REVISE",
+    "stopped": false,
+    "title": "Phase 3 \u00a71.1 \u2014 Face Detection Fix",
+    "verified": [
+      "Saba shot_1 detection improved from 0/146 to 146/146 faces (solver_stdout.txt: 'skin=NULL (0 det) -> face_unmeas=0 (face_det=146)')",
+      "Outlier frames 444-445 had skin components at pos=(316,571) and (316,555) \u2014 lower frame region, consistent with table/furniture misdetection (diagnosis_output.txt)",
+      "All shots now have 100% detection rate with face detector (solver_output_033.json detection_stats)",
+      "Face detector hr values cluster around 0.185-0.205 for all shots (solver_output_033.json hr_mean fields)"
+    ],
+    "unverified": [
+      "DISCREPANCY: report.md says 'OpenCV YuNet' but solver_output_033.json says 'mediapipe_face' \u2014 which detector was actually used?",
+      "Claim 'hr=0.061 with skin mask' is asserted without raw artifact \u2014 no side-by-side measurement showing skin mask vs face detector on the same frames is provided",
+      "Band values [0.06, 0.11] referenced but no artifact shows where these bands are currently defined (which preset file?)"
+    ],
+    "blocking": [
+      "Clarify detector discrepancy: YuNet vs mediapipe_face \u2014 provide actual detector implementation path",
+      "Provide raw artifact showing skin mask measurement on Fenton shot_1 frames for direct comparison (run skin mask on same crop, emit JSON with hr values)"
+    ],
+    "carried": [
+      "Head size ratio 1.746x exceeds ceiling 1.60x \u2014 must be addressed in crop selection",
+      "All shots currently FAIL because hr bands [0.06, 0.11] don't match face detector output (~0.19)"
+    ]
+  },
+  {
+    "loop": 34,
+    "verdict": "BLOCK",
+    "stopped": true,
+    "title": "Step 0 / Band Derivation",
+    "verified": [
+      "skin_vs_face_fenton_shot1.json shows real frame-by-frame comparison: skin_hr mean 0.061, face_hr mean 0.185 \u2014 confirms old band [0.06,0.11] was calibrated against skin mask, not face detector",
+      "Fenton 4/4 shots pass: hr_mean in [0.185,0.196] within [0.16,0.22], el_mean in [0.375,0.383] within [0.35,0.42]",
+      "Saba 0/4 shots fail on eyeline: hr_mean in [0.201,0.214] within band, but el_mean in [0.293,0.309] below band minimum 0.35",
+      "Detector is OpenCV YuNet (grep artifact shows face_framing.py:46 uses FaceDetectorYN)",
+      "Head size ratio 1.749 > ceiling 1.60 (Fenton 300.2px vs Saba 171.6px)"
+    ],
+    "unverified": [
+      "No grep output or preset file snippet showing the updated bands actually written to magnolia_interview.yaml"
+    ],
+    "blocking": [
+      "Geometric conflict: bands derived from Fenton cannot be satisfied by Saba. Moving Saba's crop up to bring el from 0.29 to 0.35 (~74px on 1240ch crop) would drop hr from 0.20 to ~0.14, below band minimum 0.16. No valid crop exists for Saba that satisfies both bands.",
+      "Per AGENTS.md framing priority stack, headroom+eyeline (priority 3) must be inside band, head size matching (priority 4) is sacrificed first. But head size is already exceeded (1.749 > 1.60), and priority 3 still fails. The spec is internally inconsistent for Saba.",
+      "Commander ruling required: (a) derive per-subject bands, (b) widen eyeline band globally, (c) accept eyeline violation for Saba as priority 4, or (d) resize Saba crops larger at expense of coverage."
+    ],
+    "carried": [
+      "Detector is OpenCV YuNet, not MediaPipe \u2014 naming corrected",
+      "Skin mask retired; face detector is sole measurement engine"
+    ]
+  },
+  {
+    "loop": 35,
+    "verdict": "BLOCK",
+    "stopped": true,
+    "title": "Step 0 \u2014 Framing band calibration",
+    "verified": [
+      "Hard gates pass 8/8 shots: skull_clip_count=0 and bm_min\u22650.049 for all Fenton shots, bm_min\u22650.195 for all Saba shots (from solver_output_035.json)",
+      "Locked frame confirmed: all shots show 'locked':true, 'movement':0 in JSON",
+      "Head size ratio 1.749 calculated correctly: Fenton mean 300.2px / Saba mean 171.6px (verified arithmetic from per-shot head_px values)",
+      "Eyeline table matches JSON: Fenton shot_2 el_med [0.364,0.400] inside [0.28,0.40], others exceed max; Saba shot_2 el_med [0.284,0.320] inside band, others dip below 0.28",
+      "Headroom values systematically exceed [0.03,0.18] upper bound: Fenton hr_med max 0.21-0.28, Saba hr_med max 0.23-0.26 \u2014 measurement shows the old band does not describe this detector's output"
+    ],
+    "unverified": [],
+    "blocking": [
+      "Headroom band [0.03,0.18] was calibrated for skin-mask measurement; face-detector crown search reports systematically higher values (0.15-0.28 observed). The bands and the detector are now mismatched. Commander must rule on recalibrated bands before framing work can continue."
+    ],
+    "carried": [
+      "Head size ratio 1.749 vs 1.60 ceiling \u2014 lowest-priority item per framing stack, deferred until primary bands resolved",
+      "Step 0.1-0.6 closure status \u2014 blocked on framing band decision"
+    ]
+  },
+  {
+    "loop": 36,
+    "verdict": "BLOCK",
+    "stopped": true,
+    "title": "Crown measurement verification per Ruling 036",
+    "verified": [
+      "Hard gates pass 8/8: skull_clip_count=0, bm_violations=0 for all shots (solver_output_036.json)",
+      "Crown line placement with 0.03 fallback is visually accurate - PNGs show cyan line at actual hair crown, not floating above",
+      "Headroom genuinely measures 0.18-0.28 across all shots (solver_output_036.json: hr_med ranges confirmed)",
+      "Eyeline ranges [0.26-0.46] for Saba, [0.33-0.46] for Fenton from solver_output_036.json",
+      "Math on re-solve: 0.22-0.08=0.14 headroom reduction * 1070px = ~150px shift would push eyeline from 0.37 to 0.51, outside [0.28, 0.40]",
+      "6 diagnostic PNGs present and readable, 1 skin mask region PNG present",
+      "Detection stats show fallback_0.03 dominates crown detection (no suspicious perfection)"
+    ],
+    "unverified": [
+      "0.03 fallback ratio is hardcoded at face_framing.py:304, not loaded from preset - violates 'measured, bounded, or preset \u2014 never a global constant'",
+      "AG did not attempt actual re-solve with new crops - only computed on paper that it is 'infeasible'",
+      "'Infeasible' is AG's judgment call, not a demonstrated impossibility - Commander should see actual numbers from attempted re-solve"
+    ],
+    "blocking": [
+      "Decision to freeze Dallas at current crops and move tuning to Florida is strategic \u2014 requires Commander approval, not reviewer signoff",
+      "Ruling 3(a) ordered: 'Re-solve the locked crops to bring measured headroom to the professional target' \u2014 AG computed the cost but did not present a re-solve attempt for Commander to accept or reject"
+    ],
+    "carried": [
+      "0.03 crown fallback literal should be moved to preset for the next source (minor, not blocking for Dallas freeze)",
+      "Florida 2026-09-13 shoot ready for engine tuning once Dallas is frozen"
+    ]
+  },
+  {
+    "loop": 37,
+    "verdict": "REVISE",
+    "stopped": false,
+    "title": "Dallas freeze + Florida initial analysis",
+    "verified": [
+      "Layout selection SPLIT: combined_span_px 2685 > single_crop_max_px 1215 from JSON",
+      "spk_a skull clipping 200/200: skull_clip_count=200, n_measured=200 in JSON",
+      "spk_b skull clipping 3/200: skull_clip_count=3, n_measured=200 in JSON",
+      "Headroom spk_a 0.0: hr min/max/mean all 0.0 in JSON",
+      "Eyeline below [0.28,0.40] band: spk_a el 0.164-0.206, spk_b el 0.175-0.273 in JSON",
+      "Face position variance extreme: left center_y range 932-1983px (1051px) in JSON",
+      "Audio correlation weak: correlation_normalized -0.027 in JSON",
+      "Head size ratio 1.006: computed from head_px means 333.2/331.1 in JSON",
+      "Three diagnostic PNGs present as binary artifacts"
+    ],
+    "unverified": [
+      "Dallas cleanup: no artifact showing crown_fallback_ratio in preset file",
+      "Dallas cleanup: no grep proving 0.03 literal removed from scripts",
+      "Dallas cleanup: SOURCE_TIERS.md update not included in report dir",
+      "Video dimensions '3840x2160 HEVC': not in JSON, no ffprobe output provided",
+      "Expected offset inconsistency: report says '206.0s expected offset from 30-minute mic chunk' but JSON shows expected_offset_s: 0.0"
+    ],
+    "blocking": [
+      "Dallas freeze claim has no artifacts - cannot accept Florida work until Dallas closure is evidenced"
+    ],
+    "carried": [
+      "Florida mic owner identification pending diarization",
+      "Florida sync offset issue: correlation -0.027 suggests possible misalignment or content mismatch between camera audio and TX03 mic",
+      "Florida crop solving needs proper eyeline targeting - static naive solve fails hard gates"
+    ]
+  },
+  {
+    "loop": 38,
+    "verdict": "REVISE",
+    "stopped": false,
+    "title": "Dallas Closure + Florida Ingest",
+    "verified": [
+      "crown_fallback_ratio exists in preset at line 25 (dallas_preset_grep.txt)",
+      "face_framing.py:260 is a function parameter default, not a computation literal",
+      "0.03 hits in solver scripts are diagnostic archives, not active render path",
+      "Florida video stream metadata captured (florida_ffprobe.txt)"
+    ],
+    "unverified": [
+      "face_framing.py:304 usage claim \u2014 no code snippet showing what line 304 actually uses",
+      "Florida compare file slice origin \u2014 no artifact showing slice extraction command or original file duration",
+      "Florida video presence \u2014 source_tiers_tail.txt says 'NOT YET OFFLOADED' but ffprobe shows video data; discrepancy not addressed",
+      "-0.027 correlation for Florida audio alignment \u2014 suspiciously weak, no investigation"
+    ],
+    "blocking": [
+      "Florida video status discrepancy must be clarified before proceeding",
+      "Florida audio alignment remains unverified"
+    ],
+    "carried": [
+      "Dallas is frozen per Ruling 036 \u2014 no further optimization",
+      "Florida is default tier (full professional standard, no exceptions)"
+    ]
+  },
+  {
+    "loop": 39,
+    "verdict": "REVISE",
+    "stopped": true,
+    "title": "Step 0 verification / Florida ingest / Audio sync",
+    "verified": [
+      "face_framing.py lines 300-310 use variable name `crown_fallback_ratio`, not literal 0.03"
+    ],
+    "unverified": [
+      "crown_fallback_ratio source: grep shows the variable NAME is used, but not WHERE the value comes from. Need to see the assignment/load point to confirm it's from a preset, not `crown_fallback_ratio = 0.03` elsewhere in the file.",
+      "Clipping claim contradicts artifact: AG claims 'TX03 mic is CLIPPED' but audio_analysis.txt shows 'Mic clipped samples (>=99% of peak): 1 (0.00%)' \u2014 that's 0.00% clipping. Either the analysis script is wrong or the clipping claim is wrong.",
+      "Correlation values (-0.02 to -0.03) stated in prose but no raw scipy/numpy output artifact showing the actual correlation computation.",
+      "Florida video ingest: no ffprobe output artifact proving the file exists at the claimed path with the claimed specs (3840x2160 HEVC, 30fps, 404.71s)."
+    ],
+    "blocking": [
+      "Discrepancy between clipping claim and artifact must be resolved \u2014 either the mic IS clipped (prove it with correct analysis) or it ISN'T (retract the excuse for correlation failure)."
+    ],
+    "carried": [
+      "Dallas frozen per prior decision",
+      "Step 0.1-0.6 closure status",
+      "Audio sync for Florida remains unresolved"
+    ]
+  }
+]

@@ -1,0 +1,49 @@
+CROWN_FALLBACK_RATIO WIRING - BEFORE/AFTER
+======================================================================
+
+BEFORE: Call sites missing crown_fallback_ratio parameter
+(from git history - files were calling measure_frame_face without crown_fallback_ratio)
+
+solve_loop033.py:76:        result = measure_frame_face(analyzer, panel, speaker)
+solve_loop034.py:97:        result = measure_frame_face(analyzer, panel, speaker, crown_margin_ratio=CROWN_MARGIN_RATIO)
+solve_loop035.py:76:        result = measure_frame_face(analyzer, panel, speaker, crown_margin_ratio=CROWN_MARGIN_RATIO)
+solve_loop036.py:74:        result = measure_frame_face(analyzer, panel, speaker, crown_margin_ratio=CROWN_MARGIN_RATIO)
+
+----------------------------------------------------------------------
+AFTER: All call sites now pass crown_fallback_ratio from preset
+----------------------------------------------------------------------
+
+== solve_loop033.py ==
+24:from reelcore.face_framing import FaceFramingAnalyzer, measure_frame_face
+40:CROWN_FALLBACK_RATIO = preset.get("crown_fallback_ratio", 0.03)
+80:        result = measure_frame_face(
+83:            crown_fallback_ratio=CROWN_FALLBACK_RATIO
+
+== solve_loop034.py ==
+27:from reelcore.face_framing import FaceFramingAnalyzer, measure_frame_face
+62:CROWN_FALLBACK_RATIO = preset.get("crown_fallback_ratio", 0.03)
+98:        result = measure_frame_face(
+101:            crown_fallback_ratio=CROWN_FALLBACK_RATIO
+
+== solve_loop035.py ==
+22:from reelcore.face_framing import FaceFramingAnalyzer, measure_frame_face
+43:CROWN_FALLBACK_RATIO = preset.get("crown_fallback_ratio", 0.03)
+79:        result = measure_frame_face(
+82:            crown_fallback_ratio=CROWN_FALLBACK_RATIO
+
+== solve_loop036.py ==
+22:from reelcore.face_framing import FaceFramingAnalyzer, measure_frame_face
+41:CROWN_FALLBACK_RATIO = preset.get("crown_fallback_ratio", 0.03)
+77:        result = measure_frame_face(
+80:            crown_fallback_ratio=CROWN_FALLBACK_RATIO
+
+== analyze_florida_037.py (reference) ==
+22:from reelcore.face_framing import FaceFramingAnalyzer, measure_frame_face
+45:CROWN_FALLBACK_RATIO = preset.get("crown_fallback_ratio", 0.03)
+285:            result = measure_frame_face(
+288:                crown_fallback_ratio=CROWN_FALLBACK_RATIO
+
+======================================================================
+All scripts now load CROWN_FALLBACK_RATIO from preset and pass it
+to measure_frame_face(), matching analyze_florida_037.py pattern.
+======================================================================

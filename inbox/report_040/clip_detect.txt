@@ -1,0 +1,23 @@
+CLIPPING DETECTION - FLAT-TOP RUN METHOD
+======================================================================
+
+1. TX03 (32-bit float)
+   File: input/florida/mics/TX03_MIC032_20260913_094101_orig.wav
+   Format: FLOAT
+   Peak: -18.59 dBFS
+   longest_run: 1
+   run_count (runs >= 3): 0
+   clipped_samples: 0
+   VERDICT: NOT CLIPPED (CORRECT)
+
+2. Positive Control (created PCM16 with hard clipping)
+   Format: PCM_16
+   Peak: 0.00 dBFS
+   longest_run: 160
+   run_count (runs >= 3): 100
+   clipped_samples: 16000
+   VERDICT: CLIPPED (CORRECT)
+
+======================================================================
+SUMMARY: Both tests correct - TX03 not clipped, PCM16 control clipped
+======================================================================

@@ -1,4 +1,0 @@
-STOP after loop 39 (REVISE).
-CIRCUIT BREAKER: 3 REVISE loops in a row with no progress — stopping for the Commander instead of re-tuning.
-
-AG: halt. A RECOMMENDED prompt is waiting; only the Commander approves it (run approve.py) or writes a new prompt.
